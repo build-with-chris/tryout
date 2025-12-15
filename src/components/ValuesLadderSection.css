@@ -1,0 +1,87 @@
+/* ============================================
+   Values Ladder Section Styles
+   ============================================ */
+
+.values-ladder-section {
+  background-color: var(--color-white);
+}
+
+.values-ladder-header {
+  margin-bottom: var(--spacing-3xl);
+  text-align: center;
+}
+
+.values-badge {
+  display: inline-block;
+  margin-bottom: var(--spacing-lg);
+}
+
+.values-badge span {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-lg);
+  background-color: var(--color-neutral-900);
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-full);
+}
+
+.values-ladder-subline {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.values-ladder-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.values-progress {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-neutral-600);
+  font-weight: var(--font-weight-medium);
+}
+
+.values-ladder-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .values-ladder-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+}
+
+.values-panel-wrapper {
+  animation: fadeInSlide var(--transition-base);
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .values-panel-wrapper {
+    animation: none;
+  }
+}
+

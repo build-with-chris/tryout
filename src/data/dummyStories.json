@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah",
+    "role": "Filialleiterin",
+    "category": "Leitung",
+    "image": "/img/placeholder-story-1.jpg",
+    "video": "/video/placeholder-story-1.mp4",
+    "quote": "Vor 5 Jahren stand ich an der Kasse. Heute leite ich meine eigene Filiale. REWE hat an mich geglaubt, als ich es selbst noch nicht tat. Wenn ich das schaffe, schaffst du das auch.",
+    "learnings": [
+      "Von der Kasse zur Filialleitung – dein Weg ist möglich",
+      "REWE investiert in dich, wenn du bereit bist zu wachsen",
+      "Jeder Schritt zählt, auch wenn er klein erscheint"
+    ],
+    "bio": "Sarah startete 2019 als Verkäuferin in einer REWE-Filiale in München. Ohne Führungserfahrung, aber mit viel Herz und Engagement. Heute leitet sie erfolgreich ihre eigene Filiale und motiviert andere, ihren Weg zu gehen."
+  },
+  {
+    "id": 2,
+    "name": "Michael",
+    "role": "Lagerist",
+    "category": "Fachkraft",
+    "image": "/img/placeholder-story-2.jpg",
+    "video": "/video/placeholder-story-2.mp4",
+    "quote": "Ich dachte, ich wäre zu alt für einen Neuanfang. Mit 45 Jahren bei REWE angefangen – beste Entscheidung meines Lebens. Hier zählt, wer du bist, nicht wie alt.",
+    "learnings": [
+      "Es ist nie zu spät für einen Neuanfang",
+      "REWE sieht dein Potenzial, nicht dein Alter",
+      "Ein Job, der zu dir passt, verändert alles"
+    ],
+    "bio": "Michael kam mit 45 Jahren zu REWE, nachdem er sich beruflich neu orientieren musste. Ohne Einzelhandelserfahrung, aber mit Lebenserfahrung. Heute ist er ein geschätzter Kollege im Lager und zeigt: Alter ist nur eine Zahl."
+  },
+  {
+    "id": 3,
+    "name": "Lisa",
+    "role": "Kundenberaterin",
+    "category": "Quereinstieg",
+    "image": "/img/placeholder-story-3.jpg",
+    "video": "/video/placeholder-story-3.mp4",
+    "quote": "Als alleinerziehende Mutter dachte ich, Vollzeit geht nicht. REWE hat mir gezeigt: Es geht. Flexible Schichten, Verständnis für meine Situation. Hier kann ich Mama sein und trotzdem Karriere machen.",
+    "learnings": [
+      "Familie und Karriere? Bei REWE geht beides",
+      "Flexible Lösungen für dein Leben",
+      "Du musst dich nicht entscheiden – wir finden den Weg"
+    ],
+    "bio": "Lisa kam als Quereinsteigerin zu REWE, alleinerziehend mit zwei Kindern. Sie brauchte Flexibilität und Verständnis. REWE gab ihr beides – und mehr. Heute ist sie erfolgreiche Kundenberaterin und ihre Kinder sind stolz auf ihre Mama."
+  },
+  {
+    "id": 4,
+    "name": "Tom",
+    "role": "Auszubildender",
+    "category": "Ausbildung",
+    "image": "/img/placeholder-story-4.jpg",
+    "video": "/video/placeholder-story-4.mp4",
+    "quote": "Nach dem Abi wusste ich nicht, was ich will. Jetzt weiß ich: REWE war die richtige Wahl. Ich lerne jeden Tag, werde ernst genommen und habe eine echte Perspektive. Das ist mehr, als ich mir erhofft habe.",
+    "learnings": [
+      "Eine Ausbildung ist kein Plan B – sie ist dein Start",
+      "Bei REWE wirst du ernst genommen, von Tag 1",
+      "Deine Zukunft beginnt hier, nicht irgendwann"
+    ],
+    "bio": "Tom hatte nach dem Abi keine klare Vorstellung, was er machen wollte. Die Ausbildung bei REWE hat ihm gezeigt: Manchmal findest du deinen Weg, indem du einfach anfängst. Heute ist er im zweiten Lehrjahr und weiß genau, wo er hinwill."
+  },
+  {
+    "id": 5,
+    "name": "Julia",
+    "role": "Stellvertretende Filialleiterin",
+    "category": "Leitung",
+    "image": "/img/placeholder-story-5.jpg",
+    "video": "/video/placeholder-story-5.mp4",
+    "quote": "Ich hatte Angst, Verantwortung zu übernehmen. REWE hat mir gezeigt: Du kannst mehr, als du denkst. Heute führe ich ein Team und liebe es. Manchmal musst du einfach springen – REWE fängt dich auf.",
+    "learnings": [
+      "Deine Ängste sind normal – wir helfen dir, sie zu überwinden",
+      "Verantwortung wächst mit dir, nicht über dich",
+      "REWE glaubt an dich, auch wenn du es noch nicht tust"
+    ],
+    "bio": "Julia war jahrelang Verkäuferin, hatte aber Angst vor mehr Verantwortung. REWE hat sie ermutigt, den Schritt zu wagen. Heute ist sie stellvertretende Filialleiterin und zeigt anderen: Du kannst mehr, als du denkst."
+  },
+  {
+    "id": 6,
+    "name": "Marco",
+    "role": "Lagerist",
+    "category": "Fachkraft",
+    "image": "/img/placeholder-story-6.jpg",
+    "video": "/video/placeholder-story-6.mp4",
+    "quote": "Ich dachte, ohne Ausbildung geht nichts. Falsch gedacht. Bei REWE zählt, was du kannst, nicht nur, was auf dem Papier steht. Ich habe gelernt, dass ich wertvoll bin, genau so wie ich bin.",
+    "learnings": [
+      "Dein Wert liegt nicht in Zertifikaten, sondern in dir",
+      "REWE sieht dein Potenzial, nicht deine Lücken",
+      "Jeder kann hier seinen Platz finden"
+    ],
+    "bio": "Marco kam ohne abgeschlossene Ausbildung zu REWE. Er hatte Zweifel, ob er überhaupt eine Chance hat. REWE hat ihm gezeigt: Du hast eine Chance. Heute ist er ein geschätzter Kollege im Lager und plant seine Ausbildung."
+  },
+  {
+    "id": 7,
+    "name": "Anna",
+    "role": "Verkäuferin",
+    "category": "Quereinstieg",
+    "image": "/img/placeholder-story-7.jpg",
+    "video": "/video/placeholder-story-7.mp4",
+    "quote": "Nach der Elternzeit zurück in den Job – ich war unsicher. REWE hat mir gezeigt: Du bist nicht weniger wert, nur weil du Pause hattest. Hier findest du deinen Rhythmus wieder.",
+    "learnings": [
+      "Eine Pause macht dich nicht weniger wertvoll",
+      "REWE versteht, dass Leben passiert",
+      "Du findest hier deinen Weg zurück – in deinem Tempo"
+    ],
+    "bio": "Anna kam nach 3 Jahren Elternzeit zurück ins Berufsleben. Unsicher, ob sie noch mithalten kann. REWE hat ihr gezeigt: Du kannst es. Heute ist sie wieder voll im Job und hat ihre Leidenschaft für den Verkauf zurückgefunden."
+  },
+  {
+    "id": 8,
+    "name": "Max",
+    "role": "Auszubildender",
+    "category": "Ausbildung",
+    "image": "/img/placeholder-story-8.jpg",
+    "video": "/video/placeholder-story-8.mp4",
+    "quote": "Ich war nicht der Beste in der Schule. Aber bei REWE zählt, was du tust, nicht deine Noten. Hier kann ich zeigen, was wirklich in mir steckt. Und das ist mehr, als ich dachte.",
+    "learnings": [
+      "Schulnoten sagen nichts über dein Potenzial",
+      "Bei REWE zählt, was du tust, nicht deine Vergangenheit",
+      "Du kannst mehr, als du denkst – wir zeigen es dir"
+    ],
+    "bio": "Max hatte keine guten Schulnoten und dachte, er hätte keine Chance. REWE hat ihm gezeigt: Deine Noten sind nicht dein Schicksal. Heute ist er im ersten Lehrjahr und zeigt jeden Tag, was wirklich in ihm steckt."
+  }
+]

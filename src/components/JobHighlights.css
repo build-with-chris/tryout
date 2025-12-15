@@ -1,0 +1,101 @@
+/* ============================================
+   Job Highlights Sidebar Component Styles
+   ============================================ */
+
+.job-highlights-sidebar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-highlights-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.job-highlights-container .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--spacing-xl);
+}
+
+.job-highlights-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-tight);
+}
+
+.job-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  flex: 1;
+}
+
+.job-highlight-item {
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-neutral-300);
+  transition: transform var(--transition-base);
+}
+
+.job-highlight-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.job-highlight-item:hover {
+  transform: translateX(4px);
+}
+
+.job-highlight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.job-highlight-description {
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+}
+
+.job-highlight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-base);
+}
+
+.job-highlight-link:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+.job-highlight-link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .job-highlight-card {
+    transition: none;
+  }
+  
+  .job-highlight-card:hover {
+    transform: none;
+  }
+}
+

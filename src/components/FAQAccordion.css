@@ -1,0 +1,19 @@
+/* ============================================
+   FAQ Accordion Component Styles
+   ============================================ */
+
+.faq-accordion-section {
+  background-color: var(--color-white);
+}
+
+.faq-accordion-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-question {
+  flex: 1;
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+}
+

@@ -1,0 +1,43 @@
+/* ============================================
+   Bewerbungswege Layout Styles
+   ============================================ */
+
+.bewerbungswege-with-jobs {
+  background-color: var(--color-white);
+}
+
+.bewerbungswege-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .bewerbungswege-layout {
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+  }
+}
+
+.bewerbungswege-main {
+  width: 100%;
+}
+
+.bewerbungswege-sidebar {
+  width: 100%;
+}
+
+/* Sticky sidebar on desktop */
+@media (min-width: 1024px) {
+  .bewerbungswege-sidebar {
+    position: sticky;
+    top: var(--spacing-xl);
+    align-self: start;
+    height: fit-content;
+    max-height: calc(100vh - var(--spacing-2xl));
+    overflow-y: auto;
+  }
+}
+

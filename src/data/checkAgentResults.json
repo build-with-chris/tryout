@@ -1,0 +1,83 @@
+{
+  "results": {
+    "markt": {
+      "title": "Markt",
+      "description": "Du arbeitest gerne mit Menschen zusammen und schätzt den direkten Kundenkontakt. Im Markt bist du das Gesicht von REWE und sorgst für zufriedene Kunden.",
+      "icon": "🛒",
+      "jobs": ["Verkäufer/in", "Kassierer/in", "Kundenberater/in"],
+      "reasons": [
+        "Du magst den direkten Kontakt mit Menschen",
+        "Abwechslungsreiche Aufgaben im Verkauf",
+        "Schneller Einstieg möglich"
+      ]
+    },
+    "logistik": {
+      "title": "Logistik",
+      "description": "Du arbeitest gerne strukturiert und im Team. In der Logistik sorgst du dafür, dass alles reibungslos läuft – von der Warenannahme bis zur Kommissionierung.",
+      "icon": "🚚",
+      "jobs": ["Lagerist/in", "Kommissionierer/in", "Fachkraft für Lagerlogistik"],
+      "reasons": [
+        "Strukturierte Arbeitsabläufe",
+        "Teamarbeit im Vordergrund",
+        "Gute Work-Life-Balance"
+      ]
+    },
+    "verwaltung": {
+      "title": "Verwaltung",
+      "description": "Du arbeitest gerne organisiert und übernimmst gerne Verantwortung. In der Verwaltung sorgst du für reibungslose Abläufe im Hintergrund.",
+      "icon": "📋",
+      "jobs": ["Buchhalter/in", "Personalreferent/in", "Sachbearbeiter/in"],
+      "reasons": [
+        "Organisierte Arbeitsabläufe",
+        "Verantwortungsvolle Aufgaben",
+        "Gute Entwicklungsmöglichkeiten"
+      ]
+    },
+    "einkauf": {
+      "title": "Einkauf",
+      "description": "Du denkst strategisch und magst Verhandlungen. Im Einkauf gestaltest du das Sortiment aktiv mit und sorgst für die beste Auswahl für unsere Kunden.",
+      "icon": "📊",
+      "jobs": ["Einkäufer/in", "Category Manager/in", "Sortimentsmanager/in"],
+      "reasons": [
+        "Strategische Verantwortung",
+        "Kreative Sortimentsgestaltung",
+        "Vielfältige Karrierewege"
+      ]
+    },
+    "it": {
+      "title": "IT",
+      "description": "Du interessierst dich für Technik und Digitalisierung. In der IT gestaltest du die Zukunft von REWE mit und sorgst für innovative Lösungen.",
+      "icon": "💻",
+      "jobs": ["IT-Support", "Frontend-Entwickler/in", "Systemadministrator/in"],
+      "reasons": [
+        "Zukunftsfeld Digitalisierung",
+        "Technische Herausforderungen",
+        "Moderne Arbeitsumgebung"
+      ]
+    },
+    "ausbildung": {
+      "title": "Ausbildung",
+      "description": "Du möchtest von Grund auf lernen und suchst eine solide Basis für deine Karriere. Eine Ausbildung bei REWE bietet dir beste Perspektiven.",
+      "icon": "🎓",
+      "jobs": ["Kaufmann/-frau im Einzelhandel", "Fachkraft für Lagerlogistik", "Kaufmann/-frau für Büromanagement"],
+      "reasons": [
+        "Strukturierte Ausbildung",
+        "Gute Übernahmechancen",
+        "Vielfältige Einsatzbereiche"
+      ]
+    }
+  },
+  "mapping": {
+    "high-contact-high-responsibility": ["markt", "verwaltung"],
+    "high-contact-low-responsibility": ["markt", "ausbildung"],
+    "low-contact-high-responsibility": ["logistik", "einkauf", "it"],
+    "low-contact-low-responsibility": ["logistik", "ausbildung"],
+    "fulltime-high-contact": ["markt", "verwaltung"],
+    "fulltime-low-contact": ["logistik", "einkauf", "it"],
+    "parttime-high-contact": ["markt", "ausbildung"],
+    "parttime-low-contact": ["logistik", "ausbildung"],
+    "immediate-start": ["markt", "logistik"],
+    "flexible-start": ["verwaltung", "einkauf", "it", "ausbildung"]
+  }
+}
+

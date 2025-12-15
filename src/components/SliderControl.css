@@ -1,0 +1,121 @@
+/* ============================================
+   Slider Control Component Styles
+   ============================================ */
+
+.slider-control-container {
+  margin: var(--spacing-2xl) 0;
+}
+
+.slider-track {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.slider-track:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-xl);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+  padding: 0 var(--spacing-sm);
+}
+
+.slider-label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-600);
+  transition: color var(--transition-base);
+}
+
+.slider-label.active {
+  color: var(--color-neutral-900);
+  font-weight: var(--font-weight-semibold);
+}
+
+.slider-rail {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--color-neutral-300);
+  overflow: hidden;
+}
+
+.slider-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--color-neutral-300);
+  transition: width var(--transition-slow);
+  border-radius: var(--radius-xl);
+}
+
+.slider-handle {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  cursor: grab;
+  z-index: 2;
+  transition: left var(--transition-slow);
+}
+
+.slider-handle:active {
+  cursor: grabbing;
+}
+
+.slider-handle:focus-visible {
+  outline: none;
+}
+
+.slider-handle:focus-visible .slider-handle-inner {
+  box-shadow: var(--focus-ring);
+}
+
+.slider-handle-inner {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-white);
+  border: 3px solid var(--color-neutral-900);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.slider-handle:hover .slider-handle-inner {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+.slider-handle-inner::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-neutral-900);
+  border-radius: var(--radius-full);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .slider-fill,
+  .slider-handle {
+    transition: none;
+  }
+  
+  .slider-handle:hover .slider-handle-inner {
+    transform: none;
+  }
+}
+

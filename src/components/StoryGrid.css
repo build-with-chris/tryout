@@ -1,0 +1,160 @@
+/* ============================================
+   Story Grid Component Styles
+   ============================================ */
+
+.story-grid-section {
+  background-color: var(--color-white);
+  position: relative;
+}
+
+.story-section-header {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.story-section-subheadline {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  line-height: var(--line-height-tight);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+.story-card-interactive {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.story-card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.story-card-interactive:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.story-card-image {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background-color: var(--color-neutral-300);
+}
+
+.story-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.story-card-interactive:hover .story-card-image img {
+  transform: scale(1.05);
+}
+
+.story-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.story-card-interactive:hover .story-card-overlay {
+  opacity: 1;
+}
+
+.story-play-icon {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.9);
+  transition: transform var(--transition-base);
+}
+
+.story-card-interactive:hover .story-play-icon {
+  transform: scale(1);
+}
+
+.story-play-icon svg {
+  width: 32px;
+  height: 32px;
+  margin-left: 4px; /* Visual centering for play icon */
+}
+
+.story-card-content {
+  padding: var(--spacing-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-card-quote-preview {
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+  font-style: italic;
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
+  min-height: 80px;
+}
+
+.story-card-badge {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: var(--spacing-md);
+  right: var(--spacing-md);
+}
+
+.story-name-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.story-card-cta {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-neutral-300);
+}
+
+.story-load-more {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+

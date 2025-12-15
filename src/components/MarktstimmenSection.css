@@ -1,0 +1,96 @@
+/* ============================================
+   Marktstimmen Section Styles
+   ============================================ */
+
+.marktstimmen-section {
+  background-color: var(--color-white);
+}
+
+.marktstimmen-header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.marktstimmen-subheadline {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+  line-height: var(--line-height-tight);
+}
+
+.marktstimmen-helper {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+}
+
+.marktstimmen-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-lg);
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-lg);
+}
+
+.filter-chip {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-900);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filter-chip:hover {
+  border-color: var(--color-neutral-600);
+  background-color: var(--color-neutral-100);
+}
+
+.filter-chip:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.filter-chip.active {
+  background-color: var(--color-neutral-900);
+  color: var(--color-white);
+  border-color: var(--color-neutral-900);
+}
+
+.marktstimmen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .marktstimmen-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.marktstimmen-empty {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-neutral-600);
+}
+
+.marktstimmen-load-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-neutral-300);
+}
+
+.marktstimmen-count {
+  color: var(--color-neutral-600);
+}
+

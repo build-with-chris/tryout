@@ -1,0 +1,147 @@
+[
+  {
+    "id": 1,
+    "title": "Verkäufer/in (m/w/d)",
+    "location": "München",
+    "postalCode": "80331",
+    "area": "Markt",
+    "workModel": "Vollzeit",
+    "entryLevel": "Einstieg",
+    "distance": 2.5,
+    "publishedDate": "2024-01-15",
+    "description": "Kundenberatung, Kasse, Warenpräsentation"
+  },
+  {
+    "id": 2,
+    "title": "Lagerist/in (m/w/d)",
+    "location": "Augsburg",
+    "postalCode": "86150",
+    "area": "Logistik",
+    "workModel": "Vollzeit",
+    "entryLevel": "Einstieg",
+    "distance": 15.3,
+    "publishedDate": "2024-01-20",
+    "description": "Warenannahme, Kommissionierung, Qualitätskontrolle"
+  },
+  {
+    "id": 3,
+    "title": "Filialleiter/in (m/w/d)",
+    "location": "Stuttgart",
+    "postalCode": "70173",
+    "area": "Markt",
+    "workModel": "Vollzeit",
+    "entryLevel": "Erfahren",
+    "distance": 45.2,
+    "publishedDate": "2024-01-10",
+    "description": "Teamführung, Sortimentsgestaltung, Verkaufssteuerung"
+  },
+  {
+    "id": 4,
+    "title": "IT-Support (m/w/d)",
+    "location": "München",
+    "postalCode": "80335",
+    "area": "IT",
+    "workModel": "Teilzeit",
+    "entryLevel": "Einstieg",
+    "distance": 3.1,
+    "publishedDate": "2024-01-22",
+    "description": "Technischer Support, Systemadministration, Digitalisierung"
+  },
+  {
+    "id": 5,
+    "title": "Kaufmann/-frau im Einzelhandel - Ausbildung",
+    "location": "München",
+    "postalCode": "80339",
+    "area": "Ausbildung",
+    "workModel": "Ausbildung",
+    "entryLevel": "Einstieg",
+    "distance": 5.8,
+    "publishedDate": "2024-01-18",
+    "description": "3-jährige Ausbildung im Einzelhandel"
+  },
+  {
+    "id": 6,
+    "title": "Einkäufer/in (m/w/d)",
+    "location": "München",
+    "postalCode": "80331",
+    "area": "Einkauf",
+    "workModel": "Vollzeit",
+    "entryLevel": "Erfahren",
+    "distance": 2.2,
+    "publishedDate": "2024-01-12",
+    "description": "Sortimentsgestaltung, Verhandlungen, Marktanalyse"
+  },
+  {
+    "id": 7,
+    "title": "Buchhalter/in (m/w/d)",
+    "location": "Augsburg",
+    "postalCode": "86150",
+    "area": "Verwaltung",
+    "workModel": "Teilzeit",
+    "entryLevel": "Erfahren",
+    "distance": 16.1,
+    "publishedDate": "2024-01-19",
+    "description": "Finanzbuchhaltung, Rechnungswesen, Controlling"
+  },
+  {
+    "id": 8,
+    "title": "Kassierer/in (m/w/d)",
+    "location": "München",
+    "postalCode": "80336",
+    "area": "Markt",
+    "workModel": "Minijob",
+    "entryLevel": "Einstieg",
+    "distance": 4.5,
+    "publishedDate": "2024-01-21",
+    "description": "Kassentätigkeit, Kundenberatung, Warenpräsentation"
+  },
+  {
+    "id": 9,
+    "title": "Fachkraft für Lagerlogistik - Ausbildung",
+    "location": "Stuttgart",
+    "postalCode": "70173",
+    "area": "Ausbildung",
+    "workModel": "Ausbildung",
+    "entryLevel": "Einstieg",
+    "distance": 44.8,
+    "publishedDate": "2024-01-16",
+    "description": "3-jährige Ausbildung in der Lagerlogistik"
+  },
+  {
+    "id": 10,
+    "title": "Logistikmitarbeiter/in (m/w/d)",
+    "location": "München",
+    "postalCode": "80331",
+    "area": "Logistik",
+    "workModel": "Vollzeit",
+    "entryLevel": "Einstieg",
+    "distance": 2.8,
+    "publishedDate": "2024-01-23",
+    "description": "Warenannahme, Kommissionierung, Transport"
+  },
+  {
+    "id": 11,
+    "title": "Personalreferent/in (m/w/d)",
+    "location": "München",
+    "postalCode": "80335",
+    "area": "Verwaltung",
+    "workModel": "Vollzeit",
+    "entryLevel": "Erfahren",
+    "distance": 3.5,
+    "publishedDate": "2024-01-11",
+    "description": "Personalwesen, Recruiting, Mitarbeiterbetreuung"
+  },
+  {
+    "id": 12,
+    "title": "Frontend-Entwickler/in (m/w/d)",
+    "location": "München",
+    "postalCode": "80339",
+    "area": "IT",
+    "workModel": "Vollzeit",
+    "entryLevel": "Erfahren",
+    "distance": 6.2,
+    "publishedDate": "2024-01-14",
+    "description": "Web-Entwicklung, React, TypeScript"
+  }
+]
+
