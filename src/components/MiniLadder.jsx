@@ -22,3 +22,5 @@ const MiniLadder = ({ rungs }) => {
 
 export default MiniLadder
 
+
+

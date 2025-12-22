@@ -17,3 +17,5 @@ const MiniProof = ({ proofLine }) => {
 
 export default MiniProof
 
+
+

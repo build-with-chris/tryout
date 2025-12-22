@@ -73,3 +73,5 @@ const InfoCard = ({ card, isExpanded: controlledExpanded, onExpand, onToggle }) 
 
 export default InfoCard
 
+
+
