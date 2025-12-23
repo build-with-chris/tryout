@@ -3,7 +3,7 @@
    ============================================ */
 
 .karriere-welten-section {
-  background-color: var(--color-white);
+  background-color: transparent;
 }
 
 .karriere-welten-header {
@@ -13,13 +13,13 @@
 .karriere-welten-subheadline {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-neutral-900);
+  color: var(--color-white);
   line-height: var(--line-height-tight);
 }
 
 .karriere-welten-helper {
   font-size: var(--font-size-sm);
-  color: var(--color-neutral-600);
+  color: var(--color-neutral-400);
 }
 
 .world-panel {

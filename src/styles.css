@@ -121,6 +121,7 @@ h1, .h1 {
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-lg);
+  color: var(--color-white);
 }
 
 h2, .h2 {
@@ -128,6 +129,7 @@ h2, .h2 {
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-md);
+  color: var(--color-white);
 }
 
 h3, .h3 {
@@ -135,6 +137,7 @@ h3, .h3 {
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-md);
+  color: var(--color-white);
 }
 
 h4, .h4 {
@@ -142,10 +145,12 @@ h4, .h4 {
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-normal);
   margin-bottom: var(--spacing-sm);
+  color: var(--color-white);
 }
 
 p {
   margin-bottom: var(--spacing-md);
+  color: var(--color-white);
 }
 
 small, .text-small {
@@ -173,6 +178,32 @@ small, .text-small {
 }
 
 /* ============================================
+   Content Layer - Allows shader interaction while keeping interactive elements clickable
+   ============================================ */
+
+.content-layer {
+  pointer-events: none;
+}
+
+/* All direct children (sections, etc.) should allow pointer events for scrolling and interaction */
+.content-layer > * {
+  pointer-events: auto;
+}
+
+/* Ensure all interactive elements are clickable even if nested */
+.content-layer a,
+.content-layer button,
+.content-layer input,
+.content-layer select,
+.content-layer textarea,
+.content-layer [role="button"],
+.content-layer [role="tab"],
+.content-layer [role="tablist"],
+.content-layer [tabindex]:not([tabindex="-1"]) {
+  pointer-events: auto;
+}
+
+/* ============================================
    Utility Classes
    ============================================ */
 
@@ -191,6 +222,7 @@ small, .text-small {
 
 .section {
   padding: var(--spacing-4xl) 0;
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -527,15 +559,17 @@ small, .text-small {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   text-align: left;
-  color: var(--color-neutral-900);
-  background-color: var(--color-white);
-  border: none;
+  color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: background-color var(--transition-base);
+  margin-bottom: var(--spacing-sm);
 }
 
 .accordion-trigger:hover {
-  background-color: var(--color-neutral-100);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .accordion-trigger:focus-visible {
@@ -567,8 +601,9 @@ small, .text-small {
 }
 
 .accordion-content-inner {
-  color: var(--color-neutral-600);
+  color: var(--color-white);
   line-height: var(--line-height-relaxed);
+  opacity: 0.9;
 }
 
 /* ============================================
@@ -1062,10 +1097,11 @@ small, .text-small {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   margin-bottom: var(--spacing-xs);
+  color: var(--color-white);
 }
 
 .award-org {
-  color: var(--color-neutral-600);
+  color: var(--color-neutral-400);
 }
 
 /* ============================================

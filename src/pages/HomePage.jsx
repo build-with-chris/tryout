@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import '../styles.css'
 import HeroStart from '../components/HeroStart'
-import BewerbungswegeSlider from '../components/BewerbungswegeSlider'
-import JobHighlights from '../components/JobHighlights'
 import MarktstimmenSection from '../components/MarktstimmenSection'
+import { Timeline10 } from '../components/timeline10'
 import KarriereWeltenSection from '../components/KarriereWeltenSection'
 import CheckAgent from '../components/CheckAgent'
 import ApplicationFlow from '../components/ApplicationFlow'
-import ValuesLadderSection from '../components/ValuesLadderSection'
+import { About14 } from '../components/about14'
 import TrustBlock from '../components/TrustBlock'
 import FAQAccordion from '../components/FAQAccordion'
 import ContactCTA from '../components/ContactCTA'
+import { Shader7 } from '../components/shader7'
 import '../components/BewerbungswegeLayout.css'
 
 // Icon Components (Simple SVG placeholders)
@@ -92,116 +92,8 @@ const Accordion = ({ items }) => {
   )
 }
 
-// Process Tabs Component
-const ProcessTabs = () => {
-  const [activeTab, setActiveTab] = useState('fast')
-
-  return (
-    <div>
-      <div className="process-tabs">
-        <button
-          className={`process-tab ${activeTab === 'fast' ? 'active' : ''}`}
-          onClick={() => setActiveTab('fast')}
-        >
-          Heute loslegen
-        </button>
-        <button
-          className={`process-tab ${activeTab === 'deep' ? 'active' : ''}`}
-          onClick={() => setActiveTab('deep')}
-        >
-          Weiterkommen mit Plan
-        </button>
-      </div>
-
-      <div className={`process-tab-content ${activeTab === 'fast' ? 'active' : ''}`}>
-        <div className="steps">
-          <ol className="steps-list">
-            <li className="step-item">
-              <div className="step-number">1</div>
-              <h3 className="step-title">Profil erstellen</h3>
-              <p className="step-description">
-                In 60 Sekunden dein Profil anlegen und grundlegende Informationen hinterlegen.
-              </p>
-            </li>
-            <li className="step-item">
-              <div className="step-number">2</div>
-              <h3 className="step-title">Bewerbung absenden</h3>
-              <p className="step-description">
-                Mit einem Klick deine Bewerbung für passende Stellen senden.
-              </p>
-            </li>
-            <li className="step-item">
-              <div className="step-number">3</div>
-              <h3 className="step-title">Schnelle Rückmeldung</h3>
-              <p className="step-description">
-                Innerhalb von 24 Stunden erhältst du eine erste Rückmeldung von uns.
-              </p>
-            </li>
-            <li className="step-item">
-              <div className="step-number">4</div>
-              <h3 className="step-title">Start bei REWE</h3>
-              <p className="step-description">
-                Nach erfolgreichem Matching startest du direkt in deinem neuen Job.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-      <div className={`process-tab-content ${activeTab === 'deep' ? 'active' : ''}`}>
-        <div className="steps">
-          <ol className="steps-list">
-            <li className="step-item">
-              <div className="step-number">1</div>
-              <h3 className="step-title">Ausführliches Profil</h3>
-              <p className="step-description">
-                Detaillierte Angaben zu deiner Erfahrung, Qualifikationen und Wünschen.
-              </p>
-            </li>
-            <li className="step-item">
-              <div className="step-number">2</div>
-              <h3 className="step-title">Persönliches Gespräch</h3>
-              <p className="step-description">
-                Wir lernen uns in einem ausführlichen Gespräch kennen.
-              </p>
-            </li>
-            <li className="step-item">
-              <div className="step-number">3</div>
-              <h3 className="step-title">Individuelle Beratung</h3>
-              <p className="step-description">
-                Gemeinsam finden wir den perfekten Karrierepfad für dich.
-              </p>
-            </li>
-            <li className="step-item">
-              <div className="step-number">4</div>
-              <h3 className="step-title">Maßgeschneiderte Lösung</h3>
-              <p className="step-description">
-                Dein individueller Einstieg bei REWE, genau wie du es dir vorstellst.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 function HomePage() {
-  // Initialize activePath from URL or localStorage
-  const getInitialPath = () => {
-    const params = new URLSearchParams(window.location.search)
-    const urlPath = params.get('weg')
-    const storedPath = localStorage.getItem('bewerbungsweg')
-    
-    if (urlPath && (urlPath === 'heute' || urlPath === 'plan')) {
-      return urlPath
-    } else if (storedPath && (storedPath === 'heute' || storedPath === 'plan')) {
-      return storedPath
-    }
-    return 'heute'
-  }
-
-  const [activePath, setActivePath] = useState(getInitialPath)
 
   const awards = [
     {
@@ -245,43 +137,36 @@ function HomePage() {
   ]
 
   return (
-    <div className="app">
-      {/* Hero Start - Clean Hero + Typographic Drop */}
-      <HeroStart />
+    <div className="app relative min-h-screen" style={{ background: 'transparent' }}>
+      {/* Shader Background for entire page */}
+      <div className="fixed inset-0 z-0 pointer-events-auto">
+        <Shader7 
+          className="absolute inset-0 w-full h-full"
+          color="#CC071E"
+        />
+        {/* Overlay for better content contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/30 pointer-events-none" />
+      </div>
+
+      {/* Content with relative z-index - pointer-events-none allows shader interaction, but interactive elements will override */}
+      <div className="relative z-10 content-layer" style={{ background: 'transparent' }}>
+        {/* Hero Start - Clean Hero + Typographic Drop */}
+        <HeroStart />
 
       {/* Marktstimmen Section */}
       <MarktstimmenSection />
 
-      {/* Bewerbung in 4 Schritten */}
-      <section className="section" id="bewerbung" style={{ backgroundColor: 'var(--color-neutral-100)' }}>
-        <div className="container">
-          <h2 className="h2 text-center mb-xl">Bewerbung in 4 Schritten</h2>
-          <ProcessTabs />
-        </div>
-      </section>
+      {/* Timeline Section */}
+      <Timeline10 />
 
-      {/* Bewerbungswege + Job Highlights Section */}
-      <section className="section bewerbungswege-with-jobs" id="bewerbungswege">
-        <div className="container">
-          <div className="bewerbungswege-layout">
-            <div className="bewerbungswege-main">
-              <BewerbungswegeSlider onPathChange={setActivePath} />
-            </div>
-            <div className="bewerbungswege-sidebar">
-              <JobHighlights activePath={activePath} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Ladder Section */}
-      <ValuesLadderSection />
+      {/* Values Section */}
+      <About14 />
 
       {/* Karriere Welten Section */}
       <KarriereWeltenSection />
 
       {/* Trust / Awards Section */}
-      <section className="section" id="trust" style={{ backgroundColor: 'var(--color-neutral-100)' }}>
+      <section className="section" id="trust" style={{ backgroundColor: 'transparent' }}>
         <div className="container">
           <h2 className="h2 text-center mb-xl">Ausgezeichnete Arbeitgeberqualität</h2>
           <div className="awards-grid">
@@ -291,7 +176,7 @@ function HomePage() {
                   {award.icon}
                 </div>
                 <h3 className="award-title">{award.title}</h3>
-                <p className="award-org text-small" style={{ color: 'var(--color-neutral-600)' }}>
+                <p className="award-org text-small">
                   {award.organization}
                 </p>
               </div>
@@ -301,7 +186,7 @@ function HomePage() {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="section" id="faq">
+      <section className="section" id="faq" style={{ backgroundColor: 'transparent' }}>
         <div className="container">
           <h2 className="h2 text-center mb-xl">Häufige Fragen</h2>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -309,6 +194,9 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Bewerbung in 4 Schritten */}
+      <ApplicationFlow />
 
       {/* Contact / Footer */}
       <footer className="footer" id="kontakt">
@@ -386,6 +274,7 @@ function HomePage() {
             Per WhatsApp starten
           </a>
         </div>
+      </div>
       </div>
     </div>
   )

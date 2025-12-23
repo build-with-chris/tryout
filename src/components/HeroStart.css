@@ -43,14 +43,32 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60%;
+  height: 70%;
   background: linear-gradient(
     to top,
-    rgba(28, 28, 28, 0.85) 0%,
-    rgba(28, 28, 28, 0.5) 50%,
+    rgba(28, 28, 28, 0.95) 0%,
+    rgba(28, 28, 28, 0.75) 40%,
+    rgba(28, 28, 28, 0.4) 70%,
     transparent 100%
   );
   z-index: 1;
+}
+
+/* Transition gradient from hero to shader */
+.hero-start-transition {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to top,
+    rgba(204, 7, 30, 0.3) 0%,
+    rgba(204, 7, 30, 0.15) 30%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero-start-content {
@@ -97,22 +115,59 @@
   opacity: 0.9;
 }
 
-/* Main Hero Word */
-.hero-start-word {
-  font-size: clamp(3rem, 12vw, 8rem);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  line-height: 0.9;
-  letter-spacing: -0.02em;
+/* Main Hero Text */
+.hero-start-text {
   text-align: center;
-  margin: 0;
   margin-bottom: var(--spacing-2xl);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
 @media (min-width: 769px) {
-  .hero-start-word {
+  .hero-start-text {
     margin-bottom: var(--spacing-3xl);
+  }
+}
+
+.hero-start-line1 {
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  margin-bottom: var(--spacing-md);
+  text-shadow: 
+    0 2px 12px rgba(0, 0, 0, 0.6),
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(0, 0, 0, 0.3);
+  text-stroke: 1px rgba(0, 0, 0, 0.2);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 769px) {
+  .hero-start-line1 {
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+.hero-start-line2 {
+  font-size: clamp(1.75rem, 6vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-shadow: 
+    0 2px 12px rgba(0, 0, 0, 0.6),
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(204, 7, 30, 0.5);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+@media (min-width: 769px) {
+  .hero-start-line2 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
   }
 }
 
@@ -218,14 +273,58 @@
    ============================================ */
 
 .hero-typographic-drop {
-  background-color: var(--color-white);
+  position: relative;
   padding: var(--spacing-4xl) 0;
+  overflow: hidden;
+  margin-top: -120px; /* Overlap with hero transition for seamless blend */
+  padding-top: calc(var(--spacing-4xl) + 120px); /* Compensate for negative margin */
 }
 
 @media (max-width: 768px) {
   .hero-typographic-drop {
     padding: var(--spacing-3xl) 0;
+    margin-top: -80px;
+    padding-top: calc(var(--spacing-3xl) + 80px);
   }
+}
+
+.hero-typographic-shader {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+/* Transition gradient from hero to shader at top */
+.hero-shader-transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(204, 7, 30, 0.3) 0%,
+    rgba(204, 7, 30, 0.15) 30%,
+    transparent 100%
+  );
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-typographic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 10;
+  pointer-events: none; /* Allow mouse events to pass through to shader */
 }
 
 .typographic-content {
@@ -233,6 +332,8 @@
   margin: 0 auto;
   text-align: center;
   position: relative;
+  z-index: 20;
+  pointer-events: auto; /* Ensure interactive elements work */
 }
 
 /* Badge */
@@ -258,29 +359,33 @@
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
-  color: var(--color-neutral-900);
+  color: var(--color-white);
   margin-bottom: var(--spacing-lg);
   letter-spacing: -0.02em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Subline */
-.typographic-subline {
+/* Subheading */
+.typographic-subheading {
   font-size: clamp(1.25rem, 3vw, 2rem);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
-  color: var(--color-primary);
+  color: var(--color-white);
   margin-bottom: var(--spacing-md);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Supporting Line */
 .typographic-supporting {
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
-  color: var(--color-neutral-600);
+  color: var(--color-white);
   margin-bottom: var(--spacing-2xl);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0.95;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* CTA Row */

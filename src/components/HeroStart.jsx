@@ -20,6 +20,8 @@ const HeroStart = () => {
             aria-hidden="true"
           />
           <div className="hero-start-overlay"></div>
+          {/* Transition gradient to shader */}
+          <div className="hero-start-transition"></div>
         </div>
 
         <div className="hero-start-content">
@@ -28,8 +30,11 @@ const HeroStart = () => {
             <span>REWE Süd Karriere</span>
           </div>
 
-          {/* Main Hero Word */}
-          <h1 className="hero-start-word">Chancen.</h1>
+          {/* Main Hero Text */}
+          <div className="hero-start-text">
+            <h1 className="hero-start-line1">Chancen erkennt man nicht. Man ergreift sie.</h1>
+            <h2 className="hero-start-line2">Bei REWE.</h2>
+          </div>
 
           {/* CTAs */}
           <div className="hero-start-ctas">
@@ -61,20 +66,27 @@ const HeroStart = () => {
       </section>
 
       {/* Typographic Drop Section */}
-      <section className="hero-typographic-drop" id="traum">
-        <div className="container">
+      <section 
+        className="hero-typographic-drop relative" 
+        id="traum"
+        aria-labelledby="traum-heading"
+      >
+        {/* Overlay for better text contrast */}
+        <div className="hero-typographic-overlay" />
+
+        <div className="container relative z-20">
           <div className="typographic-content">
-            {/* Badge */}
-            <div className="typographic-badge">
-              <span>REWE bringt's</span>
-            </div>
-
             {/* Main Headline */}
-            <h2 className="typographic-headline">REWE deinen Traum</h2>
+            <h2 
+              id="traum-heading"
+              className="typographic-headline"
+            >
+              REWE deinen Traum
+            </h2>
 
-            {/* Subline */}
-            <p className="typographic-subline">
-              Was du schon kannst, bringt dich weiter.
+            {/* Subheading */}
+            <p className="typographic-subheading">
+              Viele Wege. Ein Arbeitgeber.
             </p>
 
             {/* Supporting Line */}
@@ -87,6 +99,7 @@ const HeroStart = () => {
               <a 
                 href="#bewerbung" 
                 className="btn btn-primary btn-lg"
+                aria-label="In 60 Sekunden bewerben - Zur Bewerbung"
               >
                 In 60 Sekunden bewerben
               </a>

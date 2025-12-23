@@ -140,21 +140,24 @@ const ApplicationFlow = () => {
     }
 
     setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
+    return { isValid: Object.keys(newErrors).length === 0, errors: newErrors }
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     
-    if (!validateForm(activeLane)) {
+    const { isValid, errors: validationErrors } = validateForm(activeLane)
+    if (!isValid) {
       // Scroll to first error
-      const firstError = Object.keys(errors)[0] || Object.keys(validateForm(activeLane) ? {} : errors)[0]
+      const firstError = Object.keys(validationErrors)[0]
       if (firstError) {
-        const element = document.getElementById(`${activeLane}-${firstError}`)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'center' })
-          element.focus()
-        }
+        setTimeout(() => {
+          const element = document.getElementById(`${activeLane}-${firstError}`)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+            element.focus()
+          }
+        }, 100)
       }
       return
     }
@@ -205,7 +208,7 @@ const ApplicationFlow = () => {
     <section className="application-flow-section section" id="bewerbung">
       <div className="container">
         <h2 className="h2 text-center mb-xl">Bewerbung: So einfach geht's</h2>
-        <p className="text-center mb-xl" style={{ maxWidth: '600px', margin: '0 auto var(--spacing-xl)', color: 'var(--color-neutral-600)' }}>
+        <p className="text-center mb-xl" style={{ maxWidth: '600px', margin: '0 auto var(--spacing-xl)', color: 'var(--color-neutral-400)' }}>
           Wähle deinen Weg und starte deine Bewerbung in wenigen Minuten
         </p>
 
@@ -643,7 +646,7 @@ const ApplicationFlow = () => {
           <div className="application-success">
             <div className="success-icon">✓</div>
             <h3 className="h3 mb-md">Bewerbung erfolgreich eingereicht!</h3>
-            <p className="mb-lg" style={{ color: 'var(--color-neutral-600)' }}>
+            <p className="mb-lg" style={{ color: 'var(--color-neutral-400)' }}>
               {activeLane === 'fast' 
                 ? 'Wir melden uns innerhalb von 24 Stunden bei dir.'
                 : 'Wir melden uns innerhalb von 3-5 Werktagen bei dir für ein persönliches Gespräch.'}

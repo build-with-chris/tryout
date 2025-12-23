@@ -14,46 +14,15 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-// Toggle Component
-const CareerToggle = ({ activeCareer, onToggle }) => {
-  return (
-    <div className="flex justify-center mb-12">
-      <div className="inline-flex rounded-lg border-2 border-[#CC071E]/20 bg-white p-1" role="tablist">
-        <button
-          className={cn(
-            "px-8 py-3 rounded-md font-semibold transition-all",
-            activeCareer === 'markt'
-              ? "bg-[#CC071E] text-white shadow-md"
-              : "text-[#CC071E] hover:bg-[#F5E5E7]"
-          )}
-          onClick={() => onToggle('markt')}
-          role="tab"
-          aria-selected={activeCareer === 'markt'}
-        >
-          Markt
-        </button>
-        <button
-          className={cn(
-            "px-8 py-3 rounded-md font-semibold transition-all",
-            activeCareer === 'logistik'
-              ? "bg-[#CC071E] text-white shadow-md"
-              : "text-[#CC071E] hover:bg-[#F5E5E7]"
-          )}
-          onClick={() => onToggle('logistik')}
-          role="tab"
-          aria-selected={activeCareer === 'logistik'}
-        >
-          Logistik
-        </button>
-      </div>
-    </div>
-  );
-};
-
 const Feature313 = ({
-  className
+  className,
+  initialCareer = 'markt',
+  controlledCareer = null,
+  onCareerChange = null
 }) => {
-  const [activeCareer, setActiveCareer] = useState('markt');
+  const [internalCareer, setInternalCareer] = useState(initialCareer);
+  const activeCareer = controlledCareer !== null ? controlledCareer : internalCareer;
+  const setActiveCareer = onCareerChange || setInternalCareer;
   const isMobile = useIsMobile();
 
   // Daten für Markt und Logistik
@@ -100,16 +69,6 @@ const Feature313 = ({
   return (
     <section className={cn("bg-muted py-12", className)}>
       <div className="container flex flex-col gap-2">
-        {/* Header */}
-        <div className="mb-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Markt oder Logistik. Wofür interessierst du dich?
-          </h2>
-        </div>
-
-        {/* Toggle */}
-        <CareerToggle activeCareer={activeCareer} onToggle={setActiveCareer} />
-
         {/* Cards Grid */}
         <div className="grid grid-cols-1 gap-1 lg:grid-cols-4">
           {currentData.cards.map((card, index) => (

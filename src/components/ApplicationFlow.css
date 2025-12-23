@@ -3,7 +3,22 @@
    ============================================ */
 
 .application-flow-section {
-  background-color: var(--color-neutral-100);
+  background-color: transparent;
+  position: relative;
+}
+
+.application-flow-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.application-flow-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .application-flow-container {
@@ -115,11 +130,11 @@
 .step-label {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-neutral-900);
+  color: var(--color-white);
 }
 
 .step-description {
-  color: var(--color-neutral-600);
+  color: var(--color-neutral-400);
 }
 
 /* Form Container */
