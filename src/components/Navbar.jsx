@@ -29,6 +29,12 @@ const Navbar = () => {
           >
             Option 3
           </Link>
+          <Link 
+            to="/option4" 
+            className={`navbar-link ${location.pathname === '/option4' ? 'active' : ''}`}
+          >
+            Option 4
+          </Link>
         </div>
       </div>
     </nav>

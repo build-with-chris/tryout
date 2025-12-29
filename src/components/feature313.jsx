@@ -67,7 +67,7 @@ const Feature313 = ({
   const isYouTube = !!youtubeId;
 
   return (
-    <section className={cn("bg-muted py-12", className)}>
+    <section className={cn("bg-white py-12", className)}>
       <div className="container flex flex-col gap-2">
         {/* Cards Grid */}
         <div className="grid grid-cols-1 gap-1 lg:grid-cols-4">

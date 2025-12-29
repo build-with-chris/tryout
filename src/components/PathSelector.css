@@ -1,0 +1,490 @@
+/* ============================================
+   Path Selector - Ruhige Weggabelung
+   ============================================ */
+
+.path-selector {
+  background-color: var(--color-white);
+  padding: var(--spacing-4xl) 0;
+}
+
+.path-selector-header {
+  text-align: center;
+  margin-bottom: var(--spacing-4xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.path-selector-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-lg);
+}
+
+.path-selector-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================
+   CTA-Buttons (gleichwertig)
+   ============================================ */
+
+.path-selector-ctas {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-4xl);
+  flex-wrap: wrap;
+}
+
+.path-cta {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.path-cta:hover {
+  background-color: var(--color-neutral-100);
+  border-color: var(--color-neutral-400);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.path-cta:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+.path-cta--active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.path-cta--active:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.path-cta-label {
+  display: block;
+}
+
+/* ============================================
+   Content-Bereich (wechselt je nach Auswahl)
+   ============================================ */
+
+.path-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.path-content--transitioning {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ============================================
+   Video-Container (großes Image-Video)
+   ============================================ */
+
+.path-video-container {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.path-video-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: 400px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-neutral-900);
+}
+
+.path-video-image-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.path-video-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.path-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.path-video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .path-video-content {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.path-video-play-button {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.path-video-play-button:hover {
+  background-color: var(--color-neutral-100);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.path-video-play-icon {
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+  color: var(--color-primary);
+}
+
+.path-video-text {
+  padding: var(--spacing-md);
+}
+
+.path-video-caption {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xs);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.path-video-duration {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Dialog für Video-Player */
+.path-video-dialog {
+  width: 100%;
+  max-width: 1200px;
+  border: none;
+  background-color: #000;
+  padding: 0;
+}
+
+.path-video-player {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.path-video-iframe,
+.path-video-element {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+.path-video-element {
+  object-fit: contain;
+}
+
+.path-content-inner {
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-3xl);
+  border: 1px solid var(--color-neutral-300);
+}
+
+.path-content-header {
+  margin-bottom: var(--spacing-3xl);
+  padding-bottom: var(--spacing-2xl);
+  border-bottom: 2px solid var(--color-neutral-300);
+}
+
+.path-content-headline {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-lg);
+}
+
+.path-content-description {
+  font-size: var(--font-size-lg);
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================
+   Aspekte (Arbeitsalltag, Team, Planbarkeit)
+   ============================================ */
+
+.path-aspects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.path-aspect {
+  background-color: var(--color-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-300);
+}
+
+.path-aspect-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-neutral-300);
+}
+
+.path-aspect-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.path-aspect-item {
+  position: relative;
+  padding-left: var(--spacing-xl);
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-900);
+  line-height: var(--line-height-relaxed);
+}
+
+.path-aspect-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
+/* ============================================
+   Wechsel-Button
+   ============================================ */
+
+.path-switch {
+  text-align: center;
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-neutral-300);
+}
+
+.path-switch-button {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.path-switch-button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.path-switch-button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+  .path-selector {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .path-selector-header {
+    margin-bottom: var(--spacing-3xl);
+    padding: 0 var(--spacing-md);
+  }
+
+  .path-selector-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .path-selector-subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .path-selector-ctas {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-3xl);
+    padding: 0 var(--spacing-md);
+  }
+
+  .path-cta {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .path-content-inner {
+    margin: 0 var(--spacing-md);
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .path-content-headline {
+    font-size: var(--font-size-2xl);
+  }
+
+  .path-content-description {
+    font-size: var(--font-size-base);
+  }
+
+  .path-aspects {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .path-aspect {
+    padding: var(--spacing-lg);
+  }
+
+  .path-aspect-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .path-aspect-item {
+    font-size: var(--font-size-sm);
+    padding-left: var(--spacing-lg);
+  }
+
+  .path-video-wrapper {
+    min-height: 300px;
+  }
+
+  .path-video-play-button {
+    height: 64px;
+    width: 64px;
+  }
+
+  .path-video-play-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .path-video-caption {
+    font-size: var(--font-size-xl);
+  }
+
+  .path-video-duration {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* ============================================
+   Accessibility: Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .path-content {
+    transition: none;
+  }
+
+  .path-cta {
+    transition: none;
+  }
+
+  .path-cta:hover {
+    transform: none;
+  }
+
+  .path-cta--active:hover {
+    transform: none;
+  }
+
+  .path-switch-button {
+    transition: none;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .path-selector-ctas {
+    display: none;
+  }
+
+  .path-switch {
+    display: none;
+  }
+
+  .path-content-inner {
+    border: none;
+    padding: 0;
+    page-break-inside: avoid;
+  }
+}
+

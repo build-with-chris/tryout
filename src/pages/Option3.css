@@ -1,5 +1,16 @@
 .option3-page {
   min-height: 100vh;
+  background-color: var(--color-white);
+}
+
+.option3-page > section:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.option3-page > section {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .option3-page .container {

@@ -1,0 +1,402 @@
+/* ============================================
+   Career Path Jobs - Ergänzung unter Video
+   ============================================ */
+
+.career-path-jobs {
+  margin-top: var(--spacing-3xl);
+  padding-top: var(--spacing-3xl);
+  border-top: 2px solid var(--color-neutral-300);
+}
+
+/* Phasen-Navigation - Elegante Timeline */
+.career-path-jobs-phases {
+  margin-bottom: var(--spacing-3xl);
+  padding: 0 var(--spacing-lg);
+}
+
+.career-path-jobs-timeline-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Timeline Line */
+.career-path-jobs-timeline-line {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-neutral-300);
+  border-radius: var(--radius-full);
+  z-index: 0;
+}
+
+.career-path-jobs-timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease-in-out;
+  box-shadow: 0 0 8px rgba(204, 7, 30, 0.3);
+}
+
+/* Phase Wrapper */
+.career-path-jobs-phases-inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 1;
+  gap: var(--spacing-md);
+}
+
+.career-path-jobs-phase-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.career-path-jobs-phase-button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: center;
+  min-width: 120px;
+}
+
+.career-path-jobs-phase-button:hover {
+  transform: translateY(-2px);
+}
+
+.career-path-jobs-phase-button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 8px;
+  border-radius: var(--radius-md);
+}
+
+/* Phase Marker Circle */
+.career-path-jobs-phase-marker {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.career-path-jobs-phase-marker-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 3px solid var(--color-neutral-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.career-path-jobs-phase-button:hover .career-path-jobs-phase-marker-inner {
+  border-color: var(--color-neutral-400);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+.career-path-jobs-phase-button--active .career-path-jobs-phase-marker-inner {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(204, 7, 30, 0.4);
+  transform: scale(1.1);
+}
+
+.career-path-jobs-phase-button--past .career-path-jobs-phase-marker-inner {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.career-path-jobs-phase-number {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-600);
+  line-height: 1;
+}
+
+.career-path-jobs-phase-button--active .career-path-jobs-phase-number {
+  color: var(--color-white);
+}
+
+.career-path-jobs-phase-check {
+  width: 28px;
+  height: 28px;
+  color: var(--color-white);
+  stroke-width: 3;
+}
+
+/* Phase Label */
+.career-path-jobs-phase-label {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-600);
+  transition: color var(--transition-base);
+  line-height: var(--line-height-tight);
+}
+
+.career-path-jobs-phase-button:hover .career-path-jobs-phase-label {
+  color: var(--color-neutral-900);
+}
+
+.career-path-jobs-phase-button--active .career-path-jobs-phase-label {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.career-path-jobs-phase-button--past .career-path-jobs-phase-label {
+  color: var(--color-neutral-900);
+}
+
+/* Job-Liste */
+.career-path-jobs-list {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.career-path-jobs-list-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.career-path-jobs-item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.career-path-jobs-item:hover {
+  border-color: var(--color-neutral-400);
+  box-shadow: var(--shadow-sm);
+}
+
+.career-path-jobs-item-button {
+  width: 100%;
+  text-align: left;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.career-path-jobs-item-button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: -3px;
+}
+
+.career-path-jobs-item-content {
+  flex: 1;
+}
+
+.career-path-jobs-item-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--spacing-xs);
+  line-height: var(--line-height-tight);
+}
+
+.career-path-jobs-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+}
+
+.career-path-jobs-item-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.career-path-jobs-item-icon-svg {
+  width: 100%;
+  height: 100%;
+  color: var(--color-neutral-600);
+}
+
+/* Job-Details (Accordion) */
+.career-path-jobs-item-details {
+  overflow: hidden;
+}
+
+.career-path-jobs-item-details-inner {
+  padding: 0 var(--spacing-xl) var(--spacing-lg);
+  border-top: 1px solid var(--color-neutral-300);
+  padding-top: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.career-path-jobs-item-description {
+  color: var(--color-neutral-900);
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+}
+
+.career-path-jobs-item-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.career-path-jobs-item-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  color: var(--color-neutral-900);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+}
+
+.career-path-jobs-item-bullet-marker {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+
+.career-path-jobs-empty {
+  padding: var(--spacing-2xl);
+  text-align: center;
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-300);
+}
+
+.career-path-jobs-empty p {
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-base);
+}
+
+/* CTA */
+.career-path-jobs-cta {
+  text-align: center;
+}
+
+.career-path-jobs-cta-inner {
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-neutral-300);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+}
+
+.career-path-jobs-cta-button {
+  display: inline-block;
+  min-width: 280px;
+  margin-bottom: var(--spacing-md);
+}
+
+.career-path-jobs-cta-subline {
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .career-path-jobs {
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-2xl);
+  }
+
+  .career-path-jobs-phases {
+    padding: 0 var(--spacing-md);
+  }
+
+  .career-path-jobs-timeline-line {
+    top: 28px;
+    height: 2px;
+  }
+
+  .career-path-jobs-phase-marker {
+    width: 56px;
+    height: 56px;
+  }
+
+  .career-path-jobs-phase-marker-inner {
+    border-width: 2px;
+  }
+
+  .career-path-jobs-phase-number {
+    font-size: var(--font-size-lg);
+  }
+
+  .career-path-jobs-phase-check {
+    width: 24px;
+    height: 24px;
+  }
+
+  .career-path-jobs-phase-label {
+    font-size: var(--font-size-sm);
+  }
+
+  .career-path-jobs-phase-button {
+    min-width: 80px;
+  }
+
+  .career-path-jobs-item-button {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .career-path-jobs-item-title {
+    font-size: var(--font-size-base);
+  }
+
+  .career-path-jobs-item-details-inner {
+    padding: 0 var(--spacing-lg) var(--spacing-md);
+    padding-top: var(--spacing-md);
+  }
+
+  .career-path-jobs-cta-inner {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .career-path-jobs-cta-button {
+    min-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .career-path-jobs-item-button,
+  .career-path-jobs-phase-button {
+    transition: none;
+  }
+}
+

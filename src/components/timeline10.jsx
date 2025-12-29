@@ -1,53 +1,52 @@
-import { motion } from "framer-motion";
-import React, { useState } from "react";
-
+import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-
 import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { careerPathJobs } from "@/data/careerPathJobs";
 
 const Timeline10 = ({
   className
 }) => {
   const [activeCategory, setActiveCategory] = useState('markt');
-  const timelinePhases = [
-    {
-      id: 0,
-      title: "Einstieg",
-      markt: {
-        subheading: "Mitten im Geschehen",
-        items: ["Ausbildung", "Verkauf", "Warenverräumung", "Frischetheke"]
-      },
-      logistik: {
-        subheading: "Anpacken & organisieren",
-        items: ["Wareneingang", "Lager", "Warenausgang"]
-      }
-    },
-    {
-      id: 1,
-      title: "Entwicklung",
-      markt: {
-        subheading: "Verantwortung übernehmen",
-        items: ["Teamleitung", "Abteilungsleitung", "Fachbereiche"]
-      },
-      logistik: {
-        subheading: "Koordinieren & steuern",
-        items: ["Fachkraft Logistik", "Disposition", "Fuhrpark"]
-      }
-    },
-    {
-      id: 2,
-      title: "Verantwortung",
-      markt: {
-        subheading: "Entscheidungen treffen",
-        items: ["Marktmanagement", "Bereichsleitung"]
-      },
-      logistik: {
-        subheading: "Führen & weiterdenken",
-        items: ["Teamleitung", "Abteilungsleitung", "Leiter Fuhrpark"]
-      }
-    },
+  const [activePhase, setActivePhase] = useState('einstieg');
+  const [expandedJobId, setExpandedJobId] = useState(null);
+
+  // Reset expanded job when category or phase changes
+  useEffect(() => {
+    setExpandedJobId(null);
+  }, [activeCategory, activePhase]);
+
+  const phases = [
+    { id: 'einstieg', title: 'Einstieg', label: 'Einstieg' },
+    { id: 'entwicklung', title: 'Entwicklung', label: 'Entwicklung' },
+    { id: 'verantwortung', title: 'Verantwortung', label: 'Verantwortung' }
   ];
+
+  // Get jobs for current category and phase
+  const currentJobs = careerPathJobs[activeCategory]?.[activePhase] || [];
+
+  // CTA logic based on active phase
+  const getCTA = () => {
+    if (activePhase === 'einstieg') {
+      return {
+        primary: 'Bewerbung in 60 Sekunden',
+        subline: 'Ohne Lebenslauf. Einfach starten.',
+        href: '#bewerbung?weg=heute'
+      };
+    } else {
+      return {
+        primary: 'Weiterkommen mit Plan',
+        subline: 'Schritt für Schritt mehr Verantwortung übernehmen.',
+        href: '#bewerbung?weg=plan'
+      };
+    }
+  };
+
+  const cta = getCTA();
+
+  const handleJobToggle = (jobId) => {
+    setExpandedJobId(expandedJobId === jobId ? null : jobId);
+  };
 
   return (
     <section className={cn("py-32 relative", className)} id="karriereweg">
@@ -95,89 +94,158 @@ const Timeline10 = ({
             </div>
           </div>
         </div>
-        <Card className="relative w-full border-none shadow-none md:py-16 bg-white/10 backdrop-blur-sm rounded-lg">
-          <CardContent className="p-0">
-            <div className="relative w-full">
-              {/* Horizontal Timeline Line */}
-              <div className="relative hidden md:block mb-12">
-                <Separator className="absolute top-0 left-0 w-full bg-white/20" />
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{
-                    width: "100%",
-                  }}
-                  transition={{ ease: "easeOut", duration: 0.8 }}
-                  className={cn("absolute top-0 left-0 h-0.5 bg-primary")} />
-              </div>
 
-              {/* Horizontal Grid: 3 Etappen nebeneinander */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
-                {timelinePhases.map((phase, index) => (
-                  <div key={phase.id} className="relative">
-                    {/* Timeline indicator */}
-                    <div className="flex flex-col items-center md:items-start mb-6">
-                      <div className="flex items-center gap-4 mb-4 md:mb-0">
-                        <div className="absolute -top-[60px] left-1/2 -translate-x-1/2 md:relative md:top-0 md:left-0 md:translate-x-0 flex size-8 md:size-10 items-center justify-center rounded-full bg-primary z-10">
-                          <div className="size-4 md:size-6 rounded-full bg-background" />
-                        </div>
-                        <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white text-center md:text-left">
-                          {phase.title}
-                        </h2>
-                      </div>
-                    </div>
+        {/* Phasen-Navigation */}
+        <div className="w-full max-w-4xl mb-12">
+          <div className="flex justify-center gap-2 md:gap-4 mb-8">
+            {phases.map((phase, index) => (
+              <React.Fragment key={phase.id}>
+                <button
+                  className={cn(
+                    "px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition-all text-sm md:text-base",
+                    "flex items-center gap-2 relative",
+                    activePhase === phase.id
+                      ? "bg-white/20 text-white border-2 border-white/40"
+                      : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border-2 border-transparent"
+                  )}
+                  onClick={() => setActivePhase(phase.id)}
+                  role="tab"
+                  aria-selected={activePhase === phase.id}
+                  aria-controls={`phase-${phase.id}`}
+                >
+                  {index > 0 && (
+                    <span className="absolute -left-2 md:-left-4 text-white/30 text-lg">→</span>
+                  )}
+                  <span>{phase.title}</span>
+                </button>
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
 
-                    {/* Markt oder Logistik - je nach Auswahl */}
-                    <motion.div
-                      key={activeCategory}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="w-full"
+        {/* Job-Liste mit Accordion */}
+        <div className="w-full max-w-4xl mb-12">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`${activeCategory}-${activePhase}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-4"
+            >
+              {currentJobs.length > 0 ? (
+                currentJobs.map((job) => {
+                  const isExpanded = expandedJobId === job.id;
+                  return (
+                    <div
+                      key={job.id}
+                      className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden transition-all hover:bg-white/15"
                     >
-                      {activeCategory === 'markt' ? (
-                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-5 border border-white/20">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="text-xl md:text-2xl">🛒</span>
-                            <h3 className="text-base md:text-lg font-semibold text-white">Markt</h3>
+                      <button
+                        className="w-full text-left p-4 md:p-6 flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-transparent"
+                        onClick={() => handleJobToggle(job.id)}
+                        aria-expanded={isExpanded}
+                        aria-controls={`job-details-${job.id}`}
+                      >
+                        <div className="flex-1">
+                          <h3 className="text-lg md:text-xl font-bold text-white mb-1">
+                            {job.title}
+                          </h3>
+                          <div className="flex flex-wrap gap-2 text-xs md:text-sm text-white/70">
+                            <span>{job.workModel}</span>
+                            {job.entryLevel && (
+                              <>
+                                <span>•</span>
+                                <span>{job.entryLevel}</span>
+                              </>
+                            )}
                           </div>
-                          <p className="text-xs md:text-sm font-medium text-primary mb-3 md:mb-4">
-                            {phase.markt.subheading}
-                          </p>
-                          <ul className="space-y-1.5 md:space-y-2">
-                            {phase.markt.items.map((item, i) => (
-                              <li key={i} className="text-xs md:text-sm text-white/90 flex items-center gap-2">
-                                <span className="text-primary">→</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
                         </div>
-                      ) : (
-                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-5 border border-white/20">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="text-xl md:text-2xl">🚚</span>
-                            <h3 className="text-base md:text-lg font-semibold text-white">Logistik</h3>
-                          </div>
-                          <p className="text-xs md:text-sm font-medium text-primary mb-3 md:mb-4">
-                            {phase.logistik.subheading}
-                          </p>
-                          <ul className="space-y-1.5 md:space-y-2">
-                            {phase.logistik.items.map((item, i) => (
-                              <li key={i} className="text-xs md:text-sm text-white/90 flex items-center gap-2">
-                                <span className="text-primary">→</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </motion.div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+                        <motion.div
+                          animate={{ rotate: isExpanded ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="flex-shrink-0"
+                        >
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </motion.div>
+                      </button>
+
+                      <AnimatePresence>
+                        {isExpanded && (
+                          <motion.div
+                            id={`job-details-${job.id}`}
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0 border-t border-white/10">
+                              <p className="text-white/90 mb-4 text-sm md:text-base leading-relaxed">
+                                {job.shortDescription}
+                              </p>
+                              <ul className="space-y-2 mb-4">
+                                {job.bullets.map((bullet, index) => (
+                                  <li
+                                    key={index}
+                                    className="text-white/80 text-sm md:text-base flex items-start gap-2"
+                                  >
+                                    <span className="text-primary mt-1 flex-shrink-0">•</span>
+                                    <span>{bullet}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })
+              ) : (
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-8 text-center">
+                  <p className="text-white/70">Keine Jobs für diese Phase verfügbar.</p>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Kontextabhängige CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.3 }}
+          className="w-full max-w-2xl text-center"
+        >
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8">
+            <a
+              href={cta.href}
+              className="btn btn-primary btn-lg mb-3 block md:inline-block"
+              style={{ display: 'inline-block', minWidth: '280px' }}
+            >
+              {cta.primary}
+            </a>
+            {cta.subline && (
+              <p className="text-white/70 text-sm md:text-base mt-2">
+                {cta.subline}
+              </p>
+            )}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
