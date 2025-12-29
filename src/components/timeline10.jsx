@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 const Timeline10 = ({
   className
 }) => {
+  const [activeCategory, setActiveCategory] = useState('markt');
   const timelinePhases = [
     {
       id: 0,
@@ -55,10 +56,44 @@ const Timeline10 = ({
           <h2 className="mb-4 text-center text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
             Ob im Markt oder in der Logistik
           </h2>
-          <p className="text-lg text-white/80">
+          <p className="text-lg text-white/80 mb-8">
             bei REWE gibt es nicht den einen Karriereweg.<br />
             Sondern viele Möglichkeiten, die zu deinem Leben passen.
           </p>
+          
+          {/* Toggle für Markt/Logistik */}
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex rounded-lg border-2 border-white/20 bg-white/10 backdrop-blur-sm p-1" role="tablist">
+              <button
+                className={cn(
+                  "px-6 py-3 rounded-md font-semibold transition-all text-sm md:text-base flex items-center gap-2",
+                  activeCategory === 'markt'
+                    ? "bg-primary text-white shadow-md"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
+                )}
+                onClick={() => setActiveCategory('markt')}
+                role="tab"
+                aria-selected={activeCategory === 'markt'}
+              >
+                <span className="text-xl">🛒</span>
+                Markt
+              </button>
+              <button
+                className={cn(
+                  "px-6 py-3 rounded-md font-semibold transition-all text-sm md:text-base flex items-center gap-2",
+                  activeCategory === 'logistik'
+                    ? "bg-primary text-white shadow-md"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
+                )}
+                onClick={() => setActiveCategory('logistik')}
+                role="tab"
+                aria-selected={activeCategory === 'logistik'}
+              >
+                <span className="text-xl">🚚</span>
+                Logistik
+              </button>
+            </div>
+          </div>
         </div>
         <Card className="relative w-full border-none shadow-none md:py-16 bg-white/10 backdrop-blur-sm rounded-lg">
           <CardContent className="p-0">
@@ -91,46 +126,52 @@ const Timeline10 = ({
                       </div>
                     </div>
 
-                    {/* Markt und Logistik nebeneinander unter der Etappe */}
-                    <div className="grid grid-cols-2 gap-4 md:gap-3 lg:gap-4">
-                      {/* Markt */}
-                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-5 border border-white/20">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-xl md:text-2xl">🛒</span>
-                          <h3 className="text-base md:text-lg font-semibold text-white">Markt</h3>
+                    {/* Markt oder Logistik - je nach Auswahl */}
+                    <motion.div
+                      key={activeCategory}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-full"
+                    >
+                      {activeCategory === 'markt' ? (
+                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-5 border border-white/20">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xl md:text-2xl">🛒</span>
+                            <h3 className="text-base md:text-lg font-semibold text-white">Markt</h3>
+                          </div>
+                          <p className="text-xs md:text-sm font-medium text-primary mb-3 md:mb-4">
+                            {phase.markt.subheading}
+                          </p>
+                          <ul className="space-y-1.5 md:space-y-2">
+                            {phase.markt.items.map((item, i) => (
+                              <li key={i} className="text-xs md:text-sm text-white/90 flex items-center gap-2">
+                                <span className="text-primary">→</span>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <p className="text-xs md:text-sm font-medium text-primary mb-3 md:mb-4">
-                          {phase.markt.subheading}
-                        </p>
-                        <ul className="space-y-1.5 md:space-y-2">
-                          {phase.markt.items.map((item, i) => (
-                            <li key={i} className="text-xs md:text-sm text-white/90 flex items-center gap-2">
-                              <span className="text-primary">→</span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Logistik */}
-                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-5 border border-white/20">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-xl md:text-2xl">🚚</span>
-                          <h3 className="text-base md:text-lg font-semibold text-white">Logistik</h3>
+                      ) : (
+                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-5 border border-white/20">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xl md:text-2xl">🚚</span>
+                            <h3 className="text-base md:text-lg font-semibold text-white">Logistik</h3>
+                          </div>
+                          <p className="text-xs md:text-sm font-medium text-primary mb-3 md:mb-4">
+                            {phase.logistik.subheading}
+                          </p>
+                          <ul className="space-y-1.5 md:space-y-2">
+                            {phase.logistik.items.map((item, i) => (
+                              <li key={i} className="text-xs md:text-sm text-white/90 flex items-center gap-2">
+                                <span className="text-primary">→</span>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <p className="text-xs md:text-sm font-medium text-primary mb-3 md:mb-4">
-                          {phase.logistik.subheading}
-                        </p>
-                        <ul className="space-y-1.5 md:space-y-2">
-                          {phase.logistik.items.map((item, i) => (
-                            <li key={i} className="text-xs md:text-sm text-white/90 flex items-center gap-2">
-                              <span className="text-primary">→</span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
+                      )}
+                    </motion.div>
                   </div>
                 ))}
               </div>

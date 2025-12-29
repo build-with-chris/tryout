@@ -20,8 +20,6 @@ const HeroStart = () => {
             aria-hidden="true"
           />
           <div className="hero-start-overlay"></div>
-          {/* Transition gradient to shader */}
-          <div className="hero-start-transition"></div>
         </div>
 
         <div className="hero-start-content">
