@@ -144,6 +144,159 @@ const Gallery25 = ({
     },
   ];
 
+  // Third row images
+  const column1ImagesRow3 = [
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3351.jpg",
+      alt: "REWE Marktbild 23",
+      height: "23rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3359.jpg",
+      alt: "REWE Marktbild 24",
+      height: "28rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3377.jpg",
+      alt: "REWE Marktbild 25",
+      height: "12rem",
+    },
+  ];
+
+  const column2ImagesRow3 = [
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3381.jpg",
+      alt: "REWE Marktbild 26",
+      height: "13rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3386.jpg",
+      alt: "REWE Marktbild 27",
+      height: "32rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3419.jpg",
+      alt: "REWE Marktbild 28",
+      height: "18rem",
+    },
+  ];
+
+  const column3ImagesRow3 = [
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3450.jpg",
+      alt: "REWE Marktbild 29",
+      height: "32rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3459.jpg",
+      alt: "REWE Marktbild 30",
+      height: "32rem",
+    },
+  ];
+
+  const column4ImagesRow3 = [
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3462.jpg",
+      alt: "REWE Marktbild 31",
+      height: "13rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3486.jpg",
+      alt: "REWE Marktbild 32",
+      height: "22.5rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3545.jpg",
+      alt: "REWE Marktbild 33",
+      height: "22rem",
+    },
+  ];
+
+  // Fourth row images
+  const column1ImagesRow4 = [
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3547.jpg",
+      alt: "REWE Marktbild 34",
+      height: "23rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3561.jpg",
+      alt: "REWE Marktbild 35",
+      height: "28rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3563.jpg",
+      alt: "REWE Marktbild 36",
+      height: "12rem",
+    },
+  ];
+
+  const column2ImagesRow4 = [
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3567.jpg",
+      alt: "REWE Marktbild 37",
+      height: "13rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3610.jpg",
+      alt: "REWE Marktbild 38",
+      height: "32rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3618.jpg",
+      alt: "REWE Marktbild 39",
+      height: "18rem",
+    },
+  ];
+
+  const column3ImagesRow4 = [
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3691.jpg",
+      alt: "REWE Marktbild 40",
+      height: "32rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3696.jpg",
+      alt: "REWE Marktbild 41",
+      height: "32rem",
+    },
+  ];
+
+  const column4ImagesRow4 = [
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3877.jpg",
+      alt: "REWE Marktbild 42",
+      height: "13rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3911.jpg",
+      alt: "REWE Marktbild 43",
+      height: "22.5rem",
+    },
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3924.jpg",
+      alt: "REWE Marktbild 44",
+      height: "22rem",
+    },
+  ];
+
+  // Fifth row images (remaining 1)
+  const column1ImagesRow5 = [
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3935.jpg",
+      alt: "REWE Marktbild 45",
+      height: "23rem",
+    },
+  ];
+
+  const column2ImagesRow5 = [
+    {
+      src: "/Markt/rewe_kolbermoor_foto-craft_3940.jpg",
+      alt: "REWE Marktbild 46",
+      height: "28rem",
+    },
+  ];
+
   // Flatten all images into a single array for lightbox navigation
   const allImages = useMemo(() => {
     return [
@@ -155,6 +308,16 @@ const Gallery25 = ({
       ...column2ImagesRow2,
       ...column3ImagesRow2,
       ...column4ImagesRow2,
+      ...column1ImagesRow3,
+      ...column2ImagesRow3,
+      ...column3ImagesRow3,
+      ...column4ImagesRow3,
+      ...column1ImagesRow4,
+      ...column2ImagesRow4,
+      ...column3ImagesRow4,
+      ...column4ImagesRow4,
+      ...column1ImagesRow5,
+      ...column2ImagesRow5,
     ];
   }, []);
 
@@ -183,25 +346,30 @@ const Gallery25 = ({
   // Helper function to get image index from column and row
   // Row 1 layout: column1Images, column2ImagesRow2, column3ImagesRow2, column4ImagesRow2
   // Row 2 layout: column1ImagesRow2, column2Images, column3Images, column4Images
+  // Row 3 layout: column1ImagesRow3, column2ImagesRow3, column3ImagesRow3, column4ImagesRow3
+  // Row 4 layout: column1ImagesRow4, column2ImagesRow4, column3ImagesRow4, column4ImagesRow4
+  // Row 5 layout: column1ImagesRow5, empty, empty, empty
   const getImageIndex = (column, row, index) => {
-    if (row === 1) {
-      // First row layout
-      const columnArrays = [column1Images, column2ImagesRow2, column3ImagesRow2, column4ImagesRow2];
-      let offset = 0;
-      for (let i = 0; i < column; i++) {
-        offset += columnArrays[i].length;
-      }
-      return offset + index;
-    } else {
-      // Second row layout
-      const firstRowCount = column1Images.length + column2ImagesRow2.length + column3ImagesRow2.length + column4ImagesRow2.length;
-      const columnArrays = [column1ImagesRow2, column2Images, column3Images, column4Images];
-      let offset = 0;
-      for (let i = 0; i < column; i++) {
-        offset += columnArrays[i].length;
-      }
-      return firstRowCount + offset + index;
+    const rowLayouts = [
+      [column1Images, column2ImagesRow2, column3ImagesRow2, column4ImagesRow2], // Row 1
+      [column1ImagesRow2, column2Images, column3Images, column4Images], // Row 2
+      [column1ImagesRow3, column2ImagesRow3, column3ImagesRow3, column4ImagesRow3], // Row 3
+      [column1ImagesRow4, column2ImagesRow4, column3ImagesRow4, column4ImagesRow4], // Row 4
+      [column1ImagesRow5, column2ImagesRow5, [], []], // Row 5
+    ];
+
+    let offset = 0;
+    for (let r = 0; r < row - 1; r++) {
+      rowLayouts[r].forEach(col => {
+        offset += col.length;
+      });
     }
+
+    for (let i = 0; i < column; i++) {
+      offset += rowLayouts[row - 1][i].length;
+    }
+
+    return offset + index;
   };
 
   return (
@@ -326,7 +494,6 @@ const Gallery25 = ({
                   alt={image.alt} />
               </motion.div>
             ))}
-            <div className="h-17 w-full rounded-2xl bg-muted"></div>
           </div>
         </div>
         <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -447,8 +614,158 @@ const Gallery25 = ({
                   alt={image.alt} />
               </motion.div>
             ))}
-            <div className="h-17 w-full rounded-2xl bg-muted"></div>
           </div>
+        </div>
+        {/* Row 3 */}
+        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="grid gap-4">
+            {column1ImagesRow3.map((image, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index}
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(0, 3, index))}>
+                <img className="h-full w-full rounded-2xl object-cover" src={image.src} alt={image.alt} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid gap-4">
+            {column2ImagesRow3.map((image, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: -50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index}
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(1, 3, index))}>
+                <img className="h-full w-full rounded-2xl object-cover" src={image.src} alt={image.alt} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid gap-4">
+            {column3ImagesRow3.map((image, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index}
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(2, 3, index))}>
+                <img className="h-full w-full rounded-2xl object-cover" src={image.src} alt={image.alt} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid gap-4">
+            {column4ImagesRow3.map((image, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: -50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index}
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(3, 3, index))}>
+                <img className="h-full w-full rounded-2xl object-cover" src={image.src} alt={image.alt} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        {/* Row 4 */}
+        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="grid gap-4">
+            {column1ImagesRow4.map((image, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index}
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(0, 4, index))}>
+                <img className="h-full w-full rounded-2xl object-cover" src={image.src} alt={image.alt} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid gap-4">
+            {column2ImagesRow4.map((image, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: -50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index}
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(1, 4, index))}>
+                <img className="h-full w-full rounded-2xl object-cover" src={image.src} alt={image.alt} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid gap-4">
+            {column3ImagesRow4.map((image, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index}
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(2, 4, index))}>
+                <img className="h-full w-full rounded-2xl object-cover" src={image.src} alt={image.alt} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid gap-4">
+            {column4ImagesRow4.map((image, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: -50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index}
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(3, 4, index))}>
+                <img className="h-full w-full rounded-2xl object-cover" src={image.src} alt={image.alt} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        {/* Row 5 */}
+        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="grid gap-4">
+            {column1ImagesRow5.map((image, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index}
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(0, 5, index))}>
+                <img className="h-full w-full rounded-2xl object-cover" src={image.src} alt={image.alt} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid gap-4">
+            {column2ImagesRow5.map((image, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: -50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index}
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(1, 5, index))}>
+                <img className="h-full w-full rounded-2xl object-cover" src={image.src} alt={image.alt} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid gap-4"></div>
+          <div className="grid gap-4"></div>
         </div>
       </div>
 
