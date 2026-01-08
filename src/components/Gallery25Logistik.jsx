@@ -1,12 +1,14 @@
 "use client";;
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState, useMemo } from "react";
 
 import { cn } from "@/lib/utils";
+import ImageLightbox from "./ImageLightbox";
 
 const Gallery25Logistik = ({
   className
 }) => {
+  const [lightboxImageIndex, setLightboxImageIndex] = useState(null);
   const column1Images = [
     {
       src: "/Logisitik/rewe_logstik_sued_foto-craft_8135.jpg",
@@ -142,6 +144,64 @@ const Gallery25Logistik = ({
     },
   ];
 
+  // Flatten all images into a single array for lightbox navigation
+  const allImages = useMemo(() => {
+    return [
+      ...column1Images,
+      ...column2Images,
+      ...column3Images,
+      ...column4Images,
+      ...column1ImagesRow2,
+      ...column2ImagesRow2,
+      ...column3ImagesRow2,
+      ...column4ImagesRow2,
+    ];
+  }, []);
+
+  const handleImageClick = (imageIndex) => {
+    setLightboxImageIndex(imageIndex);
+  };
+
+  const handleCloseLightbox = () => {
+    setLightboxImageIndex(null);
+  };
+
+  const handleNext = () => {
+    if (lightboxImageIndex < allImages.length - 1) {
+      setLightboxImageIndex(lightboxImageIndex + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (lightboxImageIndex > 0) {
+      setLightboxImageIndex(lightboxImageIndex - 1);
+    }
+  };
+
+  const currentLightboxImage = lightboxImageIndex !== null ? allImages[lightboxImageIndex] : null;
+
+  // Helper function to get image index from column and row
+  // Row 1 layout: column1Images, column2ImagesRow2, column3ImagesRow2, column4ImagesRow2
+  // Row 2 layout: column1ImagesRow2, column2Images, column3Images, column4Images
+  const getImageIndex = (column, row, index) => {
+    if (row === 1) {
+      const columnArrays = [column1Images, column2ImagesRow2, column3ImagesRow2, column4ImagesRow2];
+      let offset = 0;
+      for (let i = 0; i < column; i++) {
+        offset += columnArrays[i].length;
+      }
+      return offset + index;
+    } else {
+      const firstRowCount = column1Images.length + column2ImagesRow2.length + column3ImagesRow2.length + column4ImagesRow2.length;
+      const columnArrays = [column1ImagesRow2, column2Images, column3Images, column4Images];
+      let offset = 0;
+      for (let i = 0; i < column; i++) {
+        offset += columnArrays[i].length;
+      }
+      return firstRowCount + offset + index;
+    }
+  };
+
   return (
     <section className={cn("py-32", className)}>
       <div className="relative container">
@@ -165,8 +225,9 @@ const Gallery25Logistik = ({
                   delay: index * 0.1,
                 }}
                 key={index}
-                className="w-full overflow-hidden rounded-2xl bg-muted"
-                style={{ height: image.height }}>
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(0, 1, index))}>
                 <img
                   className="h-full w-full rounded-2xl object-cover"
                   src={image.src}
@@ -194,8 +255,9 @@ const Gallery25Logistik = ({
                   delay: index * 0.1,
                 }}
                 key={index}
-                className="w-full overflow-hidden rounded-2xl bg-muted"
-                style={{ height: image.height }}>
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(1, 1, index))}>
                 <img
                   className="h-full w-full rounded-2xl object-cover"
                   src={image.src}
@@ -223,8 +285,9 @@ const Gallery25Logistik = ({
                   delay: index * 0.1,
                 }}
                 key={index}
-                className="w-full overflow-hidden rounded-2xl bg-muted"
-                style={{ height: image.height }}>
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(2, 1, index))}>
                 <img
                   className="h-full w-full rounded-2xl object-cover"
                   src={image.src}
@@ -252,8 +315,9 @@ const Gallery25Logistik = ({
                   delay: index * 0.1,
                 }}
                 key={index}
-                className="w-full overflow-hidden rounded-2xl bg-muted"
-                style={{ height: image.height }}>
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(3, 1, index))}>
                 <img
                   className="h-full w-full rounded-2xl object-cover"
                   src={image.src}
@@ -283,8 +347,9 @@ const Gallery25Logistik = ({
                   delay: index * 0.1,
                 }}
                 key={index}
-                className="w-full overflow-hidden rounded-2xl bg-muted"
-                style={{ height: image.height }}>
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(0, 2, index))}>
                 <img
                   className="h-full w-full rounded-2xl object-cover"
                   src={image.src}
@@ -312,8 +377,9 @@ const Gallery25Logistik = ({
                   delay: index * 0.1,
                 }}
                 key={index}
-                className="w-full overflow-hidden rounded-2xl bg-muted"
-                style={{ height: image.height }}>
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(1, 2, index))}>
                 <img
                   className="h-full w-full rounded-2xl object-cover"
                   src={image.src}
@@ -341,8 +407,9 @@ const Gallery25Logistik = ({
                   delay: index * 0.1,
                 }}
                 key={index}
-                className="w-full overflow-hidden rounded-2xl bg-muted"
-                style={{ height: image.height }}>
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(2, 2, index))}>
                 <img
                   className="h-full w-full rounded-2xl object-cover"
                   src={image.src}
@@ -370,8 +437,9 @@ const Gallery25Logistik = ({
                   delay: index * 0.1,
                 }}
                 key={index}
-                className="w-full overflow-hidden rounded-2xl bg-muted"
-                style={{ height: image.height }}>
+                className="w-full overflow-hidden rounded-2xl bg-muted cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ height: image.height }}
+                onClick={() => handleImageClick(getImageIndex(3, 2, index))}>
                 <img
                   className="h-full w-full rounded-2xl object-cover"
                   src={image.src}
@@ -382,6 +450,16 @@ const Gallery25Logistik = ({
           </div>
         </div>
       </div>
+
+      <ImageLightbox
+        image={currentLightboxImage}
+        isOpen={lightboxImageIndex !== null}
+        onClose={handleCloseLightbox}
+        onNext={handleNext}
+        onPrevious={handlePrevious}
+        hasNext={lightboxImageIndex !== null && lightboxImageIndex < allImages.length - 1}
+        hasPrevious={lightboxImageIndex !== null && lightboxImageIndex > 0}
+      />
     </section>
   );
 };
