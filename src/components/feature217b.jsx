@@ -1,79 +1,74 @@
-import { Users, ArrowRight, Heart } from "lucide-react";
+import { Briefcase, Users, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const FEATURES = [
-  {
-    title: "Echte Geschichten",
-    summary:
-      "Höre von echten Menschen bei REWE – ihre Wege, ihre Erfolge, ihre Erfahrungen. 15–25 Sekunden, einfach reinhören.",
-    icon: Users,
-    link: "#marktstimmen",
-  },
-  {
-    title: "Zwei Wege zu REWE",
-    summary:
-      "Heute loslegen: In 60 Sekunden bewerben. Oder weiterkommen mit Plan: Individuelle Beratung für deinen Karriereweg.",
-    icon: ArrowRight,
-    link: "#bewerbung",
-  },
-  {
-    title: "Werte, die zählen",
-    summary:
-      "Sicherheit, Karriere, Respekt, Klarheit, Verantwortung und Wertschätzung – was dir wichtig ist, sollst du bei uns spüren.",
-    icon: Heart,
-    link: "#werte",
-  },
-];
-
 const Feature217b = ({
-  className
+  className,
+  badge = "",
+  headline = "",
+  description = "",
+  features = [],
+  backgroundImage = ""
 }) => {
+  // Default Icons für die Features
+  const defaultIcons = [Briefcase, Users, Shield];
+  
   return (
     <section className={cn("", className)}>
       <div
-        className="relative bg-cover bg-center bg-no-repeat py-10 after:absolute after:inset-0 after:z-10 after:block after:size-full after:bg-gradient-to-br after:from-[#CC071E]/80 after:to-[#9E0012]/90 after:content-[''] md:py-12 xl:py-16"
+        className="relative bg-cover bg-center bg-no-repeat py-10 md:py-12 xl:py-16"
         style={{
-          backgroundImage:
-            "url('https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/futuristic-device-design-qcufu.png')",
+          backgroundImage: backgroundImage ? `url('${backgroundImage}')` : "url('https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/futuristic-device-design-qcufu.png')",
         }}>
+        {/* Subtiler dunkler Overlay für besseren Kontrast und Lesbarkeit */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50 z-10" aria-hidden="true" />
         <div className="relative z-20 container">
           <div className="flex flex-col gap-8">
             <div className="mx-auto max-w-4xl text-center">
-              <div className="inline-block px-4 py-2 mb-6 text-sm font-semibold text-white bg-white/20 rounded-full backdrop-blur-sm">
-                REWE bringt's
-              </div>
-              <h2 className="mb-6 text-3xl tracking-tight text-white md:text-6xl lg:text-7xl font-bold">
-                REWE deinen Traum
-              </h2>
-              <div className="text-lg md:text-xl font-medium tracking-tight text-white/95 leading-relaxed">
-                Was du schon kannst, bringt dich weiter. Mehr als ein Supermarkt – eine Chance für dein Leben. 
-                Entdecke echte Geschichten, finde deinen Weg und erlebe Werte, die zählen.
-              </div>
+              {badge && (
+                <div className="inline-block px-4 py-2 mb-6 text-sm font-semibold text-white bg-white/20 rounded-full backdrop-blur-sm">
+                  {badge}
+                </div>
+              )}
+              {headline && (
+                <h2 className="mb-24 md:mb-32 lg:mb-40 text-2xl tracking-tight text-white md:text-3xl lg:text-4xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.9)] whitespace-nowrap">
+                  {headline}
+                </h2>
+              )}
+              {description && (
+                <div className="text-lg md:text-xl font-medium tracking-tight text-white leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_3px_rgba(0,0,0,0.9)]">
+                  {description}
+                </div>
+              )}
             </div>
 
-            <div className="grid items-stretch gap-8 lg:grid-cols-3">
-              {FEATURES.map((item) => (
-                <a
-                  key={item.title}
-                  href={item.link}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const element = document.querySelector(item.link);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
-                  className="flex h-full flex-col items-center justify-center gap-4 rounded-xl border border-white/30 bg-white/10 p-6 backdrop-blur-md hover:bg-white/15 transition-all cursor-pointer group">
-                  <item.icon className="size-10 stroke-white group-hover:scale-110 transition-transform" />
-                  <div className="max-w-sm text-center text-xl font-bold text-white">
-                    {item.title}
-                  </div>
-                  <div className="max-w-sm text-center text-sm text-white/90 leading-relaxed">
-                    {item.summary}
-                  </div>
-                </a>
-              ))}
-            </div>
+            {features.length > 0 && (
+              <div className="grid items-stretch gap-8 lg:grid-cols-3">
+                {features.map((item, index) => {
+                  const IconComponent = item.icon || defaultIcons[index] || Briefcase;
+                  return (
+                    <div
+                      key={item.title || index}
+                      className="flex h-full flex-col items-center justify-center gap-4 rounded-xl border border-white/30 bg-white/10 p-6 backdrop-blur-md hover:bg-white/15 transition-all group">
+                      <IconComponent className="size-10 stroke-white group-hover:scale-110 transition-transform drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
+                      <div className="max-w-sm text-center text-xl font-bold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_3px_rgba(0,0,0,0.9)]">
+                        {item.title}
+                      </div>
+                      {item.items && item.items.length > 0 ? (
+                        <ul className="max-w-sm text-center text-sm text-white leading-relaxed space-y-2 drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)] [text-shadow:_1px_1px_2px_rgba(0,0,0,0.8)]">
+                          {item.items.map((listItem, itemIndex) => (
+                            <li key={itemIndex}>{listItem}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <div className="max-w-sm text-center text-sm text-white leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)] [text-shadow:_1px_1px_2px_rgba(0,0,0,0.8)]">
+                          {item.summary}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </div>

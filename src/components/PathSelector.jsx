@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Play } from 'lucide-react'
+import { Play, Briefcase, Users, Shield } from 'lucide-react'
 import './PathSelector.css'
 import {
   Dialog,
@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button'
 import { useIsMobile } from '@/hooks/use-mobile'
 import CareerPathJobs from './CareerPathJobs'
 import { Feature297 } from '@/components/feature297'
+import { Feature217b } from '@/components/feature217b'
 
 // Video-Daten für Markt, Logistik und Verwaltung
 const videoData = {
@@ -42,7 +43,7 @@ const videoData = {
 // Inhalte für Markt, Logistik und Verwaltung - aus dem Arbeitsalltag
 const pathContent = {
   markt: {
-    headline: "Im Markt: Wo Menschen einkaufen",
+    headline: "Wo Teamgefühl den Tag trägt.",
     description: "Du bist da, wo es passiert. Kunden beraten, Ware auffüllen, im Team zusammenarbeiten. Jeder Tag ist anders, aber die Struktur gibt dir Sicherheit.",
     aspects: [
       {
@@ -72,7 +73,7 @@ const pathContent = {
     ]
   },
   logistik: {
-    headline: "In der Logistik: Wo alles zusammenkommt",
+    headline: "Wenn du gern anpackst – aber nicht allein.",
     description: "Du sorgst dafür, dass die Ware ankommt. Kommissionieren, scannen, bewegen. Strukturierte Abläufe, klares Team, verlässliche Schichten.",
     aspects: [
       {
@@ -102,7 +103,7 @@ const pathContent = {
     ]
   },
   verwaltung: {
-    headline: "In der Verwaltung: Wo alles läuft",
+    headline: "Blick hinter die Kulissen.",
     description: "Du sorgst dafür, dass im Hintergrund alles funktioniert. Buchhaltung, Personal, Einkauf – strukturierte Abläufe, klares Team, verlässliche Arbeitszeiten.",
     aspects: [
       {
@@ -325,53 +326,45 @@ const PathSelector = () => {
               </Dialog>
             </div>
 
-            <div className="path-content-inner">
-              <div className="path-content-header">
-                <h3 className="path-content-headline">
-                  {currentContent?.headline}
-                </h3>
-                <p className="path-content-description">
-                  {currentContent?.description}
-                </p>
-              </div>
+            {/* Feature217b für Content-Darstellung */}
+            <Feature217b
+              badge=""
+              headline={currentContent?.headline}
+              description={currentContent?.description}
+              features={currentContent?.aspects.map((aspect, index) => ({
+                ...aspect,
+                icon: index === 0 ? Briefcase : index === 1 ? Users : Shield
+              })) || []}
+              backgroundImage={
+                activePath === 'markt' 
+                  ? '/QuerMarktLogistikVerwaltung/Markt.jpg'
+                  : activePath === 'logistik'
+                  ? '/QuerMarktLogistikVerwaltung/Logistik.jpg'
+                  : '/QuerMarktLogistikVerwaltung/Verwaltung.jpg'
+              }
+            />
 
-              <div className="path-aspects">
-                {currentContent?.aspects.map((aspect, index) => (
-                  <div key={index} className="path-aspect">
-                    <h4 className="path-aspect-title">{aspect.title}</h4>
-                    <ul className="path-aspect-list" role="list">
-                      {aspect.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="path-aspect-item">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-
-              {/* Wechsel-Button */}
-              <div className="path-switch">
-                <button
-                  className="path-switch-button"
-                  onClick={() => {
+            {/* Wechsel-Button */}
+            <div className="path-switch">
+              <button
+                className="path-switch-button"
+                onClick={() => {
+                  const currentIndex = paths.indexOf(activePath)
+                  const nextIndex = (currentIndex + 1) % paths.length
+                  handlePathSelect(paths[nextIndex])
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
                     const currentIndex = paths.indexOf(activePath)
                     const nextIndex = (currentIndex + 1) % paths.length
                     handlePathSelect(paths[nextIndex])
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault()
-                      const currentIndex = paths.indexOf(activePath)
-                      const nextIndex = (currentIndex + 1) % paths.length
-                      handlePathSelect(paths[nextIndex])
-                    }
-                  }}
-                  aria-label={`Zu ${activePath === 'markt' ? 'Logistik' : activePath === 'logistik' ? 'Verwaltung' : 'Markt'} wechseln`}
-                >
-                  {activePath === 'markt' ? 'Zur Logistik' : activePath === 'logistik' ? 'Zur Verwaltung' : 'Zum Markt'}
-                </button>
-              </div>
+                  }
+                }}
+                aria-label={`Zu ${activePath === 'markt' ? 'Logistik' : activePath === 'logistik' ? 'Verwaltung' : 'Markt'} wechseln`}
+              >
+                {activePath === 'markt' ? 'Zur Logistik' : activePath === 'logistik' ? 'Zur Verwaltung' : 'Zum Markt'}
+              </button>
             </div>
 
             {/* Karrierepfade-Jobs Ergänzung - unter dem Video */}
