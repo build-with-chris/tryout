@@ -36,10 +36,10 @@ const Navbar = () => {
             Option 4
           </Link>
           <Link 
-            to="/gallerie" 
-            className={`navbar-link ${location.pathname === '/gallerie' ? 'active' : ''}`}
+            to="/galerie" 
+            className={`navbar-link ${location.pathname === '/galerie' ? 'active' : ''}`}
           >
-            Gallerie
+            Galerie
           </Link>
         </div>
       </div>

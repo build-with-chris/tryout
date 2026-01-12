@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { useIsMobile } from '@/hooks/use-mobile'
 import CareerPathJobs from './CareerPathJobs'
+import { Feature297 } from '@/components/feature297'
 
 // Video-Daten für Markt, Logistik und Verwaltung
 const videoData = {
@@ -176,50 +177,39 @@ const PathSelector = () => {
       <div className="container">
         <div className="path-selector-header">
           <h2 id="path-heading" className="path-selector-title">
-            REWE ruft. Wohin führt dein Weg?
+            REWE – deinen Traum. Wo steigst du ein?
           </h2>
           <p className="path-selector-subtitle">
-            Markt, Logistik oder Verwaltung – entdecke, wo du dich wiederfindest.
+            Wähle deinen Bereich – und sieh sofort: Alltag, Teamgefühl, Planbarkeit, Entwicklung.
           </p>
         </div>
 
-        {/* CTA-Buttons - gleichwertig */}
-        <div className="path-selector-ctas" role="group" aria-label="Weg auswählen">
-          <button
-            className={`path-cta ${activePath === 'markt' ? 'path-cta--active' : ''}`}
-            onClick={() => handlePathSelect('markt')}
-            onKeyDown={(e) => handleKeyDown(e, 'markt')}
-            aria-pressed={activePath === 'markt'}
-            aria-expanded={activePath === 'markt'}
-            aria-controls="path-content"
-            id="path-cta-markt"
-          >
-            <span className="path-cta-label">Zum Markt</span>
-          </button>
-          
-          <button
-            className={`path-cta ${activePath === 'logistik' ? 'path-cta--active' : ''}`}
-            onClick={() => handlePathSelect('logistik')}
-            onKeyDown={(e) => handleKeyDown(e, 'logistik')}
-            aria-pressed={activePath === 'logistik'}
-            aria-expanded={activePath === 'logistik'}
-            aria-controls="path-content"
-            id="path-cta-logistik"
-          >
-            <span className="path-cta-label">Zur Logistik</span>
-          </button>
-          
-          <button
-            className={`path-cta ${activePath === 'verwaltung' ? 'path-cta--active' : ''}`}
-            onClick={() => handlePathSelect('verwaltung')}
-            onKeyDown={(e) => handleKeyDown(e, 'verwaltung')}
-            aria-pressed={activePath === 'verwaltung'}
-            aria-expanded={activePath === 'verwaltung'}
-            aria-controls="path-content"
-            id="path-cta-verwaltung"
-          >
-            <span className="path-cta-label">Zur Verwaltung</span>
-          </button>
+        {/* Feature297 Cards - Shadcn Style */}
+        <div className="path-selector-cards">
+          <Feature297
+            items={[
+              {
+                id: 'markt',
+                title: 'Ich will in den Markt',
+                imageSrc: '/MarktLogistikVerwaltgung/Markt.jpg',
+                imageAlt: videoData.markt.imageAlt,
+              },
+              {
+                id: 'logistik',
+                title: 'Ich will in die Logistik',
+                imageSrc: '/MarktLogistikVerwaltgung/Logistik.jpg',
+                imageAlt: videoData.logistik.imageAlt,
+              },
+              {
+                id: 'verwaltung',
+                title: 'Ich will in die Verwaltung',
+                imageSrc: '/MarktLogistikVerwaltgung/Verwaltung.jpg',
+                imageAlt: videoData.verwaltung.imageAlt,
+              },
+            ]}
+            activeItem={activePath}
+            onItemClick={handlePathSelect}
+          />
         </div>
 
         {/* Content-Bereich - wechselt je nach Auswahl */}

@@ -29,6 +29,10 @@
   line-height: var(--line-height-relaxed);
 }
 
+.path-selector-cards {
+  margin-bottom: var(--spacing-4xl);
+}
+
 /* ============================================
    CTA-Buttons (gleichwertig)
    ============================================ */
@@ -94,7 +98,7 @@
 
 .path-content {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: var(--spacing-4xl) auto 0;
   opacity: 1;
   transform: translateY(0);
   transition: opacity var(--transition-slow), transform var(--transition-slow);

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import {
   Shield,
   ArrowUp,
@@ -6,6 +6,7 @@ import {
   CheckSquare,
   Leaf,
   Star,
+  X,
 } from "lucide-react"
 import './ValuesSection.css'
 
@@ -22,11 +23,12 @@ const valuesData = [
       "Stabilität, auf die man bauen kann"
     ],
     icon: Shield,
+    reelSrc: "/Reels%20copy/Sicherheit.mp4",
   },
   {
     id: 2,
     shortLabel: "Karriere",
-    headline: "Wir begleiten dich auf Karriereleiter oder Karrierestapler.",
+    headline: "Wir begleiten dich auf Karrierestapler.",
     description: "Du musst nicht geschniegelt \"Karriere machen\". Wer anpackt und dranbleibt, kommt bei uns weiter – finanziell und im Können.",
     examples: [
       "Klare Entwicklungsschritte",
@@ -34,6 +36,7 @@ const valuesData = [
       "Perspektiven, die sichtbar sind (auch intern)"
     ],
     icon: ArrowUp,
+    reelSrc: "/Reels copy/Karriere.mp4",
   },
   {
     id: 3,
@@ -46,6 +49,7 @@ const valuesData = [
       "Respektvoll – auch wenn's mal knirscht"
     ],
     icon: Users,
+    reelSrc: "/Reels copy/Respekt.mp4",
   },
   {
     id: 4,
@@ -58,6 +62,7 @@ const valuesData = [
       "Standards, die dir Sicherheit geben"
     ],
     icon: CheckSquare,
+    reelSrc: "/Reels copy/Klarheit.mp4",
   },
   {
     id: 5,
@@ -70,6 +75,7 @@ const valuesData = [
       "Offenheit für alle – im Team und im Umgang"
     ],
     icon: Leaf,
+    reelSrc: "/Reels copy/Verantwortung.mp4",
   },
   {
     id: 6,
@@ -82,15 +88,49 @@ const valuesData = [
       "Respektvoller Umgang als Standard"
     ],
     icon: Star,
+    reelSrc: "/Reels copy/Wertschätzung.mp4",
   },
 ]
 
 const ValuesSection = () => {
   const [activeValue, setActiveValue] = useState(valuesData[0].id)
+  const [isExpanded, setIsExpanded] = useState(false)
+  const [playingVideo, setPlayingVideo] = useState(null)
+  const videoRef = useRef(null)
 
   const handleValueClick = (valueId) => {
-    setActiveValue(valueId)
+    if (activeValue === valueId && isExpanded) {
+      // Wenn die gleiche Card nochmal geklickt wird und bereits geöffnet ist, schließen
+      setIsExpanded(false)
+      setPlayingVideo(null)
+      if (videoRef.current) {
+        videoRef.current.pause()
+        videoRef.current.currentTime = 0
+      }
+    } else {
+      setActiveValue(valueId)
+      setIsExpanded(true)
+      // Video wird automatisch geladen, wenn die Card geöffnet wird
+    }
   }
+
+  // Video pausieren, wenn die Card geschlossen wird
+  useEffect(() => {
+    if (!isExpanded && videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+      setPlayingVideo(null)
+    }
+  }, [isExpanded])
+
+  // Video pausieren, wenn der aktive Wert wechselt
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+      setPlayingVideo(null)
+    }
+  }, [activeValue])
 
   const handleKeyDown = (e, valueId) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -113,12 +153,47 @@ const ValuesSection = () => {
 
       const newValue = valuesData[newIndex]
       setActiveValue(newValue.id)
+      setIsExpanded(true)
       
       // Focus auf das neue Element setzen
       const newButton = document.getElementById(`value-tab-${newValue.id}`)
       if (newButton) {
         newButton.focus()
       }
+    }
+  }
+
+  const handleVideoPlay = () => {
+    setPlayingVideo(activeValue)
+  }
+
+  const handleVideoPause = () => {
+    setPlayingVideo(null)
+  }
+
+  const handleVideoEnd = () => {
+    setPlayingVideo(null)
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0
+    }
+  }
+
+  const handlePlayButtonClick = (e) => {
+    e.stopPropagation()
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.error('Error playing video:', error)
+      })
+    }
+  }
+
+  const handleCloseExpanded = (e) => {
+    e.stopPropagation()
+    setIsExpanded(false)
+    setPlayingVideo(null)
+    if (videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
     }
   }
 
@@ -170,32 +245,133 @@ const ValuesSection = () => {
 
           {/* Aktiver Wert-Content */}
           <div 
-            className="values-content"
+            className={`values-content ${isExpanded ? 'values-content--expanded' : ''}`}
             role="tabpanel"
             id={`value-content-${currentValue.id}`}
             aria-labelledby={`value-tab-${currentValue.id}`}
+            onClick={() => !isExpanded && setIsExpanded(true)}
           >
-            <div className="values-content-inner">
-              <div className="values-content-header">
-                <h3 className="values-content-headline">
-                  {currentValue.headline}
-                </h3>
-                <p className="values-content-description">
-                  {currentValue.description}
-                </p>
-              </div>
+            {isExpanded ? (
+              <div className="values-content-expanded">
+                {/* Linke Hälfte: Text-Content */}
+                <div className="values-content-left">
+                  <button 
+                    className="values-close-button"
+                    onClick={handleCloseExpanded}
+                    aria-label="Card schließen"
+                  >
+                    <X size={24} />
+                  </button>
+                  <div className="values-content-header">
+                    <h3 className="values-content-headline">
+                      {currentValue.headline}
+                    </h3>
+                    <p className="values-content-description">
+                      {currentValue.description}
+                    </p>
+                  </div>
 
-              <div className="values-examples">
-                <h4 className="values-examples-title">Konkret bedeutet das:</h4>
-                <ul className="values-examples-list" role="list">
-                  {currentValue.examples.map((example, index) => (
-                    <li key={index} className="values-examples-item">
-                      {example}
-                    </li>
-                  ))}
-                </ul>
+                  <div className="values-examples">
+                    <h4 className="values-examples-title">Konkret bedeutet das:</h4>
+                    <ul className="values-examples-list" role="list">
+                      {currentValue.examples.map((example, index) => (
+                        <li key={index} className="values-examples-item">
+                          {example}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Rechte Hälfte: Video */}
+                <div className="values-content-right">
+                  <div className="values-video-wrapper">
+                    <video
+                      ref={videoRef}
+                      className="values-video"
+                      src={currentValue.reelSrc}
+                      loop={false}
+                      muted={false}
+                      playsInline
+                      preload="metadata"
+                      controls={playingVideo === activeValue}
+                      onPlay={handleVideoPlay}
+                      onPause={handleVideoPause}
+                      onEnded={handleVideoEnd}
+                      onError={(e) => {
+                        const video = e.target
+                        console.error('Video error for:', currentValue.shortLabel, {
+                          error: video.error,
+                          code: video.error?.code,
+                          message: video.error?.message,
+                          currentSrc: video.src,
+                          reelSrc: currentValue.reelSrc
+                        })
+                      }}
+                      onLoadedMetadata={() => {
+                        console.log('Video metadata loaded:', currentValue.shortLabel, currentValue.reelSrc)
+                      }}
+                      onCanPlay={() => {
+                        console.log('Video can play:', currentValue.shortLabel)
+                      }}
+                    >
+                      <source src={currentValue.reelSrc} type="video/mp4" />
+                      Dein Browser unterstützt das Video-Tag nicht.
+                    </video>
+                    
+                    {playingVideo !== activeValue && (
+                      <>
+                        <div className="values-video-overlay" />
+                        <button 
+                          className="values-play-button" 
+                          onClick={handlePlayButtonClick}
+                          aria-label="Video abspielen"
+                        >
+                          <svg
+                            width="60"
+                            height="60"
+                            viewBox="0 0 60 60"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="30" cy="30" r="30" fill="white" fillOpacity="0.9" />
+                            <path
+                              d="M24 18L24 42L42 30L24 18Z"
+                              fill="#CC071E"
+                            />
+                          </svg>
+                        </button>
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="values-content-inner">
+                <div className="values-content-header">
+                  <h3 className="values-content-headline">
+                    {currentValue.headline}
+                  </h3>
+                  <p className="values-content-description">
+                    {currentValue.description}
+                  </p>
+                </div>
+
+                <div className="values-examples">
+                  <h4 className="values-examples-title">Konkret bedeutet das:</h4>
+                  <ul className="values-examples-list" role="list">
+                    {currentValue.examples.map((example, index) => (
+                      <li key={index} className="values-examples-item">
+                        {example}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="values-expand-hint">
+                  Klicken, um Reel zu öffnen
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
