@@ -94,7 +94,7 @@ const valuesData = [
 
 const ValuesSection = () => {
   const [activeValue, setActiveValue] = useState(valuesData[0].id)
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(true)
   const [playingVideo, setPlayingVideo] = useState(null)
   const videoRef = useRef(null)
 
