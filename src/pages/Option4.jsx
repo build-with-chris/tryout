@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 import './Option4.css'
 import { Hero234aOption4 } from '@/components/hero234a-option4'
 import AudioPlayer from '@/components/AudioPlayer'
@@ -132,8 +133,63 @@ const Option4 = () => {
     <div className="option4-page">
       <Hero234aOption4 />
       
-      <section className="option4-audio-section section">
-        <div className="container">
+      <section className="option4-audio-section section relative">
+        {/* Hintergrund-Bilder */}
+        <div className="option4-images-background">
+          <motion.div
+            className="option4-image option4-image-1"
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4, type: "spring", bounce: 0.2, delay: 0.1 }}
+          >
+            <img src="/Marktstimmen Bilder/links.jpg" alt="" />
+          </motion.div>
+          <div className="option4-speech-bubble">
+            <img src="/REWE deinen Traum.png" alt="REWE deinen Traum" />
+          </div>
+          <motion.div
+            className="option4-image option4-image-4"
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4, type: "spring", bounce: 0.2, delay: 0.25 }}
+          >
+            <img src="/Marktstimmen Bilder/rewe_logstik_sued_foto-craft_8323.jpg" alt="" />
+          </motion.div>
+          <motion.div
+            className="option4-image option4-image-5"
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4, type: "spring", bounce: 0.2, delay: 0.1 }}
+          >
+            <img src="/Marktstimmen Bilder/rewe_logstik_sued_foto-craft_8531.jpg" alt="" />
+          </motion.div>
+          <motion.div
+            className="option4-image option4-image-6"
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4, type: "spring", bounce: 0.2, delay: 0.3 }}
+          >
+            <img src="/Marktstimmen Bilder/rewe_logstik_sued_foto-craft_8774.jpg" alt="" />
+          </motion.div>
+          <motion.div
+            className="option4-image option4-image-7"
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4, type: "spring", bounce: 0.2, delay: 0.35 }}
+          >
+            <img src="/Marktstimmen Bilder/rewe_logstik_sued_foto-craft_8831.jpg" alt="" />
+          </motion.div>
+          <motion.div
+            className="option4-image option4-image-8"
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.4, type: "spring", bounce: 0.2, delay: 0.2 }}
+          >
+            <img src="/Marktstimmen Bilder/rewe_logstik_sued_foto-craft_9057.jpg" alt="" />
+          </motion.div>
+        </div>
+
+        <div className="container relative z-10">
           <div className="option4-audio-header">
             <h2 className="h2 text-center mb-md">Hier sprechen nicht Jobs. Hier sprechen Menschen.</h2>
             <p className="option4-audio-subheadline text-center mb-lg">
