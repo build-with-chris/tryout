@@ -15,7 +15,7 @@ function App() {
         <Route path="/option2" element={<Option2 />} />
         <Route path="/option3" element={<Option3 />} />
         <Route path="/option4" element={<Option4 />} />
-        <Route path="/gallerie" element={<Gallerie />} />
+        <Route path="/galerie" element={<Gallerie />} />
       </Routes>
     </BrowserRouter>
   )
