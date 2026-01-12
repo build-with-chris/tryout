@@ -221,6 +221,110 @@ export const careerPathJobs = {
         entryLevel: 'Verantwortung'
       }
     ]
+  },
+  verwaltung: {
+    einstieg: [
+      {
+        id: 'verwaltung-einstieg-1',
+        title: 'Kaufmann/-frau für Büromanagement – Ausbildung',
+        shortDescription: 'Eine solide kaufmännische Ausbildung, die dir alle Türen öffnet. Du lernst die Verwaltung von Grund auf kennen und entwickelst dich kontinuierlich weiter.',
+        bullets: [
+          '3-jährige duale Ausbildung',
+          'Abwechslung zwischen Theorie und Praxis',
+          'Gute Übernahmechancen nach der Ausbildung'
+        ],
+        workModel: 'Ausbildung',
+        entryLevel: 'Einstieg'
+      },
+      {
+        id: 'verwaltung-einstieg-2',
+        title: 'Bürokauffrau/-mann (m/w/d)',
+        shortDescription: 'Du sorgst dafür, dass im Büro alles reibungslos läuft. Eine abwechslungsreiche Tätigkeit mit klaren Strukturen und guter Teamatmosphäre.',
+        bullets: [
+          'Buchhaltung und Finanzverwaltung',
+          'Sekretariat und Verwaltungsaufgaben',
+          'Arbeit im Team mit festen Routinen'
+        ],
+        workModel: 'Vollzeit / Teilzeit',
+        entryLevel: 'Einstieg'
+      },
+      {
+        id: 'verwaltung-einstieg-3',
+        title: 'Sachbearbeiter/in (m/w/d)',
+        shortDescription: 'Du bearbeitest verschiedene Verwaltungsaufgaben und sorgst für reibungslose Abläufe. Eine Tätigkeit, die Genauigkeit und Teamgeist erfordert.',
+        bullets: [
+          'Bearbeitung von Verwaltungsvorgängen',
+          'Kundenbetreuung und Kommunikation',
+          'Moderne Systeme und klare Prozesse'
+        ],
+        workModel: 'Vollzeit / Teilzeit',
+        entryLevel: 'Einstieg'
+      }
+    ],
+    entwicklung: [
+      {
+        id: 'verwaltung-entwicklung-1',
+        title: 'Fachkraft Buchhaltung (m/w/d)',
+        shortDescription: 'Du übernimmst spezialisierte Aufgaben in der Buchhaltung und sorgst für reibungslose Finanzprozesse. Expertise, die geschätzt wird.',
+        bullets: [
+          'Spezialisierung in Buchhaltung und Finanzen',
+          'Koordination von Finanzprozessen',
+          'Weiterbildungsmöglichkeiten inklusive'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Entwicklung'
+      },
+      {
+        id: 'verwaltung-entwicklung-2',
+        title: 'Personalreferent/in (m/w/d)',
+        shortDescription: 'Du planst und koordinierst Personalprozesse. Eine spannende Herausforderung mit viel Gestaltungsspielraum.',
+        bullets: [
+          'Personalverwaltung und -entwicklung',
+          'Optimierung von HR-Prozessen',
+          'Enge Zusammenarbeit mit verschiedenen Bereichen'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Entwicklung'
+      },
+      {
+        id: 'verwaltung-entwicklung-3',
+        title: 'Einkäufer/in (m/w/d)',
+        shortDescription: 'Du verantwortest die Beschaffung und gestaltest das Sortiment aktiv mit. Hier kannst du zeigen, was in dir steckt.',
+        bullets: [
+          'Warenbeschaffung und -optimierung',
+          'Verantwortung für Einkauf und Qualität',
+          'Weiterbildungsmöglichkeiten inklusive'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Entwicklung'
+      }
+    ],
+    verantwortung: [
+      {
+        id: 'verwaltung-verantwortung-1',
+        title: 'Abteilungsleiter/in Verwaltung (m/w/d)',
+        shortDescription: 'Du trägst die Verantwortung für einen Verwaltungsbereich und führst ein großes Team. Eine herausfordernde Position mit viel Gestaltungsspielraum.',
+        bullets: [
+          'Führung eines großen Teams',
+          'Verantwortung für Verwaltungsprozesse',
+          'Strategische Planung und Umsetzung'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Verantwortung'
+      },
+      {
+        id: 'verwaltung-verantwortung-2',
+        title: 'Geschäftsführer/in (m/w/d)',
+        shortDescription: 'Du verantwortest mehrere Bereiche und entwickelst das Unternehmen weiter. Eine Position mit strategischer Ausrichtung und viel Verantwortung.',
+        bullets: [
+          'Verantwortung für mehrere Abteilungen',
+          'Strategische Planung und Umsetzung',
+          'Entwicklung von Teams und Prozessen'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Verantwortung'
+      }
+    ]
   }
 }
 

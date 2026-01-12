@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button'
 import { useIsMobile } from '@/hooks/use-mobile'
 import CareerPathJobs from './CareerPathJobs'
 
-// Video-Daten für Markt und Logistik
+// Video-Daten für Markt, Logistik und Verwaltung
 const videoData = {
   markt: {
     imageSrc: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw1.jpeg",
@@ -28,10 +28,17 @@ const videoData = {
     videoUrl: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/man-1.mp4",
     videoCaption: "Dein Tag in der Logistik",
     videoSecondaryCaption: "(2:30 Min)",
+  },
+  verwaltung: {
+    imageSrc: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw1.jpeg",
+    imageAlt: "REWE Verwaltung - Büro und Organisation",
+    videoUrl: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/man-1.mp4",
+    videoCaption: "Dein Tag in der Verwaltung",
+    videoSecondaryCaption: "(2:20 Min)",
   }
 }
 
-// Inhalte für Markt und Logistik - aus dem Arbeitsalltag
+// Inhalte für Markt, Logistik und Verwaltung - aus dem Arbeitsalltag
 const pathContent = {
   markt: {
     headline: "Im Markt: Wo Menschen einkaufen",
@@ -92,13 +99,45 @@ const pathContent = {
         ]
       }
     ]
+  },
+  verwaltung: {
+    headline: "In der Verwaltung: Wo alles läuft",
+    description: "Du sorgst dafür, dass im Hintergrund alles funktioniert. Buchhaltung, Personal, Einkauf – strukturierte Abläufe, klares Team, verlässliche Arbeitszeiten.",
+    aspects: [
+      {
+        title: "Dein Arbeitsalltag",
+        items: [
+          "Buchhaltung & Finanzen verwalten",
+          "Personalwesen & Prozesse gestalten",
+          "Einkauf & Beschaffung organisieren"
+        ]
+      },
+      {
+        title: "Team & Zusammenarbeit",
+        items: [
+          "Zusammenarbeit mit verschiedenen Abteilungen",
+          "Mentoring durch erfahrene Kolleg:innen",
+          "Strukturierte Prozesse und klare Kommunikation"
+        ]
+      },
+      {
+        title: "Planbarkeit & Sicherheit",
+        items: [
+          "Feste Arbeitszeiten, die du frühzeitig kennst",
+          "Klare Aufgaben und Zuständigkeiten",
+          "Unbefristete Verträge, langfristige Perspektive"
+        ]
+      }
+    ]
   }
 }
 
 const PathSelector = () => {
-  const [activePath, setActivePath] = useState(null) // null = keine Auswahl, 'markt' oder 'logistik'
+  const [activePath, setActivePath] = useState(null) // null = keine Auswahl, 'markt', 'logistik' oder 'verwaltung'
   const [isTransitioning, setIsTransitioning] = useState(false)
   const isMobile = useIsMobile()
+  
+  const paths = ['markt', 'logistik', 'verwaltung']
 
   // Helper function to extract YouTube video ID
   const getYouTubeVideoId = (url) => {
@@ -140,7 +179,7 @@ const PathSelector = () => {
             REWE ruft. Wohin führt dein Weg?
           </h2>
           <p className="path-selector-subtitle">
-            Markt oder Logistik – entdecke, wo du dich wiederfindest.
+            Markt, Logistik oder Verwaltung – entdecke, wo du dich wiederfindest.
           </p>
         </div>
 
@@ -169,6 +208,18 @@ const PathSelector = () => {
           >
             <span className="path-cta-label">Zur Logistik</span>
           </button>
+          
+          <button
+            className={`path-cta ${activePath === 'verwaltung' ? 'path-cta--active' : ''}`}
+            onClick={() => handlePathSelect('verwaltung')}
+            onKeyDown={(e) => handleKeyDown(e, 'verwaltung')}
+            aria-pressed={activePath === 'verwaltung'}
+            aria-expanded={activePath === 'verwaltung'}
+            aria-controls="path-content"
+            id="path-cta-verwaltung"
+          >
+            <span className="path-cta-label">Zur Verwaltung</span>
+          </button>
         </div>
 
         {/* Content-Bereich - wechselt je nach Auswahl */}
@@ -179,7 +230,7 @@ const PathSelector = () => {
             role="region"
             aria-live="polite"
             aria-labelledby={`path-cta-${activePath}`}
-            aria-label={`Inhalte für ${activePath === 'markt' ? 'Markt' : 'Logistik'}`}
+            aria-label={`Inhalte für ${activePath === 'markt' ? 'Markt' : activePath === 'logistik' ? 'Logistik' : 'Verwaltung'}`}
           >
             {/* Großes Video-Image */}
             <div className="path-video-container">
@@ -313,16 +364,22 @@ const PathSelector = () => {
               <div className="path-switch">
                 <button
                   className="path-switch-button"
-                  onClick={() => handlePathSelect(activePath === 'markt' ? 'logistik' : 'markt')}
+                  onClick={() => {
+                    const currentIndex = paths.indexOf(activePath)
+                    const nextIndex = (currentIndex + 1) % paths.length
+                    handlePathSelect(paths[nextIndex])
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
-                      handlePathSelect(activePath === 'markt' ? 'logistik' : 'markt')
+                      const currentIndex = paths.indexOf(activePath)
+                      const nextIndex = (currentIndex + 1) % paths.length
+                      handlePathSelect(paths[nextIndex])
                     }
                   }}
-                  aria-label={`Zu ${activePath === 'markt' ? 'Logistik' : 'Markt'} wechseln`}
+                  aria-label={`Zu ${activePath === 'markt' ? 'Logistik' : activePath === 'logistik' ? 'Verwaltung' : 'Markt'} wechseln`}
                 >
-                  {activePath === 'markt' ? 'Zur Logistik' : 'Zum Markt'}
+                  {activePath === 'markt' ? 'Zur Logistik' : activePath === 'logistik' ? 'Zur Verwaltung' : 'Zum Markt'}
                 </button>
               </div>
             </div>

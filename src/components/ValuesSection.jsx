@@ -14,72 +14,72 @@ const valuesData = [
   {
     id: 1,
     shortLabel: "Sicherheit",
-    headline: "Darauf kannst du dich verlassen",
-    description: "Du weißt morgens, was heute ansteht. Die Schichten sind klar, die Aufgaben auch. Wenn mal was Unerwartetes kommt, gibt es jemanden, der dir zeigt, wie's geht.",
+    headline: "Sicherer Job. Sicheres Gefühl.",
+    description: "Du startest nicht ins Ungewisse. Du kennst deinen Plan – und wenn's hakt, ist jemand da, der dich rauszieht. (Nicht erst nach Feierabend.)",
     examples: [
-      "Feste Schichtpläne, die du frühzeitig kennst",
-      "Einarbeitung mit erfahrenen Kolleg:innen an deiner Seite",
-      "Unbefristete Verträge statt kurzfristiger Projekte"
+      "Schichten mit Vorlauf – damit Privatleben auch Platz hat",
+      "Kolleg:innen als fester Anker am Start",
+      "Stabilität, auf die man bauen kann"
     ],
     icon: Shield,
   },
   {
     id: 2,
     shortLabel: "Karriere",
-    headline: "So wächst man bei uns",
-    description: "Vom Einsteiger zur Fachkraft, vom Regal zur Kasse, von der Logistik zur Teamleitung. Du lernst Schritt für Schritt, und wir zeigen dir den Weg.",
+    headline: "Wir begleiten dich auf Karriereleiter oder Karrierestapler.",
+    description: "Du musst nicht geschniegelt \"Karriere machen\". Wer anpackt und dranbleibt, kommt bei uns weiter – finanziell und im Können.",
     examples: [
-      "Schulungen direkt im Markt, nicht nur in der Theorie",
-      "Regelmäßige Gespräche über deine nächsten Schritte",
-      "Klare Wege: Fachlaufbahn oder Führung – beides möglich"
+      "Klare Entwicklungsschritte",
+      "Entwicklung in mehrere Richtungen (Markt/Logistik/Team)",
+      "Perspektiven, die sichtbar sind (auch intern)"
     ],
     icon: ArrowUp,
   },
   {
     id: 3,
     shortLabel: "Respekt",
-    headline: "So läuft Zusammenarbeit bei uns",
-    description: "Wenn die Kasse voll ist, springt jemand ein. Wenn die Palette schwer ist, hilft jemand mit. Im Team funktioniert's, weil alle auf Augenhöhe sind.",
+    headline: "Entrecôte statt Ellenbogen.",
+    description: "Wenn's stressig wird, zählt nicht das Ego – sondern das Team. Bei uns hilft man sich, weil's sonst keinen Spaß macht.",
     examples: [
-      "Unterstützung in stressigen Phasen, nicht allein gelassen",
-      "Offene Kommunikation, auch wenn's mal nicht passt",
-      "Fairer Umgang – unabhängig von Alter oder Erfahrung"
+      "Teamgefühl als Standard, nicht als Ausnahme",
+      "Unterstützung statt Schuldzuweisung",
+      "Respektvoll – auch wenn's mal knirscht"
     ],
     icon: Users,
   },
   {
     id: 4,
     shortLabel: "Klarheit",
-    headline: "Weniger Rätselraten, mehr Flow",
-    description: "Du weißt, wer dein Ansprechpartner ist. Du weißt, was erwartet wird. Du weißt, wie die Abläufe funktionieren. Das gibt Sicherheit im Alltag.",
+    headline: "Du weißt, was zählt – heute und morgen.",
+    description: "Klarheit heißt auch: Ziel und Sinn verstehen. Dann macht Arbeit mehr Spaß – und weniger Stress.",
     examples: [
-      "Transparente Ziele und Erwartungen von Anfang an",
-      "Feste Ansprechpartner für Fragen und Probleme",
-      "Strukturierte Prozesse, die dir Orientierung geben"
+      "Verständliche Ziele – mit dir abgestimmt",
+      "Feste Ansprechpartner, die dich begleiten",
+      "Standards, die dir Sicherheit geben"
     ],
     icon: CheckSquare,
   },
   {
     id: 5,
     shortLabel: "Verantwortung",
-    headline: "So nehmen wir Verantwortung ernst",
-    description: "Vielfalt ist bei uns Normalität. Nachhaltigkeit passiert im Alltag – beim Einkauf, im Lager, im Team. Jeder kann sich einbringen, jeder wird gehört.",
+    headline: "Wir machen's lieber praktisch als perfekt.",
+    description: "Verantwortung zeigt sich in kleinen Entscheidungen – jeden Tag. Und du kannst Teil davon sein, ohne Theater.",
     examples: [
-      "Offenheit für alle – unabhängig von Herkunft oder Hintergrund",
-      "Praktische Nachhaltigkeit im täglichen Arbeiten",
-      "Respekt als Standard, nicht als Ausnahme"
+      "Ideen einbringen – pragmatisch, nicht bürokratisch",
+      "Mitdenken im Kleinen (da, wo's wirkt)",
+      "Offenheit für alle – im Team und im Umgang"
     ],
     icon: Leaf,
   },
   {
     id: 6,
     shortLabel: "Wertschätzung",
-    headline: "Gute Leistung bleibt nicht unsichtbar",
-    description: "Wenn du etwas gut machst, wird es gesehen. Wenn du dich einbringst, wird es wertgeschätzt. Faire Bezahlung, ehrliches Feedback, gemeinsame Erfolge.",
+    headline: "REWE glaubt an dich. Glaub auch du an dich.",
+    description: "Du bekommst Rückhalt, ehrliches Feedback und das Gefühl: Ich bin hier richtig – gerade am Anfang.",
     examples: [
-      "Konstruktives Feedback, nicht nur wenn etwas schiefläuft",
-      "Faire Bezahlung und Benefits, die wirklich ankommen",
-      "Gemeinsam Erfolge feiern, nicht nur Einzelkämpfer:innen"
+      "Faire Bezahlung/Benefits als Basis",
+      "Feedback auch dann, wenn's gut läuft",
+      "Respektvoller Umgang als Standard"
     ],
     icon: Star,
   },
@@ -129,10 +129,10 @@ const ValuesSection = () => {
       <div className="container">
         <div className="values-header">
           <h2 id="values-heading" className="values-title">
-            So läuft es bei uns
+            Hier arbeitet's sich gut. Punkt.
           </h2>
           <p className="values-subtitle">
-            Werte, die du im Alltag erlebst – nicht nur in der Broschüre.
+            Du sollst wissen, woran du bist: Menschen im Fokus, nicht nur Prozesse.
           </p>
         </div>
 

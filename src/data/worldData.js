@@ -124,6 +124,69 @@ export const worldData = {
       secondary: "Per WhatsApp starten",
       tertiary: "Unverbindlich kennenlernen"
     }
+  },
+  verwaltung: {
+    name: "Verwaltung",
+    cards: [
+      {
+        id: "start",
+        title: "So startest du",
+        icon: "🚀",
+        bullets: [
+          "Einstieg mit kaufmännischer Ausbildung oder Studium",
+          "Vollzeit/Teilzeit je nach Position",
+          "Strukturierte Einarbeitung"
+        ]
+      },
+      {
+        id: "tag",
+        title: "So sieht dein Tag aus",
+        icon: "📅",
+        bullets: [
+          "Buchhaltung & Finanzen verwalten",
+          "Personalwesen & Prozesse gestalten",
+          "Einkauf & Beschaffung organisieren"
+        ]
+      },
+      {
+        id: "sicher",
+        title: "So wirst du sicher",
+        icon: "🛡️",
+        bullets: [
+          "Systematische Einarbeitung in Prozesse",
+          "Schulungen zu Systemen & Tools",
+          "Mentoring durch erfahrene Kolleg:innen"
+        ]
+      },
+      {
+        id: "weiter",
+        title: "So geht's weiter",
+        icon: "📈",
+        bullets: [
+          "Einstieg → Fachkraft → Abteilungsleitung",
+          "Weiterbildungen & Qualifizierungen",
+          "Perspektive bis Geschäftsleitung (optional)"
+        ],
+        ladder: {
+          rungs: ["Start", "Fachkraft", "Führen"]
+        }
+      },
+      {
+        id: "bewerbung",
+        title: "So bewirbst du dich",
+        icon: "✍️",
+        bullets: [
+          "Heute loslegen: 60 Sekunden, max. 5 Felder",
+          "WhatsApp-Start möglich",
+          "Rückmeldung innerhalb von X Tagen"
+        ]
+      }
+    ],
+    ctas: {
+      primary: "In 60 Sekunden bewerben",
+      secondary: "Per WhatsApp starten",
+      tertiary: "Unverbindlich kennenlernen"
+    }
   }
 }
 

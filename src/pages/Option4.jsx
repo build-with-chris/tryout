@@ -17,6 +17,12 @@ const Option4 = () => {
     "Sie hatten ihren ersten Tag. Wann kommst du an Board?"
   ]
 
+  // Beschreibungen für jede Audiospur
+  const audioDescriptions = [
+    "Echte Anerkennung statt leere Versprechen: Bei REWE zählt Einsatz – und er zahlt sich aus. Drei Kolleg:innen erzählen, warum sie ihren Start keine Sekunde bereuen (außer, dass er nicht früher war).",
+    "Der erste Tag ist aufregend – ganz normal. Entscheidend ist, was danach kommt: ein Team, das dich mitnimmt, dir den Rücken stärkt und dich ankommen lässt."
+  ]
+
   // Story-Objekte mit echten Audiodateien
   const audioStories = [
     {
@@ -129,9 +135,9 @@ const Option4 = () => {
       <section className="option4-audio-section section">
         <div className="container">
           <div className="option4-audio-header">
-            <h2 className="h2 text-center mb-md">Marktstimmen</h2>
+            <h2 className="h2 text-center mb-md">Hier sprechen nicht Jobs. Hier sprechen Menschen.</h2>
             <p className="option4-audio-subheadline text-center mb-lg">
-              Echte Geschichten von echten Menschen.
+              Über Teamgefühl, Entwicklung und den Moment, in dem's „passt".
             </p>
             <p className="option4-audio-helper text-center mb-xl">
               15–25 Sekunden. Einfach reinhören.
@@ -155,6 +161,9 @@ const Option4 = () => {
                     onPlayPause={() => handlePlayPause(story.id)}
                     onKeyDown={handleKeyDown}
                   />
+                  <p className="option4-audio-description">
+                    {audioDescriptions[index]}
+                  </p>
                 </div>
               )
             })}
