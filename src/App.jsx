@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Option4 />} />
         <Route path="/option2" element={<Option2 />} />
         <Route path="/option3" element={<Option3 />} />
         <Route path="/option4" element={<Option4 />} />
