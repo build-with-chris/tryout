@@ -1,5 +1,5 @@
 /* ============================================
-   Career Path Jobs - Ergänzung unter Video
+   Career Path Jobs - Karriere-Stufen Übersicht
    ============================================ */
 
 .career-path-jobs {
@@ -8,7 +8,7 @@
   border-top: 2px solid var(--color-neutral-300);
 }
 
-/* Phasen-Navigation - Elegante Timeline */
+/* Phasen-Navigation - Neutrale Karriere-Stufen */
 .career-path-jobs-phases {
   margin-bottom: var(--spacing-3xl);
   padding: 0 var(--spacing-lg);
@@ -32,7 +32,7 @@
   z-index: 0;
 }
 
-.career-path-jobs-timeline-progress {
+.career-path-jobs-timeline-indicator {
   position: absolute;
   top: 0;
   left: 0;
@@ -122,11 +122,6 @@
   transform: scale(1.1);
 }
 
-.career-path-jobs-phase-button--past .career-path-jobs-phase-marker-inner {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
 .career-path-jobs-phase-number {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
@@ -138,14 +133,14 @@
   color: var(--color-white);
 }
 
-.career-path-jobs-phase-check {
-  width: 28px;
-  height: 28px;
-  color: var(--color-white);
-  stroke-width: 3;
+/* Phase Label Wrapper */
+.career-path-jobs-phase-label-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
 }
 
-/* Phase Label */
 .career-path-jobs-phase-label {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
@@ -164,8 +159,14 @@
   font-weight: var(--font-weight-bold);
 }
 
-.career-path-jobs-phase-button--past .career-path-jobs-phase-label {
-  color: var(--color-neutral-900);
+.career-path-jobs-phase-microcopy {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-neutral-500);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  max-width: 140px;
 }
 
 /* Job-Liste */
@@ -318,13 +319,30 @@
 .career-path-jobs-cta-button {
   display: inline-block;
   min-width: 280px;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
 }
 
-.career-path-jobs-cta-subline {
-  color: var(--color-neutral-600);
+.career-path-jobs-cta-hint {
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-xs);
+  margin: 0 0 var(--spacing-md) 0;
+  font-style: italic;
+}
+
+.career-path-jobs-cta-secondary {
+  display: inline-block;
+  color: var(--color-primary);
   font-size: var(--font-size-sm);
-  margin: 0;
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: color var(--transition-base), text-decoration-color var(--transition-base);
+}
+
+.career-path-jobs-cta-secondary:hover {
+  color: var(--color-primary-hover);
+  text-decoration-color: var(--color-primary-hover);
 }
 
 /* Responsive */
@@ -356,13 +374,13 @@
     font-size: var(--font-size-lg);
   }
 
-  .career-path-jobs-phase-check {
-    width: 24px;
-    height: 24px;
-  }
-
   .career-path-jobs-phase-label {
     font-size: var(--font-size-sm);
+  }
+
+  .career-path-jobs-phase-microcopy {
+    font-size: var(--font-size-xs);
+    max-width: 100px;
   }
 
   .career-path-jobs-phase-button {
@@ -395,8 +413,22 @@
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   .career-path-jobs-item-button,
-  .career-path-jobs-phase-button {
+  .career-path-jobs-phase-button,
+  .career-path-jobs-phase-marker-inner,
+  .career-path-jobs-timeline-indicator {
     transition: none;
+  }
+
+  .career-path-jobs-phase-button:hover {
+    transform: none;
+  }
+
+  .career-path-jobs-phase-button:hover .career-path-jobs-phase-marker-inner {
+    transform: none;
+  }
+
+  .career-path-jobs-phase-button--active .career-path-jobs-phase-marker-inner {
+    transform: none;
   }
 }
 

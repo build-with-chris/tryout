@@ -4,12 +4,145 @@ import { cn } from "@/lib/utils";
 import { careerPathJobs } from "@/data/careerPathJobs";
 import './CareerPathJobs.css';
 
+// CTA-Links Konfiguration - nur interne Pfade, keine Bewerbungen
+const ctaLinks = {
+  markt: {
+    einstieg: {
+      primary: {
+        text: "Einstiegsjobs im Bereich ansehen",
+        href: "/karriere/markt/einstieg"
+      },
+      secondary: {
+        text: "So läuft der nächste Schritt",
+        href: "/karriere/so-gehts-weiter"
+      }
+    },
+    entwicklung: {
+      primary: {
+        text: "Entwicklungswege im Bereich ansehen",
+        href: "/karriere/markt/entwicklung"
+      },
+      secondary: {
+        text: "Weiterkommen mit Plan",
+        href: "/karriere/so-gehts-weiter"
+      }
+    },
+    verantwortung: {
+      primary: {
+        text: "Führungsrollen im Bereich ansehen",
+        href: "/karriere/markt/verantwortung"
+      },
+      secondary: {
+        text: "Verantwortung übernehmen: Was das bei REWE Süd heißt",
+        href: "/karriere/so-gehts-weiter"
+      }
+    }
+  },
+  logistik: {
+    einstieg: {
+      primary: {
+        text: "Einstiegsjobs im Bereich ansehen",
+        href: "/karriere/logistik/einstieg"
+      },
+      secondary: {
+        text: "So läuft der nächste Schritt",
+        href: "/karriere/so-gehts-weiter"
+      }
+    },
+    entwicklung: {
+      primary: {
+        text: "Entwicklungswege im Bereich ansehen",
+        href: "/karriere/logistik/entwicklung"
+      },
+      secondary: {
+        text: "Weiterkommen mit Plan",
+        href: "/karriere/so-gehts-weiter"
+      }
+    },
+    verantwortung: {
+      primary: {
+        text: "Führungsrollen im Bereich ansehen",
+        href: "/karriere/logistik/verantwortung"
+      },
+      secondary: {
+        text: "Verantwortung übernehmen: Was das bei REWE Süd heißt",
+        href: "/karriere/so-gehts-weiter"
+      }
+    }
+  },
+  verwaltung: {
+    einstieg: {
+      primary: {
+        text: "Einstiegsjobs im Bereich ansehen",
+        href: "/karriere/verwaltung/einstieg"
+      },
+      secondary: {
+        text: "So läuft der nächste Schritt",
+        href: "/karriere/so-gehts-weiter"
+      }
+    },
+    entwicklung: {
+      primary: {
+        text: "Entwicklungswege im Bereich ansehen",
+        href: "/karriere/verwaltung/entwicklung"
+      },
+      secondary: {
+        text: "Weiterkommen mit Plan",
+        href: "/karriere/so-gehts-weiter"
+      }
+    },
+    verantwortung: {
+      primary: {
+        text: "Führungsrollen im Bereich ansehen",
+        href: "/karriere/verwaltung/verantwortung"
+      },
+      secondary: {
+        text: "Verantwortung übernehmen: Was das bei REWE Süd heißt",
+        href: "/karriere/so-gehts-weiter"
+      }
+    }
+  }
+};
+
+// Phasen-Konfiguration mit Microcopy
+const phases = [
+  { 
+    id: 'einstieg', 
+    title: 'Einstieg', 
+    microcopy: 'Reinkommen, anlernen, sicher starten.',
+    icon: '1' 
+  },
+  { 
+    id: 'entwicklung', 
+    title: 'Entwicklung', 
+    microcopy: 'Skills ausbauen, mehr Verantwortung im Team.',
+    icon: '2' 
+  },
+  { 
+    id: 'verantwortung', 
+    title: 'Verantwortung', 
+    microcopy: 'Teams führen, Bereiche gestalten.',
+    icon: '3' 
+  }
+];
+
 const CareerPathJobs = ({
-  activePath, // 'markt' oder 'logistik' - kommt von PathSelector
+  activePath, // 'markt', 'logistik' oder 'verwaltung' - kommt von PathSelector
   className
 }) => {
   const [activePhase, setActivePhase] = useState('einstieg');
   const [expandedJobId, setExpandedJobId] = useState(null);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Check for reduced motion preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+    
+    const handleChange = (e) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   // Reset expanded job when path or phase changes
   useEffect(() => {
@@ -21,55 +154,54 @@ const CareerPathJobs = ({
     return null;
   }
 
-  const phases = [
-    { id: 'einstieg', title: 'Einstieg', label: 'Einstieg', icon: '1' },
-    { id: 'entwicklung', title: 'Entwicklung', label: 'Entwicklung', icon: '2' },
-    { id: 'verantwortung', title: 'Verantwortung', label: 'Verantwortung', icon: '3' }
-  ];
-
   // Get jobs for current path and phase
   const currentJobs = careerPathJobs[activePath]?.[activePhase] || [];
 
-  // CTA logic based on active phase
-  const getCTA = () => {
-    if (activePhase === 'einstieg') {
-      return {
-        primary: 'Bewerbung in 60 Sekunden',
-        subline: 'Ohne Lebenslauf. Einfach starten.',
-        href: '#bewerbung?weg=heute'
-      };
-    } else {
-      return {
-        primary: 'Weiterkommen mit Plan',
-        subline: 'Schritt für Schritt mehr Verantwortung übernehmen.',
-        href: '#bewerbung?weg=plan'
-      };
-    }
-  };
-
-  const cta = getCTA();
+  // Get CTA configuration for current path and phase
+  const currentCTA = ctaLinks[activePath]?.[activePhase] || null;
 
   const handleJobToggle = (jobId) => {
     setExpandedJobId(expandedJobId === jobId ? null : jobId);
   };
 
-  // Find active phase index for progress calculation
+  // Find active phase index for neutral indicator (not progress)
   const activePhaseIndex = phases.findIndex(p => p.id === activePhase);
+
+  // Animation variants with reduced motion support
+  const containerVariants = {
+    initial: prefersReducedMotion ? {} : { opacity: 0, y: 20 },
+    animate: prefersReducedMotion ? {} : { opacity: 1, y: 0 },
+    exit: prefersReducedMotion ? {} : { opacity: 0, y: -20 }
+  };
+
+  const accordionVariants = {
+    initial: prefersReducedMotion ? {} : { height: 0, opacity: 0 },
+    animate: prefersReducedMotion ? {} : { height: 'auto', opacity: 1 },
+    exit: prefersReducedMotion ? {} : { height: 0, opacity: 0 }
+  };
+
+  const iconVariants = {
+    rotate: (isExpanded) => ({
+      rotate: prefersReducedMotion ? 0 : isExpanded ? 180 : 0
+    })
+  };
 
   return (
     <div className={cn("career-path-jobs", className)}>
-      {/* Phasen-Navigation - Elegante Timeline */}
+      {/* Phasen-Navigation - Neutrale Karriere-Stufen */}
       <div className="career-path-jobs-phases">
         <div className="career-path-jobs-timeline-wrapper">
-          {/* Timeline Line */}
+          {/* Neutrale Timeline Line (kein Fortschritt) */}
           <div className="career-path-jobs-timeline-line">
             <motion.div
-              className="career-path-jobs-timeline-progress"
+              className="career-path-jobs-timeline-indicator"
               initial={false}
               animate={{
-                width: `${(activePhaseIndex / (phases.length - 1)) * 100}%`
+                width: prefersReducedMotion 
+                  ? '0%' 
+                  : `${((activePhaseIndex + 1) / phases.length) * 100}%`
               }}
-              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              transition={{ duration: prefersReducedMotion ? 0 : 0.4, ease: 'easeInOut' }}
             />
           </div>
 
@@ -77,15 +209,13 @@ const CareerPathJobs = ({
           <div className="career-path-jobs-phases-inner">
             {phases.map((phase, index) => {
               const isActive = activePhase === phase.id;
-              const isPast = index < activePhaseIndex;
               
               return (
                 <div key={phase.id} className="career-path-jobs-phase-wrapper">
                   <button
                     className={cn(
                       "career-path-jobs-phase-button",
-                      isActive && "career-path-jobs-phase-button--active",
-                      isPast && "career-path-jobs-phase-button--past"
+                      isActive && "career-path-jobs-phase-button--active"
                     )}
                     onClick={() => setActivePhase(phase.id)}
                     role="tab"
@@ -95,26 +225,13 @@ const CareerPathJobs = ({
                     {/* Phase Marker Circle */}
                     <div className="career-path-jobs-phase-marker">
                       <div className="career-path-jobs-phase-marker-inner">
-                        {isPast ? (
-                          <svg
-                            className="career-path-jobs-phase-check"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={3}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                        ) : (
-                          <span className="career-path-jobs-phase-number">{phase.icon}</span>
-                        )}
+                        <span className="career-path-jobs-phase-number">{phase.icon}</span>
                       </div>
                     </div>
-                    <span className="career-path-jobs-phase-label">{phase.title}</span>
+                    <div className="career-path-jobs-phase-label-wrapper">
+                      <span className="career-path-jobs-phase-label">{phase.title}</span>
+                      <span className="career-path-jobs-phase-microcopy">{phase.microcopy}</span>
+                    </div>
                   </button>
                 </div>
               );
@@ -128,10 +245,8 @@ const CareerPathJobs = ({
         <AnimatePresence mode="wait">
           <motion.div
             key={`${activePath}-${activePhase}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            {...containerVariants}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
             className="career-path-jobs-list-inner"
           >
             {currentJobs.length > 0 ? (
@@ -154,17 +269,13 @@ const CareerPathJobs = ({
                         </h3>
                         <div className="career-path-jobs-item-meta">
                           <span>{job.workModel}</span>
-                          {job.entryLevel && (
-                            <>
-                              <span>•</span>
-                              <span>{job.entryLevel}</span>
-                            </>
-                          )}
                         </div>
                       </div>
                       <motion.div
-                        animate={{ rotate: isExpanded ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
+                        custom={isExpanded}
+                        variants={iconVariants}
+                        animate="rotate"
+                        transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
                         className="career-path-jobs-item-icon"
                       >
                         <svg
@@ -187,10 +298,8 @@ const CareerPathJobs = ({
                       {isExpanded && (
                         <motion.div
                           id={`job-details-${job.id}`}
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          {...accordionVariants}
+                          transition={{ duration: prefersReducedMotion ? 0 : 0.3, ease: 'easeInOut' }}
                           className="career-path-jobs-item-details"
                         >
                           <div className="career-path-jobs-item-details-inner">
@@ -224,30 +333,36 @@ const CareerPathJobs = ({
         </AnimatePresence>
       </div>
 
-      {/* Kontextabhängige CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.3 }}
-        className="career-path-jobs-cta"
-      >
-        <div className="career-path-jobs-cta-inner">
-          <a
-            href={cta.href}
-            className="btn btn-primary btn-lg career-path-jobs-cta-button"
-          >
-            {cta.primary}
-          </a>
-          {cta.subline && (
-            <p className="career-path-jobs-cta-subline">
-              {cta.subline}
+      {/* Kontextabhängige CTA - nur interne Links */}
+      {currentCTA && (
+        <motion.div
+          {...containerVariants}
+          transition={{ delay: prefersReducedMotion ? 0 : 0.2, duration: prefersReducedMotion ? 0 : 0.3 }}
+          className="career-path-jobs-cta"
+        >
+          <div className="career-path-jobs-cta-inner">
+            <a
+              href={currentCTA.primary.href}
+              className="btn btn-primary btn-lg career-path-jobs-cta-button"
+            >
+              {currentCTA.primary.text}
+            </a>
+            <p className="career-path-jobs-cta-hint">
+              Info-Seite – keine Bewerbung auf dieser Website.
             </p>
-          )}
-        </div>
-      </motion.div>
+            {currentCTA.secondary && (
+              <a
+                href={currentCTA.secondary.href}
+                className="career-path-jobs-cta-secondary"
+              >
+                {currentCTA.secondary.text}
+              </a>
+            )}
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };
 
 export default CareerPathJobs;
-

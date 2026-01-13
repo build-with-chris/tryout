@@ -1,43 +1,15 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Play, Briefcase, Users, Shield } from 'lucide-react'
+import { Briefcase, Users, Shield } from 'lucide-react'
 import './PathSelector.css'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog'
-import { Button } from '@/components/ui/button'
-import { useIsMobile } from '@/hooks/use-mobile'
 import CareerPathJobs from './CareerPathJobs'
 import { Feature297 } from '@/components/feature297'
 import { Feature217b } from '@/components/feature217b'
 
-// Video-Daten für Markt, Logistik und Verwaltung
-const videoData = {
-  markt: {
-    imageSrc: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw1.jpeg",
-    imageAlt: "REWE Markt - Kundenberatung und Verkauf",
-    videoUrl: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/man-1.mp4",
-    videoCaption: "Dein Tag im Markt",
-    videoSecondaryCaption: "(2:15 Min)",
-  },
-  logistik: {
-    imageSrc: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw2.jpeg",
-    imageAlt: "REWE Logistik - Warenbewegung und Kommissionierung",
-    videoUrl: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/man-1.mp4",
-    videoCaption: "Dein Tag in der Logistik",
-    videoSecondaryCaption: "(2:30 Min)",
-  },
-  verwaltung: {
-    imageSrc: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw1.jpeg",
-    imageAlt: "REWE Verwaltung - Büro und Organisation",
-    videoUrl: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/man-1.mp4",
-    videoCaption: "Dein Tag in der Verwaltung",
-    videoSecondaryCaption: "(2:20 Min)",
-  }
+// Image Alt-Texte für Markt, Logistik und Verwaltung
+const imageAltTexts = {
+  markt: "REWE Markt - Kundenberatung und Verkauf",
+  logistik: "REWE Logistik - Warenbewegung und Kommissionierung",
+  verwaltung: "REWE Verwaltung - Büro und Organisation",
 }
 
 // Inhalte für Markt, Logistik und Verwaltung - aus dem Arbeitsalltag
@@ -137,16 +109,8 @@ const pathContent = {
 const PathSelector = () => {
   const [activePath, setActivePath] = useState(null) // null = keine Auswahl, 'markt', 'logistik' oder 'verwaltung'
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const isMobile = useIsMobile()
   
   const paths = ['markt', 'logistik', 'verwaltung']
-
-  // Helper function to extract YouTube video ID
-  const getYouTubeVideoId = (url) => {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
-    const match = url.match(regExp)
-    return match && match[2].length === 11 ? match[2] : null
-  }
 
   const handlePathSelect = (path) => {
     if (activePath === path) return // Bereits aktiv
@@ -168,10 +132,6 @@ const PathSelector = () => {
   }
 
   const currentContent = activePath ? pathContent[activePath] : null
-  const currentVideoData = activePath ? videoData[activePath] : null
-  
-  const youtubeId = currentVideoData?.videoUrl ? getYouTubeVideoId(currentVideoData.videoUrl) : null
-  const isYouTube = !!youtubeId
 
   return (
     <section className="path-selector section" id="path-selector" aria-labelledby="path-heading">
@@ -193,19 +153,19 @@ const PathSelector = () => {
                 id: 'markt',
                 title: 'Ich will in den Markt',
                 imageSrc: '/MarktLogistikVerwaltgung/Markt.jpg',
-                imageAlt: videoData.markt.imageAlt,
+                imageAlt: imageAltTexts.markt,
               },
               {
                 id: 'logistik',
                 title: 'Ich will in die Logistik',
                 imageSrc: '/MarktLogistikVerwaltgung/Logistik.jpg',
-                imageAlt: videoData.logistik.imageAlt,
+                imageAlt: imageAltTexts.logistik,
               },
               {
                 id: 'verwaltung',
                 title: 'Ich will in die Verwaltung',
                 imageSrc: '/MarktLogistikVerwaltgung/Verwaltung.jpg',
-                imageAlt: videoData.verwaltung.imageAlt,
+                imageAlt: imageAltTexts.verwaltung,
               },
             ]}
             activeItem={activePath}
@@ -214,7 +174,7 @@ const PathSelector = () => {
         </div>
 
         {/* Content-Bereich - wechselt je nach Auswahl */}
-        {activePath && currentVideoData && (
+        {activePath && currentContent && (
           <div 
             id="path-content"
             className={`path-content ${isTransitioning ? 'path-content--transitioning' : ''}`}
@@ -223,109 +183,6 @@ const PathSelector = () => {
             aria-labelledby={`path-cta-${activePath}`}
             aria-label={`Inhalte für ${activePath === 'markt' ? 'Markt' : activePath === 'logistik' ? 'Logistik' : 'Verwaltung'}`}
           >
-            {/* Großes Video-Image */}
-            <div className="path-video-container">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <motion.div
-                    className="path-video-wrapper"
-                    whileHover="hover"
-                    initial="initial"
-                  >
-                    <motion.div
-                      className="path-video-image-container"
-                      variants={{
-                        initial: { filter: "blur(0px)" },
-                        hover: { filter: "blur(4px)" },
-                      }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                    >
-                      <motion.img
-                        src={currentVideoData.imageSrc}
-                        alt={currentVideoData.imageAlt}
-                        className="path-video-image"
-                        variants={{
-                          initial: { scale: 1 },
-                          hover: { scale: 1.1 },
-                        }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
-                      />
-                    </motion.div>
-                    <div className="path-video-overlay">
-                      <motion.div
-                        className="path-video-content"
-                        variants={{
-                          initial: { gap: "0.5rem" },
-                          hover: { gap: "0rem" },
-                        }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
-                      >
-                        <motion.div
-                          variants={{
-                            initial: { x: 0, scale: 1 },
-                            hover: {
-                              x: isMobile ? 0 : "75%",
-                              scale: 1.2,
-                            },
-                          }}
-                          transition={{ duration: 0.3, ease: "easeOut" }}
-                        >
-                          <Button
-                            size="lg"
-                            className="path-video-play-button"
-                          >
-                            <Play className="path-video-play-icon" />
-                            <span className="sr-only">{currentVideoData.videoCaption}</span>
-                          </Button>
-                        </motion.div>
-                        <motion.div
-                          className="path-video-text"
-                          variants={{
-                            initial: { opacity: 1 },
-                            hover: { opacity: 0, transform: "-translate-y-3" },
-                          }}
-                          transition={{ duration: 0.3, ease: "easeOut" }}
-                        >
-                          <p className="path-video-caption">
-                            {currentVideoData.videoCaption}
-                          </p>
-                          <p className="path-video-duration">
-                            {currentVideoData.videoSecondaryCaption}
-                          </p>
-                        </motion.div>
-                      </motion.div>
-                    </div>
-                  </motion.div>
-                </DialogTrigger>
-                <DialogContent className="path-video-dialog">
-                  <DialogTitle className="sr-only">{currentVideoData.videoCaption}</DialogTitle>
-                  <DialogDescription className="sr-only">
-                    {currentVideoData.videoSecondaryCaption} - {currentVideoData.videoCaption}
-                  </DialogDescription>
-                  <div className="path-video-player">
-                    {isYouTube ? (
-                      <iframe
-                        className="path-video-iframe"
-                        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
-                        title="Video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <video 
-                        className="path-video-element" 
-                        controls 
-                        autoPlay 
-                        src={currentVideoData.videoUrl}
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                    )}
-                  </div>
-                </DialogContent>
-              </Dialog>
-            </div>
-
             {/* Feature217b für Content-Darstellung */}
             <Feature217b
               badge=""
@@ -367,7 +224,7 @@ const PathSelector = () => {
               </button>
             </div>
 
-            {/* Karrierepfade-Jobs Ergänzung - unter dem Video */}
+            {/* Karrierepfade-Jobs Ergänzung */}
             <CareerPathJobs activePath={activePath} />
           </div>
         )}
