@@ -4,38 +4,43 @@ import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
 
-// Bilder für obere und untere Leiste (alte Bilder)
-const defaultImages = [
-  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw1.jpeg",
-  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw2.jpeg",
-  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw3.jpeg",
-  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw4.jpeg",
-  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw5.jpeg",
-  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw6.jpeg",
-  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw7.jpeg",
-  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw8.jpeg",
-  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw9.jpeg",
-  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw10.jpeg",
+// Bilder für obere Leiste - Azubis (mit 80% Schwarz-Weiß-Filter)
+const azubisImages = [
+  "/Azubis/Azubi%20Büro.jpg",
+  "/Azubis/Azubi%20Frischetheke.jpg",
+  "/Azubis/Azubi%20Logistik.jpg",
+  "/Azubis/Mitarbeiterin%20Markt.jpg",
+  "/Azubis/Quereinstieg%20Firschetheke.jpg",
+  "/Azubis/QuereinstiegLager.jpg",
 ];
 
-// Neue REWE Bilder für die mittlere Leiste
+// Neue REWE Bilder für die mittlere Leiste (mit Sprüchen zwischen den Bildern)
 const reweImages = [
-  "/heroReweBilder/Motiv1-1.jpg",
   "/heroReweBilder/Motiv1-2.jpg",
-  "/heroReweBilder/Motiv1-3.jpg",
+  "/heroReweBilder/Spruch1.png",
   "/heroReweBilder/Motiv2-1.jpg",
   "/heroReweBilder/Motiv2-2.jpg",
-  "/heroReweBilder/Motiv3-1.jpg",
-  "/heroReweBilder/Motiv3-2.jpg",
+  "/heroReweBilder/Spruch2.png",
   "/heroReweBilder/Motiv3-3.jpg",
   "/heroReweBilder/Motiv3-4.jpg",
+  "/heroReweBilder/Spruch3.png",
   "/heroReweBilder/Motiv3-5.jpg",
 ];
 
+// Bilder für untere Leiste - Führungspersönlichkeiten
+const fuehrungspersoehnlichkeitenImages = [
+  "/Fuehrungspersoehnlichkeiten/Jutta.jpg",
+  "/Fuehrungspersoehnlichkeiten/Leiter Frischetheke.jpg",
+  "/Fuehrungspersoehnlichkeiten/Sarah.jpg",
+  "/Fuehrungspersoehnlichkeiten/Teamleiter Logistik.jpg",
+  "/Fuehrungspersoehnlichkeiten/Temperatursicherheitsbeauftragter.jpg",
+  "/Fuehrungspersoehnlichkeiten/Yassin.jpg",
+];
+
 const galleryImages = [
-  defaultImages,  // Obere Leiste
-  reweImages,     // Mittlere Leiste (neue REWE Bilder)
-  defaultImages,  // Untere Leiste
+  azubisImages,      // Obere Leiste (mit 80% SW-Filter)
+  reweImages,        // Mittlere Leiste (neue REWE Bilder)
+  fuehrungspersoehnlichkeitenImages, // Untere Leiste
 ];
 
 const Hero234aOption4 = ({
@@ -80,7 +85,10 @@ const Hero234aOption4 = ({
                     <img
                       src={image}
                       alt={`Gallery image ${imageIndex + 1}`}
-                      className="h-full w-full object-cover" />
+                      className="h-full w-full object-cover"
+                      style={{
+                        filter: rowIndex === 0 ? 'grayscale(80%)' : 'none'
+                      }} />
                   </motion.div>
                 ))}
               </motion.div>
