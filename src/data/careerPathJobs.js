@@ -56,18 +56,6 @@ export const careerPathJobs = {
     entwicklung: [
       {
         id: 'markt-entwicklung-1',
-        title: 'Teamleiter/in Verkauf (m/w/d)',
-        shortDescription: 'Du übernimmst Verantwortung für ein Team und sorgst dafür, dass alles reibungslos läuft. Eine spannende Herausforderung mit viel Gestaltungsspielraum.',
-        bullets: [
-          'Führung eines motivierten Teams',
-          'Personaleinsatzplanung und -entwicklung',
-          'Enge Zusammenarbeit mit der Marktleitung'
-        ],
-        workModel: 'Vollzeit',
-        entryLevel: 'Entwicklung'
-      },
-      {
-        id: 'markt-entwicklung-2',
         title: 'Abteilungsleiter/in (m/w/d)',
         shortDescription: 'Du verantwortest eine komplette Abteilung und gestaltest das Sortiment aktiv mit. Hier kannst du zeigen, was in dir steckt.',
         bullets: [
@@ -79,7 +67,7 @@ export const careerPathJobs = {
         entryLevel: 'Entwicklung'
       },
       {
-        id: 'markt-entwicklung-3',
+        id: 'markt-entwicklung-2',
         title: 'Fachverkäufer/in im Lebensmittelhandel (m/w/d)',
         shortDescription: 'Du bist Spezialist:in für deinen Bereich – ob Frischetheke, Backwaren oder Obst & Gemüse. Expertise, die geschätzt wird.',
         bullets: [
@@ -94,6 +82,18 @@ export const careerPathJobs = {
     verantwortung: [
       {
         id: 'markt-verantwortung-1',
+        title: 'Teamleiter/in Verkauf (m/w/d)',
+        shortDescription: 'Du übernimmst Verantwortung für ein Team und sorgst dafür, dass alles reibungslos läuft. Eine spannende Herausforderung mit viel Gestaltungsspielraum.',
+        bullets: [
+          'Führung eines motivierten Teams',
+          'Personaleinsatzplanung und -entwicklung',
+          'Enge Zusammenarbeit mit der Marktleitung'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Verantwortung'
+      },
+      {
+        id: 'markt-verantwortung-2',
         title: 'Marktleiter/in (m/w/d)',
         shortDescription: 'Du trägst die Gesamtverantwortung für einen Markt und führst ein großes Team. Eine herausfordernde Position mit viel Gestaltungsspielraum.',
         bullets: [
@@ -105,7 +105,7 @@ export const careerPathJobs = {
         entryLevel: 'Verantwortung'
       },
       {
-        id: 'markt-verantwortung-2',
+        id: 'markt-verantwortung-3',
         title: 'Bereichsleiter/in (m/w/d)',
         shortDescription: 'Du verantwortest mehrere Märkte und entwickelst die Region weiter. Eine Position mit strategischer Ausrichtung und viel Verantwortung.',
         bullets: [

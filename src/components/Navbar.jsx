@@ -12,6 +12,12 @@ const Navbar = () => {
         </Link>
         <div className="navbar-links">
           <Link 
+            to="/option2" 
+            className={`navbar-link ${location.pathname === '/option2' ? 'active' : ''}`}
+          >
+            Option 2
+          </Link>
+          <Link 
             to="/option4" 
             className={`navbar-link ${location.pathname === '/option4' ? 'active' : ''}`}
           >

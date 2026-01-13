@@ -14,7 +14,7 @@ const azubisImages = [
   "/Azubis/QuereinstiegLager.jpg",
 ];
 
-// Neue REWE Bilder für die mittlere Leiste (mit Sprüchen zwischen den Bildern)
+// Neue REWE Bilder für die untere Leiste (mit Sprüchen zwischen den Bildern)
 const reweImages = [
   "/heroReweBilder/Motiv1-2.jpg",
   "/heroReweBilder/Spruch1.png",
@@ -27,7 +27,7 @@ const reweImages = [
   "/heroReweBilder/Motiv3-5.jpg",
 ];
 
-// Bilder für untere Leiste - Führungspersönlichkeiten
+// Bilder für mittlere Leiste - Führungspersönlichkeiten
 const fuehrungspersoehnlichkeitenImages = [
   "/Fuehrungspersoehnlichkeiten/Jutta.jpg",
   "/Fuehrungspersoehnlichkeiten/Leiter Frischetheke.jpg",
@@ -39,8 +39,8 @@ const fuehrungspersoehnlichkeitenImages = [
 
 const galleryImages = [
   azubisImages,      // Obere Leiste (mit 80% SW-Filter)
-  reweImages,        // Mittlere Leiste (neue REWE Bilder)
-  fuehrungspersoehnlichkeitenImages, // Untere Leiste
+  fuehrungspersoehnlichkeitenImages, // Mittlere Leiste
+  reweImages,        // Untere Leiste (neue REWE Bilder)
 ];
 
 const Hero234aOption4 = ({

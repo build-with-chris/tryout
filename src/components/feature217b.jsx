@@ -15,9 +15,10 @@ const Feature217b = ({
   return (
     <section className={cn("", className)}>
       <div
-        className="relative bg-cover bg-center bg-no-repeat py-10 md:py-12 xl:py-16"
+        className="relative bg-cover bg-no-repeat py-10 md:py-12 xl:py-16"
         style={{
           backgroundImage: backgroundImage ? `url('${backgroundImage}')` : "url('https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/futuristic-device-design-qcufu.png')",
+          backgroundPosition: 'center 70%',
         }}>
         {/* Subtiler dunkler Overlay für besseren Kontrast und Lesbarkeit */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50 z-10" aria-hidden="true" />
