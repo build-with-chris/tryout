@@ -37,11 +37,31 @@ const fuehrungspersoehnlichkeitenImages = [
   "/Fuehrungspersoehnlichkeiten/Yassin.jpg",
 ];
 
-const galleryImages = [
-  azubisImages,      // Obere Leiste (mit 80% SW-Filter)
-  fuehrungspersoehnlichkeitenImages, // Mittlere Leiste
-  reweImages,        // Untere Leiste (neue REWE Bilder)
-];
+// Funktion zum abwechselnden Mischen der drei Arrays
+const mixImages = () => {
+  const mixed = [];
+  const maxLength = Math.max(
+    azubisImages.length,
+    fuehrungspersoehnlichkeitenImages.length,
+    reweImages.length
+  );
+  
+  for (let i = 0; i < maxLength; i++) {
+    if (i < azubisImages.length) {
+      mixed.push({ src: azubisImages[i], type: 'azubis' });
+    }
+    if (i < fuehrungspersoehnlichkeitenImages.length) {
+      mixed.push({ src: fuehrungspersoehnlichkeitenImages[i], type: 'fuehrung' });
+    }
+    if (i < reweImages.length) {
+      mixed.push({ src: reweImages[i], type: 'rewe' });
+    }
+  }
+  
+  return mixed;
+};
+
+const galleryImages = mixImages();
 
 const Hero234aOption4 = ({
   className
@@ -60,7 +80,7 @@ const Hero234aOption4 = ({
         <div
           className="relative h-[500px] w-[900px] overflow-hidden rounded-2xl md:h-[600px] md:w-[1200px]">
           <div className="absolute inset-0 flex flex-col justify-center gap-3">
-            {galleryImages.map((row, rowIndex) => (
+            {[0, 1, 2].map((rowIndex) => (
               <motion.div
                 key={rowIndex}
                 className="flex gap-3 will-change-transform"
@@ -72,7 +92,7 @@ const Hero234aOption4 = ({
                   repeat: Infinity,
                   ease: "linear",
                 }}>
-                {[...row, ...row, ...row, ...row].map((image, imageIndex) => (
+                {[...galleryImages, ...galleryImages, ...galleryImages, ...galleryImages].map((imageData, imageIndex) => (
                   <motion.div
                     key={`${rowIndex}-${imageIndex}`}
                     className="relative flex-shrink-0 overflow-hidden rounded-lg"
@@ -83,11 +103,11 @@ const Hero234aOption4 = ({
                     whileHover={{ scale: 1.05, rotate: 5 }}
                     transition={{ duration: 0.3 }}>
                     <img
-                      src={image}
+                      src={imageData.src}
                       alt={`Gallery image ${imageIndex + 1}`}
                       className="h-full w-full object-cover"
                       style={{
-                        filter: rowIndex === 0 ? 'grayscale(80%)' : 'none'
+                        filter: imageData.type === 'azubis' ? 'grayscale(80%)' : 'none'
                       }} />
                   </motion.div>
                 ))}

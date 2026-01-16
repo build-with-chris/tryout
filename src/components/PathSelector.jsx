@@ -5,9 +5,9 @@ import CareerPathJobs from './CareerPathJobs'
 import { Feature297 } from '@/components/feature297'
 import { Feature217b } from '@/components/feature217b'
 
-// Image Alt-Texte für Markt, Logistik und Verwaltung
+// Image Alt-Texte für Vertrieb, Logistik und Verwaltung
 const imageAltTexts = {
-  markt: "REWE Markt - Kundenberatung und Verkauf",
+  markt: "REWE Vertrieb - Kundenberatung und Verkauf",
   logistik: "REWE Logistik - Warenbewegung und Kommissionierung",
   verwaltung: "REWE Verwaltung - Büro und Organisation",
 }
@@ -151,7 +151,7 @@ const PathSelector = () => {
             items={[
               {
                 id: 'markt',
-                title: 'Ich will in den Markt',
+                title: 'Ich will in den Vertrieb',
                 imageSrc: '/MarktLogistikVerwaltgung/Markt.jpg',
                 imageAlt: imageAltTexts.markt,
               },
@@ -181,7 +181,7 @@ const PathSelector = () => {
             role="region"
             aria-live="polite"
             aria-labelledby={`path-cta-${activePath}`}
-            aria-label={`Inhalte für ${activePath === 'markt' ? 'Markt' : activePath === 'logistik' ? 'Logistik' : 'Verwaltung'}`}
+            aria-label={`Inhalte für ${activePath === 'markt' ? 'Vertrieb' : activePath === 'logistik' ? 'Logistik' : 'Verwaltung'}`}
           >
             {/* Feature217b für Content-Darstellung */}
             <Feature217b

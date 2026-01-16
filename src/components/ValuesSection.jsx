@@ -28,7 +28,7 @@ const valuesData = [
   {
     id: 2,
     shortLabel: "Karriere",
-    headline: "Wir begleiten dich auf Karrierestapler.",
+    headline: "Wir begleiten dich auf der Karriereleiter.",
     description: "Du musst nicht geschniegelt \"Karriere machen\". Wer anpackt und dranbleibt, kommt bei uns weiter – finanziell und im Können.",
     examples: [
       "Klare Entwicklungsschritte",

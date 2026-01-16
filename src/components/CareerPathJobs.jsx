@@ -7,97 +7,67 @@ import './CareerPathJobs.css';
 // CTA-Links Konfiguration - nur interne Pfade, keine Bewerbungen
 const ctaLinks = {
   markt: {
-    einstieg: {
+    ausbildung: {
       primary: {
-        text: "Einstiegsjobs im Bereich ansehen",
-        href: "/karriere/markt/einstieg"
+        text: "Ausbildungsplätze im Bereich ansehen",
+        href: "/karriere/markt/ausbildung"
       },
       secondary: {
         text: "So läuft der nächste Schritt",
         href: "/karriere/so-gehts-weiter"
       }
     },
-    entwicklung: {
+    professionals: {
       primary: {
-        text: "Entwicklungswege im Bereich ansehen",
-        href: "/karriere/markt/entwicklung"
+        text: "Jobs für Professionals im Bereich ansehen",
+        href: "/karriere/markt/professionals"
       },
       secondary: {
         text: "Weiterkommen mit Plan",
-        href: "/karriere/so-gehts-weiter"
-      }
-    },
-    verantwortung: {
-      primary: {
-        text: "Führungsrollen im Bereich ansehen",
-        href: "/karriere/markt/verantwortung"
-      },
-      secondary: {
-        text: "Verantwortung übernehmen: Was das bei REWE Süd heißt",
         href: "/karriere/so-gehts-weiter"
       }
     }
   },
   logistik: {
-    einstieg: {
+    ausbildung: {
       primary: {
-        text: "Einstiegsjobs im Bereich ansehen",
-        href: "/karriere/logistik/einstieg"
+        text: "Ausbildungsplätze im Bereich ansehen",
+        href: "/karriere/logistik/ausbildung"
       },
       secondary: {
         text: "So läuft der nächste Schritt",
         href: "/karriere/so-gehts-weiter"
       }
     },
-    entwicklung: {
+    professionals: {
       primary: {
-        text: "Entwicklungswege im Bereich ansehen",
-        href: "/karriere/logistik/entwicklung"
+        text: "Jobs für Professionals im Bereich ansehen",
+        href: "/karriere/logistik/professionals"
       },
       secondary: {
         text: "Weiterkommen mit Plan",
-        href: "/karriere/so-gehts-weiter"
-      }
-    },
-    verantwortung: {
-      primary: {
-        text: "Führungsrollen im Bereich ansehen",
-        href: "/karriere/logistik/verantwortung"
-      },
-      secondary: {
-        text: "Verantwortung übernehmen: Was das bei REWE Süd heißt",
         href: "/karriere/so-gehts-weiter"
       }
     }
   },
   verwaltung: {
-    einstieg: {
+    ausbildung: {
       primary: {
-        text: "Einstiegsjobs im Bereich ansehen",
-        href: "/karriere/verwaltung/einstieg"
+        text: "Ausbildungsplätze im Bereich ansehen",
+        href: "/karriere/verwaltung/ausbildung"
       },
       secondary: {
         text: "So läuft der nächste Schritt",
         href: "/karriere/so-gehts-weiter"
       }
     },
-    entwicklung: {
+    professionals: {
       primary: {
-        text: "Entwicklungswege im Bereich ansehen",
-        href: "/karriere/verwaltung/entwicklung"
+        text: "Jobs für Professionals im Bereich ansehen",
+        href: "/karriere/verwaltung/professionals"
       },
       secondary: {
         text: "Weiterkommen mit Plan",
-        href: "/karriere/so-gehts-weiter"
-      }
-    },
-    verantwortung: {
-      primary: {
-        text: "Führungsrollen im Bereich ansehen",
-        href: "/karriere/verwaltung/verantwortung"
-      },
-      secondary: {
-        text: "Verantwortung übernehmen: Was das bei REWE Süd heißt",
         href: "/karriere/so-gehts-weiter"
       }
     }
@@ -107,22 +77,16 @@ const ctaLinks = {
 // Phasen-Konfiguration mit Microcopy
 const phases = [
   { 
-    id: 'einstieg', 
-    title: 'Einstieg', 
-    microcopy: 'Reinkommen, anlernen, sicher starten.',
+    id: 'ausbildung', 
+    title: 'Ausbildung', 
+    microcopy: 'Lernen, wachsen, durchstarten.',
     icon: '1' 
   },
   { 
-    id: 'entwicklung', 
-    title: 'Entwicklung', 
-    microcopy: 'Skills ausbauen, mehr Verantwortung im Team.',
+    id: 'professionals', 
+    title: 'Professionals', 
+    microcopy: 'Erfahrung einbringen, weiterkommen.',
     icon: '2' 
-  },
-  { 
-    id: 'verantwortung', 
-    title: 'Verantwortung', 
-    microcopy: 'Teams führen, Bereiche gestalten.',
-    icon: '3' 
   }
 ];
 
@@ -130,7 +94,7 @@ const CareerPathJobs = ({
   activePath, // 'markt', 'logistik' oder 'verwaltung' - kommt von PathSelector
   className
 }) => {
-  const [activePhase, setActivePhase] = useState('einstieg');
+  const [activePhase, setActivePhase] = useState('ausbildung');
   const [expandedJobId, setExpandedJobId] = useState(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -183,8 +147,8 @@ const CareerPathJobs = ({
     })
   };
 
-  // Limit jobs to 4
-  const displayedJobs = currentJobs.slice(0, 4);
+  // Display all jobs
+  const displayedJobs = currentJobs;
 
   return (
     <div className={cn("career-path-jobs", className)}>
