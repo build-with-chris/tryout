@@ -5,6 +5,7 @@ import { Hero234aOption4 } from '@/components/hero234a-option4'
 import AudioPlayer from '@/components/AudioPlayer'
 import ValuesSection from '@/components/ValuesSection'
 import PathSelector from '@/components/PathSelector'
+import { Integration8 } from '@/components/integration8'
 
 const Option4 = () => {
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null)
@@ -230,6 +231,8 @@ const Option4 = () => {
       <ValuesSection />
 
       <PathSelector />
+
+      <Integration8 />
 
     </div>
   )
