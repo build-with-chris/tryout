@@ -51,10 +51,10 @@ const Feature268 = ({
         <div className="w-full space-y-5 lg:w-3/5">
           <h1
             className="mt-3 w-full max-w-2xl text-5xl font-medium font-semibold tracking-tighter lg:text-6xl text-neutral-900">
-            Darf's noch etwas mehr sein?
+            Fragen im Kopf?<br />Wir nehmen sie ernst.
           </h1>
           <p className="max-w-xl text-neutral-700">
-            Deine Fragen sind zum Fragen da. Und wir sind da, um sie zu beantworten.
+            Ob Markt, Logistik oder Verwaltung: REWE Süd hilft dir, den nächsten Schritt zu finden.
           </p>
           <div className="mt-10 mb-29 flex gap-2">
             <Button asChild className="rounded-full">
