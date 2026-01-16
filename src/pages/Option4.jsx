@@ -6,6 +6,7 @@ import AudioPlayer from '@/components/AudioPlayer'
 import ValuesSection from '@/components/ValuesSection'
 import PathSelector from '@/components/PathSelector'
 import { Integration8 } from '@/components/integration8'
+import { Feature268 } from '@/components/feature268'
 
 const Option4 = () => {
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null)
@@ -233,6 +234,8 @@ const Option4 = () => {
       <PathSelector />
 
       <Integration8 />
+
+      <Feature268 />
 
     </div>
   )
