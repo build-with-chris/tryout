@@ -37,31 +37,28 @@ const fuehrungspersoehnlichkeitenImages = [
   "/Fuehrungspersoehnlichkeiten/Yassin.jpg",
 ];
 
-// Funktion zum abwechselnden Mischen der drei Arrays
-const mixImages = () => {
-  const mixed = [];
-  const maxLength = Math.max(
-    azubisImages.length,
-    fuehrungspersoehnlichkeitenImages.length,
-    reweImages.length
-  );
+// Funktion zum Erstellen einer gemischten Zeile mit 2 Bildern aus jedem Ordner
+const createRowImages = (rowIndex) => {
+  // Zeile 0: Bilder 1-2 (Index 0-1)
+  // Zeile 1: Bilder 3-4 (Index 2-3)
+  // Zeile 2: Bilder 5-6 (Index 4-5)
+  const startIndex = rowIndex * 2;
+  const endIndex = startIndex + 2;
   
-  for (let i = 0; i < maxLength; i++) {
-    if (i < azubisImages.length) {
-      mixed.push({ src: azubisImages[i], type: 'azubis' });
-    }
-    if (i < fuehrungspersoehnlichkeitenImages.length) {
-      mixed.push({ src: fuehrungspersoehnlichkeitenImages[i], type: 'fuehrung' });
-    }
-    if (i < reweImages.length) {
-      mixed.push({ src: reweImages[i], type: 'rewe' });
-    }
+  const azubis = azubisImages.slice(startIndex, endIndex);
+  const fuehrung = fuehrungspersoehnlichkeitenImages.slice(startIndex, endIndex);
+  const rewe = reweImages.slice(startIndex, endIndex);
+  
+  // Mische abwechselnd: Azubis, Führung, Rewe, Azubis, Führung, Rewe...
+  const mixed = [];
+  for (let i = 0; i < 2; i++) {
+    mixed.push({ src: azubis[i], type: 'azubis' });
+    mixed.push({ src: fuehrung[i], type: 'fuehrung' });
+    mixed.push({ src: rewe[i], type: 'rewe' });
   }
   
   return mixed;
 };
-
-const galleryImages = mixImages();
 
 const Hero234aOption4 = ({
   className
@@ -80,39 +77,44 @@ const Hero234aOption4 = ({
         <div
           className="relative h-[500px] w-[900px] overflow-hidden rounded-2xl md:h-[600px] md:w-[1200px]">
           <div className="absolute inset-0 flex flex-col justify-center gap-3">
-            {[0, 1, 2].map((rowIndex) => (
-              <motion.div
-                key={rowIndex}
-                className="flex gap-3 will-change-transform"
-                animate={{
-                  x: rowIndex % 2 === 0 ? [-3200, 0] : [0, -3200],
-                }}
-                transition={{
-                  duration: 25 + rowIndex * 5,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}>
-                {[...galleryImages, ...galleryImages, ...galleryImages, ...galleryImages].map((imageData, imageIndex) => (
-                  <motion.div
-                    key={`${rowIndex}-${imageIndex}`}
-                    className="relative flex-shrink-0 overflow-hidden rounded-lg"
-                    style={{
-                      width: "180px",
-                      height: "180px",
-                    }}
-                    whileHover={{ scale: 1.05, rotate: 5 }}
-                    transition={{ duration: 0.3 }}>
-                    <img
-                      src={imageData.src}
-                      alt={`Gallery image ${imageIndex + 1}`}
-                      className="h-full w-full object-cover"
+            {[0, 1, 2].map((rowIndex) => {
+              // Erstelle für jede Zeile eine eigene Mischung mit 6 Bildern aus jedem Ordner
+              const rowImages = createRowImages(rowIndex);
+              
+              return (
+                <motion.div
+                  key={rowIndex}
+                  className="flex gap-3 will-change-transform"
+                  animate={{
+                    x: rowIndex % 2 === 0 ? [-3200, 0] : [0, -3200],
+                  }}
+                  transition={{
+                    duration: 25 + rowIndex * 5,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}>
+                  {[...rowImages, ...rowImages, ...rowImages, ...rowImages].map((imageData, imageIndex) => (
+                    <motion.div
+                      key={`${rowIndex}-${imageIndex}`}
+                      className="relative flex-shrink-0 overflow-hidden rounded-lg"
                       style={{
-                        filter: imageData.type === 'azubis' ? 'grayscale(80%)' : 'none'
-                      }} />
-                  </motion.div>
-                ))}
-              </motion.div>
-            ))}
+                        width: "180px",
+                        height: "180px",
+                      }}
+                      whileHover={{ scale: 1.05, rotate: 5 }}
+                      transition={{ duration: 0.3 }}>
+                      <img
+                        src={imageData.src}
+                        alt={`Gallery image ${imageIndex + 1}`}
+                        className="h-full w-full object-cover"
+                        style={{
+                          filter: imageData.type === 'azubis' ? 'grayscale(80%)' : 'none'
+                        }} />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
