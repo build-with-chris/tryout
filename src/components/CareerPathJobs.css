@@ -8,6 +8,14 @@
   border-top: 2px solid var(--color-neutral-300);
 }
 
+.career-path-jobs-heading {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
 /* Phasen-Navigation - Neutrale Karriere-Stufen */
 .career-path-jobs-phases {
   margin-bottom: var(--spacing-3xl);
@@ -175,9 +183,15 @@
 }
 
 .career-path-jobs-list-inner {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .career-path-jobs-list-inner {
+    grid-template-columns: 1fr;
+  }
 }
 
 .career-path-jobs-item {

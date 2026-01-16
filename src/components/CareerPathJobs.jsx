@@ -157,9 +157,6 @@ const CareerPathJobs = ({
   // Get jobs for current path and phase
   const currentJobs = careerPathJobs[activePath]?.[activePhase] || [];
 
-  // Get CTA configuration for current path and phase
-  const currentCTA = ctaLinks[activePath]?.[activePhase] || null;
-
   const handleJobToggle = (jobId) => {
     setExpandedJobId(expandedJobId === jobId ? null : jobId);
   };
@@ -186,8 +183,14 @@ const CareerPathJobs = ({
     })
   };
 
+  // Limit jobs to 4
+  const displayedJobs = currentJobs.slice(0, 4);
+
   return (
     <div className={cn("career-path-jobs", className)}>
+      {/* Überschrift über der Timeline */}
+      <h2 className="career-path-jobs-heading">Diese Berufe erwarten dich.</h2>
+      
       {/* Phasen-Navigation - Neutrale Karriere-Stufen */}
       <div className="career-path-jobs-phases">
         <div className="career-path-jobs-timeline-wrapper">
@@ -249,8 +252,8 @@ const CareerPathJobs = ({
             transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
             className="career-path-jobs-list-inner"
           >
-            {currentJobs.length > 0 ? (
-              currentJobs.map((job) => {
+            {displayedJobs.length > 0 ? (
+              displayedJobs.map((job) => {
                 const isExpanded = expandedJobId === job.id;
                 return (
                   <div
@@ -332,35 +335,6 @@ const CareerPathJobs = ({
           </motion.div>
         </AnimatePresence>
       </div>
-
-      {/* Kontextabhängige CTA - nur interne Links */}
-      {currentCTA && (
-        <motion.div
-          {...containerVariants}
-          transition={{ delay: prefersReducedMotion ? 0 : 0.2, duration: prefersReducedMotion ? 0 : 0.3 }}
-          className="career-path-jobs-cta"
-        >
-          <div className="career-path-jobs-cta-inner">
-            <a
-              href={currentCTA.primary.href}
-              className="btn btn-primary btn-lg career-path-jobs-cta-button"
-            >
-              {currentCTA.primary.text}
-            </a>
-            <p className="career-path-jobs-cta-hint">
-              Info-Seite – keine Bewerbung auf dieser Website.
-            </p>
-            {currentCTA.secondary && (
-              <a
-                href={currentCTA.secondary.href}
-                className="career-path-jobs-cta-secondary"
-              >
-                {currentCTA.secondary.text}
-              </a>
-            )}
-          </div>
-        </motion.div>
-      )}
     </div>
   );
 };

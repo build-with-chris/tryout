@@ -71,7 +71,7 @@ const Integration8 = ({
     <section className={cn("py-32", className)}>
       <div className="container pt-32">
         <h1 className="text-center text-5xl font-medium tracking-tight md:text-7xl text-neutral-900 dark:text-neutral-100">
-          REWE deinen Traum – mit vielen Wegen ans Ziel
+          Viele Wege führen zu deinem Traum
         </h1>
         <p
           className="mx-auto mt-4 max-w-2xl text-center tracking-tight text-neutral-700 dark:text-neutral-300 md:text-lg">

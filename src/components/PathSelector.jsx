@@ -15,7 +15,7 @@ const imageAltTexts = {
 // Inhalte für Markt, Logistik und Verwaltung - aus dem Arbeitsalltag
 const pathContent = {
   markt: {
-    headline: "Wo Teamgefühl den Tag trägt.",
+    headline: "Teamgefühl trägt den Tag",
     description: "Du bist da, wo es passiert. Kunden beraten, Ware auffüllen, im Team zusammenarbeiten. Jeder Tag ist anders, aber die Struktur gibt dir Sicherheit.",
     aspects: [
       {
@@ -45,7 +45,7 @@ const pathContent = {
     ]
   },
   logistik: {
-    headline: "Wenn du gern anpackst – aber nicht allein.",
+    headline: "Du packst gerne an",
     description: "Du sorgst dafür, dass die Ware ankommt. Kommissionieren, scannen, bewegen. Strukturierte Abläufe, klares Team, verlässliche Schichten.",
     aspects: [
       {
@@ -75,7 +75,7 @@ const pathContent = {
     ]
   },
   verwaltung: {
-    headline: "Blick hinter die Kulissen.",
+    headline: "Blick hinter die Kulissen",
     description: "Du sorgst dafür, dass im Hintergrund alles funktioniert. Buchhaltung, Personal, Einkauf – strukturierte Abläufe, klares Team, verlässliche Arbeitszeiten.",
     aspects: [
       {
@@ -200,29 +200,6 @@ const PathSelector = () => {
                   : '/QuerMarktLogistikVerwaltung/Verwaltung.jpg'
               }
             />
-
-            {/* Wechsel-Button */}
-            <div className="path-switch">
-              <button
-                className="path-switch-button"
-                onClick={() => {
-                  const currentIndex = paths.indexOf(activePath)
-                  const nextIndex = (currentIndex + 1) % paths.length
-                  handlePathSelect(paths[nextIndex])
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    const currentIndex = paths.indexOf(activePath)
-                    const nextIndex = (currentIndex + 1) % paths.length
-                    handlePathSelect(paths[nextIndex])
-                  }
-                }}
-                aria-label={`Zu ${activePath === 'markt' ? 'Logistik' : activePath === 'logistik' ? 'Verwaltung' : 'Markt'} wechseln`}
-              >
-                {activePath === 'markt' ? 'Zur Logistik' : activePath === 'logistik' ? 'Zur Verwaltung' : 'Zum Markt'}
-              </button>
-            </div>
 
             {/* Karrierepfade-Jobs Ergänzung */}
             <CareerPathJobs activePath={activePath} />
