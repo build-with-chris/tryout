@@ -24,6 +24,7 @@ const valuesData = [
     ],
     icon: Shield,
     reelSrc: "/Reels%20copy/Sicherheit.mp4",
+    thumbnailSrc: "/Logisitik/rewe_logstik_sued_foto-craft_8958.jpg",
   },
   {
     id: 2,
@@ -37,6 +38,7 @@ const valuesData = [
     ],
     icon: ArrowUp,
     reelSrc: "/Reels copy/Karriere.mp4",
+    thumbnailSrc: "/Logisitik/rewe_logstik_sued_foto-craft_8805.jpg",
   },
   {
     id: 3,
@@ -204,7 +206,7 @@ const ValuesSection = () => {
       <div className="container">
         <div className="values-header">
           <h2 id="values-heading" className="values-title">
-            Hier arbeitet's sich gut. Punkt.
+            Bei Rewe Süd arbeitet's sich gut. Punkt.
           </h2>
           <p className="values-subtitle">
             Du sollst wissen, woran du bist: Menschen im Fokus, nicht nur Prozesse.
@@ -290,6 +292,7 @@ const ValuesSection = () => {
                       ref={videoRef}
                       className="values-video"
                       src={currentValue.reelSrc}
+                      poster={currentValue.thumbnailSrc}
                       loop={false}
                       muted={false}
                       playsInline

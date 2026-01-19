@@ -15,62 +15,44 @@ const imageAltTexts = {
 // Inhalte für Markt, Logistik und Verwaltung - aus dem Arbeitsalltag
 const pathContent = {
   markt: {
-    headline: "Teamgefühl trägt den Tag",
+    headline: "Markt und Frischetheke",
     description: "Du bist da, wo es passiert. Kunden beraten, Ware auffüllen, im Team zusammenarbeiten. Jeder Tag ist anders, aber die Struktur gibt dir Sicherheit.",
     aspects: [
       {
-        title: "Dein Arbeitsalltag",
-        items: [
-          "Kundengespräche an der Kasse und im Verkaufsbereich",
-          "Ware auffüllen, Qualität prüfen, Regale ordnen",
-          "Im Team Abläufe koordinieren und unterstützen"
-        ]
+        title: "In den Marktrollen zählt am Ende vor allem, dass Kund:innen zufrieden sind.",
+        summary: "",
+        items: []
       },
       {
-        title: "Team & Zusammenarbeit",
-        items: [
-          "Kolleg:innen springen ein, wenn es voll wird",
-          "Erfahrene Mitarbeitende zeigen dir die Abläufe",
-          "Gemeinsam schaffen wir die Schichten"
-        ]
+        title: "Zusammenarbeit auf Augenhöhe. Und wer Verantwortung übernimmt, bekommt eine passende Rolle",
+        summary: "",
+        items: []
       },
       {
-        title: "Planbarkeit & Sicherheit",
-        items: [
-          "Feste Schichtpläne, die du frühzeitig kennst",
-          "Klare Aufgaben und Zuständigkeiten",
-          "Unbefristete Verträge, keine kurzfristigen Projekte"
-        ]
+        title: "Du bekommst Struktur im Alltag und Sicherheit im Job",
+        summary: "",
+        items: []
       }
     ]
   },
   logistik: {
     headline: "Du packst gerne an",
-    description: "Du sorgst dafür, dass die Ware ankommt. Kommissionieren, scannen, bewegen. Strukturierte Abläufe, klares Team, verlässliche Schichten.",
+    description: "zusammen mit 1.211 Kollegen an zwei Standorten",
     aspects: [
       {
-        title: "Dein Arbeitsalltag",
-        items: [
-          "Kommissionieren und Ware scannen",
-          "Paletten bewegen und sicher lagern",
-          "Prozesse sauber dokumentieren"
-        ]
+        title: "Kommissionierung, Wareneingang oder Warenausgang",
+        summary: "",
+        items: []
       },
       {
-        title: "Team & Zusammenarbeit",
-        items: [
-          "Team unterstützt dich vom ersten Tag an",
-          "Klare Übergaben zwischen Schichten",
-          "Zusammenarbeit auf Augenhöhe"
-        ]
+        title: "Teamgeist ist bei REWE Süd Teil des Arbeitgeberversprechens",
+        summary: "",
+        items: []
       },
       {
-        title: "Planbarkeit & Sicherheit",
-        items: [
-          "Transparente Schichtmodelle von Anfang an",
-          "Sicherheitsbriefing und Einarbeitung",
-          "Strukturierte Prozesse, die dir Orientierung geben"
-        ]
+        title: "Klarer Rahmen durch feste Schichtstruktur",
+        summary: "",
+        items: []
       }
     ]
   },
@@ -79,28 +61,19 @@ const pathContent = {
     description: "Du sorgst dafür, dass im Hintergrund alles funktioniert. Buchhaltung, Personal, Einkauf – strukturierte Abläufe, klares Team, verlässliche Arbeitszeiten.",
     aspects: [
       {
-        title: "Dein Arbeitsalltag",
-        items: [
-          "Buchhaltung & Finanzen verwalten",
-          "Personalwesen & Prozesse gestalten",
-          "Einkauf & Beschaffung organisieren"
-        ]
+        title: "Dein Job ist Organisation und Umsetzung",
+        summary: "",
+        items: []
       },
       {
-        title: "Team & Zusammenarbeit",
-        items: [
-          "Zusammenarbeit mit verschiedenen Abteilungen",
-          "Mentoring durch erfahrene Kolleg:innen",
-          "Strukturierte Prozesse und klare Kommunikation"
-        ]
+        title: "Du arbeitest in Rollen, die sich ergänzen – Sachbearbeitung, Assistenz, Referat und Teamleitung",
+        summary: "",
+        items: []
       },
       {
-        title: "Planbarkeit & Sicherheit",
-        items: [
-          "Feste Arbeitszeiten, die du frühzeitig kennst",
-          "Klare Aufgaben und Zuständigkeiten",
-          "Unbefristete Verträge, langfristige Perspektive"
-        ]
+        title: "Weiterkommen ist vorgesehen: Coaching, Fortbildungen und Aufstiegsmöglichkeiten",
+        summary: "",
+        items: []
       }
     ]
   }
@@ -146,7 +119,7 @@ const PathSelector = () => {
       <div className="container">
         <div className="path-selector-header">
           <h2 id="path-heading" className="path-selector-title">
-            REWE – deinen Traum. Wo steigst du ein?
+            Wo steigst du ein?
           </h2>
           <p className="path-selector-subtitle">
             Wähle deinen Bereich – und sieh sofort: Alltag, Teamgefühl, Planbarkeit, Entwicklung.

@@ -7,11 +7,13 @@ export const careerPathJobs = {
       {
         id: 'markt-ausbildung-1',
         title: 'Verkäufer (m/w/d)',
-        shortDescription: 'Du bist das Gesicht von REWE und sorgst für zufriedene Kunden. Jeden Tag erlebst du neue Begegnungen und lernst dabei kontinuierlich dazu.',
+        shortDescription: 'Kundenberatung und Verkauf stehen im Mittelpunkt. Du führst Beratungs- und Verkaufsgespräche, präsentierst Waren ansprechend und bedienst digitale Kassen- und Marktsysteme.',
         bullets: [
-          'Kundenberatung und freundlicher Service',
-          'Teamarbeit in einem motivierten Umfeld',
-          'Klare Strukturen und geregelte Arbeitszeiten'
+          'Führen von Beratungs- und Verkaufsgesprächen',
+          'Ansprechende Warenpräsentation',
+          'Warenannahme und -lagerung',
+          'Umsetzung von Verkaufsförderungsmaßnahmen',
+          'Bedienung digitaler Kassen- und Marktsysteme'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -19,11 +21,13 @@ export const careerPathJobs = {
       {
         id: 'markt-ausbildung-2',
         title: 'Kaufmann im Einzelhandel (m/w/d)',
-        shortDescription: 'Eine solide Ausbildung, die dir alle Türen öffnet. Du lernst den Einzelhandel von Grund auf kennen und entwickelst dich kontinuierlich weiter.',
+        shortDescription: 'Drei-jährige Ausbildung mit erweiterten Aufgaben im Markt. Du organisierst Waren und den gesamten Markt, setzt Verkaufsförderungsaktionen um und arbeitest mit digitalen Systemen.',
         bullets: [
-          '3-jährige duale Ausbildung',
-          'Abwechslung zwischen Theorie und Praxis',
-          'Gute Übernahmechancen nach der Ausbildung'
+          'Kunden beraten und Verkaufsgespräche führen',
+          'Organisation der Waren und des gesamten Marktes (Bestandsaufnahme, Warenbeschaffung, Personaleinsatzplanung)',
+          'Werbe- und Verkaufsförderungsaktionen passend zu Trends umsetzen',
+          'Digitale Kassensysteme anwenden',
+          'Verkaufsstatistiken ermitteln und auswerten'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -31,11 +35,13 @@ export const careerPathJobs = {
       {
         id: 'markt-ausbildung-3',
         title: 'Kaufmann im Einzelhandel, Feinkost (m/w/d)',
-        shortDescription: 'Spezialisiere dich auf Feinkost und lerne alles über hochwertige Produkte. Eine Ausbildung mit Fokus auf Qualität und Kundenberatung.',
+        shortDescription: 'Spezialisierung auf Frischetheke (Fleisch, Wurst, Käse, Feinkost). Du präsentierst Waren attraktiv, berätst fachkundig und stellst eigene Spezialitäten nach Rezept her.',
         bullets: [
-          '3-jährige duale Ausbildung mit Feinkost-Schwerpunkt',
-          'Spezialisierung auf Premium-Produkte',
-          'Gute Übernahmechancen nach der Ausbildung'
+          'Waren attraktiv in den Frischetheken präsentieren und auszeichnen',
+          'Kunden fachkundig beraten',
+          'Eigene Spezialitäten nach Rezept herstellen',
+          'Mit digitalen Kassen- und Warenwirtschaftssystemen arbeiten (inkl. Statistiken)',
+          'Bestellung, Kontrolle und Lagerung von Feinkostwaren übernehmen'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -43,11 +49,14 @@ export const careerPathJobs = {
       {
         id: 'markt-ausbildung-4',
         title: 'Ausbildung im Abiturientenprogramm zur Führungskraft im Einzelhandel (m/w/d)',
-        shortDescription: 'Ein spezielles Programm für Abiturienten, das dich direkt auf eine Führungsposition vorbereitet. Theorie und Praxis optimal kombiniert.',
+        shortDescription: 'Kombinierte Aus- und Fortbildung (Handelsfachwirt). In drei Jahren werden Verkäufer/Kaufmann-Abschluss und Führungsqualifikation erworben.',
         bullets: [
-          'Spezielles Programm für Abiturienten',
-          'Direkte Vorbereitung auf Führungspositionen',
-          'Kombination aus Ausbildung und Studium'
+          'Kunden beraten und Verkaufsgespräche führen',
+          'Mit digitalen Marktsystemen arbeiten',
+          'Waren beschaffen, lagern und kontrollieren',
+          'Organisation des gesamten Marktes (Personalplanung, Mitarbeiterführung)',
+          'Projekte z.B. zur Kundenbindung oder Qualitätssicherung umsetzen',
+          'Verkaufsstatistiken auswerten sowie Wirtschaftlichkeit prüfen (z.B. Bestandskontrollen)'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -55,11 +64,13 @@ export const careerPathJobs = {
       {
         id: 'markt-ausbildung-5',
         title: 'Duales Bachelor Studium BWL – Studienrichtung Handel',
-        shortDescription: 'Kombiniere Studium und Praxis bei REWE. Du erwirbst einen Bachelor-Abschluss und sammelst gleichzeitig wertvolle Praxiserfahrung.',
+        shortDescription: 'Kombination aus Hochschulstudium und Praxis im Markt. Während der Praxisphasen stehen die Vorbereitung auf Führungsaufgaben und bereichsübergreifende Einsätze im Fokus.',
         bullets: [
-          'Bachelor-Abschluss in BWL mit Handelsschwerpunkt',
-          'Wechsel zwischen Theorie und Praxis',
-          'Gute Übernahmechancen nach dem Studium'
+          'Mitarbeit in verschiedenen Unternehmensbereichen (Markt, Logistik, Verwaltung)',
+          'Vertretungs-Einsätze zur Vorbereitung auf Führungsposition',
+          'Begleitung von Außendienst-Einsätzen (z.B. mit Vertriebsleitung, bei Umbauten/Neueröffnungen)',
+          'Kennenlernen der Schnittstellen zwischen Markt, Verwaltung und Logistik',
+          'Teilnahme an Seminaren (z.B. Systemschulungen, Arbeitsrecht)'
         ],
         workModel: 'Duales Studium',
         entryLevel: 'Ausbildung'
@@ -69,11 +80,13 @@ export const careerPathJobs = {
       {
         id: 'markt-professionals-1',
         title: 'Aushilfe/Minijob (mit Kassiertätigkeit)',
-        shortDescription: 'Flexibel arbeiten und dabei Geld verdienen. Perfekt für Studierende, Berufstätige oder alle, die flexibel sein möchten.',
+        shortDescription: 'Unterstützt stundenweise den Markt, vor allem an der Kasse und im Verkauf. Die Aufgaben entsprechen im Kern denen eines Kassierers/Verkäufers.',
         bullets: [
-          'Flexible Arbeitszeiten',
-          'Kassiertätigkeit und Kundenbetreuung',
-          'Einarbeitung durch erfahrene Kolleg:innen'
+          'Kassieren und korrekte Abrechnung sicherstellen',
+          'Sauberkeit und Ordnung im Kassenbereich gewährleisten',
+          'Waren verräumen und auf Vollständigkeit sowie Qualität prüfen',
+          'Kunden freundlich bedienen und beraten',
+          'Meist flexibel auf 450€-Basis (Minijob)'
         ],
         workModel: 'Minijob / Teilzeit',
         entryLevel: 'Professionals'
@@ -81,11 +94,14 @@ export const careerPathJobs = {
       {
         id: 'markt-professionals-2',
         title: 'Marktmanager/Filialleitung (mit Perspektive zur Selbstständigkeit)',
-        shortDescription: 'Du trägst die Gesamtverantwortung für einen Markt und führst ein großes Team. Mit Perspektive zur Selbstständigkeit.',
+        shortDescription: 'Als Filialleitung trägst du die Gesamtverantwortung für einen Supermarkt. Diese Position bietet auch die Perspektive zur Selbstständigkeit.',
         bullets: [
-          'Strategische Marktführung und -entwicklung',
-          'Führung eines großen Teams',
-          'Perspektive zur Selbstständigkeit'
+          'Umsetzung des REWE-Vertriebskonzepts und Durchführung von Werbe- und Verkaufsaktionen',
+          'Steuerung von Umsatz-, Kosten- und Inventurentwicklung',
+          'Mitarbeiterführung als Vorbild mit wertschätzender Kultur',
+          'Verantwortung für Sortimentsgestaltung und Qualitätsmanagement',
+          'Sicherstellung effizienter Warensteuerung und Einhaltung aller gesetzlichen sowie internen Vorgaben',
+          'Perspektive zur Selbstständigkeit: Möglichkeit, einen eigenen REWE-Markt als Kaufmann/frau zu führen'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
@@ -93,11 +109,13 @@ export const careerPathJobs = {
       {
         id: 'markt-professionals-3',
         title: 'Verkäufer (mit Kassiertätigkeit)',
-        shortDescription: 'Du bist das Gesicht von REWE und sorgst für zufriedene Kunden. An der Kasse und im Verkaufsbereich.',
+        shortDescription: 'Verkaufskraft im Markt mit Schwerpunkt Kasse. Die Aufgaben überschneiden sich mit denen einer Aushilfe an der Kasse.',
         bullets: [
-          'Kassiertätigkeit und Kundenbetreuung',
-          'Teamarbeit in einem motivierten Umfeld',
-          'Klare Strukturen und geregelte Arbeitszeiten'
+          'Kassiervorgänge durchführen und korrekt abrechnen',
+          'Kassenbereich sauber halten',
+          'Waren einräumen und Qualität kontrollieren',
+          'Kunden durch freundliches Auftreten und kompetente Beratung begeistern',
+          'Oft Teilzeit- oder Vollzeitstellen im Verkauf mit Kassenverantwortung'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -105,11 +123,14 @@ export const careerPathJobs = {
       {
         id: 'markt-professionals-4',
         title: 'Frischetheke Metzgerei (Bereichsleiter, Verkäufer)',
-        shortDescription: 'Spezialisiere dich auf die Frischetheke. Ob als Verkäufer oder Bereichsleiter – hier kannst du zeigen, was in dir steckt.',
+        shortDescription: 'Fachverkäufer an der Bedientheke für Fleisch/Wurst/Käse oder Leitung der Bedienabteilung. Hier ist Fachwissen über Lebensmittel gefragt.',
         bullets: [
-          'Spezialisierung auf Frischetheke und Metzgerei',
-          'Kundenberatung auf höchstem Niveau',
-          'Verantwortung für Qualität und Sortiment'
+          'Ansprechende Warenpräsentation und kompetente Beratung an der Theke',
+          'Zubereitung und Veredelung von Fleisch- und Feinkostwaren (Portionieren, Rezepturen umsetzen)',
+          'Herstellung von Spezialitäten nach Rezept',
+          'Umsetzung eigener Ideen zur Verkaufsförderung',
+          'Ständige Kontrolle von Warenpräsenz, Frische und Hygienevorschriften',
+          'Als Bereichsleiter: Führung des Theken-Teams, Verantwortung für Qualität, Kosten- und Umsatzkennzahlen'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -117,11 +138,14 @@ export const careerPathJobs = {
       {
         id: 'markt-professionals-5',
         title: 'Marktmanager Assistent / Stellvertretende Filialleitung',
-        shortDescription: 'Du unterstützt die Marktleitung und übernimmst Verantwortung für verschiedene Bereiche. Eine spannende Herausforderung mit viel Gestaltungsspielraum.',
+        shortDescription: 'Unterstützt den Marktmanager bei allen laufenden Aufgaben und vertritt ihn bei Abwesenheit. Diese Position ist häufig der Schritt zur eigenen Marktleitung.',
         bullets: [
-          'Unterstützung der Marktleitung',
-          'Verantwortung für verschiedene Bereiche',
-          'Weiterbildungsmöglichkeiten inklusive'
+          'Mitverantwortung für Umsetzung des Vertriebskonzepts und entsprechender Werbe-/Verkaufsmaßnahmen',
+          'Mitsteuerung von Umsatz-, Kosten- und Inventurentwicklungen sowie Qualitätsmanagement',
+          'Überwachung der Einhaltung gesetzlicher und betrieblicher Vorgaben im Markt',
+          'Aktive Mitarbeit im Team und Dienstplanerstellung',
+          'Führung des Teams auf Augenhöhe und als erste Ansprechperson',
+          'Sicherstellung einer exzellenten Kundenbetreuung im Markt'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
@@ -129,11 +153,13 @@ export const careerPathJobs = {
       {
         id: 'markt-professionals-6',
         title: 'Mitarbeitende in den Bereichen Getränkemarkt, Convenience, MoPro, Backshop, Imbiss warme Speisen',
-        shortDescription: 'Arbeite in spezialisierten Bereichen wie Getränkemarkt, Convenience, MoPro, Backshop oder Imbiss. Vielfältige Möglichkeiten für jeden Geschmack.',
+        shortDescription: 'In größeren Märkten gibt es spezialisierte Verkaufsmitarbeiter für verschiedene Fachbereiche.',
         bullets: [
-          'Spezialisierung in verschiedenen Bereichen',
-          'Abwechslungsreiche Tätigkeiten',
-          'Teamarbeit in einem motivierten Umfeld'
+          'Getränkemarkt: Warenverräumung und -präsentation, Lagerbestände prüfen, Leergut',
+          'Convenience: Zubereitung verzehrfertiger Speisen (Salate, Snacks, warme Speisen) nach Rezepturen, Qualitätsstandards und Frische sicherstellen',
+          'Mopro (Molkereiprodukte): Fokus auf Frische, Sauberkeit und lückenlose Warenpräsenz in der Kühlwarenabteilung, Kühlkette und Haltbarkeiten prüfen',
+          'Backshop: Präsentation von Brot und Backwaren, Aufbereitung (z.B. Teiglinge aufbacken), Wareneingang kontrollieren',
+          'Imbiss warme Speisen: Zubereitung von Snacks oder warmen Mahlzeiten, Hygienevorgaben einhalten, Kunden direkt bedienen'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -145,11 +171,15 @@ export const careerPathJobs = {
       {
         id: 'logistik-ausbildung-1',
         title: 'Ausbildung zum Berufskraftfahrer (m/w/d)',
-        shortDescription: 'Lerne das Fahren von LKWs und die Logistik von Grund auf. Eine solide Ausbildung mit guten Übernahmechancen.',
+        shortDescription: 'Dreijährige Ausbildung zum Lkw-Fahrer im REWE-Lieferverkehr. Du lernst alle Aufgaben rund um Warentransport kennen.',
         bullets: [
-          '3-jährige duale Ausbildung',
-          'Führerschein Klasse C/CE inklusive',
-          'Gute Übernahmechancen nach der Ausbildung'
+          'Übernahme von Warenlieferungen',
+          'Prüfung der Ladung und Ladungssicherung',
+          'Beladen und Entladen des Lkw sowie Wartung und Pflege des Fahrzeugs',
+          'Kontrolle der Fahrzeug- und Transportpapiere',
+          'Sichere Auslieferung der Waren an Märkte (Nahverkehr) unter Nutzung von Navigationssystemen',
+          'Wirtschaftliche Routen- und Terminplanung im Nahverkehr',
+          'Im Rahmen der Ausbildung kann der Lkw-Führerschein Klasse CE erworben werden'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -157,11 +187,13 @@ export const careerPathJobs = {
       {
         id: 'logistik-ausbildung-2',
         title: 'Ausbildung zum Fachlageristen (m/w/d)',
-        shortDescription: 'Lerne die Logistik von Grund auf kennen. Warenannahme, Kommissionierung, Versand – alles, was zur Logistik gehört.',
+        shortDescription: 'Zweijährige Ausbildung im Lager (mit Option, ein drittes Jahr zur Fachkraft für Lagerlogistik anzuhängen).',
         bullets: [
-          '2-jährige duale Ausbildung',
-          'Abwechslung zwischen Theorie und Praxis',
-          'Gute Übernahmechancen nach der Ausbildung'
+          'Wareneingang prüfen und Waren per EDV-System einlagern',
+          'Waren kommissionieren (Bestellungen zusammenstellen) und den Warenausgang koordinieren',
+          'Einsatz verschiedener digitaler Lagerverwaltungssysteme kennenlernen',
+          'Umgang mit Arbeitsmitteln wie Messgeräten und das Führen von Flurförderfahrzeugen (z.B. Gabelstapler)',
+          'Lagerorganisation betreiben und Qualitätskontrollen durchführen'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -169,11 +201,14 @@ export const careerPathJobs = {
       {
         id: 'logistik-ausbildung-3',
         title: 'Ausbildung zur Fachkraft für Lagerlogistik',
-        shortDescription: 'Eine erweiterte Ausbildung in der Logistik mit mehr Verantwortung und besseren Aufstiegschancen.',
+        shortDescription: 'Dreijährige Ausbildung (vertieft gegenüber Fachlagerist). Die Aufgaben ähneln denen des Fachlageristen, erweitert um planerische Tätigkeiten.',
         bullets: [
-          '3-jährige duale Ausbildung',
-          'Spezialisierung auf Lagerlogistik',
-          'Gute Übernahmechancen nach der Ausbildung'
+          'Wareneingang prüfen und per System einlagern',
+          'Kommissionierung und Warenausgang koordinieren',
+          'Tourenplanung für Auslieferungen und Optimierung logistischer Abläufe',
+          'Ermitteln und Auswerten von Lagerkennzahlen (Statistiken über Warenfluss)',
+          'Bedienung von Lagergeräten inkl. Flurförderfahrzeugen',
+          'Logistische Prozesse analysieren und verbessern'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -181,11 +216,13 @@ export const careerPathJobs = {
       {
         id: 'logistik-ausbildung-4',
         title: 'Duales Bachelor Studium BWL – Studienrichtung Logistik',
-        shortDescription: 'Kombiniere Studium und Praxis bei REWE. Du erwirbst einen Bachelor-Abschluss und sammelst gleichzeitig wertvolle Praxiserfahrung in der Logistik.',
+        shortDescription: 'Verzahnt Theorie an der Hochschule mit Praxis in REWE-Lägern. Im Praxisanteil übernimmst du verantwortungsvolle Aufgaben, um dich auf Führungsrollen in der Logistik vorzubereiten.',
         bullets: [
-          'Bachelor-Abschluss in BWL mit Logistik-Schwerpunkt',
-          'Wechsel zwischen Theorie und Praxis',
-          'Gute Übernahmechancen nach dem Studium'
+          'Qualitätskontrollen im Wareneingang durchführen',
+          'Kommissionierabläufe eigenständig steuern',
+          'Transportketten koordinieren und überwachen (inkl. Tourenplanungssysteme bedienen)',
+          'Mitarbeit in Projekten der Lager-/Betriebsleitung',
+          'Analyse der logistischen Prozesse am Standort'
         ],
         workModel: 'Duales Studium',
         entryLevel: 'Ausbildung'
@@ -193,11 +230,14 @@ export const careerPathJobs = {
       {
         id: 'logistik-ausbildung-5',
         title: 'Duales Studium Wirtschaftsingenieurwesen – Studienrichtung Automatisierungstechnik',
-        shortDescription: 'Kombiniere Ingenieurwesen und Logistik. Du lernst, wie man Logistikprozesse automatisiert und optimiert.',
+        shortDescription: 'Kombination aus Ingenieurwissenschaften mit Praxis in der REWE-Logistik, insbesondere in hochautomatisierten Lägern.',
         bullets: [
-          'Bachelor-Abschluss in Wirtschaftsingenieurwesen',
-          'Spezialisierung auf Automatisierungstechnik',
-          'Gute Übernahmechancen nach dem Studium'
+          'Technische und wirtschaftliche Problemstellungen fachübergreifend lösen',
+          'Ingenieurwissenschaftliche Fachkompetenzen aufbauen',
+          'Technische Prozesse im Lager/Automatisierung selbstständig erschließen',
+          'In laufenden Automatisierungs-Projekten mitarbeiten',
+          'Grundlagen in Projekt-, Personal- und Unternehmensmanagement vertiefen',
+          'Praxisphasen an modernen Logistikstandorten mit automatisierter Kommissionierung'
         ],
         workModel: 'Duales Studium',
         entryLevel: 'Ausbildung'
@@ -207,11 +247,13 @@ export const careerPathJobs = {
       {
         id: 'logistik-professionals-1',
         title: 'Kommissionierer / Lagermitarbeiter',
-        shortDescription: 'Du sorgst dafür, dass die Waren genau da sind, wo sie gebraucht werden. Eine abwechslungsreiche Tätigkeit mit klaren Strukturen.',
+        shortDescription: 'Lagerpersonal, das Kundenaufträge (Marktbestellungen) im Verteilzentrum zusammenstellt. Diese Mitarbeiter sind das Rückgrat der Logistik.',
         bullets: [
-          'Kommissionierung und Ware scannen',
-          'Arbeit im Team mit festen Routinen',
-          'Moderne Technik und klare Prozesse'
+          'Auftragslisten (Picklisten) erhalten und mittels Flurförderfahrzeug die angeforderten Waren aus dem Lager entnehmen',
+          'Kommissionieren per Sprachsteuerung (Pick-by-Voice) oder Touchscreen-Gerät (Pick-by-Touch)',
+          'Waren auf Paletten sorgfältig und transportsicher packen',
+          'Auf Ordnung im Lager achten und Transportsicherheit gewährleisten (z.B. Ladung sichern)',
+          'Sorgen dafür, dass die REWE-Märkte vollständig und pünktlich beliefert werden'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -219,11 +261,13 @@ export const careerPathJobs = {
       {
         id: 'logistik-professionals-2',
         title: 'Lagerassistenten',
-        shortDescription: 'Du unterstützt das Logistikteam und sorgst für reibungslose Abläufe. Eine Tätigkeit, die Genauigkeit und Teamgeist erfordert.',
+        shortDescription: 'Unterstützt die Lagerleitung oder bestimmte Lagerprozesse administrativ. Typische Aufgaben umfassen Kommissionierung unterstützen, Bestandsdaten verwalten und Inventuren mit vorbereiten.',
         bullets: [
-          'Unterstützung bei Warenannahme und -kontrolle',
-          'Arbeit im Team mit festen Routinen',
-          'Klare Strukturen und geregelte Arbeitszeiten'
+          'Kommissionierung unterstützen',
+          'Bestandsdaten verwalten',
+          'Inventuren mit vorbereiten',
+          'Als Schichtkoordinator fungieren',
+          'Administrative Unterstützung der Lagerleitung'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -231,23 +275,29 @@ export const careerPathJobs = {
       {
         id: 'logistik-professionals-3',
         title: 'Teamleiter',
-        shortDescription: 'Du übernimmst Verantwortung für ein Team und sorgst dafür, dass alles reibungslos läuft. Eine spannende Herausforderung mit viel Gestaltungsspielraum.',
+        shortDescription: 'Führungsposition im Lager: Du verantwortest einen Lagerbereich oder eine Schicht (z.B. Nachtschicht).',
         bullets: [
-          'Führung eines motivierten Teams',
-          'Personaleinsatzplanung und -entwicklung',
-          'Verantwortung für Logistikprozesse'
+          'Operative Prozesse im Lagerabschnitt koordinieren und optimieren (z.B. im Kommissionierbereich)',
+          'Abstimmung mit anderen Fachabteilungen (etwa Wareneingang, Transport)',
+          'Das eigene Team fachlich und disziplinarisch führen (inkl. Einsatzplanung)',
+          'Als Vorbild vorangehen und für eine vertrauensvolle, auf Augenhöhe basierende Führungskultur sorgen',
+          'Einhalten von Zielvorgaben (Planzahlen) sicherstellen',
+          'Gewährleisten, dass betriebliche sowie gesetzliche Vorschriften (Arbeitssicherheit, Hygiene etc.) im Lager eingehalten werden'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
       },
       {
         id: 'logistik-professionals-4',
-        title: 'Mitarbeiter Wareneingang/Warenausgang',
-        shortDescription: 'Du sorgst für präzise Warenannahme und -ausgabe. Eine Tätigkeit, die Konzentration und Teamgeist erfordert.',
+        title: 'Mitarbeiter Wareneingang / Warenausgang',
+        shortDescription: 'Das Logistikpersonal im Wareneingang prüft und verbucht eingehende Warenlieferungen. Im Warenausgang stellen Mitarbeiter sicher, dass ausgehende Lieferungen vollständig und korrekt zusammengestellt sind.',
         bullets: [
-          'Warenannahme und -kontrolle',
-          'Qualitätskontrolle und Dokumentation',
-          'Arbeit im Team mit festen Routinen'
+          'Wareneingang: Prüfung und Verbuchung eingehender Warenlieferungen',
+          'Ware annehmen, Menge und Qualität kontrollieren (z.B. MHD, Unversehrtheit der Paletten)',
+          'Waren am richtigen Platz einlagern',
+          'Warenausgang: Sicherstellen, dass ausgehende Lieferungen vollständig und korrekt zusammengestellt sind',
+          'Kommissionierte Paletten auf Lkw verladen',
+          'Begleitpapiere prüfen und auf ordnungsgemäße Ladungssicherung achten'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -255,11 +305,13 @@ export const careerPathJobs = {
       {
         id: 'logistik-professionals-5',
         title: 'Berufskraftfahrer',
-        shortDescription: 'Du transportierst Waren sicher und zuverlässig von A nach B. Eine verantwortungsvolle Tätigkeit mit klaren Routen.',
+        shortDescription: 'Festangestellte LKW-Fahrer im REWE-Fuhrpark übernehmen die Belieferung der Supermärkte. Diese Fahrer sind regional unterwegs und wichtiger Bestandteil der gekühlten und trockenen Warenversorgung der Filialen.',
         bullets: [
-          'Transport von Waren',
-          'Sicherheit und Zuverlässigkeit',
-          'Klare Routen und Arbeitszeiten'
+          'Pünktliche Anlieferung der REWE-Märkte im Nahverkehr',
+          'Sicheres Be- und Entladen des Lkw verantworten',
+          'Retourwaren aus den Märkten wieder mit zurücknehmen',
+          'Transportierte Waren per Handscanner erfassen',
+          'Alle gesetzlichen Vorschriften (Lenkzeiten, Verkehrssicherheit etc.) strikt einhalten'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
@@ -267,11 +319,13 @@ export const careerPathJobs = {
       {
         id: 'logistik-professionals-6',
         title: 'Werkstudenten Kommissionierung / Lagermitarbeiter',
-        shortDescription: 'Flexibel arbeiten während des Studiums. Perfekt für Studierende, die Praxiserfahrung sammeln möchten.',
+        shortDescription: 'Studierende, die neben dem Studium im REWE-Lager jobben, unterstützen in Teilzeit die Lagerprozesse.',
         bullets: [
-          'Flexible Arbeitszeiten',
-          'Praxiserfahrung während des Studiums',
-          'Einarbeitung durch erfahrene Kolleg:innen'
+          'Waren per Scanner picken',
+          'Packen und allgemeine Lagerarbeiten',
+          'Geringere Wochenstundenzahl',
+          'Befristung während des Studiums',
+          'Tätigkeiten entsprechen meist denen der regulären Kommissionierer bzw. Lagermitarbeiter'
         ],
         workModel: 'Werkstudent',
         entryLevel: 'Professionals'
@@ -283,11 +337,14 @@ export const careerPathJobs = {
       {
         id: 'verwaltung-ausbildung-1',
         title: 'Kaufmann für Büromanagement (m/w/d)',
-        shortDescription: 'Eine solide kaufmännische Ausbildung, die dir alle Türen öffnet. Du lernst die Verwaltung von Grund auf kennen und entwickelst dich kontinuierlich weiter.',
+        shortDescription: 'Klassische Verwaltungsausbildung (3 Jahre) in einer Regions- oder Konzernzentrale. Die Auszubildenden durchlaufen verschiedene administrative Abteilungen.',
         bullets: [
-          '3-jährige duale Ausbildung',
-          'Abwechslung zwischen Theorie und Praxis',
-          'Gute Übernahmechancen nach der Ausbildung'
+          'Mitarbeit in unterschiedlichen Unternehmensbereichen wie Personal, Rechnungswesen, Einkauf, Vertrieb, Marketing',
+          'Kommunikation mit internen und externen Ansprechpartnern (z.B. andere Abteilungen, Lieferanten) und Teilnahme an Besprechungen',
+          'Umgang mit digitalen Büro- und Informationssystemen',
+          'Aufbereitung und Verarbeitung von Daten und Informationen (z.B. Statistiken, Berichte)',
+          'Planung, Organisation und Durchführung kleiner Projekte und Büroabläufe',
+          'Breites organisatorisches Know-how erlangen'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -295,11 +352,15 @@ export const careerPathJobs = {
       {
         id: 'verwaltung-ausbildung-2',
         title: 'Kaufmann für Immobilienmanagement (m/w/d)',
-        shortDescription: 'Spezialisiere dich auf Immobilienmanagement. Du lernst, wie man Immobilien verwaltet und optimiert.',
+        shortDescription: 'Diese Ausbildung vermittelt Kenntnisse im Immobilienwesen, speziell bei REWE, wo es um Märkte und Logistikimmobilien geht.',
         bullets: [
-          '3-jährige duale Ausbildung',
-          'Spezialisierung auf Immobilienmanagement',
-          'Gute Übernahmechancen nach der Ausbildung'
+          'Verschiedene relevante Abteilungen kennenlernen: kaufmännisches Immobilienmanagement, Expansion (Standortentwicklung), Bauabteilung und Vertrieb',
+          'Verwaltung und Vermietung von Immobilien, z.B. Mieterbetreuung, Bearbeitung von Betriebskostenabrechnungen und Wirtschaftsplänen',
+          'Mitwirkung beim An- und Verkauf von Grundstücken und Gebäuden',
+          'Teilnahme an Vertrags- und Verhandlungsgesprächen (z.B. Vergabe von Aufträgen an externe Dienstleister)',
+          'Erste Erfahrungen in der Projektentwicklung von neuen Einzelhandelsstandorten sammeln',
+          'Ansprechpartner für Mieter bei Fragen rund um die Immobilie sein',
+          'Dauer i.d.R. 2–3 Jahre, oft Abitur/Fachabitur erforderlich'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -307,11 +368,13 @@ export const careerPathJobs = {
       {
         id: 'verwaltung-ausbildung-3',
         title: 'Kaufmann für Marketingkommunikation (m/w/d)',
-        shortDescription: 'Lerne Marketing und Kommunikation von Grund auf kennen. Eine Ausbildung mit Fokus auf Kreativität und Strategie.',
+        shortDescription: 'Ausbildung im Marketing, die es bei REWE (ggf. in Zentralen) gibt. Du lernst Marketingkampagnen zu konzipieren und umzusetzen.',
         bullets: [
-          '3-jährige duale Ausbildung',
-          'Spezialisierung auf Marketing und Kommunikation',
-          'Gute Übernahmechancen nach der Ausbildung'
+          'Marketingkampagnen konzipieren und umsetzen',
+          'Media- und Werbemittel planen',
+          'Marktforschungsergebnisse auswerten',
+          'Mit Agenturen sowie internen Abteilungen (z.B. Category Management, Vertrieb) zusammenarbeiten',
+          'Einsatzbereiche könnten in der Werbung, Online-Marketing oder Öffentlichkeitsarbeit der REWE Group liegen'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -321,11 +384,14 @@ export const careerPathJobs = {
       {
         id: 'verwaltung-professionals-1',
         title: 'Sachbearbeiter',
-        shortDescription: 'Du bearbeitest verschiedene Verwaltungsaufgaben und sorgst für reibungslose Abläufe. Eine Tätigkeit, die Genauigkeit und Teamgeist erfordert.',
+        shortDescription: 'Kaufmännische Angestellte in bestimmten Fachbereichen (z.B. Category Management, Controlling, Personalverwaltung etc.).',
         bullets: [
-          'Bearbeitung von Verwaltungsvorgängen',
-          'Kundenbetreuung und Kommunikation',
-          'Moderne Systeme und klare Prozesse'
+          'Unterstützung durch Büro- und Verwaltungsarbeiten, z.B. im Category Management oder Controlling',
+          'Kommunikationsschnittstelle zwischen den Märkten und dem Außendienst',
+          'Daten aufbereiten, Formulare und Berichte erstellen',
+          'Ablage und Korrespondenz erledigen',
+          'Anfragen aus Märkten aufnehmen und an die zuständigen Fachbetreuer weitergeben',
+          'Reibungslosen administrativen Ablauf im Hintergrund sicherstellen'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -333,11 +399,15 @@ export const careerPathJobs = {
       {
         id: 'verwaltung-professionals-2',
         title: 'Assistenzen',
-        shortDescription: 'Du unterstützt verschiedene Abteilungen und sorgst für reibungslose Abläufe. Eine abwechslungsreiche Tätigkeit mit klaren Strukturen.',
+        shortDescription: 'Team- oder Geschäftsführungsassistenten in den Zentralen. Sie organisieren Termine, Meetings und Reisen und unterstützen die Führungskräfte in administrativen und organisatorischen Belangen.',
         bullets: [
-          'Unterstützung verschiedener Abteilungen',
-          'Arbeit im Team mit festen Routinen',
-          'Klare Strukturen und geregelte Arbeitszeiten'
+          'Termine, Meetings und Reisen organisieren',
+          'Protokoll führen',
+          'Führungskräfte in administrativen und organisatorischen Belangen unterstützen',
+          'Kalender koordinieren',
+          'Präsentationen vorbereiten',
+          'Kommunikation filtern',
+          'Entlastung des Managements'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -345,11 +415,14 @@ export const careerPathJobs = {
       {
         id: 'verwaltung-professionals-3',
         title: 'Referenten',
-        shortDescription: 'Du übernimmst spezialisierte Aufgaben und sorgst für reibungslose Abläufe. Expertise, die geschätzt wird.',
+        shortDescription: 'Spezialisierte Fachkräfte in Stabsstellen (z.B. Marketing-Referent, Personalreferent, Rechtsreferent). Sie nehmen Expertenrollen ein.',
         bullets: [
-          'Spezialisierung in einem Fachbereich',
-          'Koordination von Prozessen',
-          'Weiterbildungsmöglichkeiten inklusive'
+          'Personalreferent: Betreuung und Beratung von Führungskräften in Personalthemen',
+          'Marketingreferent: Planung von Marketingaktionen',
+          'Rechtsreferent: Prüfung von Verträgen und Compliance',
+          'Expertenrolle in der jeweiligen Fachabteilung',
+          'Meist einschlägige Berufserfahrung erforderlich',
+          'Aufgaben variieren je nach Abteilung'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
@@ -357,11 +430,14 @@ export const careerPathJobs = {
       {
         id: 'verwaltung-professionals-4',
         title: 'Teamleiter',
-        shortDescription: 'Du übernimmst Verantwortung für ein Team und sorgst dafür, dass alles reibungslos läuft. Eine spannende Herausforderung mit viel Gestaltungsspielraum.',
+        shortDescription: 'In der Verwaltung übernehmen Teamleiter die Führung kleinerer Teams in Fachabteilungen (etwa im Einkauf, in der IT, im Controlling etc.).',
         bullets: [
-          'Führung eines motivierten Teams',
-          'Personaleinsatzplanung und -entwicklung',
-          'Verantwortung für Verwaltungsprozesse'
+          'Operative Aufgaben des Teams koordinieren und die Zielerreichung sicherstellen',
+          'Mitarbeiter fachlich und disziplinarisch führen',
+          'Arbeitsabläufe optimieren',
+          'Als Bindeglied zur Abteilungsleitung dienen',
+          'Konkrete Aufgaben hängen vom Bereich ab (z.B. Teamleiter Controlling: Finanzplanung, Teamleiter IT: Steuerung von Entwickler-Teams)',
+          'Führung und Organisation stehen immer im Vordergrund'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
