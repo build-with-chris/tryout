@@ -37,7 +37,7 @@ const pathContent = {
   },
   logistik: {
     headline: "Du packst gerne an",
-    description: "zusammen mit 1.211 Kollegen an zwei Standorten",
+    description: "zusammen mit 1.211 Kollegen an zwei Standorten in Buttenheim und Eitting",
     aspects: [
       {
         title: "Kommissionierung, Wareneingang oder Warenausgang",
