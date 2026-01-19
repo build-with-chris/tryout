@@ -84,11 +84,69 @@ const phases = [
   },
   { 
     id: 'professionals', 
-    title: 'Professionals', 
+    title: 'Direkteinstieg', 
     microcopy: 'Erfahrung einbringen, weiterkommen.',
     icon: '2' 
   }
 ];
+
+// Funktion zur Generierung des Job-Suchlinks basierend auf Job-Titel
+const getJobSearchLink = (jobTitle) => {
+  // Spezielle Mappings für bessere Suchergebnisse (in Reihenfolge der Spezifität)
+  const searchTermMap = [
+    { pattern: /Kaufmann im Einzelhandel, Feinkost/i, term: 'frischetheke' },
+    { pattern: /Frischetheke Metzgerei/i, term: 'frischetheke' },
+    { pattern: /Ausbildung im Abiturientenprogramm/i, term: 'abiturientenprogramm' },
+    { pattern: /Duales Bachelor Studium BWL.*Handel/i, term: 'duales studium handel' },
+    { pattern: /Duales Bachelor.*Logistik/i, term: 'duales studium logistik' },
+    { pattern: /Duales Studium Wirtschaftsingenieurwesen/i, term: 'wirtschaftsingenieurwesen' },
+    { pattern: /Marktmanager.*Filialleitung/i, term: 'marktmanager' },
+    { pattern: /Marktmanager Assistent/i, term: 'marktmanager assistent' },
+    { pattern: /Aushilfe.*Minijob/i, term: 'aushilfe' },
+    { pattern: /Mitarbeitende in speziellen Abteilungen/i, term: 'getränkemarkt' },
+    { pattern: /Ausbildung zum Berufskraftfahrer/i, term: 'berufskraftfahrer' },
+    { pattern: /Ausbildung zum Fachlageristen/i, term: 'fachlagerist' },
+    { pattern: /Ausbildung zur Fachkraft für Lagerlogistik/i, term: 'fachkraft lagerlogistik' },
+    { pattern: /Kaufleute für Groß- und Außenhandelsmanagement/i, term: 'großhandel' },
+    { pattern: /Kommissionierer.*Lagermitarbeiter/i, term: 'kommissionierer' },
+    { pattern: /Lagerassistenten/i, term: 'lagerassistent' },
+    { pattern: /Teamleiter.*Zentrale/i, term: 'teamleiter verwaltung' },
+    { pattern: /Teamleiter/i, term: 'teamleiter logistik' },
+    { pattern: /Mitarbeiter Wareneingang.*Warenausgang/i, term: 'wareneingang' },
+    { pattern: /Berufskraftfahrer/i, term: 'berufskraftfahrer' },
+    { pattern: /Werkstudenten.*Kommissionierung/i, term: 'werkstudent logistik' },
+    { pattern: /Kaufmann für Büromanagement/i, term: 'büromanagement' },
+    { pattern: /Kaufmann für Immobilienmanagement/i, term: 'immobilien' },
+    { pattern: /Kaufmann für Marketingkommunikation/i, term: 'marketing' },
+    { pattern: /Kaufmann im Einzelhandel/i, term: 'kaufmann einzelhandel' },
+    { pattern: /Verkäufer/i, term: 'verkäufer' },
+    { pattern: /Sachbearbeiter/i, term: 'sachbearbeiter' },
+    { pattern: /Assistenzen/i, term: 'assistenz' },
+    { pattern: /Referenten/i, term: 'referenten' }
+  ];
+  
+  // Finde passendes Mapping
+  let searchTerm = null;
+  for (const mapping of searchTermMap) {
+    if (mapping.pattern.test(jobTitle)) {
+      searchTerm = mapping.term;
+      break;
+    }
+  }
+  
+  // Fallback: Nutze den ersten Teil des Titels (ohne Klammern)
+  if (!searchTerm) {
+    searchTerm = jobTitle
+      .replace(/\s*\([^)]*\)/g, '') // Entferne alles in Klammern
+      .trim()
+      .split(' ')[0]
+      .toLowerCase();
+  }
+  
+  // URL-encode den Suchbegriff
+  const encodedTerm = encodeURIComponent(searchTerm);
+  return `https://karriere.rewe.de/jobs/suche?term=${encodedTerm}`;
+};
 
 const CareerPathJobs = ({
   activePath, // 'markt', 'logistik' oder 'verwaltung' - kommt von PathSelector
@@ -150,10 +208,21 @@ const CareerPathJobs = ({
   // Display all jobs
   const displayedJobs = currentJobs;
 
+  // Dynamische Überschrift basierend auf dem aktiven Bereich
+  const getHeading = () => {
+    const headings = {
+      markt: 'Der Markt wartet auf dich',
+      logistik: 'Die Logistik wartet auf dich',
+      verwaltung: 'Die Zentrale wartet auf dich',
+      frischetheke: 'Die Frischetheke wartet auf dich'
+    };
+    return headings[activePath] || 'Diese Berufe erwarten dich.';
+  };
+
   return (
     <div className={cn("career-path-jobs", className)}>
       {/* Überschrift über der Timeline */}
-      <h2 className="career-path-jobs-heading">Diese Berufe erwarten dich.</h2>
+      <h2 className="career-path-jobs-heading">{getHeading()}</h2>
       
       {/* Phasen-Navigation - Neutrale Karriere-Stufen */}
       <div className="career-path-jobs-phases">
@@ -284,6 +353,16 @@ const CareerPathJobs = ({
                                 </li>
                               ))}
                             </ul>
+                            <div className="career-path-jobs-item-cta">
+                              <a
+                                href={getJobSearchLink(job.title)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="career-path-jobs-item-cta-link"
+                              >
+                                Jetzt offene Stellen anschauen
+                              </a>
+                            </div>
                           </div>
                         </motion.div>
                       )}

@@ -33,20 +33,6 @@ export const careerPathJobs = {
         entryLevel: 'Ausbildung'
       },
       {
-        id: 'markt-ausbildung-3',
-        title: 'Kaufmann im Einzelhandel, Feinkost (m/w/d)',
-        shortDescription: 'Spezialisierung auf Frischetheke (Fleisch, Wurst, Käse, Feinkost). Du präsentierst Waren attraktiv, berätst fachkundig und stellst eigene Spezialitäten nach Rezept her.',
-        bullets: [
-          'Waren attraktiv in den Frischetheken präsentieren und auszeichnen',
-          'Kunden fachkundig beraten',
-          'Eigene Spezialitäten nach Rezept herstellen',
-          'Mit digitalen Kassen- und Warenwirtschaftssystemen arbeiten (inkl. Statistiken)',
-          'Bestellung, Kontrolle und Lagerung von Feinkostwaren übernehmen'
-        ],
-        workModel: 'Ausbildung',
-        entryLevel: 'Ausbildung'
-      },
-      {
         id: 'markt-ausbildung-4',
         title: 'Ausbildung im Abiturientenprogramm zur Führungskraft im Einzelhandel (m/w/d)',
         shortDescription: 'Kombinierte Aus- und Fortbildung (Handelsfachwirt). In drei Jahren werden Verkäufer/Kaufmann-Abschluss und Führungsqualifikation erworben.',
@@ -116,21 +102,6 @@ export const careerPathJobs = {
           'Waren einräumen und Qualität kontrollieren',
           'Kunden durch freundliches Auftreten und kompetente Beratung begeistern',
           'Oft Teilzeit- oder Vollzeitstellen im Verkauf mit Kassenverantwortung'
-        ],
-        workModel: 'Vollzeit / Teilzeit',
-        entryLevel: 'Professionals'
-      },
-      {
-        id: 'markt-professionals-4',
-        title: 'Frischetheke Metzgerei (Bereichsleiter, Verkäufer)',
-        shortDescription: 'Fachverkäufer an der Bedientheke für Fleisch/Wurst/Käse oder Leitung der Bedienabteilung. Hier ist Fachwissen über Lebensmittel gefragt.',
-        bullets: [
-          'Ansprechende Warenpräsentation und kompetente Beratung an der Theke',
-          'Zubereitung und Veredelung von Fleisch- und Feinkostwaren (Portionieren, Rezepturen umsetzen)',
-          'Herstellung von Spezialitäten nach Rezept',
-          'Umsetzung eigener Ideen zur Verkaufsförderung',
-          'Ständige Kontrolle von Warenpräsenz, Frische und Hygienevorschriften',
-          'Als Bereichsleiter: Führung des Theken-Teams, Verantwortung für Qualität, Kosten- und Umsatzkennzahlen'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -438,6 +409,57 @@ export const careerPathJobs = {
           'Als Bindeglied zur Abteilungsleitung dienen',
           'Konkrete Aufgaben hängen vom Bereich ab (z.B. Teamleiter Controlling: Finanzplanung, Teamleiter IT: Steuerung von Entwickler-Teams)',
           'Führung und Organisation stehen immer im Vordergrund'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Professionals'
+      }
+    ]
+  },
+  frischetheke: {
+    ausbildung: [
+      {
+        id: 'frischetheke-ausbildung-1',
+        title: 'Kaufmann im Einzelhandel, Feinkost (m/w/d)',
+        shortDescription: 'Spezialisierung auf Frischetheke (Fleisch, Wurst, Käse, Feinkost). Du präsentierst Waren attraktiv, berätst fachkundig und stellst eigene Spezialitäten nach Rezept her.',
+        bullets: [
+          'Waren attraktiv in den Frischetheken präsentieren und auszeichnen',
+          'Kunden fachkundig beraten',
+          'Eigene Spezialitäten nach Rezept herstellen',
+          'Mit digitalen Kassen- und Warenwirtschaftssystemen arbeiten (inkl. Statistiken)',
+          'Bestellung, Kontrolle und Lagerung von Feinkostwaren übernehmen'
+        ],
+        workModel: 'Ausbildung',
+        entryLevel: 'Ausbildung'
+      }
+    ],
+    professionals: [
+      {
+        id: 'frischetheke-professionals-1',
+        title: 'Verkäufer in der Frischetheke (Metzgerei) (m/w/d)',
+        shortDescription: 'Fachverkäufer an der Bedientheke für Fleisch/Wurst/Käse. Hier ist Fachwissen über Lebensmittel gefragt.',
+        bullets: [
+          'Ansprechende Warenpräsentation und kompetente Beratung an der Theke',
+          'Zubereitung und Veredelung von Fleisch- und Feinkostwaren (Portionieren, Rezepturen umsetzen)',
+          'Herstellung von Spezialitäten nach Rezept',
+          'Umsetzung eigener Ideen zur Verkaufsförderung',
+          'Ständige Kontrolle von Warenpräsenz, Frische und Hygienevorschriften'
+        ],
+        workModel: 'Vollzeit / Teilzeit',
+        entryLevel: 'Professionals'
+      },
+      {
+        id: 'frischetheke-professionals-2',
+        title: 'Bereichsleiter Frischetheke (Metzgerei) (m/w/d)',
+        shortDescription: 'Leitung der Bedienabteilung. Du führst das Theken-Team und trägst Verantwortung für Qualität der Produkte und Abläufe an der Theke.',
+        bullets: [
+          'Führung des Theken-Teams und Verantwortung für Qualität der Produkte und Abläufe an der Theke',
+          'Umsetzung der nationalen Vertriebskonzepte',
+          'Kosten- und Umsatzkennzahlen sowie Inventuren und Warenfluss im Griff',
+          'Entwicklung von Maßnahmen, um Kunden für das Sortiment zu begeistern',
+          'Schulung von Mitarbeitern und Vorbild in wertschätzender Führung',
+          'Gewährleistung korrekter Preisauszeichnung und Sortimentspflege',
+          'Strenge Einhaltung von Hygienevorschriften',
+          'Serviceorientierte Kundenberatung'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'

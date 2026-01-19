@@ -7,7 +7,7 @@ const Feature297 = ({
   onItemClick = () => {}
 }) => {
   return (
-    <div className={cn("grid gap-4 md:grid-cols-3", className)}>
+    <div className={cn("grid gap-4 md:grid-cols-4", className)}>
       {items.map((item, index) => {
         const isActive = activeItem === item.id;
         return (

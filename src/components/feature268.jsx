@@ -19,8 +19,8 @@ const questions = [
   },
   {
     id: 'quereinsteiger',
-    question: 'Kann ich als Quereinsteiger starten?',
-    answer: 'Ja. Viele starten ohne Vorerfahrung und wachsen bei uns Schritt für Schritt rein.'
+    question: 'Kann ich aus einem anderen Berufsfeld zu euch wechseln?',
+    answer: 'Ja. Auch ohne passende Vorerfahrung kannst du bei uns starten – mit Einarbeitung und Support.'
   },
   {
     id: 'arbeitsmodelle',

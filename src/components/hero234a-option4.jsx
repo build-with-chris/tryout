@@ -163,8 +163,15 @@ const Hero234aOption4 = ({
             <Button 
               size="lg" 
               className="bg-white text-[#CC071E] hover:bg-[#F5E5E7] hover:text-[#9E0012] font-semibold"
+              asChild
             >
-              Jetzt bewerben
+              <a 
+                href="https://karriere.rewe.de/jobs/suche" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Jetzt bewerben
+              </a>
             </Button>
           </motion.div>
         </motion.div>

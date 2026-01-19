@@ -5,7 +5,6 @@
 .career-path-jobs {
   margin-top: var(--spacing-3xl);
   padding-top: var(--spacing-3xl);
-  border-top: 2px solid var(--color-neutral-300);
 }
 
 .career-path-jobs-heading {
@@ -303,6 +302,28 @@
   font-weight: var(--font-weight-bold);
   flex-shrink: 0;
   margin-top: 0.1em;
+}
+
+.career-path-jobs-item-cta {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-neutral-200);
+}
+
+.career-path-jobs-item-cta-link {
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.career-path-jobs-item-cta-link:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary-hover);
+  text-underline-offset: 2px;
 }
 
 .career-path-jobs-empty {

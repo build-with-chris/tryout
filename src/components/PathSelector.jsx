@@ -15,7 +15,7 @@ const imageAltTexts = {
 // Inhalte für Markt, Logistik und Verwaltung - aus dem Arbeitsalltag
 const pathContent = {
   markt: {
-    headline: "Markt und Frischetheke",
+    headline: "Der Markt wartet auf dich",
     description: "Du bist da, wo es passiert. Kunden beraten, Ware auffüllen, im Team zusammenarbeiten. Jeder Tag ist anders, aber die Struktur gibt dir Sicherheit.",
     aspects: [
       {
@@ -36,7 +36,7 @@ const pathContent = {
     ]
   },
   logistik: {
-    headline: "Du packst gerne an",
+    headline: "Die Logistik wartet auf dich",
     description: "zusammen mit 1.211 Kollegen an zwei Standorten in Buttenheim und Eitting",
     aspects: [
       {
@@ -57,7 +57,7 @@ const pathContent = {
     ]
   },
   verwaltung: {
-    headline: "Blick hinter die Kulissen",
+    headline: "Die Zentrale wartet auf dich",
     description: "Du sorgst dafür, dass im Hintergrund alles funktioniert. Buchhaltung, Personal, Einkauf – strukturierte Abläufe, klares Team, verlässliche Arbeitszeiten.",
     aspects: [
       {
@@ -72,6 +72,27 @@ const pathContent = {
       },
       {
         title: "Weiterkommen ist vorgesehen: Coaching, Fortbildungen und Aufstiegsmöglichkeiten",
+        summary: "",
+        items: []
+      }
+    ]
+  },
+  frischetheke: {
+    headline: "Die Frischetheke wartet auf dich",
+    description: "Du bist Spezialist:in für Frische. An der Theke berätst du Kunden, präsentierst Waren ansprechend und sorgst für Qualität.",
+    aspects: [
+      {
+        title: "Du bist Spezialist:in für Frischeprodukte",
+        summary: "",
+        items: []
+      },
+      {
+        title: "Kundenberatung und Warenpräsentation stehen im Mittelpunkt",
+        summary: "",
+        items: []
+      },
+      {
+        title: "Du arbeitest mit hochwertigen Produkten und sorgst für Qualität",
         summary: "",
         items: []
       }
@@ -132,21 +153,27 @@ const PathSelector = () => {
             items={[
               {
                 id: 'markt',
-                title: 'Ich will in den Vertrieb',
+                title: 'Komm in den Markt',
                 imageSrc: '/MarktLogistikVerwaltgung/Markt.jpg',
                 imageAlt: imageAltTexts.markt,
               },
               {
                 id: 'logistik',
-                title: 'Ich will in die Logistik',
+                title: 'Komm in die Logistik',
                 imageSrc: '/MarktLogistikVerwaltgung/Logistik.jpg',
                 imageAlt: imageAltTexts.logistik,
               },
               {
                 id: 'verwaltung',
-                title: 'Ich will in die Verwaltung',
+                title: 'Komm in die Zentrale',
                 imageSrc: '/MarktLogistikVerwaltgung/Verwaltung.jpg',
                 imageAlt: imageAltTexts.verwaltung,
+              },
+              {
+                id: 'frischetheke',
+                title: 'Komm an die Frischetheke',
+                imageSrc: '/Markt/rewe_kolbermoor_foto-craft_3192.jpg',
+                imageAlt: 'REWE Frischetheke - Frische Produkte und Beratung',
               },
             ]}
             activeItem={activePath}
@@ -167,8 +194,8 @@ const PathSelector = () => {
             {/* Feature217b für Content-Darstellung */}
             <Feature217b
               badge=""
-              headline={currentContent?.headline}
-              description={currentContent?.description}
+              headline=""
+              description=""
               features={currentContent?.aspects.map((aspect, index) => ({
                 ...aspect,
                 icon: index === 0 ? Briefcase : index === 1 ? Users : Shield
@@ -178,6 +205,8 @@ const PathSelector = () => {
                   ? '/QuerMarktLogistikVerwaltung/Markt.jpg'
                   : activePath === 'logistik'
                   ? '/QuerMarktLogistikVerwaltung/Logistik.jpg'
+                  : activePath === 'frischetheke'
+                  ? '/Markt/rewe_kolbermoor_foto-craft_3192.jpg'
                   : '/QuerMarktLogistikVerwaltung/Verwaltung.jpg'
               }
             />
