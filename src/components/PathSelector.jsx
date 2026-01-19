@@ -113,7 +113,15 @@ const PathSelector = () => {
   const paths = ['markt', 'logistik', 'verwaltung']
 
   const handlePathSelect = (path) => {
-    if (activePath === path) return // Bereits aktiv
+    // Wenn bereits aktiv, schließen
+    if (activePath === path) {
+      setIsTransitioning(true)
+      setTimeout(() => {
+        setActivePath(null)
+        setIsTransitioning(false)
+      }, 150)
+      return
+    }
     
     setIsTransitioning(true)
     
