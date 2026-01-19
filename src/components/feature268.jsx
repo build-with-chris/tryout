@@ -42,7 +42,8 @@ const ctaLinks = {
 };
 
 const Feature268 = ({
-  className
+  className,
+  onFAQClick
 }) => {
   return (
     <section className={cn("h-full w-screen overflow-hidden py-32", className)}>
@@ -62,10 +63,12 @@ const Feature268 = ({
                 {ctaLinks.primary.text}
               </Link>
             </Button>
-            <Button asChild variant="secondary" className="rounded-full">
-              <Link to={ctaLinks.secondary.href}>
-                {ctaLinks.secondary.text}
-              </Link>
+            <Button 
+              variant="secondary" 
+              className="rounded-full"
+              onClick={onFAQClick}
+            >
+              {ctaLinks.secondary.text}
             </Button>
           </div>
           <ul className="space-y-4">

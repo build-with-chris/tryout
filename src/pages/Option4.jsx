@@ -7,12 +7,14 @@ import ValuesSection from '@/components/ValuesSection'
 import PathSelector from '@/components/PathSelector'
 import { Integration8 } from '@/components/integration8'
 import { Feature268 } from '@/components/feature268'
+import FAQSection from '@/components/FAQSection'
 
 const Option4 = () => {
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null)
   const [progress, setProgress] = useState({})
   const [audioDurations, setAudioDurations] = useState({})
   const audioRefs = useRef({})
+  const [showFAQs, setShowFAQs] = useState(false)
 
   // Titel/Beschreibungen für jede Audiospur
   const audioTitles = [
@@ -235,7 +237,15 @@ const Option4 = () => {
 
       <Integration8 />
 
-      <Feature268 />
+      <Feature268 onFAQClick={() => {
+        setShowFAQs(true)
+        // Smooth scroll to FAQ section
+        setTimeout(() => {
+          document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 100)
+      }} />
+
+      {showFAQs && <FAQSection />}
 
     </div>
   )
