@@ -17,11 +17,8 @@ const azubisImages = [
 // Neue REWE Bilder für die untere Leiste (mit Sprüchen zwischen den Bildern)
 const reweImages = [
   "/heroReweBilder/Motiv1-2.jpg",
-  "/heroReweBilder/Spruch1.png",
   "/heroReweBilder/Motiv2-1.jpg",
-  "/heroReweBilder/Motiv2-2.jpg",
   "/heroReweBilder/Spruch2.png",
-  "/heroReweBilder/Motiv3-3.jpg",
   "/heroReweBilder/Motiv3-4.jpg",
   "/heroReweBilder/Spruch3.png",
   "/heroReweBilder/Motiv3-5.jpg",
