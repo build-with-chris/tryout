@@ -38,50 +38,50 @@ const Feature297 = ({
               </div>
               {/* Button unten mittig - Plus wenn nicht aktiv, X wenn aktiv */}
               <div className="flex justify-center">
-                <div className={cn(
-                  "w-12 h-12 rounded-full shadow-lg flex items-center justify-center group-hover:scale-110 transition-all duration-300",
-                  isActive ? "bg-[#CC071E]" : "bg-white"
-                )}>
-                  {isActive ? (
-                    // X-Symbol wenn aktiv (weiß auf rot)
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="transition-transform duration-300"
-                    >
-                      <path
-                        d="M18 6L6 18M6 6L18 18"
-                        stroke="white"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ) : (
-                    // Plus-Symbol wenn nicht aktiv (rot auf weiß)
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="transition-transform duration-300"
-                    >
-                      <path
-                        d="M12 5V19M5 12H19"
-                        stroke="#CC071E"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  )}
+                  <div className={cn(
+                    "w-12 h-12 rounded-full shadow-lg flex items-center justify-center group-hover:scale-110 transition-all duration-300",
+                    isActive ? "bg-[#CC071E]" : "bg-white"
+                  )}>
+                    {isActive ? (
+                      // X-Symbol wenn aktiv (weiß auf rot)
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="transition-transform duration-300"
+                      >
+                        <path
+                          d="M18 6L6 18M6 6L18 18"
+                          stroke="white"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    ) : (
+                      // Plus-Symbol wenn nicht aktiv (rot auf weiß)
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="transition-transform duration-300"
+                      >
+                        <path
+                          d="M12 5V19M5 12H19"
+                          stroke="#CC071E"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </button>
+            </button>
         );
       })}
     </div>

@@ -17,39 +17,37 @@ const Feature217b = ({
   return (
     <section className={cn("", className)}>
       <div
-        className="relative bg-cover bg-no-repeat py-10 md:py-12 xl:py-16"
+        className="relative bg-cover bg-no-repeat min-h-[300px] md:min-h-[350px] lg:min-h-[400px] flex items-end"
         style={{
           backgroundImage: backgroundImage ? `url('${backgroundImage}')` : "url('https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/futuristic-device-design-qcufu.png')",
-          backgroundPosition: 'center 70%',
+          backgroundPosition: 'center center',
         }}>
         {/* Subtiler dunkler Overlay für besseren Kontrast und Lesbarkeit */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50 z-10" aria-hidden="true" />
-        <div className="relative z-20 container">
-          <div className="flex flex-col gap-8">
-            <div className="w-full">
-              <div className="w-full lg:w-1/3">
-                {badge && (
-                  <div className="inline-block px-4 py-2 mb-6 text-sm font-semibold text-white bg-white/20 rounded-full backdrop-blur-sm">
-                    {badge}
-                  </div>
-                )}
-                {headline && (
-                  <div className="mb-24 md:mb-32 lg:mb-40">
-                    <h2 className="text-2xl tracking-tight text-white md:text-3xl lg:text-4xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.9)] text-left">
-                      {headline}
-                    </h2>
-                    {description && (
-                      <p className="mt-4 text-xl md:text-2xl text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.9)] text-left">
-                        {description}
-                      </p>
-                    )}
-                  </div>
-                )}
-              </div>
+        <div className="relative z-20 container w-full py-10 md:py-12 xl:py-16">
+          <div className="w-full">
+            <div className="w-full lg:w-1/3 mb-8">
+              {badge && (
+                <div className="inline-block px-4 py-2 mb-6 text-sm font-semibold text-white bg-white/20 rounded-full backdrop-blur-sm">
+                  {badge}
+                </div>
+              )}
+              {headline && (
+                <div className="mb-24 md:mb-32 lg:mb-40">
+                  <h2 className="text-2xl tracking-tight text-white md:text-3xl lg:text-4xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.9)] text-left">
+                    {headline}
+                  </h2>
+                  {description && (
+                    <p className="mt-4 text-xl md:text-2xl text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.9)] text-left">
+                      {description}
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
 
             {features.length > 0 && (
-              <div className="grid items-stretch gap-8 lg:grid-cols-3">
+              <div className="grid items-stretch gap-8 lg:grid-cols-3 pb-8">
                 {features.map((item, index) => {
                   const IconComponent = item.icon || defaultIcons[index] || Briefcase;
                   const isOpen = openIndex === index;

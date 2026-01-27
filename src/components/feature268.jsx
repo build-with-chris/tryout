@@ -107,15 +107,12 @@ const Feature268 = ({
             className="group/card flex h-full !w-full flex-col items-center justify-center rounded-3xl bg-muted/70 px-5 py-15">
             <CardItem
               translateZ="60"
-              className="mb-2 max-w-xs text-center text-3xl leading-none font-semibold tracking-tight text-neutral-900">
-              Top Employer & Top Ausbildungsbetrieb
-            </CardItem>
-            <CardItem
-              as="p"
-              translateZ="25"
-              className="my-4 flex w-full max-w-sm items-center justify-center text-sm tracking-tight">
-              <span className="mr-2 text-neutral-600">Ausgezeichnete</span>
-              <span className="font-semibold text-neutral-900">Arbeitgeberqualität</span>
+              className="mb-2 max-w-xs">
+              <img
+                src="/top-employer-germany-2026.596a9ed2.webp"
+                alt="Top Employer & Top Ausbildungsbetrieb"
+                className="w-full h-auto object-contain"
+              />
             </CardItem>
             <CardItem translateZ="60" className="mt-4 w-full max-w-[1000px]">
               <img
