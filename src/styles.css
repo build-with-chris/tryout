@@ -221,13 +221,13 @@ small, .text-small {
 }
 
 .section {
-  padding: var(--spacing-4xl) 0;
+  padding: var(--spacing-2xl) 0;
   position: relative;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl) 0;
   }
 }
 

@@ -1,6 +1,6 @@
 .option4-page {
   min-height: 100vh;
-  background-color: var(--color-white);
+  background-color: #f9fafb;
 }
 
 .option4-page > section:first-of-type {
@@ -9,8 +9,8 @@
 }
 
 .option4-audio-section {
-  background-color: transparent;
-  padding: var(--spacing-3xl) var(--spacing-lg);
+  background-color: #f9fafb;
+  padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-4xl);
   position: relative;
   min-height: 100vh;
   overflow: visible;

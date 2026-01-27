@@ -28,7 +28,7 @@ const Feature268 = ({
   onFAQClick
 }) => {
   return (
-    <section className={cn("h-full w-screen overflow-hidden py-32", className)}>
+    <section className={cn("h-full w-screen overflow-hidden py-16 bg-white", className)}>
       <div
         className="relative container flex h-full flex-col items-start justify-between gap-10 lg:flex-row">
         <div className="w-full space-y-5 lg:w-3/5">

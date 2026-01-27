@@ -140,10 +140,10 @@ const PathSelector = () => {
       <div className="container">
         <div className="path-selector-header">
           <h2 id="path-heading" className="path-selector-title">
-            Wo steigst du ein?
+            REWE ruft. Welches Team darf's sein?
           </h2>
           <p className="path-selector-subtitle">
-            Wähle deinen Bereich – und sieh sofort: Alltag, Teamgefühl, Planbarkeit, Entwicklung.
+            Markt, Frischetheke, Logistik oder Zentrale.
           </p>
         </div>
 
