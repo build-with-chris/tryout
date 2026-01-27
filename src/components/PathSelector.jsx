@@ -24,7 +24,7 @@ const pathContent = {
         items: []
       },
       {
-        title: "Zusammenarbeit auf Augenhöhe. Und wer Verantwortung übernimmt, bekommt eine passende Rolle",
+        title: "Zusammenarbeit auf Augenhöhe. Verantwortung wird belohnt.",
         summary: "",
         items: []
       },
@@ -45,7 +45,7 @@ const pathContent = {
         items: []
       },
       {
-        title: "Teamgeist ist bei REWE Süd Teil des Arbeitgeberversprechens",
+        title: "Teamgeist ist bei REWE Süd Arbeitgeberversprechens",
         summary: "",
         items: []
       },
@@ -66,7 +66,7 @@ const pathContent = {
         items: []
       },
       {
-        title: "Du arbeitest in Rollen, die sich ergänzen – Sachbearbeitung, Assistenz, Referat und Teamleitung",
+        title: "Rollen, die sich ergänzen – Sachbearbeitung, Assistenz, Referat und Teamleitung",
         summary: "",
         items: []
       },
@@ -178,14 +178,41 @@ const PathSelector = () => {
             ]}
             activeItem={activePath}
             onItemClick={handlePathSelect}
+            renderContent={(pathId) => {
+              const content = pathContent[pathId];
+              if (!content) return null;
+              return (
+                <>
+                  <Feature217b
+                    badge=""
+                    headline=""
+                    description=""
+                    features={content.aspects.map((aspect, index) => ({
+                      ...aspect,
+                      icon: index === 0 ? Briefcase : index === 1 ? Users : Shield
+                    }))}
+                    backgroundImage={
+                      pathId === 'markt' 
+                        ? '/QuerMarktLogistikVerwaltung/Markt.jpg'
+                        : pathId === 'logistik'
+                        ? '/QuerMarktLogistikVerwaltung/Logistik.jpg'
+                        : pathId === 'frischetheke'
+                        ? '/Markt/rewe_kolbermoor_foto-craft_3192.jpg'
+                        : '/QuerMarktLogistikVerwaltung/Verwaltung.jpg'
+                    }
+                  />
+                  <CareerPathJobs activePath={pathId} />
+                </>
+              );
+            }}
           />
         </div>
 
-        {/* Content-Bereich - wechselt je nach Auswahl */}
+        {/* Content-Bereich - wechselt je nach Auswahl (nur Desktop) */}
         {activePath && currentContent && (
           <div 
             id="path-content"
-            className={`path-content ${isTransitioning ? 'path-content--transitioning' : ''}`}
+            className={`path-content hidden md:block ${isTransitioning ? 'path-content--transitioning' : ''}`}
             role="region"
             aria-live="polite"
             aria-labelledby={`path-cta-${activePath}`}

@@ -1,28 +1,65 @@
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import "./feature297.css";
 
 const Feature297 = ({
   className,
   items = [],
   activeItem = null,
-  onItemClick = () => {}
+  onItemClick = () => {},
+  renderContent = null // Callback für Content-Rendering auf Mobile
 }) => {
+  const [animatedIndex, setAnimatedIndex] = useState(0);
+
+  // Animation: Rote Umrandung bewegt sich im Uhrzeigersinn
+  useEffect(() => {
+    if (activeItem) return; // Stoppe Animation wenn eine Kachel aktiv ist
+    
+    const interval = setInterval(() => {
+      setAnimatedIndex((prev) => (prev + 1) % items.length);
+    }, 2000); // Wechselt alle 2 Sekunden
+
+    return () => clearInterval(interval);
+  }, [items.length, activeItem]);
+
   return (
-    <div className={cn("grid gap-4 md:grid-cols-4", className)}>
+    <div className={cn("grid gap-4 md:grid-cols-4 relative", className)}>
       {items.map((item, index) => {
         const isActive = activeItem === item.id;
+        const isAnimated = !activeItem && animatedIndex === index;
         return (
-          <button
-            key={item.id || index}
-            onClick={() => onItemClick(item.id)}
-            className={cn(
-              "group relative overflow-hidden rounded-sm",
-              isActive && "ring-2 ring-primary ring-offset-2"
+          <React.Fragment key={item.id || index}>
+            <button
+              onClick={() => onItemClick(item.id)}
+              className={cn(
+                "group relative overflow-hidden rounded-sm",
+                isActive && "ring-2 ring-primary ring-offset-2"
+              )}
+              aria-pressed={isActive}
+              aria-expanded={isActive}
+              aria-controls="path-content"
+              id={`path-cta-${item.id}`}
+            >
+            {/* Animierte rote Umrandung - fährt um die Kachel herum */}
+            {isAnimated && (
+              <div className="absolute inset-0 rounded-sm pointer-events-none z-20 overflow-visible">
+                <svg className="absolute inset-0 w-full h-full" style={{ filter: 'drop-shadow(0 0 4px #CC071E)' }}>
+                  <rect
+                    x="2"
+                    y="2"
+                    width="calc(100% - 4px)"
+                    height="calc(100% - 4px)"
+                    rx="4"
+                    fill="none"
+                    stroke="#CC071E"
+                    strokeWidth="3"
+                    strokeDasharray="200 400"
+                    strokeDashoffset="0"
+                    className="animate-border-rotate"
+                  />
+                </svg>
+              </div>
             )}
-            aria-pressed={isActive}
-            aria-expanded={isActive}
-            aria-controls="path-content"
-            id={`path-cta-${item.id}`}
-          >
             <img
               src={item.imageSrc}
               alt={item.imageAlt || item.title}
@@ -82,6 +119,13 @@ const Feature297 = ({
                 </div>
               </div>
             </button>
+            {/* Mobile: Content direkt nach der aktiven Kachel */}
+            {isActive && renderContent && (
+              <div className="md:hidden col-span-full mt-4">
+                {renderContent(item.id)}
+              </div>
+            )}
+          </React.Fragment>
         );
       })}
     </div>

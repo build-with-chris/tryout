@@ -1,0 +1,12 @@
+@keyframes borderRotate {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 600;
+  }
+}
+
+.animate-border-rotate {
+  animation: borderRotate 3s linear infinite;
+}
