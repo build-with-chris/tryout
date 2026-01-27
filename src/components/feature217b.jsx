@@ -26,6 +26,11 @@ const Feature217b = ({
     return () => clearInterval(interval);
   }, [features.length]);
   
+  // Wenn alle Props leer sind und keine Features vorhanden sind, nichts rendern
+  if (!badge && !headline && !description && (!features || features.length === 0)) {
+    return null;
+  }
+
   return (
     <section className={cn("", className)}>
       <div

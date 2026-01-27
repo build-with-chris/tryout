@@ -4,6 +4,7 @@ import './PathSelector.css'
 import CareerPathJobs from './CareerPathJobs'
 import { Feature297 } from '@/components/feature297'
 import { Feature217b } from '@/components/feature217b'
+import { Feature253 } from '@/components/feature253'
 
 // Image Alt-Texte für Vertrieb, Logistik und Verwaltung
 const imageAltTexts = {
@@ -178,33 +179,6 @@ const PathSelector = () => {
             ]}
             activeItem={activePath}
             onItemClick={handlePathSelect}
-            renderContent={(pathId) => {
-              const content = pathContent[pathId];
-              if (!content) return null;
-              return (
-                <>
-                  <Feature217b
-                    badge=""
-                    headline=""
-                    description=""
-                    features={content.aspects.map((aspect, index) => ({
-                      ...aspect,
-                      icon: index === 0 ? Briefcase : index === 1 ? Users : Shield
-                    }))}
-                    backgroundImage={
-                      pathId === 'markt' 
-                        ? '/QuerMarktLogistikVerwaltung/Markt.jpg'
-                        : pathId === 'logistik'
-                        ? '/QuerMarktLogistikVerwaltung/Logistik.jpg'
-                        : pathId === 'frischetheke'
-                        ? '/Markt/rewe_kolbermoor_foto-craft_3192.jpg'
-                        : '/QuerMarktLogistikVerwaltung/Verwaltung.jpg'
-                    }
-                  />
-                  <CareerPathJobs activePath={pathId} />
-                </>
-              );
-            }}
           />
         </div>
 
@@ -242,6 +216,18 @@ const PathSelector = () => {
             <CareerPathJobs activePath={activePath} />
           </div>
         )}
+
+        {/* Praktika Section */}
+        <Feature253
+          title="Unsere Praktika:"
+          subtitle="Praktika für Schülerinnen"
+          description="Ein Praktikum bei REWE ist dein perfekter Einblick in die Jobwelt. Auch wenn du noch nicht weißt, wo dein Weg nach dem Schulabschluss hinführt: hier kannst du reinschnuppern. Bewirb dich einfach im Markt um die Ecke."
+          ctaText="Schreib uns!"
+          onCtaClick={() => {
+            // Hier kann später eine Funktion für den CTA eingefügt werden
+            console.log('Schreib uns! clicked')
+          }}
+        />
       </div>
     </section>
   )
