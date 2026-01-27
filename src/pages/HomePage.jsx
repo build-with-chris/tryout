@@ -153,9 +153,6 @@ function HomePage() {
         {/* Hero Start - Clean Hero + Typographic Drop */}
         <HeroStart />
 
-      {/* Marktstimmen Section */}
-      <MarktstimmenSection />
-
       {/* Timeline Section */}
       <Timeline10 />
 
@@ -197,6 +194,9 @@ function HomePage() {
 
       {/* Bewerbung in 4 Schritten */}
       <ApplicationFlow />
+
+      {/* Marktstimmen Section */}
+      <MarktstimmenSection />
 
       {/* Contact / Footer */}
       <footer className="footer" id="kontakt">

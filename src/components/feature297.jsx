@@ -32,7 +32,7 @@ const Feature297 = ({
             <button
               onClick={() => onItemClick(item.id)}
               className={cn(
-                "group relative overflow-hidden rounded-sm",
+                "group relative overflow-hidden rounded-sm h-[300px] md:h-[375px]",
                 isActive && "ring-2 ring-primary ring-offset-2"
               )}
               aria-pressed={isActive}
@@ -63,7 +63,12 @@ const Feature297 = ({
             <img
               src={item.imageSrc}
               alt={item.imageAlt || item.title}
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              style={{
+                objectPosition: (item.id === 'markt' || item.id === 'frischetheke' || item.id === 'verwaltung') 
+                  ? 'center 20%' 
+                  : 'center center'
+              }} />
             {/* Dunkler Overlay für bessere Textlesbarkeit */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-between p-6 z-10">

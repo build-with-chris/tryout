@@ -136,7 +136,23 @@ const Option4 = () => {
   return (
     <div className="option4-page">
       <Hero234aOption4 />
-      
+
+      <PathSelector />
+
+      <ValuesSection />
+
+      <Integration8 />
+
+      <Feature268 onFAQClick={() => {
+        setShowFAQs(true)
+        // Smooth scroll to FAQ section
+        setTimeout(() => {
+          document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 100)
+      }} />
+
+      {showFAQs && <FAQSection />}
+
       <section className="option4-audio-section section relative">
         {/* Hintergrund-Bilder */}
         <div className="option4-images-background">
@@ -195,7 +211,7 @@ const Option4 = () => {
 
         <div className="container relative z-10">
           <div className="option4-audio-header">
-            <h2 className="h2 text-center mb-md">Hier sprechen nicht Jobs. Hier sprechen Menschen.</h2>
+            <h2 className="h2 text-center mb-md">Wann kommst du on Board?</h2>
             <p className="option4-audio-subheadline text-center mb-lg">
               Über Teamgefühl, Entwicklung und den Moment, in dem's „passt".
             </p>
@@ -230,22 +246,6 @@ const Option4 = () => {
           </div>
         </div>
       </section>
-
-      <ValuesSection />
-
-      <PathSelector />
-
-      <Integration8 />
-
-      <Feature268 onFAQClick={() => {
-        setShowFAQs(true)
-        // Smooth scroll to FAQ section
-        setTimeout(() => {
-          document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }, 100)
-      }} />
-
-      {showFAQs && <FAQSection />}
 
     </div>
   )

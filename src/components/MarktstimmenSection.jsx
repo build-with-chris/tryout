@@ -72,7 +72,7 @@ const MarktstimmenSection = () => {
     <section className="marktstimmen-section section" id="marktstimmen">
       <div className="container">
         <div className="marktstimmen-header">
-          <h2 className="h2 text-center mb-md">Marktstimmen</h2>
+          <h2 className="h2 text-center mb-md">Wann kommst du on Board?</h2>
           <p className="marktstimmen-subheadline text-center mb-lg">
             Echte Geschichten von echten Menschen.
           </p>

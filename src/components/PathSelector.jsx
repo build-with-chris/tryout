@@ -154,8 +154,14 @@ const PathSelector = () => {
               {
                 id: 'markt',
                 title: 'Komm in den Markt',
-                imageSrc: '/MarktLogistikVerwaltgung/Markt.jpg',
+                imageSrc: '/KommInDenMarkt.jpg',
                 imageAlt: imageAltTexts.markt,
+              },
+              {
+                id: 'frischetheke',
+                title: 'Komm an die Frischetheke',
+                imageSrc: '/KommAnDieFrischetheke.jpg',
+                imageAlt: 'REWE Frischetheke - Frische Produkte und Beratung',
               },
               {
                 id: 'logistik',
@@ -168,12 +174,6 @@ const PathSelector = () => {
                 title: 'Komm in die Zentrale',
                 imageSrc: '/MarktLogistikVerwaltgung/Verwaltung.jpg',
                 imageAlt: imageAltTexts.verwaltung,
-              },
-              {
-                id: 'frischetheke',
-                title: 'Komm an die Frischetheke',
-                imageSrc: '/Markt/rewe_kolbermoor_foto-craft_3192.jpg',
-                imageAlt: 'REWE Frischetheke - Frische Produkte und Beratung',
               },
             ]}
             activeItem={activePath}
