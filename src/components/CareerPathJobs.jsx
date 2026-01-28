@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { careerPathJobs } from "@/data/careerPathJobs";
+import { verwaltungJobsDetailed } from "@/data/verwaltungJobsDetailed";
 import './CareerPathJobs.css';
 
 // CTA-Links Konfiguration - nur interne Pfade, keine Bewerbungen
@@ -196,6 +197,7 @@ const CareerPathJobs = ({
   const [expandedJobId, setExpandedJobId] = useState(null);
   const [expandedBenefits, setExpandedBenefits] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [modalJobId, setModalJobId] = useState(null);
 
   // Check for reduced motion preference
   useEffect(() => {
@@ -211,6 +213,7 @@ const CareerPathJobs = ({
   useEffect(() => {
     setExpandedJobId(null);
     setExpandedBenefits(false);
+    setModalJobId(null);
   }, [activePath, activePhase]);
 
   // Don't render if no path is selected
@@ -222,7 +225,36 @@ const CareerPathJobs = ({
   const currentJobs = careerPathJobs[activePath]?.[activePhase] || [];
 
   const handleJobToggle = (jobId) => {
-    setExpandedJobId(expandedJobId === jobId ? null : jobId);
+    // Für Verwaltung: Modal öffnen statt Accordion
+    if (activePath === 'verwaltung') {
+      setModalJobId(jobId);
+    } else {
+      // Für andere Bereiche: Accordion wie bisher
+      setExpandedJobId(expandedJobId === jobId ? null : jobId);
+    }
+  };
+
+  // Funktion zur Erstellung der Bewerbungs-URL mit Job-Titel als term-Parameter
+  const getApplicationUrl = (jobTitle) => {
+    if (!jobTitle || jobTitle.trim() === '') {
+      // Fallback falls kein Titel vorhanden
+      return activePath === 'verwaltung' && activePhase === 'ausbildung'
+        ? ZENTRALE_AUSBILDUNG_URL
+        : activePath === 'verwaltung' && activePhase === 'professionals'
+        ? ZENTRALE_PROFESSIONALS_URL
+        : getAreaSearchLink(activePath, activePhase);
+    }
+
+    // Erstelle neue URL mit Job-Titel als term-Parameter
+    const jobTitleParam = encodeURIComponent(jobTitle.trim());
+    return `https://karriere.rewe.de/jobs/suche?term=${jobTitleParam}`;
+  };
+
+  // Hole detaillierte Job-Informationen für Modal
+  const getDetailedJobInfo = (jobId) => {
+    if (activePath !== 'verwaltung') return null;
+    const detailedJobs = verwaltungJobsDetailed[activePhase] || [];
+    return detailedJobs.find(job => job.id === jobId) || null;
   };
 
   // Find active phase index for neutral indicator (not progress)
@@ -349,27 +381,45 @@ const CareerPathJobs = ({
                           <span>{job.workModel}</span>
                         </div>
                       </div>
-                      <motion.div
-                        custom={isExpanded}
-                        variants={iconVariants}
-                        animate="rotate"
-                        transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
-                        className="career-path-jobs-item-icon"
-                      >
-                        <svg
-                          className="career-path-jobs-item-icon-svg"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
+                      {activePath === 'verwaltung' ? (
+                        <div className="career-path-jobs-item-icon">
+                          <svg
+                            className="career-path-jobs-item-icon-svg"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </div>
+                      ) : (
+                        <motion.div
+                          custom={isExpanded}
+                          variants={iconVariants}
+                          animate="rotate"
+                          transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
+                          className="career-path-jobs-item-icon"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </motion.div>
+                          <svg
+                            className="career-path-jobs-item-icon-svg"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </motion.div>
+                      )}
                     </button>
 
                     <AnimatePresence>
@@ -556,8 +606,149 @@ const CareerPathJobs = ({
           </motion.div>
         </AnimatePresence>
       </div>
+
+      {/* Modal für Verwaltung */}
+      <AnimatePresence>
+        {modalJobId && (
+          <JobModal
+            jobId={modalJobId}
+            jobInfo={getDetailedJobInfo(modalJobId)}
+            jobTitle={displayedJobs.find(j => j.id === modalJobId)?.title || ''}
+            onClose={() => setModalJobId(null)}
+            prefersReducedMotion={prefersReducedMotion}
+            getApplicationUrl={getApplicationUrl}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
 
+// Modal-Komponente für Job-Details
+const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, getApplicationUrl }) => {
+  const modalVariants = {
+    hidden: prefersReducedMotion ? {} : { opacity: 0 },
+    visible: prefersReducedMotion ? {} : { opacity: 1 },
+    exit: prefersReducedMotion ? {} : { opacity: 0 }
+  };
+
+  const contentVariants = {
+    hidden: prefersReducedMotion ? {} : { opacity: 0, scale: 0.95, y: 20 },
+    visible: prefersReducedMotion ? {} : { opacity: 1, scale: 1, y: 0 },
+    exit: prefersReducedMotion ? {} : { opacity: 0, scale: 0.95, y: 20 }
+  };
+
+  if (!jobInfo) return null;
+
+  return (
+    <motion.div
+      className="career-path-jobs-modal-overlay"
+      variants={modalVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      onClick={onClose}
+    >
+      <motion.div
+        className="career-path-jobs-modal-content"
+        variants={contentVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          className="career-path-jobs-modal-close"
+          onClick={onClose}
+          aria-label="Modal schließen"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div className="career-path-jobs-modal-header">
+          <h3 className="career-path-jobs-modal-title">{jobInfo.title || jobTitle}</h3>
+          <div className="career-path-jobs-modal-meta">
+            {jobInfo.location && <span>{jobInfo.location}</span>}
+            {jobInfo.contractType && <span>{jobInfo.contractType}</span>}
+            {jobInfo.startDate && <span>Start: {jobInfo.startDate}</span>}
+          </div>
+        </div>
+
+        <div className="career-path-jobs-modal-body">
+          {jobInfo.tasks && (
+            <div className="career-path-jobs-modal-section">
+              <h4 className="career-path-jobs-modal-section-title">Aufgaben</h4>
+              <ul className="career-path-jobs-modal-list">
+                {jobInfo.tasks.map((task, index) => (
+                  <li key={index}>{task}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {jobInfo.content && (
+            <div className="career-path-jobs-modal-section">
+              <h4 className="career-path-jobs-modal-section-title">Inhalt</h4>
+              <ul className="career-path-jobs-modal-list">
+                {jobInfo.content.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {jobInfo.profile && (
+            <div className="career-path-jobs-modal-section">
+              <h4 className="career-path-jobs-modal-section-title">Profil</h4>
+              <ul className="career-path-jobs-modal-list">
+                {jobInfo.profile.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {jobInfo.benefits && (
+            <div className="career-path-jobs-modal-section">
+              <h4 className="career-path-jobs-modal-section-title">Benefits</h4>
+              <ul className="career-path-jobs-modal-list">
+                {jobInfo.benefits.map((benefit, index) => (
+                  <li key={index}>{benefit}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {jobInfo.plus && (
+            <div className="career-path-jobs-modal-section">
+              <h4 className="career-path-jobs-modal-section-title">Plus</h4>
+              <ul className="career-path-jobs-modal-list">
+                {jobInfo.plus.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <div className="career-path-jobs-modal-footer">
+          <a
+            href={getApplicationUrl((jobInfo && jobInfo.title) ? jobInfo.title : jobTitle)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary btn-lg career-path-jobs-modal-cta"
+          >
+            Jetzt bewerben
+          </a>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 export default CareerPathJobs;
+
+

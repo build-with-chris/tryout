@@ -293,112 +293,218 @@ export const careerPathJobs = {
     ausbildung: [
       {
         id: 'verwaltung-ausbildung-1',
-        title: 'Kaufmann für Büromanagement (m/w/d)',
-        shortDescription: 'Klassische Verwaltungsausbildung (3 Jahre) in einer Regions- oder Konzernzentrale. Die Auszubildenden durchlaufen verschiedene administrative Abteilungen.',
+        title: 'Ausbildung (kaufmännisch: Büro/Marketing/Groß- & Außenhandel)',
+        shortDescription: 'Kaufmännische Ausbildung in verschiedenen Bereichen der Zentrale. Du durchläufst verschiedene Abteilungen und erlangst breites organisatorisches Know-how.',
         bullets: [
           'Mitarbeit in unterschiedlichen Unternehmensbereichen wie Personal, Rechnungswesen, Einkauf, Vertrieb, Marketing',
           'Kommunikation mit internen und externen Ansprechpartnern (z.B. andere Abteilungen, Lieferanten) und Teilnahme an Besprechungen',
           'Umgang mit digitalen Büro- und Informationssystemen',
           'Aufbereitung und Verarbeitung von Daten und Informationen (z.B. Statistiken, Berichte)',
           'Planung, Organisation und Durchführung kleiner Projekte und Büroabläufe',
-          'Breites organisatorisches Know-how erlangen'
+          'Marketingkampagnen konzipieren und umsetzen (bei Marketing-Ausbildung)',
+          'Media- und Werbemittel planen sowie Marktforschungsergebnisse auswerten'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
       },
       {
         id: 'verwaltung-ausbildung-2',
-        title: 'Kaufmann für Immobilienmanagement (m/w/d)',
-        shortDescription: 'Diese Ausbildung vermittelt Kenntnisse im Immobilienwesen, speziell bei REWE, wo es um Märkte und Logistikimmobilien geht.',
+        title: 'Ausbildung (Immobilien)',
+        shortDescription: 'Ausbildung im Immobilienwesen, speziell bei REWE, wo es um Märkte und Logistikimmobilien geht.',
         bullets: [
           'Verschiedene relevante Abteilungen kennenlernen: kaufmännisches Immobilienmanagement, Expansion (Standortentwicklung), Bauabteilung und Vertrieb',
           'Verwaltung und Vermietung von Immobilien, z.B. Mieterbetreuung, Bearbeitung von Betriebskostenabrechnungen und Wirtschaftsplänen',
           'Mitwirkung beim An- und Verkauf von Grundstücken und Gebäuden',
           'Teilnahme an Vertrags- und Verhandlungsgesprächen (z.B. Vergabe von Aufträgen an externe Dienstleister)',
           'Erste Erfahrungen in der Projektentwicklung von neuen Einzelhandelsstandorten sammeln',
-          'Ansprechpartner für Mieter bei Fragen rund um die Immobilie sein',
-          'Dauer i.d.R. 2–3 Jahre, oft Abitur/Fachabitur erforderlich'
+          'Ansprechpartner für Mieter bei Fragen rund um die Immobilie sein'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
       },
       {
         id: 'verwaltung-ausbildung-3',
-        title: 'Kaufmann für Marketingkommunikation (m/w/d)',
-        shortDescription: 'Ausbildung im Marketing, die es bei REWE (ggf. in Zentralen) gibt. Du lernst Marketingkampagnen zu konzipieren und umzusetzen.',
+        title: 'Ausbildung (Einzelhandel: Verkäufer / Kaufmann im Einzelhandel)',
+        shortDescription: 'Klassische Einzelhandelsausbildung mit Fokus auf Verwaltungs- und Organisationsaufgaben in der Zentrale.',
         bullets: [
-          'Marketingkampagnen konzipieren und umsetzen',
-          'Media- und Werbemittel planen',
-          'Marktforschungsergebnisse auswerten',
-          'Mit Agenturen sowie internen Abteilungen (z.B. Category Management, Vertrieb) zusammenarbeiten',
-          'Einsatzbereiche könnten in der Werbung, Online-Marketing oder Öffentlichkeitsarbeit der REWE Group liegen'
+          'Organisation und Verwaltung von Waren- und Sortimentsdaten',
+          'Unterstützung bei der Planung und Steuerung von Verkaufsprozessen',
+          'Mitarbeit in verschiedenen Verwaltungsbereichen wie Einkauf, Vertrieb und Controlling',
+          'Umgang mit Warenwirtschaftssystemen und digitalen Verwaltungstools',
+          'Vorbereitung auf Führungsaufgaben im Einzelhandel',
+          'Kombination aus praktischer Erfahrung und theoretischem Wissen'
         ],
         workModel: 'Ausbildung',
+        entryLevel: 'Ausbildung'
+      },
+      {
+        id: 'verwaltung-ausbildung-4',
+        title: 'Abiturientenprogramm (Groß- & Außenhandel)',
+        shortDescription: 'Kombinierte Aus- und Fortbildung für Abiturienten im Groß- und Außenhandel. In drei Jahren werden Verkäufer/Kaufmann-Abschluss und Führungsqualifikation erworben.',
+        bullets: [
+          'Ausbildung zum Kaufmann im Groß- und Außenhandel',
+          'Erwerb der Handelsfachwirt-Qualifikation',
+          'Mitarbeit in verschiedenen Bereichen wie Einkauf, Vertrieb und Logistik',
+          'Vorbereitung auf Führungsaufgaben im Großhandel',
+          'Projektarbeit und eigenverantwortliche Aufgaben',
+          'Kombination aus Ausbildung und Fortbildung in einem Programm'
+        ],
+        workModel: 'Ausbildung',
+        entryLevel: 'Ausbildung'
+      },
+      {
+        id: 'verwaltung-ausbildung-5',
+        title: 'Duales Studium (Handel)',
+        shortDescription: 'Kombination aus Hochschulstudium und Praxis in der Zentrale. Während der Praxisphasen stehen die Vorbereitung auf Führungsaufgaben und bereichsübergreifende Einsätze im Fokus.',
+        bullets: [
+          'Mitarbeit in verschiedenen Unternehmensbereichen (Markt, Logistik, Verwaltung)',
+          'Vertretungs-Einsätze zur Vorbereitung auf Führungsposition',
+          'Begleitung von Außendienst-Einsätzen (z.B. mit Vertriebsleitung, bei Umbauten/Neueröffnungen)',
+          'Kennenlernen der Schnittstellen zwischen Markt, Verwaltung und Logistik',
+          'Teilnahme an Seminaren (z.B. Systemschulungen, Arbeitsrecht)',
+          'Theoretisches Wissen aus dem Studium praktisch anwenden'
+        ],
+        workModel: 'Duales Studium',
         entryLevel: 'Ausbildung'
       }
     ],
     professionals: [
       {
         id: 'verwaltung-professionals-1',
-        title: 'Sachbearbeiter',
-        shortDescription: 'Kaufmännische Angestellte in bestimmten Fachbereichen (z.B. Category Management, Controlling, Personalverwaltung etc.).',
+        title: 'Referent / Assistenz (Geschäftsleitung)',
+        shortDescription: 'Unterstützung der Geschäftsleitung in strategischen und operativen Aufgaben. Du organisierst Termine, Meetings und Reisen und unterstützt Führungskräfte in administrativen und organisatorischen Belangen.',
         bullets: [
-          'Unterstützung durch Büro- und Verwaltungsarbeiten, z.B. im Category Management oder Controlling',
-          'Kommunikationsschnittstelle zwischen den Märkten und dem Außendienst',
-          'Daten aufbereiten, Formulare und Berichte erstellen',
-          'Ablage und Korrespondenz erledigen',
-          'Anfragen aus Märkten aufnehmen und an die zuständigen Fachbetreuer weitergeben',
-          'Reibungslosen administrativen Ablauf im Hintergrund sicherstellen'
+          'Termine, Meetings und Reisen organisieren',
+          'Protokoll führen und Präsentationen vorbereiten',
+          'Führungskräfte in administrativen und organisatorischen Belangen unterstützen',
+          'Kalender koordinieren und Kommunikation filtern',
+          'Strategische Projekte begleiten und dokumentieren',
+          'Entlastung des Managements durch eigenverantwortliche Aufgaben',
+          'Schnittstelle zwischen Geschäftsleitung und verschiedenen Abteilungen'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
       },
       {
         id: 'verwaltung-professionals-2',
-        title: 'Assistenzen',
-        shortDescription: 'Team- oder Geschäftsführungsassistenten in den Zentralen. Sie organisieren Termine, Meetings und Reisen und unterstützen die Führungskräfte in administrativen und organisatorischen Belangen.',
+        title: 'Ladenlayout / Store Planning',
+        shortDescription: 'Planung und Optimierung von Ladenlayouts und Verkaufsflächen. Du entwickelst Konzepte für die optimale Warenpräsentation und Raumgestaltung.',
         bullets: [
-          'Termine, Meetings und Reisen organisieren',
-          'Protokoll führen',
-          'Führungskräfte in administrativen und organisatorischen Belangen unterstützen',
-          'Kalender koordinieren',
-          'Präsentationen vorbereiten',
-          'Kommunikation filtern',
-          'Entlastung des Managements'
+          'Entwicklung von Ladenlayout-Konzepten für neue und bestehende Märkte',
+          'Planung der optimalen Warenplatzierung und Raumaufteilung',
+          'Zusammenarbeit mit Architekten, Bauplanern und Vertrieb',
+          'Analyse von Verkaufsdaten zur Optimierung der Flächennutzung',
+          'Umsetzung von Markenkonzepten im Ladenlayout',
+          'Projektmanagement bei Umbauten und Neueröffnungen'
         ],
-        workModel: 'Vollzeit / Teilzeit',
+        workModel: 'Vollzeit',
         entryLevel: 'Professionals'
       },
       {
         id: 'verwaltung-professionals-3',
-        title: 'Referenten',
-        shortDescription: 'Spezialisierte Fachkräfte in Stabsstellen (z.B. Marketing-Referent, Personalreferent, Rechtsreferent). Sie nehmen Expertenrollen ein.',
+        title: 'Revision / Audit',
+        shortDescription: 'Interne Prüfung und Kontrolle von Geschäftsprozessen, Finanzen und Compliance. Du sorgst für Transparenz und Einhaltung von Vorgaben.',
         bullets: [
-          'Personalreferent: Betreuung und Beratung von Führungskräften in Personalthemen',
-          'Marketingreferent: Planung von Marketingaktionen',
-          'Rechtsreferent: Prüfung von Verträgen und Compliance',
-          'Expertenrolle in der jeweiligen Fachabteilung',
-          'Meist einschlägige Berufserfahrung erforderlich',
-          'Aufgaben variieren je nach Abteilung'
+          'Durchführung interner Revisionen und Audits',
+          'Prüfung von Geschäftsprozessen und Finanzdaten',
+          'Compliance-Prüfungen und Risikobewertungen',
+          'Erstellung von Prüfberichten und Handlungsempfehlungen',
+          'Zusammenarbeit mit externen Prüfern und Behörden',
+          'Entwicklung von Verbesserungsvorschlägen für interne Prozesse'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
       },
       {
         id: 'verwaltung-professionals-4',
-        title: 'Teamleiter',
-        shortDescription: 'In der Verwaltung übernehmen Teamleiter die Führung kleinerer Teams in Fachabteilungen (etwa im Einkauf, in der IT, im Controlling etc.).',
+        title: 'Gebietsmanagement / Vertrieb',
+        shortDescription: 'Steuerung und Betreuung von Vertriebsgebieten. Du koordinierst die Zusammenarbeit zwischen Zentrale und Märkten und sorgst für optimale Vertriebsprozesse.',
         bullets: [
-          'Operative Aufgaben des Teams koordinieren und die Zielerreichung sicherstellen',
-          'Mitarbeiter fachlich und disziplinarisch führen',
-          'Arbeitsabläufe optimieren',
-          'Als Bindeglied zur Abteilungsleitung dienen',
-          'Konkrete Aufgaben hängen vom Bereich ab (z.B. Teamleiter Controlling: Finanzplanung, Teamleiter IT: Steuerung von Entwickler-Teams)',
-          'Führung und Organisation stehen immer im Vordergrund'
+          'Betreuung von Vertriebsgebieten und Filialen',
+          'Koordination zwischen Zentrale und Märkten',
+          'Umsetzung von Vertriebsstrategien und Verkaufsförderungsmaßnahmen',
+          'Analyse von Verkaufsdaten und Entwicklung von Optimierungsmaßnahmen',
+          'Unterstützung bei Neueröffnungen und Standortentwicklung',
+          'Führung von Vertriebsteams und Außendienstmitarbeitern'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
-      }
+      },
+      {
+        id: 'verwaltung-professionals-5',
+        title: 'Fuhrparkmanagement',
+        shortDescription: 'Verwaltung und Optimierung des Firmenfuhrparks. Du sorgst für effiziente Fahrzeugnutzung, Wartung und Compliance.',
+        bullets: [
+          'Verwaltung und Disposition des Firmenfuhrparks',
+          'Planung von Fahrzeugwartung und Reparaturen',
+          'Optimierung der Fahrzeugauslastung und Routenplanung',
+          'Einhaltung von gesetzlichen Vorschriften (TÜV, Versicherung, Steuern)',
+          'Verhandlung mit Fahrzeuglieferanten und Werkstätten',
+          'Analyse von Fuhrparkkosten und Entwicklung von Einsparpotenzialen'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Professionals'
+      },
+      {
+        id: 'verwaltung-professionals-6',
+        title: 'Immobilienmanagement (kaufmännisch/technisch)',
+        shortDescription: 'Verwaltung und Entwicklung von Immobilienportfolios. Du kümmerst dich um kaufmännische oder technische Aspekte von Immobilienprojekten.',
+        bullets: [
+          'Verwaltung und Vermietung von Immobilien (kaufmännisch)',
+          'Mieterbetreuung und Bearbeitung von Betriebskostenabrechnungen',
+          'Mitwirkung beim An- und Verkauf von Grundstücken und Gebäuden',
+          'Technische Betreuung von Immobilien (Wartung, Instandhaltung)',
+          'Projektentwicklung von neuen Einzelhandelsstandorten',
+          'Vertragsverhandlungen und Koordination mit externen Dienstleistern'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Professionals'
+      },
+      {
+        id: 'verwaltung-professionals-7',
+        title: 'Recruiting / HR (Praktikum/Werkstudent)',
+        shortDescription: 'Personalgewinnung und -betreuung. Du unterstützt bei der Rekrutierung von Mitarbeitern und betreust Praktikanten und Werkstudenten.',
+        bullets: [
+          'Ausschreibung von Stellen und Bewerberbetreuung',
+          'Durchführung von Vorstellungsgesprächen und Auswahlprozessen',
+          'Betreuung von Praktikanten und Werkstudenten',
+          'Onboarding neuer Mitarbeiter',
+          'Zusammenarbeit mit Hochschulen und Bildungseinrichtungen',
+          'Entwicklung von Recruiting-Strategien und Employer-Branding-Maßnahmen'
+        ],
+        workModel: 'Vollzeit / Teilzeit',
+        entryLevel: 'Professionals'
+      },
+      {
+        id: 'verwaltung-professionals-8',
+        title: 'Projektleitung (Immobilien/Technik)',
+        shortDescription: 'Leitung von Projekten im Bereich Immobilien oder Technik. Du koordinierst komplexe Projekte von der Planung bis zur Umsetzung.',
+        bullets: [
+          'Projektplanung und -steuerung für Immobilien- oder Technikprojekte',
+          'Koordination von internen Teams und externen Dienstleistern',
+          'Budgetverwaltung und Kostenkontrolle',
+          'Risikomanagement und Qualitätssicherung',
+          'Kommunikation mit Stakeholdern und Projektbeteiligten',
+          'Dokumentation und Reporting von Projektergebnissen'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Professionals'
+      },
+      {
+        id: 'verwaltung-professionals-9',
+        title: 'Arbeitssicherheit (Leitung/Fachkraft)',
+        shortDescription: 'Sicherstellung von Arbeitssicherheit und Gesundheitsschutz. Du entwickelst Maßnahmen zur Unfallverhütung und sorgst für Compliance.',
+        bullets: [
+          'Entwicklung und Umsetzung von Arbeitsschutzmaßnahmen',
+          'Durchführung von Sicherheitsbegehungen und Gefährdungsbeurteilungen',
+          'Schulung von Mitarbeitern zu Arbeitssicherheitsthemen',
+          'Koordination mit Behörden und Versicherungen',
+          'Unfallanalyse und Entwicklung von Präventionsmaßnahmen',
+          'Führung eines Arbeitsschutz-Teams (bei Leitungsposition)'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Professionals'
+      },
     ]
   },
   frischetheke: {
