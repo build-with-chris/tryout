@@ -514,11 +514,18 @@ export const careerPathJobs = {
         title: 'Kaufmann im Einzelhandel, Feinkost (m/w/d)',
         shortDescription: 'Spezialisierung auf Frischetheke (Fleisch, Wurst, Käse, Feinkost). Du präsentierst Waren attraktiv, berätst fachkundig und stellst eigene Spezialitäten nach Rezept her.',
         bullets: [
-          'Waren attraktiv in den Frischetheken präsentieren und auszeichnen',
-          'Kunden fachkundig beraten',
-          'Eigene Spezialitäten nach Rezept herstellen',
-          'Mit digitalen Kassen- und Warenwirtschaftssystemen arbeiten (inkl. Statistiken)',
-          'Bestellung, Kontrolle und Lagerung von Feinkostwaren übernehmen'
+          'Für deine Zukunft: Bei guten Leistungen übernehmen wir dich garantiert – in Voll- oder Teilzeit',
+          'Für deine Ziele: Wir fördern dich mit einer flexiblen Einsatzplanung, spannenden Azubiprojekten sowie interessanten Seminaren und E-Learnings',
+          'Unser Teamspirit: Du startest in einem Team, das dich vom ersten Tag an unterstützt und fördert',
+          'Smart sparen: Du bekommst 5 % Einkaufsrabatt bei REWE und PENNY sowie weitere Rabatte beim toom Baumarkt und bei der DERTOUR Group',
+          'Ansprechende Präsentation und Auszeichnung unserer Feinkost- und Frischewaren in den Verkaufstheken',
+          'Führen von Beratungs- und Verkaufsgesprächen',
+          'Selbständige Herstellung von Spezialitäten nach hauseigenen Rezepten',
+          'Umgang mit digitalen Markt- und Kassensystemen sowie Kennenlernen und Auswerten von Verkaufsstatistiken',
+          'Du interessierst dich für Lebensmittel und die Prozesse hinter den Kulissen eines Supermarkts',
+          'Du bist verlässlich und arbeitest gut im Team',
+          'Du magst den Kontakt mit Menschen',
+          'Du hast einen guten Hauptschulabschluss oder die Mittlere Reife'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -528,13 +535,21 @@ export const careerPathJobs = {
       {
         id: 'frischetheke-professionals-1',
         title: 'Verkäufer in der Frischetheke (Metzgerei) (m/w/d)',
-        shortDescription: 'Fachverkäufer an der Bedientheke für Fleisch/Wurst/Käse. Hier ist Fachwissen über Lebensmittel gefragt.',
+        shortDescription: 'Mit deiner Leidenschaft rund um die Themen Fleisch, Wurst, Käse und Feinkost berätst du unsere Kund:innen mit deinem Fachwissen und schaffst ausgefallene Kreationen von feinster Qualität.',
         bullets: [
-          'Ansprechende Warenpräsentation und kompetente Beratung an der Theke',
-          'Zubereitung und Veredelung von Fleisch- und Feinkostwaren (Portionieren, Rezepturen umsetzen)',
-          'Herstellung von Spezialitäten nach Rezept',
-          'Umsetzung eigener Ideen zur Verkaufsförderung',
-          'Ständige Kontrolle von Warenpräsenz, Frische und Hygienevorschriften'
+          // Was wir bieten
+          'REWE ist dein sicherer und nachhaltiger Arbeitgeber – deutschlandweit und bei dir um die Ecke.',
+          'Mehr vom Gehalt – eine attraktive Vergütung und 5 % bei REWE, PENNY und weitere Rabatte beim toom Baumarkt und bei der DERTOUR Group.',
+          'Darf es noch etwas dazu sein? – freu dich auf Sonderzahlungen wie Urlaubs- und Weihnachtsgeld.',
+          'Gönn dir eine Pause – mit 6 Wochen Urlaub im Jahr.',
+          // Was du bei uns bewegst
+          'Du überzeugst unsere Kund:innen mit einer ansprechenden Warenpräsentation, kompetenter Beratung und zuvorkommendem Service.',
+          'Du zeigst Fingerspitzengefühl bei der Veredelung und Portionierung unserer Waren.',
+          'Du sorgst mit deinem Blick für Details für eine ausgezeichnete Warenpräsenz, Frische und die Einhaltung der Hygienevorschriften.',
+          // Was uns überzeugt
+          'Idealerweise deine abgeschlossene Berufsausbildung oder deine Berufserfahrung im Lebensmitteleinzelhandel oder in der (System-)Gastronomie.',
+          'Dein Interesse an der Bearbeitung und Veredelung von Fleisch- und Frischewaren.',
+          'Deine ausgeprägte Kund:innenorientierung und Kommunikationsstärke, dein Teamgeist und dein Verantwortungsbewusstsein.'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -542,16 +557,18 @@ export const careerPathJobs = {
       {
         id: 'frischetheke-professionals-2',
         title: 'Bereichsleiter Frischetheke (Metzgerei) (m/w/d)',
-        shortDescription: 'Leitung der Bedienabteilung. Du führst das Theken-Team und trägst Verantwortung für Qualität der Produkte und Abläufe an der Theke.',
+        shortDescription: 'Leitung der Bedienabteilung. Du führst das Theken-Team kompetent auf Augenhöhe, gehst als Vorbild voran und setzt das nationale Vertriebskonzept gekonnt um.',
         bullets: [
-          'Führung des Theken-Teams und Verantwortung für Qualität der Produkte und Abläufe an der Theke',
-          'Umsetzung der nationalen Vertriebskonzepte',
-          'Kosten- und Umsatzkennzahlen sowie Inventuren und Warenfluss im Griff',
-          'Entwicklung von Maßnahmen, um Kunden für das Sortiment zu begeistern',
-          'Schulung von Mitarbeitern und Vorbild in wertschätzender Führung',
-          'Gewährleistung korrekter Preisauszeichnung und Sortimentspflege',
-          'Strenge Einhaltung von Hygienevorschriften',
-          'Serviceorientierte Kundenberatung'
+          'REWE ist dein sicherer und nachhaltiger Arbeitgeber – deutschlandweit und bei dir um die Ecke',
+          'Gestalte deine Zukunft – wir übernehmen die Kosten für tätigkeitsbezogene Weiterbildungen wie z. B. deine Meisterschule, stellen dich dafür frei und fördern dich mit unseren umfassenden Angeboten an Seminaren, Coachings und E-Learnings',
+          'Mehr vom Gehalt – eine attraktive Vergütung und 5 % Einkaufsrabatt bei REWE und PENNY sowie weitere Rabatte beim toom Baumarkt und bei der DERTOUR Group',
+          'Darf es noch etwas dazu sein? – Freu dich auf Sonderzahlungen wie Urlaubs- und Weihnachtsgeld',
+          'Du führst dein Team kompetent auf Augenhöhe, gehst als Vorbild voran und setzt das nationale Vertriebskonzept gekonnt um',
+          'Du sorgst mit deinem Blick für Details für eine ausgezeichnete Warenpräsenz, Frische und die Einhaltung der Hygienevorschriften',
+          'Du setzt deine Ideen für verkaufsfördernde Maßnahmen selbständig um',
+          'Deine abgeschlossene Ausbildung, vorzugsweise im Lebensmitteleinzelhandel – aber auch als Quereinsteiger:in mit erster Fach- und Führungserfahrung im Bereich Backwaren oder SB-Frischetheke bist du bei uns herzlich willkommen',
+          'Deine lösungs- und ergebnisorientierte Arbeitsweise sowie dein Engagement für deine Aufgaben, die du strukturiert und gewissenhaft angehst',
+          'Dein Teamgeist, deine ausgeprägte Kund:innenorientierung und deine Kommunikationsstärke'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'

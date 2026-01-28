@@ -155,6 +155,12 @@ const ZENTRALE_AUSBILDUNG_URL =
 const ZENTRALE_PROFESSIONALS_URL =
   'https://karriere.rewe.de/jobs/suche?term=&location=Eching%2C+Deutschland&range=50&sort=distance&facilities%5B%5D=Gebietsmanagement&facilities%5B%5D=Vertriebsleitung&facilities%5B%5D=Weitere+Funktionen+Vertrieb&facilities%5B%5D=Controlling+%26+Finanzen&facilities%5B%5D=Einkauf&facilities%5B%5D=Human+Resources&facilities%5B%5D=Immobilien&facilities%5B%5D=Informationstechnologie&facilities%5B%5D=Marketing+%26+PR&facilities%5B%5D=Recht+%26+Revision&facilities%5B%5D=Strategie&facilities%5B%5D=Weitere+Funktionen&lat=48.2985765&lng=11.6264352&nobounds=&index='
 
+const FRISCHETHEKE_PROFESSIONALS_URL =
+  'https://karriere.rewe.de/jobs/suche?term=&location=&range=100&sort=distance&shifttypes%5B%5D=F%C3%BChrungsposition&shifttypes%5B%5D=Berufserfahrung&shifttypes%5B%5D=Berufseinstieg&facilities%5B%5D=Frischetheke&lat=0&lng=0&nobounds=&index='
+
+const FRISCHETHEKE_AUSBILDUNG_URL =
+  'https://karriere.rewe.de/jobs/suche?term=&location=&range=100&sort=distance&shifttypes%5B%5D=Ausbildung&shifttypes%5B%5D=Duales+Studium&shifttypes%5B%5D=Praktikum&shifttypes%5B%5D=Traineeprogramm&facilities%5B%5D=Frischetheke&lat=0&lng=0&nobounds=&index='
+
 // Globale Jobsuche-Links je Bereich/Phase (für einen stets sichtbaren CTA)
 const getAreaSearchLink = (activePath, activePhase) => {
   if (activePath === 'verwaltung' && activePhase === 'ausbildung') {
@@ -164,6 +170,14 @@ const getAreaSearchLink = (activePath, activePhase) => {
   // Spezieller Sonderfall (wie beim Job-CTA innerhalb der Accordion-Items)
   if (activePath === 'verwaltung' && activePhase === 'professionals') {
     return ZENTRALE_PROFESSIONALS_URL
+  }
+
+  if (activePath === 'frischetheke' && activePhase === 'ausbildung') {
+    return FRISCHETHEKE_AUSBILDUNG_URL
+  }
+
+  if (activePath === 'frischetheke' && activePhase === 'professionals') {
+    return FRISCHETHEKE_PROFESSIONALS_URL
   }
 
   const termMap = {
