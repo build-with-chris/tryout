@@ -286,20 +286,6 @@ export const careerPathJobs = {
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
-      },
-      {
-        id: 'logistik-professionals-6',
-        title: 'Werkstudenten Kommissionierung / Lagermitarbeiter',
-        shortDescription: 'Studierende, die neben dem Studium im REWE-Lager jobben, unterstützen in Teilzeit die Lagerprozesse.',
-        bullets: [
-          'Waren per Scanner picken',
-          'Packen und allgemeine Lagerarbeiten',
-          'Geringere Wochenstundenzahl',
-          'Befristung während des Studiums',
-          'Tätigkeiten entsprechen meist denen der regulären Kommissionierer bzw. Lagermitarbeiter'
-        ],
-        workModel: 'Werkstudent',
-        entryLevel: 'Professionals'
       }
     ]
   },

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Briefcase, Users, Shield } from 'lucide-react'
 import './PathSelector.css'
 import CareerPathJobs from './CareerPathJobs'
@@ -104,8 +104,18 @@ const pathContent = {
 const PathSelector = () => {
   const [activePath, setActivePath] = useState(null) // null = keine Auswahl, 'markt', 'logistik' oder 'verwaltung'
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [isDesktop, setIsDesktop] = useState(() => {
+    if (typeof window === 'undefined') return true
+    return window.matchMedia('(min-width: 768px)').matches
+  })
   
-  const paths = ['markt', 'logistik', 'verwaltung']
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)')
+    setIsDesktop(mq.matches)
+    const onChange = (e) => setIsDesktop(e.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
 
   const handlePathSelect = (path) => {
     // Wenn bereits aktiv, schließen
@@ -135,6 +145,52 @@ const PathSelector = () => {
   }
 
   const currentContent = activePath ? pathContent[activePath] : null
+
+  const renderPathContent = (path) => {
+    const content = path ? pathContent[path] : null
+    if (!path || !content) return null
+    const ariaLabel = `Inhalte für ${
+      path === 'markt'
+        ? 'Vertrieb'
+        : path === 'frischetheke'
+        ? 'Frischetheke'
+        : path === 'logistik'
+        ? 'Logistik'
+        : 'Verwaltung'
+    }`
+
+    return (
+      <div
+        id={`path-content-${path}`}
+        className={`path-content ${isTransitioning ? 'path-content--transitioning' : ''}`}
+        role="region"
+        aria-live="polite"
+        aria-labelledby={`path-cta-${path}`}
+        aria-label={ariaLabel}
+      >
+        <Feature217b
+          badge=""
+          headline=""
+          description=""
+          features={content?.aspects.map((aspect, index) => ({
+            ...aspect,
+            icon: index === 0 ? Briefcase : index === 1 ? Users : Shield,
+          })) || []}
+          backgroundImage={
+            path === 'markt'
+              ? '/QuerMarktLogistikVerwaltung/Markt.jpg'
+              : path === 'logistik'
+              ? '/QuerMarktLogistikVerwaltung/Logistik.jpg'
+              : path === 'frischetheke'
+              ? '/Markt/rewe_kolbermoor_foto-craft_3192.jpg'
+              : '/QuerMarktLogistikVerwaltung/Verwaltung.jpg'
+          }
+        />
+
+        <CareerPathJobs activePath={path} />
+      </div>
+    )
+  }
 
   return (
     <section className="path-selector section" id="path-selector" aria-labelledby="path-heading">
@@ -179,43 +235,12 @@ const PathSelector = () => {
             ]}
             activeItem={activePath}
             onItemClick={handlePathSelect}
+            renderContent={!isDesktop ? (id) => renderPathContent(id) : null}
           />
         </div>
 
         {/* Content-Bereich - wechselt je nach Auswahl (nur Desktop) */}
-        {activePath && currentContent && (
-          <div 
-            id="path-content"
-            className={`path-content hidden md:block ${isTransitioning ? 'path-content--transitioning' : ''}`}
-            role="region"
-            aria-live="polite"
-            aria-labelledby={`path-cta-${activePath}`}
-            aria-label={`Inhalte für ${activePath === 'markt' ? 'Vertrieb' : activePath === 'logistik' ? 'Logistik' : 'Verwaltung'}`}
-          >
-            {/* Feature217b für Content-Darstellung */}
-            <Feature217b
-              badge=""
-              headline=""
-              description=""
-              features={currentContent?.aspects.map((aspect, index) => ({
-                ...aspect,
-                icon: index === 0 ? Briefcase : index === 1 ? Users : Shield
-              })) || []}
-              backgroundImage={
-                activePath === 'markt' 
-                  ? '/QuerMarktLogistikVerwaltung/Markt.jpg'
-                  : activePath === 'logistik'
-                  ? '/QuerMarktLogistikVerwaltung/Logistik.jpg'
-                  : activePath === 'frischetheke'
-                  ? '/Markt/rewe_kolbermoor_foto-craft_3192.jpg'
-                  : '/QuerMarktLogistikVerwaltung/Verwaltung.jpg'
-              }
-            />
-
-            {/* Karrierepfade-Jobs Ergänzung */}
-            <CareerPathJobs activePath={activePath} />
-          </div>
-        )}
+        {isDesktop && activePath && currentContent && renderPathContent(activePath)}
 
         {/* Praktika Section */}
         <Feature253

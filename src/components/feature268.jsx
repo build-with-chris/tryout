@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -16,16 +15,11 @@ const ctaLinks = {
   primary: {
     text: 'Kontaktperson finden',
     href: '/karriere/kontakt'
-  },
-  secondary: {
-    text: 'Alle FAQs',
-    href: '/karriere/faq'
   }
 };
 
 const Feature268 = ({
-  className,
-  onFAQClick
+  className
 }) => {
   return (
     <section className={cn("h-full w-screen overflow-hidden py-16 bg-white", className)}>
@@ -94,15 +88,6 @@ const Feature268 = ({
                   <Link to={ctaLinks.primary.href}>
                     {ctaLinks.primary.text}
                   </Link>
-                </Button>
-              </CardItem>
-              <CardItem translateZ="100">
-                <Button 
-                  variant="secondary" 
-                  className="rounded-full w-full"
-                  onClick={onFAQClick}
-                >
-                  {ctaLinks.secondary.text}
                 </Button>
               </CardItem>
             </div>

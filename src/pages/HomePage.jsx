@@ -8,7 +8,6 @@ import CheckAgent from '../components/CheckAgent'
 import ApplicationFlow from '../components/ApplicationFlow'
 import { About14 } from '../components/about14'
 import TrustBlock from '../components/TrustBlock'
-import FAQAccordion from '../components/FAQAccordion'
 import ContactCTA from '../components/ContactCTA'
 import { Shader7 } from '../components/shader7'
 import '../components/BewerbungswegeLayout.css'
@@ -182,16 +181,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Accordion */}
-      <section className="section" id="faq" style={{ backgroundColor: 'transparent' }}>
-        <div className="container">
-          <h2 className="h2 text-center mb-xl">Häufige Fragen</h2>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <Accordion items={faqItems} />
-          </div>
-        </div>
-      </section>
-
       {/* Bewerbung in 4 Schritten */}
       <ApplicationFlow />
 
@@ -244,7 +233,6 @@ function HomePage() {
               <div className="footer-links">
                 <a href="#karrierewelten">Karrierewelten</a>
                 <a href="#werte">Unsere Werte</a>
-                <a href="#faq">Häufige Fragen</a>
               </div>
             </div>
           </div>

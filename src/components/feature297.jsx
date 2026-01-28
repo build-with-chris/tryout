@@ -37,7 +37,7 @@ const Feature297 = ({
               )}
               aria-pressed={isActive}
               aria-expanded={isActive}
-              aria-controls="path-content"
+              aria-controls={`path-content-${item.id}`}
               id={`path-cta-${item.id}`}
             >
             {/* Animierte rote Umrandung - fährt um die Kachel herum */}

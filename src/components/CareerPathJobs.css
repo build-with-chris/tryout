@@ -193,6 +193,63 @@
   }
 }
 
+/* Benefits-Sektion - volle Breite */
+.career-path-jobs-benefits {
+  grid-column: 1 / -1;
+  margin-top: var(--spacing-lg);
+}
+
+.career-path-jobs-item-full-width {
+  grid-column: 1 / -1;
+}
+
+/* Benefits Grid */
+.career-path-jobs-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+  .career-path-jobs-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+.career-path-jobs-benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-300);
+}
+
+.career-path-jobs-benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  line-height: 1;
+}
+
+.career-path-jobs-benefit-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--spacing-sm);
+}
+
+.career-path-jobs-benefit-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
 .career-path-jobs-item {
   background-color: var(--color-white);
   border: 1px solid var(--color-neutral-300);
@@ -342,26 +399,25 @@
 /* CTA */
 .career-path-jobs-cta {
   text-align: center;
+  margin-top: var(--spacing-xl);
 }
 
-.career-path-jobs-cta-inner {
-  background-color: var(--color-neutral-100);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-neutral-300);
-  padding: var(--spacing-2xl) var(--spacing-xl);
+/* CTA unter dem Benefits-Accordion (Ausbildung) - außerhalb des Accordions */
+.career-path-jobs-benefits .career-path-jobs-cta {
+  margin-top: var(--spacing-2xl);
+}
+
+/* CTA mittig unter allen Job-Elementen (Professionals) - über beide Spalten */
+.career-path-jobs-list-inner > .career-path-jobs-cta,
+.career-path-jobs-cta-full-width {
+  grid-column: 1 / -1;
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .career-path-jobs-cta-button {
   display: inline-block;
   min-width: 280px;
-  margin-bottom: var(--spacing-sm);
-}
-
-.career-path-jobs-cta-hint {
-  color: var(--color-neutral-500);
-  font-size: var(--font-size-xs);
-  margin: 0 0 var(--spacing-md) 0;
-  font-style: italic;
 }
 
 .career-path-jobs-cta-secondary {

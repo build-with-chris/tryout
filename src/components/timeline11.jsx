@@ -6,6 +6,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 const Timeline11 = ({
@@ -100,6 +101,15 @@ const Timeline11 = ({
                         <p className="text-sm text-muted-foreground mt-1">
                           {phase.description}
                         </p>
+                      )}
+                      {phase.title === "Bewerbung uploaden" && (
+                        <div className="mt-3">
+                          <Button asChild className="rounded-full">
+                            <a href="https://karriere.rewe.de/jobs/">
+                              Hier geht&apos;s weiter
+                            </a>
+                          </Button>
+                        </div>
                       )}
                     </div>
                   </div>

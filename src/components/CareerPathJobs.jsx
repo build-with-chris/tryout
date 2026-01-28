@@ -148,12 +148,53 @@ const getJobSearchLink = (jobTitle) => {
   return `https://karriere.rewe.de/jobs/suche?term=${encodedTerm}`;
 };
 
+const ZENTRALE_AUSBILDUNG_URL =
+  'https://karriere.rewe.de/jobs/suche?term=&location=Eching%2C+Deutschland&range=50&sort=distance&shifttypes%5B%5D=Ausbildung&shifttypes%5B%5D=Duales+Studium&shifttypes%5B%5D=Werkstudent%3Ainnent%C3%A4tigkeit&facilities%5B%5D=Lager&facilities%5B%5D=Fahren&facilities%5B%5D=Logistikverwaltung&facilities%5B%5D=Gebietsmanagement&facilities%5B%5D=Vertriebsleitung&facilities%5B%5D=Weitere+Funktionen+Vertrieb&facilities%5B%5D=Controlling+%26+Finanzen&facilities%5B%5D=Einkauf&facilities%5B%5D=Human+Resources&facilities%5B%5D=Immobilien&facilities%5B%5D=Informationstechnologie&facilities%5B%5D=Marketing+%26+PR&facilities%5B%5D=Recht+%26+Revision&facilities%5B%5D=Strategie&facilities%5B%5D=Weitere+Funktionen&lat=48.2985765&lng=11.6264352&nobounds=&index='
+
+const ZENTRALE_PROFESSIONALS_URL =
+  'https://karriere.rewe.de/jobs/suche?term=&location=Eching%2C+Deutschland&range=50&sort=distance&facilities%5B%5D=Gebietsmanagement&facilities%5B%5D=Vertriebsleitung&facilities%5B%5D=Weitere+Funktionen+Vertrieb&facilities%5B%5D=Controlling+%26+Finanzen&facilities%5B%5D=Einkauf&facilities%5B%5D=Human+Resources&facilities%5B%5D=Immobilien&facilities%5B%5D=Informationstechnologie&facilities%5B%5D=Marketing+%26+PR&facilities%5B%5D=Recht+%26+Revision&facilities%5B%5D=Strategie&facilities%5B%5D=Weitere+Funktionen&lat=48.2985765&lng=11.6264352&nobounds=&index='
+
+// Globale Jobsuche-Links je Bereich/Phase (für einen stets sichtbaren CTA)
+const getAreaSearchLink = (activePath, activePhase) => {
+  if (activePath === 'verwaltung' && activePhase === 'ausbildung') {
+    return ZENTRALE_AUSBILDUNG_URL
+  }
+
+  // Spezieller Sonderfall (wie beim Job-CTA innerhalb der Accordion-Items)
+  if (activePath === 'verwaltung' && activePhase === 'professionals') {
+    return ZENTRALE_PROFESSIONALS_URL
+  }
+
+  const termMap = {
+    markt: {
+      ausbildung: 'ausbildung einzelhandel',
+      professionals: 'verkäufer',
+    },
+    frischetheke: {
+      ausbildung: 'feinkost',
+      professionals: 'frischetheke',
+    },
+    logistik: {
+      ausbildung: 'fachkraft lagerlogistik',
+      professionals: 'kommissionierer',
+    },
+    verwaltung: {
+      ausbildung: 'büromanagement',
+      professionals: 'sachbearbeiter',
+    },
+  }
+
+  const term = termMap?.[activePath]?.[activePhase] || activePath || ''
+  return `https://karriere.rewe.de/jobs/suche?term=${encodeURIComponent(term)}`
+}
+
 const CareerPathJobs = ({
   activePath, // 'markt', 'logistik' oder 'verwaltung' - kommt von PathSelector
   className
 }) => {
   const [activePhase, setActivePhase] = useState('ausbildung');
   const [expandedJobId, setExpandedJobId] = useState(null);
+  const [expandedBenefits, setExpandedBenefits] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   // Check for reduced motion preference
@@ -169,6 +210,7 @@ const CareerPathJobs = ({
   // Reset expanded job when path or phase changes
   useEffect(() => {
     setExpandedJobId(null);
+    setExpandedBenefits(false);
   }, [activePath, activePhase]);
 
   // Don't render if no path is selected
@@ -343,9 +385,9 @@ const CareerPathJobs = ({
                               {job.shortDescription}
                             </p>
                             <ul className="career-path-jobs-item-bullets">
-                              {job.bullets.map((bullet, index) => (
+                              {job.bullets.map((bullet, bulletIndex) => (
                                 <li
-                                  key={index}
+                                  key={bulletIndex}
                                   className="career-path-jobs-item-bullet"
                                 >
                                   <span className="career-path-jobs-item-bullet-marker">•</span>
@@ -355,12 +397,22 @@ const CareerPathJobs = ({
                             </ul>
                             <div className="career-path-jobs-item-cta">
                               <a
-                                href={getJobSearchLink(job.title)}
+                                href={
+                                  activePath === 'verwaltung' && activePhase === 'ausbildung'
+                                    ? ZENTRALE_AUSBILDUNG_URL
+                                    : activePath === 'verwaltung' && activePhase === 'professionals'
+                                    ? ZENTRALE_PROFESSIONALS_URL
+                                    : getJobSearchLink(job.title)
+                                }
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="career-path-jobs-item-cta-link"
                               >
-                                Jetzt offene Stellen anschauen
+                                {activePath === 'verwaltung' && activePhase === 'professionals'
+                                  ? 'Alle offenen Jobs'
+                                  : activePath === 'verwaltung' && activePhase === 'ausbildung'
+                                  ? 'Alle Ausbildungsplätze ansehen'
+                                  : 'Jetzt offene Stellen anschauen'}
                               </a>
                             </div>
                           </div>
@@ -375,6 +427,132 @@ const CareerPathJobs = ({
                 <p>Keine Jobs für diese Phase verfügbar.</p>
               </div>
             )}
+
+            {/* Benefits-Sektion - nur bei Ausbildung, volle Breite */}
+            {activePhase === 'ausbildung' && (
+              <div className="career-path-jobs-benefits">
+                <div className="career-path-jobs-item career-path-jobs-item-full-width">
+                  <button
+                    className="career-path-jobs-item-button"
+                    onClick={() => setExpandedBenefits(!expandedBenefits)}
+                    aria-expanded={expandedBenefits}
+                    aria-controls="benefits-details"
+                  >
+                    <div className="career-path-jobs-item-content">
+                      <h3 className="career-path-jobs-item-title">
+                        Deine Benefits bei REWE
+                      </h3>
+                    </div>
+                    <motion.div
+                      custom={expandedBenefits}
+                      variants={iconVariants}
+                      animate="rotate"
+                      transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
+                      className="career-path-jobs-item-icon"
+                    >
+                      <svg
+                        className="career-path-jobs-item-icon-svg"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </motion.div>
+                  </button>
+
+                  <AnimatePresence>
+                    {expandedBenefits && (
+                      <motion.div
+                        id="benefits-details"
+                        {...accordionVariants}
+                        transition={{ duration: prefersReducedMotion ? 0 : 0.3, ease: 'easeInOut' }}
+                        className="career-path-jobs-item-details"
+                      >
+                        <div className="career-path-jobs-item-details-inner">
+                          <div className="career-path-jobs-benefits-grid">
+                            <div className="career-path-jobs-benefit-item">
+                              <div className="career-path-jobs-benefit-icon">💶</div>
+                              <h4 className="career-path-jobs-benefit-title">Tarifliche Sonderzahlungen</h4>
+                              <p className="career-path-jobs-benefit-description">
+                                Urlaubs- und Weihnachtsgeld im Rahmen von Tarifvertrag bzw. Betriebsvereinbarung – transparent geregelt und verlässlich.
+                              </p>
+                            </div>
+                            <div className="career-path-jobs-benefit-item">
+                              <div className="career-path-jobs-benefit-icon">🚲</div>
+                              <h4 className="career-path-jobs-benefit-title">Mobilität &amp; Pendeln</h4>
+                              <p className="career-path-jobs-benefit-description">
+                                Unterstützung rund um den Arbeitsweg, z. B. über Mobilitätsangebote wie JobRad oder Ticket-Lösungen – je nach Einsatzbereich.
+                              </p>
+                            </div>
+                            <div className="career-path-jobs-benefit-item">
+                              <div className="career-path-jobs-benefit-icon">🏦</div>
+                              <h4 className="career-path-jobs-benefit-title">Vorsorge &amp; finanzielle Extras</h4>
+                              <p className="career-path-jobs-benefit-description">
+                                Betriebliche Altersvorsorge und vermögenswirksame Leistungen – abhängig von Tarif/Regelung.
+                              </p>
+                            </div>
+                            <div className="career-path-jobs-benefit-item">
+                              <div className="career-path-jobs-benefit-icon">🛒</div>
+                              <h4 className="career-path-jobs-benefit-title">Mitarbeitendenrabatte</h4>
+                              <p className="career-path-jobs-benefit-description">
+                                Vorteile beim Einkauf sowie weitere Vergünstigungen bei Partnern – damit sich Arbeit auch im Alltag lohnt.
+                              </p>
+                            </div>
+                            <div className="career-path-jobs-benefit-item">
+                              <div className="career-path-jobs-benefit-icon">🩺</div>
+                              <h4 className="career-path-jobs-benefit-title">Gesundheit &amp; Wohlbefinden</h4>
+                              <p className="career-path-jobs-benefit-description">
+                                Angebote wie betriebsärztliche Betreuung und Gesundheitsaktionen (z. B. Check-ups) – je nach Standort ergänzt um weitere Maßnahmen.
+                              </p>
+                            </div>
+                            <div className="career-path-jobs-benefit-item">
+                              <div className="career-path-jobs-benefit-icon">🎓</div>
+                              <h4 className="career-path-jobs-benefit-title">Entwicklung &amp; Vereinbarkeit</h4>
+                              <p className="career-path-jobs-benefit-description">
+                                Individuelle Aus- und Weiterbildungen sowie flexible Modelle, wo es der Job zulässt (z. B. Teilzeitoptionen oder längere Auszeiten nach Regelung).
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+                
+                {/* CTA Button unter dem Benefits-Accordion (nur bei Ausbildung) */}
+                <div className="career-path-jobs-cta">
+                  <a
+                    className="btn btn-primary btn-lg career-path-jobs-cta-button"
+                    href={getAreaSearchLink(activePath, activePhase)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Alle Ausbildungsplätze ansehen
+                  </a>
+                </div>
+              </div>
+            )}
+            
+            {/* CTA Button mittig unter allen Job-Elementen (nur bei Professionals) */}
+            {activePhase === 'professionals' && displayedJobs.length > 0 && (
+              <div className="career-path-jobs-cta career-path-jobs-cta-full-width">
+                <a
+                  className="btn btn-primary btn-lg career-path-jobs-cta-button"
+                  href={getAreaSearchLink(activePath, activePhase)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Alle Jobs ansehen
+                </a>
+              </div>
+            )}
+
           </motion.div>
         </AnimatePresence>
       </div>
