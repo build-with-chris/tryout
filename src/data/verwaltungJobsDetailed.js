@@ -59,37 +59,6 @@ export const verwaltungJobsDetailed = {
     },
     {
       id: 'verwaltung-professionals-3',
-      title: 'Ladenlayouter',
-      jobId: '945266',
-      location: 'Region Süd (Eching)',
-      contractType: 'Vollzeit, unbefristet',
-      tasks: [
-        'Umbauten & Neueröffnungen koordinieren',
-        'Maßnahmen vorbereiten',
-        'Sortimente/Bestellungen abstimmen',
-        'Prozesse vor/während Neueinrichtung steuern',
-        'Zeitpläne steuern',
-        'Eng mit Teamleitung Umbauten/Neueröffnungen'
-      ],
-      profile: [
-        'Ausbildung Einzelhandel',
-        'Ideal 3–5 Jahre Markterfahrung',
-        'Marktprozess-Know-how',
-        'Selbstständig, belastbar, flexibel',
-        'MS Office',
-        'Führerschein B',
-        'Reisebereitschaft Bayern'
-      ],
-      benefits: [
-        'Vergütung + Dienstwagen',
-        'Altersvorsorge/JobRad/Kantine',
-        'Einarbeitung',
-        'Entwicklung/Schulungen',
-        'Mitarbeitendenrabatt'
-      ]
-    },
-    {
-      id: 'verwaltung-professionals-4',
       title: 'Revisor',
       jobId: '945271',
       location: 'Eching',
@@ -117,7 +86,7 @@ export const verwaltungJobsDetailed = {
       ]
     },
     {
-      id: 'verwaltung-professionals-5',
+      id: 'verwaltung-professionals-4',
       title: 'Gebietsmanager Ware Kolo / Trockensortiment',
       jobId: '946360',
       location: 'Raum Schwaben/Oberbayern',
@@ -146,7 +115,7 @@ export const verwaltungJobsDetailed = {
       ]
     },
     {
-      id: 'verwaltung-professionals-6',
+      id: 'verwaltung-professionals-5',
       title: 'Sachbearbeiter Fuhrparkmanagement (Dienstwagenbetreuung)',
       jobId: '946118',
       location: 'Eching',
@@ -175,60 +144,7 @@ export const verwaltungJobsDetailed = {
       ]
     },
     {
-      id: 'verwaltung-professionals-7',
-      title: 'Werkstudent Kaufmännisches Immobilienmanagement',
-      jobId: '942833',
-      location: 'Eching',
-      contractType: 'Befristet',
-      tasks: [
-        'Unterstützung Bewirtschaftung von Handelsimmobilien',
-        'Nachträge zu Mietverträgen',
-        'Standardkorrespondenz',
-        'Rechnungen/Nebenkosten prüfen',
-        'Umsatzmietabrechnungen bearbeiten'
-      ],
-      profile: [
-        'Sicher in MS Office',
-        'Zuverlässig',
-        'Selbstständig & teamfähig',
-        'Verantwortungsbewusst'
-      ],
-      benefits: [
-        'Kantine/Deutschlandticket/Fahrrad-Leasing',
-        '5% Rabatt',
-        'Flexible Zeiten + bis 2 Tage Homeoffice',
-        'Weiterbildung'
-      ]
-    },
-    {
-      id: 'verwaltung-professionals-8',
-      title: 'Praktikum Recruiting',
-      jobId: '947814',
-      location: 'Eching',
-      contractType: 'Befristet',
-      tasks: [
-        'Mitarbeit im Recruiting (REWE/PENNY)',
-        'Telefoninterviews (z.B. Marktleiter/Verkauf)',
-        'Stellenanzeigen ausschreiben',
-        'Bewerbungen selektieren',
-        'Admin (Systempflege, Korrespondenz, Termine)'
-      ],
-      profile: [
-        'Studium (Psychologie/BWL/Sozial-/Wirtschaftswissen o.ä.)',
-        'Kommunikativ, strukturiert',
-        'Erste Praxis (Praktikum/Werkstudent) ideal',
-        'MS Office',
-        'Ideal ca. 6 Monate verfügbar'
-      ],
-      benefits: [
-        'Kantinenzuschuss',
-        'Flexible Zeiten, mobiles Arbeiten',
-        'Echte Team-Integration',
-        'Oft Einstiegschance Richtung Werkstudent/Trainee/Direkteinstieg'
-      ]
-    },
-    {
-      id: 'verwaltung-professionals-9',
+      id: 'verwaltung-professionals-6',
       title: 'Immobilienverwalter im Innendienst',
       jobId: '948074',
       location: 'Eching',
@@ -250,7 +166,7 @@ export const verwaltungJobsDetailed = {
       ]
     },
     {
-      id: 'verwaltung-professionals-10',
+      id: 'verwaltung-professionals-8',
       title: 'Projektleiter Technisches Immobilienmanagement',
       jobId: '940379',
       location: 'u.a. Eching',
@@ -312,7 +228,7 @@ export const verwaltungJobsDetailed = {
       ]
     },
     {
-      id: 'verwaltung-professionals-12',
+      id: 'verwaltung-professionals-9',
       title: 'Leiter Arbeitssicherheit',
       jobId: '903422',
       location: 'Eching/Region Süd',

@@ -224,13 +224,16 @@ const CareerPathJobs = ({
   // Get jobs for current path and phase
   const currentJobs = careerPathJobs[activePath]?.[activePhase] || [];
 
-  const handleJobToggle = (jobId) => {
-    // Für Verwaltung: Modal öffnen statt Accordion
-    if (activePath === 'verwaltung') {
+  const handleJobToggle = (jobId, event) => {
+    // Verhindere Event-Bubbling
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    // Einheitliches Verhalten: Für alle Bereiche öffnet sich ein Modal
+    // Stelle sicher, dass die Job-ID korrekt gesetzt wird
+    if (jobId) {
       setModalJobId(jobId);
-    } else {
-      // Für andere Bereiche: Accordion wie bisher
-      setExpandedJobId(expandedJobId === jobId ? null : jobId);
     }
   };
 
@@ -252,9 +255,19 @@ const CareerPathJobs = ({
 
   // Hole detaillierte Job-Informationen für Modal
   const getDetailedJobInfo = (jobId) => {
-    if (activePath !== 'verwaltung') return null;
-    const detailedJobs = verwaltungJobsDetailed[activePhase] || [];
-    return detailedJobs.find(job => job.id === jobId) || null;
+    if (!jobId) return null;
+    
+    // Für Verwaltung: zuerst in den detaillierten Daten suchen
+    if (activePath === 'verwaltung') {
+      const detailedJobs = verwaltungJobsDetailed[activePhase] || [];
+      const detailedMatch = detailedJobs.find(job => job.id === jobId);
+      if (detailedMatch) return detailedMatch;
+    }
+
+    // Fallback bzw. alle anderen Bereiche: Basis-Daten verwenden
+    const baseJobs = careerPathJobs[activePath]?.[activePhase] || [];
+    const baseMatch = baseJobs.find(job => job.id === jobId);
+    return baseMatch || null;
   };
 
   // Find active phase index for neutral indicator (not progress)
@@ -350,7 +363,7 @@ const CareerPathJobs = ({
         </div>
       </div>
 
-      {/* Job-Liste mit Accordion */}
+      {/* Job-Liste mit Cards, die ein Modal öffnen */}
       <div className="career-path-jobs-list">
         <AnimatePresence mode="wait">
           <motion.div
@@ -360,18 +373,23 @@ const CareerPathJobs = ({
             className="career-path-jobs-list-inner"
           >
             {displayedJobs.length > 0 ? (
-              displayedJobs.map((job) => {
-                const isExpanded = expandedJobId === job.id;
+              displayedJobs.map((job, index) => {
+                // Stelle sicher, dass die Job-ID korrekt übergeben wird
+                const currentJobId = job.id;
                 return (
                   <div
-                    key={job.id}
+                    key={currentJobId}
                     className="career-path-jobs-item"
                   >
                     <button
                       className="career-path-jobs-item-button"
-                      onClick={() => handleJobToggle(job.id)}
-                      aria-expanded={isExpanded}
-                      aria-controls={`job-details-${job.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // Verwende die Job-ID direkt aus dem Closure
+                        handleJobToggle(currentJobId, e);
+                      }}
+                      data-job-id={currentJobId}
                     >
                       <div className="career-path-jobs-item-content">
                         <h3 className="career-path-jobs-item-title">
@@ -381,94 +399,22 @@ const CareerPathJobs = ({
                           <span>{job.workModel}</span>
                         </div>
                       </div>
-                      {activePath === 'verwaltung' ? (
-                        <div className="career-path-jobs-item-icon">
-                          <svg
-                            className="career-path-jobs-item-icon-svg"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                      ) : (
-                        <motion.div
-                          custom={isExpanded}
-                          variants={iconVariants}
-                          animate="rotate"
-                          transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
-                          className="career-path-jobs-item-icon"
+                      <div className="career-path-jobs-item-icon">
+                        <svg
+                          className="career-path-jobs-item-icon-svg"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
                         >
-                          <svg
-                            className="career-path-jobs-item-icon-svg"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M19 9l-7 7-7-7"
-                            />
-                          </svg>
-                        </motion.div>
-                      )}
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
                     </button>
-
-                    <AnimatePresence>
-                      {isExpanded && (
-                        <motion.div
-                          id={`job-details-${job.id}`}
-                          {...accordionVariants}
-                          transition={{ duration: prefersReducedMotion ? 0 : 0.3, ease: 'easeInOut' }}
-                          className="career-path-jobs-item-details"
-                        >
-                          <div className="career-path-jobs-item-details-inner">
-                            <p className="career-path-jobs-item-description">
-                              {job.shortDescription}
-                            </p>
-                            <ul className="career-path-jobs-item-bullets">
-                              {job.bullets.map((bullet, bulletIndex) => (
-                                <li
-                                  key={bulletIndex}
-                                  className="career-path-jobs-item-bullet"
-                                >
-                                  <span className="career-path-jobs-item-bullet-marker">•</span>
-                                  <span>{bullet}</span>
-                                </li>
-                              ))}
-                            </ul>
-                            <div className="career-path-jobs-item-cta">
-                              <a
-                                href={
-                                  activePath === 'verwaltung' && activePhase === 'ausbildung'
-                                    ? ZENTRALE_AUSBILDUNG_URL
-                                    : activePath === 'verwaltung' && activePhase === 'professionals'
-                                    ? ZENTRALE_PROFESSIONALS_URL
-                                    : getJobSearchLink(job.title)
-                                }
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="career-path-jobs-item-cta-link"
-                              >
-                                {activePath === 'verwaltung' && activePhase === 'professionals'
-                                  ? 'Alle offenen Jobs'
-                                  : activePath === 'verwaltung' && activePhase === 'ausbildung'
-                                  ? 'Alle Ausbildungsplätze ansehen'
-                                  : 'Jetzt offene Stellen anschauen'}
-                              </a>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
                   </div>
                 );
               })
@@ -607,18 +553,25 @@ const CareerPathJobs = ({
         </AnimatePresence>
       </div>
 
-      {/* Modal für Verwaltung */}
+      {/* Modal für alle Bereiche */}
       <AnimatePresence>
-        {modalJobId && (
-          <JobModal
-            jobId={modalJobId}
-            jobInfo={getDetailedJobInfo(modalJobId)}
-            jobTitle={displayedJobs.find(j => j.id === modalJobId)?.title || ''}
-            onClose={() => setModalJobId(null)}
-            prefersReducedMotion={prefersReducedMotion}
-            getApplicationUrl={getApplicationUrl}
-          />
-        )}
+        {modalJobId && (() => {
+          // Hole die Job-Informationen direkt hier, um sicherzustellen, dass die richtige ID verwendet wird
+          const jobInfo = getDetailedJobInfo(modalJobId);
+          const jobTitle = displayedJobs.find(j => j.id === modalJobId)?.title || '';
+          
+          return (
+            <JobModal
+              key={modalJobId}
+              jobId={modalJobId}
+              jobInfo={jobInfo}
+              jobTitle={jobTitle}
+              onClose={() => setModalJobId(null)}
+              prefersReducedMotion={prefersReducedMotion}
+              getApplicationUrl={getApplicationUrl}
+            />
+          );
+        })()}
       </AnimatePresence>
     </div>
   );
@@ -638,6 +591,24 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
     exit: prefersReducedMotion ? {} : { opacity: 0, scale: 0.95, y: 20 }
   };
 
+  const modalContentRef = React.useRef(null);
+
+  useEffect(() => {
+    // Beim Öffnen des Modals zum Modal scrollen, damit der Kopfbereich immer sichtbar ist
+    if (modalContentRef.current && typeof window !== 'undefined') {
+      // Kurze Verzögerung, damit das Modal gerendert ist
+      setTimeout(() => {
+        const modalRect = modalContentRef.current.getBoundingClientRect();
+        const scrollPosition = window.scrollY + modalRect.top - 20; // 20px Abstand oben
+        
+        window.scrollTo({
+          top: Math.max(0, scrollPosition),
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        });
+      }, 100);
+    }
+  }, [jobId, prefersReducedMotion]);
+
   if (!jobInfo) return null;
 
   return (
@@ -650,6 +621,7 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
       onClick={onClose}
     >
       <motion.div
+        ref={modalContentRef}
         className="career-path-jobs-modal-content"
         variants={contentVariants}
         initial="hidden"
@@ -730,6 +702,23 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
                   <li key={index}>{item}</li>
                 ))}
               </ul>
+            </div>
+          )}
+
+          {/* Fallback für Bereiche ohne detaillierte Daten: Kurzbeschreibung + Bullets aus Basisdaten */}
+          {!jobInfo.tasks && !jobInfo.content && jobInfo.shortDescription && (
+            <div className="career-path-jobs-modal-section">
+              <h4 className="career-path-jobs-modal-section-title">Das erwartet dich</h4>
+              <p className="career-path-jobs-item-description">
+                {jobInfo.shortDescription}
+              </p>
+              {jobInfo.bullets && jobInfo.bullets.length > 0 && (
+                <ul className="career-path-jobs-modal-list">
+                  {jobInfo.bullets.map((bullet, index) => (
+                    <li key={index}>{bullet}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           )}
         </div>
