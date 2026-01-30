@@ -9,39 +9,57 @@ const Integration8 = ({
   className
 }) => {
   const zeile1 = [
-    "Verkauf",
-    "Kasse",
-    "Warenverräumung",
-    "Reinigung",
-    "Aushilfe",
-    "Ausbildung",
-    "Frischetheke",
-    "Fachverkauf",
-    "Marktmanagement",
+    "Mitarbeiter Verkauf",
+    "Verkäufer/in / Kassierer:in",
+    "Mitarbeiter Warenverräumung",
+    "Aushilfe / Minijob",
+    "Marktmanager / Filialleiter",
+    "Bereichsleiter /Abteilungsleiter Frischetheke",
+    "Verkäufer/in Frischetheke Metzgerei",
+    "Fleischer / Metzger Verkauf Frischetheke Metzgerei",
+    "Bereichsleiter /Abteilungsleiter Frischetheke Metzgerei",
+    "Abiturientenprogramm zur Führungskraft im Einzelhandel (m/w/d)",
+    "Verkäufer",
+    "Kaufmann im Einzelhandel",
+    "Kaufmann im Einzelhandel, Feinkost",
+    "Duales Bachelor Studium Betriebswirtschaftslehre, Studienrichtung Handel",
+    "Mitarbeiter:in verzehrfähige Lebensmittel",
+    "Mitarbeiter:in Obst & Gemüse",
+    "Aushilfe / Minijob Frischetheke Metzgerei",
+    "Marktmanager-Assistenz",
   ];
 
   const zeile2 = [
-    "Kommissionierung",
-    "Lager",
-    "Wareneingang",
+    "Kommissionierer",
+    "Berufskraftfahrer",
+    "Teamleiter:in Logistik",
     "Warenausgang",
-    "Stapler",
-    "Verladung",
+    "Sachbearbeiter:in Logistik",
+    "Abteilungsleiter:in",
     "Fahrdienst",
     "Fuhrpark",
     "Schichtleitung",
+    "Disponent:in",
+    "Qualitätsprüfer",
+    "Staplerfahrer",
+    "Berufskraftfahrer (m/w/d)",
+    "Fachlageristen (m/w/d)",
+    "Fachkraft für Lagerlogistik",
+    "Kaufleute für Groß- und Außenhandelsmanagement",
+    "Duales Bachelor Studium Betriebswirtschaftslehre, Studienrichtung Logistik",
+    "Duales Studium Wirtschaftsingenieurwesen, Studienrichtung Automatisierungstechnik",
   ];
 
   const zeile3 = [
-    "Büromanagement",
-    "Sachbearbeitung",
     "Einkauf",
-    "Category",
-    "Controlling",
-    "Personal",
-    "Recruiting",
-    "IT",
-    "Immobilien",
+    "Marketing und PR",
+    "Controlling & Finanzen",
+    "Human Resource",
+    "Strategie",
+    "Recht und Revision",
+    "Büromanagement (m/w/d)",
+    "Immobilienmanagement (m/w/d)",
+    "Marketingkommunikation (m/w/d)",
   ];
 
   return (
@@ -57,7 +75,7 @@ const Integration8 = ({
       </div>
 
       <div className="relative mt-12 -mx-4 sm:-mx-6 lg:-mx-8">
-        <Marquee pauseOnHover className="[--duration:20s] p-0">
+        <Marquee pauseOnHover className="[--duration:40s] p-0">
           {zeile1.map((job, index) => (
             <div
               key={index}
@@ -66,7 +84,7 @@ const Integration8 = ({
             </div>
           ))}
         </Marquee>
-        <Marquee pauseOnHover reverse className="[--duration:20s] p-0">
+        <Marquee pauseOnHover reverse className="[--duration:40s] p-0">
           {zeile2.map((job, index) => (
             <div
               key={index}

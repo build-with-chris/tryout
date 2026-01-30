@@ -161,6 +161,18 @@ const FRISCHETHEKE_PROFESSIONALS_URL =
 const FRISCHETHEKE_AUSBILDUNG_URL =
   'https://karriere.rewe.de/jobs/suche?term=&location=&range=100&sort=distance&shifttypes%5B%5D=Ausbildung&shifttypes%5B%5D=Duales+Studium&shifttypes%5B%5D=Praktikum&shifttypes%5B%5D=Traineeprogramm&facilities%5B%5D=Frischetheke&lat=0&lng=0&nobounds=&index='
 
+const MARKT_AUSBILDUNG_URL =
+  'https://karriere.rewe.de/jobs/suche?term=&location=&range=25&sort=date&shifttypes%5B%5D=Ausbildung&shifttypes%5B%5D=Praktikum&shifttypes%5B%5D=Traineeprogramm&facilities%5B%5D=Verkauf&lat=0&lng=0&nobounds=&index='
+
+const MARKT_PROFESSIONALS_URL =
+  'https://karriere.rewe.de/jobs/suche?term=&location=&range=25&sort=date&shifttypes%5B%5D=F%C3%BChrungsposition&shifttypes%5B%5D=Berufserfahrung&shifttypes%5B%5D=Berufseinstieg&facilities%5B%5D=Verkauf&lat=0&lng=0&nobounds=&index='
+
+const LOGISTIK_AUSBILDUNG_URL =
+  'https://karriere.rewe.de/jobs/suche?term=&location=&range=25&sort=date&shifttypes%5B%5D=Ausbildung&shifttypes%5B%5D=Duales+Studium&shifttypes%5B%5D=Praktikum&shifttypes%5B%5D=Traineeprogramm&facilities%5B%5D=Lager&facilities%5B%5D=Fahren&facilities%5B%5D=Logistikverwaltung&lat=0&lng=0&nobounds=&index='
+
+const LOGISTIK_PROFESSIONALS_URL =
+  'https://karriere.rewe.de/jobs/suche?term=&location=&range=25&sort=date&shifttypes%5B%5D=F%C3%BChrungsposition&shifttypes%5B%5D=Berufserfahrung&shifttypes%5B%5D=Berufseinstieg&shifttypes%5B%5D=Aushilfsjob&facilities%5B%5D=Lager&facilities%5B%5D=Fahren&facilities%5B%5D=Logistikverwaltung&lat=0&lng=0&nobounds=&index='
+
 // Globale Jobsuche-Links je Bereich/Phase (für einen stets sichtbaren CTA)
 const getAreaSearchLink = (activePath, activePhase) => {
   if (activePath === 'verwaltung' && activePhase === 'ausbildung') {
@@ -178,6 +190,22 @@ const getAreaSearchLink = (activePath, activePhase) => {
 
   if (activePath === 'frischetheke' && activePhase === 'professionals') {
     return FRISCHETHEKE_PROFESSIONALS_URL
+  }
+
+  if (activePath === 'markt' && activePhase === 'ausbildung') {
+    return MARKT_AUSBILDUNG_URL
+  }
+
+  if (activePath === 'markt' && activePhase === 'professionals') {
+    return MARKT_PROFESSIONALS_URL
+  }
+
+  if (activePath === 'logistik' && activePhase === 'ausbildung') {
+    return LOGISTIK_AUSBILDUNG_URL
+  }
+
+  if (activePath === 'logistik' && activePhase === 'professionals') {
+    return LOGISTIK_PROFESSIONALS_URL
   }
 
   const termMap = {
