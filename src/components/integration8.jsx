@@ -75,7 +75,7 @@ const Integration8 = ({
       </div>
 
       <div className="relative mt-12 -mx-4 sm:-mx-6 lg:-mx-8">
-        <Marquee pauseOnHover className="[--duration:40s] p-0">
+        <Marquee pauseOnHover className="[--duration:40s] p-0 mb-6">
           {zeile1.map((job, index) => (
             <div
               key={index}
@@ -84,7 +84,7 @@ const Integration8 = ({
             </div>
           ))}
         </Marquee>
-        <Marquee pauseOnHover reverse className="[--duration:40s] p-0">
+        <Marquee pauseOnHover reverse className="[--duration:40s] p-0 mb-6">
           {zeile2.map((job, index) => (
             <div
               key={index}
