@@ -373,7 +373,8 @@ const VideoSection = () => {
           {/* Title */}
           <div className="video-section-header">
             <h2 className="video-section-title">
-              Traum ist kein Titel. Traum ist ein Gefühl.
+              <span className="video-section-title-line">Traum ist kein Titel.</span>
+              <span className="video-section-title-line">Traum ist ein Gefühl.</span>
             </h2>
             <p className="video-section-subtitle">
               Finde deinen Platz bei REWE Süd.
