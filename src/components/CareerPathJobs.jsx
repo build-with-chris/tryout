@@ -280,7 +280,12 @@ const CareerPathJobs = ({
   };
 
   // Funktion zur Erstellung der Bewerbungs-URL mit Job-Titel als term-Parameter
-  const getApplicationUrl = (jobTitle) => {
+  const getApplicationUrl = (jobTitle, jobInfo = null) => {
+    // Wenn eine spezifische applicationUrl im Job-Objekt vorhanden ist, diese verwenden
+    if (jobInfo && jobInfo.applicationUrl) {
+      return jobInfo.applicationUrl;
+    }
+
     if (!jobTitle || jobTitle.trim() === '') {
       // Fallback falls kein Titel vorhanden
       return activePath === 'verwaltung' && activePhase === 'ausbildung'
@@ -767,7 +772,7 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
 
         <div className="career-path-jobs-modal-footer">
           <a
-            href={getApplicationUrl((jobInfo && jobInfo.title) ? jobInfo.title : jobTitle)}
+            href={getApplicationUrl((jobInfo && jobInfo.title) ? jobInfo.title : jobTitle, jobInfo)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary btn-lg career-path-jobs-modal-cta"

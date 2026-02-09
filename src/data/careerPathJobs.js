@@ -255,25 +255,28 @@ export const careerPathJobs = {
         id: 'logistik-ausbildung-1',
         title: 'Ausbildung zum Berufskraftfahrer (m/w/d)',
         shortDescription: 'Dreijährige Ausbildung zum Lkw-Fahrer im REWE-Lieferverkehr. Du lernst alle Aufgaben rund um Warentransport kennen.',
+        benefits: [
+          'Übernahme der Kosten für den PKW- und LKW-Führerschein',
+          'Übernahmegarantie bei guten Leistungen – in Voll- oder Teilzeit',
+          'Flexible Einsatzplanung, Azubi-Projekte sowie Seminare und E-Learnings',
+          'Team, das dich vom ersten Tag an unterstützt und fördert',
+          '5 % Einkaufsrabatt bei REWE und PENNY sowie weitere Rabatte (u. a. toom Baumarkt, DERTOUR Group)',
+          'Vergünstigungen z. B. in Fitnessstudios und Freizeitparks'
+        ],
         tasks: [
-          'Übernahme von Warenlieferungen',
-          'Prüfung der Ladung und Ladungssicherung',
-          'Beladen und Entladen des Lkw sowie Wartung und Pflege des Fahrzeugs',
-          'Kontrolle der Fahrzeug- und Transportpapiere',
-          'Sichere Auslieferung der Waren an Märkte (Nahverkehr) unter Nutzung von Navigationssystemen',
-          'Wirtschaftliche Routen- und Terminplanung im Nahverkehr'
+          'Warenübernahme sowie Ladungsprüfung und -sicherung',
+          'Be- und Entladen des Lkw sowie Wartung und Pflege',
+          'Prüfen von Fahrzeug- und Beförderungspapieren',
+          'Sicherer Transport der Ware mit Unterstützung durch Navigationssysteme',
+          'Wirtschaftliche Planung von Terminen und Fahrtwegen im Nahverkehr'
         ],
         profile: [
-          'Interesse am Fahren und an Logistik',
-          'Verantwortungsbewusst und zuverlässig',
-          'Gute körperliche Konstitution',
-          'Mindestens Hauptschulabschluss'
-        ],
-        benefits: [
-          'Im Rahmen der Ausbildung kann der Lkw-Führerschein Klasse CE erworben werden',
-          'Übernahme bei guten Leistungen',
-          '5% Mitarbeitendenrabatt bei REWE und PENNY',
-          'Strukturierte Ausbildung mit Praxis und Berufsschule'
+          'Interesse an Lebensmitteln und den Prozessen hinter den Kulissen eines Supermarkts',
+          'Lernbereitschaft und Lust, Neues auszuprobieren',
+          'Verlässlich und teamorientiert',
+          'Freude am Kontakt mit Menschen',
+          'Guter Hauptschulabschluss oder Mittlere Reife',
+          'Ausbildungsstart ab 16 Jahren möglich; Ausbildung in Voll- oder Teilzeit möglich'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
@@ -283,107 +286,107 @@ export const careerPathJobs = {
         title: 'Ausbildung zum Fachlageristen (m/w/d)',
         shortDescription: 'Zweijährige Ausbildung im Lager (mit Option, ein drittes Jahr zur Fachkraft für Lagerlogistik anzuhängen).',
         tasks: [
-          'Wareneingang prüfen und Waren per EDV-System einlagern',
-          'Waren kommissionieren (Bestellungen zusammenstellen) und den Warenausgang koordinieren',
-          'Einsatz verschiedener digitaler Lagerverwaltungssysteme kennenlernen',
-          'Umgang mit Arbeitsmitteln wie Messgeräten und das Führen von Flurförderfahrzeugen (z.B. Gabelstapler)',
-          'Lagerorganisation betreiben und Qualitätskontrollen durchführen'
+          'Wareneingang prüfen und Waren systemgestützt einlagern',
+          'Waren kommissionieren und den Warenausgang mit koordinieren',
+          'Mit digitalen Systemen arbeiten und Lagerprozesse kennenlernen',
+          'Arbeitsmittel nutzen (z. B. Messinstrumente) und Flurförderfahrzeuge führen',
+          'Lagerorganisation unterstützen und Qualität sichern'
         ],
         profile: [
-          'Interesse an Logistik und Lagerarbeit',
-          'Sorgfältig und zuverlässig',
-          'Teamfähig',
-          'Guter Hauptschulabschluss oder Mittlere Reife'
+          'Interesse an Abläufen in einem großen Logistikzentrum',
+          'Teamgeist, kontaktfreudig und zuverlässig',
+          'Einsatzbereitschaft und Ausdauer',
+          'Schulabschluss ist wichtig – aber Persönlichkeit, Motivation und Lernbereitschaft zählen genauso'
         ],
         benefits: [
-          'Zweijährige Ausbildung mit Option auf drittes Jahr zur Fachkraft für Lagerlogistik',
-          'Übernahme bei guten Leistungen',
-          '5% Mitarbeitendenrabatt bei REWE und PENNY',
-          'Strukturierte Ausbildung mit Praxis und Berufsschule'
+          'Azubi-Projekte und Events',
+          'Garantierte Übernahme bei guten Leistungen',
+          'Einkaufsrabatte bei REWE und PENNY sowie weitere Vergünstigungen (z. B. toom Baumarkt, DER Touristik)'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
       },
       {
         id: 'logistik-ausbildung-3',
-        title: 'Ausbildung zur Fachkraft für Lagerlogistik',
+        title: 'Ausbildung zur Fachkraft für Lagerlogistik (m/w/d)',
         shortDescription: 'Dreijährige Ausbildung (vertieft gegenüber Fachlagerist). Die Aufgaben ähneln denen des Fachlageristen, erweitert um planerische Tätigkeiten.',
+        benefits: [
+          'Übernahmegarantie bei guten Leistungen – in Voll- oder Teilzeit',
+          'Flexible Einsatzplanung, Azubi-Projekte sowie Seminare und E-Learnings',
+          'Team, das dich vom ersten Tag an unterstützt und fördert',
+          '5 % Einkaufsrabatt bei REWE und PENNY sowie weitere Rabatte (u. a. toom Baumarkt, DERTOUR Group)',
+          'Vergünstigungen z. B. in Fitnessstudios und Freizeitparks',
+          'Ausbildung in Voll- oder Teilzeit möglich'
+        ],
         tasks: [
-          'Wareneingang prüfen und per System einlagern',
-          'Kommissionierung und Warenausgang koordinieren',
-          'Tourenplanung für Auslieferungen und Optimierung logistischer Abläufe',
-          'Ermitteln und Auswerten von Lagerkennzahlen (Statistiken über Warenfluss)',
-          'Bedienung von Lagergeräten inkl. Flurförderfahrzeugen',
-          'Logistische Prozesse analysieren und verbessern'
+          'Wareneingang prüfen und Waren systemgestützt einlagern',
+          'Waren kommissionieren und den Warenausgang mit koordinieren',
+          'Tourenplanung kennenlernen und logistische Prozesse optimieren',
+          'Lagerkennzahlen ermitteln und auswerten',
+          'Arbeitsmittel nutzen (z. B. Messinstrumente) und Flurförderfahrzeuge führen'
         ],
         profile: [
-          'Interesse an Logistik und planerischen Aufgaben',
-          'Analytisches Denken',
-          'Sorgfältig und zuverlässig',
-          'Teamfähig',
-          'Guter Hauptschulabschluss oder Mittlere Reife'
-        ],
-        benefits: [
-          'Dreijährige vertiefte Ausbildung',
-          'Übernahme bei guten Leistungen',
-          '5% Mitarbeitendenrabatt bei REWE und PENNY',
-          'Strukturierte Ausbildung mit Praxis und Berufsschule',
-          'Gute Karriereperspektiven'
+          'Interesse an Lebensmitteln und den Abläufen hinter den Kulissen eines Supermarkts',
+          'Lernbereitschaft und Freude daran, Neues zu lernen',
+          'Verlässlich und teamorientiert',
+          'Spaß am Kontakt mit Menschen',
+          'Gute Mittlere Reife'
         ],
         workModel: 'Ausbildung',
         entryLevel: 'Ausbildung'
       },
       {
         id: 'logistik-ausbildung-4',
-        title: 'Duales Bachelor Studium BWL – Studienrichtung Logistik',
-        shortDescription: 'Verzahnt Theorie an der Hochschule mit Praxis in REWE-Lägern. Im Praxisanteil übernimmst du verantwortungsvolle Aufgaben, um dich auf Führungsrollen in der Logistik vorzubereiten.',
+        title: 'Duales Bachelor-Studium (B.A.), Studienrichtung Logistik',
+        shortDescription: 'Der dreijährige Bachelorstudiengang mit Fachrichtung Warenwirtschaft und Logistik macht eine optimale Verzahnung von Theorie und Praxis möglich. In den Praxissemestern kannst du das theoretisch gelernte Wissen an unserem Logistikstandort umsetzen und wir machen dich fit für deine spätere Führungsposition.',
         tasks: [
-          'Qualitätskontrollen im Wareneingang durchführen',
-          'Kommissionierabläufe eigenständig steuern',
-          'Transportketten koordinieren und überwachen (inkl. Tourenplanungssysteme bedienen)',
-          'Mitarbeit in Projekten der Lager-/Betriebsleitung',
-          'Analyse der logistischen Prozesse am Standort'
+          'Die Abläufe in der Warenbeschaffung und Warensteuerung kennenlernen',
+          'Den Wareneingang im Lager selbständig leiten und an Projekten teilnehmen',
+          'Wie die Inventur in der Logistik abläuft erlernen',
+          'Die Verwaltungsabteilung Logistik kennenlernen'
         ],
         profile: [
-          'Abitur oder Fachabitur',
-          'Interesse an Betriebswirtschaftslehre und Logistik',
-          'Analytisches Denken',
-          'Teamfähig und kommunikationsstark'
+          'Gutes Abitur oder fachgebundene Hochschulreife Wirtschaft',
+          'Du hast ein sicheres und selbstbewusstes Auftreten, bist kontaktfreudig und kundenorientiert',
+          'Du hast Teamgeist und Organisationstalent und zeigst gerne Einsatz- und Verantwortungsbereitschaft'
         ],
         benefits: [
-          'Kombination aus Studium und Praxis',
-          'Schneller Einstieg in Führungspositionen',
-          'Übernahme nach erfolgreichem Abschluss',
-          '5% Mitarbeitendenrabatt bei REWE und PENNY',
-          'Umfassende Weiterbildungsmöglichkeiten'
+          'Die Übernahme der Studiengebühren (exkl. Semesterticket und andere Beiträge)',
+          'Eine Übernahmegarantie bei guten Leistungen',
+          'Eine Auftakt- und Abschlussveranstaltung',
+          'Mitarbeiterrabatte und eine eigene Kantine am Standort',
+          'Sehr gute und vielfältige Weiterbildungsmöglichkeiten speziell für den Bereich Logistik',
+          'Flurförderfahrzeuge Schulung und die Möglichkeit zum Erwerb des Gabelstaplerscheins'
         ],
         workModel: 'Duales Studium',
-        entryLevel: 'Ausbildung'
+        entryLevel: 'Ausbildung',
+        applicationUrl: 'https://karriere.rewe.de/jobs/suche?term=Duales+Bachelor+Studienrichtung+Logistik&location=&range=25&sort=date&lat=0&lng=0&nobounds=&index='
       },
       {
         id: 'logistik-ausbildung-5',
-        title: 'Duales Studium Wirtschaftsingenieurwesen – Studienrichtung Automatisierungstechnik',
+        title: 'Duales Studium (B.Eng.) Wirtschaftsingenieurwesen – Schwerpunkt Automatisierungstechnik (m/w/d)',
         shortDescription: 'Kombination aus Ingenieurwissenschaften mit Praxis in der REWE-Logistik, insbesondere in hochautomatisierten Lägern.',
         tasks: [
-          'Technische und wirtschaftliche Problemstellungen fachübergreifend lösen',
-          'Ingenieurwissenschaftliche Fachkompetenzen aufbauen',
-          'Technische Prozesse im Lager/Automatisierung selbstständig erschließen',
-          'In laufenden Automatisierungs-Projekten mitarbeiten',
-          'Grundlagen in Projekt-, Personal- und Unternehmensmanagement vertiefen',
-          'Praxisphasen an modernen Logistikstandorten mit automatisierter Kommissionierung'
+          'Komplexe Aufgaben im technischen und wirtschaftlichen Kontext erkennen und methodisch lösen',
+          'Technische Prozesse im Schwerpunkt Automatisierungstechnik eigenständig erschließen und weiterdenken',
+          'In laufenden Projekten mitarbeiten und Einblicke in Projektpraxis und Arbeitsalltag an den Logistikstandorten gewinnen',
+          'Grundlagen in Projekt-, Personal- und Unternehmensmanagement kennenlernen und anwenden',
+          'In den Praxisphasen das Gelernte direkt an unseren Logistikstandorten umsetzen – mit Blick auf eine spätere Führungsrolle'
         ],
         profile: [
-          'Abitur mit guten Noten in Mathematik und Naturwissenschaften',
-          'Interesse an Technik und Ingenieurwissenschaften',
-          'Analytisches Denken',
-          'Teamfähig und kommunikationsstark'
+          'Gutes Abitur, Fachhochschulreife oder Meisterabschluss (technischer Beruf) mit Berufserfahrung',
+          'Sicheres, selbstbewusstes Auftreten; kontaktfreudig und kundenorientiert',
+          'Technikaffin, interessiert an Trends und offen fürs Ausprobieren',
+          'Teamgeist, Organisationstalent sowie Einsatz- und Verantwortungsbereitschaft'
         ],
         benefits: [
-          'Kombination aus Studium und Praxis',
-          'Praxisphasen an modernen Logistikstandorten',
-          'Schneller Einstieg in Führungspositionen',
-          'Übernahme nach erfolgreichem Abschluss',
-          '5% Mitarbeitendenrabatt bei REWE und PENNY'
+          'Enge Verzahnung von Praxis und Studium an der Hochschule Landshut',
+          'Individuelle, persönliche Betreuung und intensive Begleitung durch eine:n Pat:in',
+          'Einsatz in den Praxisphasen an unseren Logistikstandorten (u. a. Eitting, Buttenheim, Neu-Isenburg)',
+          'Übernahme der Semestergebühren',
+          'Übernahmegarantie bei guten Leistungen',
+          'Mitarbeitendenrabatte',
+          'Sehr gute und vielfältige Weiterbildungsmöglichkeiten – besonders im Bereich Logistik'
         ],
         workModel: 'Duales Studium',
         entryLevel: 'Ausbildung'
@@ -394,25 +397,28 @@ export const careerPathJobs = {
         id: 'logistik-professionals-1',
         title: 'Kommissionierer / Lagermitarbeiter',
         shortDescription: 'Lagerpersonal, das Kundenaufträge (Marktbestellungen) im Verteilzentrum zusammenstellt. Diese Mitarbeiter sind das Rückgrat der Logistik.',
+        benefits: [
+          'Attraktive Vergütung und Urlaubsanspruch nach Tarif',
+          'Weihnachtsgeld sowie Urlaubsgeld',
+          'Vertragliche Arbeitszeit von 38,5 Std./Woche',
+          '30 Tage (6 Wochen) Urlaub',
+          'Frisch gekochtes Essen zu vergünstigten Preisen in unserer Kantine',
+          '5 % Einkaufsrabatt bei REWE und PENNY sowie Rabatte beim toom Baumarkt und der DERTOUR Group',
+          'Rabattiertes Deutschlandticket oder JobRad-Leasing',
+          'Vergünstigungen in Fitnessstudios, Rabatte bei Online-Shops sowie eine Mitgliedschaft beim Deutschen Jugendherbergswerk',
+          'Gute Vereinbarkeit von Beruf, Familie und Privatleben (zertifiziert vom audit berufundfamilie)'
+        ],
         tasks: [
-          'Auftragslisten (Picklisten) erhalten und mittels Flurförderfahrzeug die angeforderten Waren aus dem Lager entnehmen',
-          'Kommissionieren per Sprachsteuerung (Pick-by-Voice) oder Touchscreen-Gerät (Pick-by-Touch)',
-          'Waren auf Paletten sorgfältig und transportsicher packen',
-          'Auf Ordnung im Lager achten und Transportsicherheit gewährleisten (z.B. Ladung sichern)',
-          'Sorgen dafür, dass die REWE-Märkte vollständig und pünktlich beliefert werden'
+          'Zusammenstellen von Waren per Headset (Pick-by-Voice) oder Touchscreen (Pick-by-Touch)',
+          'Nutzen von Flurförderfahrzeugen zur Bewegung im Lager',
+          'Packen der Waren so, dass sie im Markt leicht abzuladen sind',
+          'Sicherstellen von Ordnung sowie transportsicherer Verpackung der Produkte'
         ],
         profile: [
-          'Körperliche Belastbarkeit',
-          'Sorgfältig und zuverlässig',
-          'Teamfähig',
-          'Bereitschaft zu Schichtarbeit'
-        ],
-        benefits: [
-          'Attraktive Vergütung',
-          '5% Mitarbeitendenrabatt bei REWE und PENNY',
-          'Strukturierte Einarbeitung',
-          'Vollzeit- oder Teilzeitstellen möglich',
-          'Feste Schichtstruktur'
+          'Erste Erfahrung im Lager ist hilfreich – Quereinsteiger:innen sind willkommen',
+          'Idealerweise Erfahrung im Umgang mit Flurförderfahrzeugen oder Gabelstaplern',
+          'Motivierte, selbständige und zuverlässige Arbeitsweise',
+          'Bereitschaft zur Schicht- und Wochenendarbeit oder Dauerspätschicht'
         ],
         workModel: 'Vollzeit / Teilzeit',
         entryLevel: 'Professionals'
@@ -503,27 +509,28 @@ export const careerPathJobs = {
       },
       {
         id: 'logistik-professionals-5',
-        title: 'Berufskraftfahrer',
-        shortDescription: 'Festangestellte LKW-Fahrer im REWE-Fuhrpark übernehmen die Belieferung der Supermärkte. Diese Fahrer sind regional unterwegs und wichtiger Bestandteil der gekühlten und trockenen Warenversorgung der Filialen.',
+        title: 'Berufskraftfahrer:in (m/w/d)',
+        shortDescription: 'Zustellfahrer:innen beliefern Kund:innen bis zur Haustür und sorgen für einen reibungslosen Service. Du bist mit deinem Fahrzeug unterwegs und übernimmst die eigenständige Beladung und Route.',
         tasks: [
-          'Pünktliche Anlieferung der REWE-Märkte im Nahverkehr',
-          'Sicheres Be- und Entladen des Lkw verantworten',
-          'Retourwaren aus den Märkten wieder mit zurücknehmen',
-          'Transportierte Waren per Handscanner erfassen',
-          'Alle gesetzlichen Vorschriften (Lenkzeiten, Verkehrssicherheit etc.) strikt einhalten'
+          'Du belädst dein Fahrzeug eigenständig und erhältst eine vorgegebene Route für deinen Arbeitstag',
+          'Du belieferst Kund:innen bis zur Wohnungs- bzw. Haustür',
+          'Du behältst unterwegs die Übersicht und überzeugst mit gutem Service'
         ],
         profile: [
-          'Lkw-Führerschein Klasse CE',
-          'Verantwortungsbewusst und zuverlässig',
-          'Gute körperliche Konstitution',
-          'Bereitschaft zu frühen Arbeitszeiten'
+          'Führerschein Klasse B',
+          'Bereitschaft zur Arbeit in zwei Schichten (Wechselschicht, 5 Tage/Woche von Mo–Sa)',
+          'Freundlich und serviceorientiert im Kontakt mit Kund:innen',
+          'Du kannst dich auf Deutsch gut ausdrücken'
         ],
         benefits: [
-          'Attraktive Vergütung',
-          '5% Mitarbeitendenrabatt bei REWE und PENNY',
-          'Unbefristetes Arbeitsverhältnis',
-          'Regionale Einsätze im Nahverkehr',
-          'Strukturierte Einarbeitung'
+          'Attraktiver Stundenlohn plus Leistungsprämie (Details je nach Regelung)',
+          'Lohnentwicklung nach dem ersten Jahr möglich',
+          'Weihnachtsgeld (inkl. Einkaufsguthaben) nach geltender Regelung',
+          'Unbefristeter Arbeitsvertrag',
+          'Betriebliche Altersvorsorge',
+          'Mitarbeitendenrabatte bei REWE, PENNY, toom und weiteren Unternehmen der REWE Group',
+          'Vergünstigtes Deutschlandticket (nach Regelung)',
+          'Intensive Einarbeitung'
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
