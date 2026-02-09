@@ -29,8 +29,8 @@ const VideoSection = () => {
   }
 
   const handleVideoClick = (e) => {
-    // Don't trigger if clicking on controls
-    if (e.target.closest('.video-controls')) {
+    // Don't trigger if clicking on controls or play button
+    if (e.target.closest('.video-controls') || e.target.closest('.play-button')) {
       return
     }
     e.stopPropagation()
@@ -227,7 +227,7 @@ const VideoSection = () => {
               playsInline
               loop={false}
               preload="metadata"
-              aria-label="REWE Imagefilm - Traum ist kein Titel. Traum ist ein Gefühl."
+              aria-label="REWE Imagefilm - Traum ist nicht der Titel. Traum ist, wenn der Job zu deinem Leben passt."
             />
 
             {/* Video Controls */}
@@ -243,6 +243,10 @@ const VideoSection = () => {
                     role="button"
                     tabIndex={0}
                     aria-label={isPlaying ? 'Video pausieren' : 'Video abspielen'}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      handlePlayPause()
+                    }}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault()
@@ -373,8 +377,8 @@ const VideoSection = () => {
           {/* Title */}
           <div className="video-section-header">
             <h2 className="video-section-title">
-              <span className="video-section-title-line">Traum ist kein Titel.</span>
-              <span className="video-section-title-line">Traum ist ein Gefühl.</span>
+              <span className="video-section-title-line">Traum ist nicht der Titel.</span>
+              <span className="video-section-title-line">Traum ist, wenn der Job zu deinem Leben passt.</span>
             </h2>
             <p className="video-section-subtitle">
               Finde deinen Platz bei REWE Süd.
