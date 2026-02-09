@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import './Option4.css'
 import { Hero234aOption4 } from '@/components/hero234a-option4'
+import VideoSection from '@/components/VideoSection'
 import AudioPlayer from '@/components/AudioPlayer'
 import ValuesSection from '@/components/ValuesSection'
 import PathSelector from '@/components/PathSelector'
@@ -12,7 +13,11 @@ const Option4 = () => {
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null)
   const [progress, setProgress] = useState({})
   const [audioDurations, setAudioDurations] = useState({})
+  const [currentAudioIndex, setCurrentAudioIndex] = useState(0)
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
   const audioRefs = useRef({})
+  const swipeContainerRef = useRef(null)
 
   // Titel/Beschreibungen für jede Audiospur
   const audioTitles = [
@@ -30,12 +35,12 @@ const Option4 = () => {
   const audioStories = [
     {
       id: 'audio1',
-      audioSrc: '/Empfehlung an 18-jähriges Ich.mp3',
+      audioSrc: '/1770625133_Empfehlung_an_18-ja_hriges_Ich.wav',
       audioDuration: 20 // Wird dynamisch aktualisiert
     },
     {
       id: 'audio2',
-      audioSrc: '/erster Arbeitstag.mp3',
+      audioSrc: '/1770624904_erster_Arbeitstag.wav',
       audioDuration: 20 // Wird dynamisch aktualisiert
     }
   ]
@@ -131,9 +136,59 @@ const Option4 = () => {
     }
   }
 
+  // Swipe handlers for mobile
+  const minSwipeDistance = 50
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+
+    if (isLeftSwipe && currentAudioIndex < audioStories.length - 1) {
+      // Swipe left - next audio
+      setCurrentAudioIndex(prev => prev + 1)
+      // Stop current audio if playing
+      if (currentlyPlaying) {
+        const audio = audioRefs.current[currentlyPlaying]
+        if (audio) {
+          audio.pause()
+          audio.currentTime = 0
+        }
+        setCurrentlyPlaying(null)
+      }
+    }
+    
+    if (isRightSwipe && currentAudioIndex > 0) {
+      // Swipe right - previous audio
+      setCurrentAudioIndex(prev => prev - 1)
+      // Stop current audio if playing
+      if (currentlyPlaying) {
+        const audio = audioRefs.current[currentlyPlaying]
+        if (audio) {
+          audio.pause()
+          audio.currentTime = 0
+        }
+        setCurrentlyPlaying(null)
+      }
+    }
+  }
+
   return (
     <div className="option4-page">
       <Hero234aOption4 />
+
+      <VideoSection />
 
       <PathSelector />
 
@@ -210,13 +265,33 @@ const Option4 = () => {
             </p>
           </div>
 
-          <div className="option4-audio-grid">
+          <div 
+            className="option4-audio-grid"
+            ref={swipeContainerRef}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             {audioStories.map((story, index) => {
               const duration = audioDurations[story.id] || story.audioDuration
               const storyWithDuration = { ...story, audioDuration: duration }
+              const isActive = index === currentAudioIndex
               
               return (
-                <div key={story.id} className="option4-audio-item">
+                <motion.div 
+                  key={story.id} 
+                  className={`option4-audio-item ${isActive ? 'active' : ''}`}
+                  initial={false}
+                  animate={{
+                    opacity: isActive ? 1 : 0,
+                    x: isActive ? 0 : (index < currentAudioIndex ? -100 : 100),
+                    scale: isActive ? 1 : 0.95,
+                  }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  style={{
+                    pointerEvents: isActive ? 'auto' : 'none'
+                  }}
+                >
                   <h3 className="option4-audio-title">
                     {audioTitles[index]}
                   </h3>
@@ -230,7 +305,18 @@ const Option4 = () => {
                   <p className="option4-audio-description">
                     {audioDescriptions[index]}
                   </p>
-                </div>
+                  
+                  {/* Mobile Swipe Indicator */}
+                  <div className="option4-audio-indicators">
+                    {audioStories.map((_, idx) => (
+                      <span
+                        key={idx}
+                        className={`option4-audio-indicator ${idx === currentAudioIndex ? 'active' : ''}`}
+                        aria-hidden="true"
+                      />
+                    ))}
+                  </div>
+                </motion.div>
               )
             })}
           </div>

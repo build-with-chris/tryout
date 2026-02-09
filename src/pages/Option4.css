@@ -169,6 +169,17 @@
   gap: var(--spacing-2xl);
   max-width: 400px;
   margin: 0 auto;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .option4-audio-grid {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    touch-action: pan-y;
+  }
 }
 
 .option4-speech-bubble {
@@ -215,6 +226,34 @@
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+@media (max-width: 768px) {
+  .option4-audio-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+  }
+
+  .option4-audio-item.active {
+    position: relative;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .option4-audio-item {
+    position: relative !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+}
+
 .option4-audio-title {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
@@ -232,11 +271,6 @@
 }
 
 @media (max-width: 768px) {
-  .option4-audio-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
-  }
-
   .option4-audio-section {
     padding: var(--spacing-2xl) var(--spacing-md);
   }
@@ -247,6 +281,34 @@
 
   .option4-audio-title {
     font-size: var(--font-size-lg);
+  }
+}
+
+/* Swipe Indicators */
+.option4-audio-indicators {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .option4-audio-indicators {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+  }
+
+  .option4-audio-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-neutral-400);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .option4-audio-indicator.active {
+    background-color: var(--color-primary);
+    transform: scale(1.2);
   }
 }
 
