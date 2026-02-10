@@ -227,7 +227,7 @@ const VideoSection = () => {
               playsInline
               loop={false}
               preload="metadata"
-              aria-label="REWE Imagefilm - Komm zu uns! Rewe deinen Traum."
+              aria-label="REWE Imagefilm - Mehr als ein Job. Mehr als Arbeit. Mehr als ein Team. Mehr als ein super Markt. REWE bietet MEHR!"
             />
 
             {/* Video Controls */}
@@ -377,8 +377,11 @@ const VideoSection = () => {
           {/* Title */}
           <div className="video-section-header">
             <h2 className="video-section-title">
-              <span className="video-section-title-line">Komm zu uns!</span>
-              <span className="video-section-title-line">Rewe deinen Traum.</span>
+              <span className="video-section-title-line">Mehr als ein Job.</span>
+              <span className="video-section-title-line">Mehr als Arbeit.</span>
+              <span className="video-section-title-line">Mehr als ein Team.</span>
+              <span className="video-section-title-line">Mehr als ein super Markt.</span>
+              <span className="video-section-title-line">REWE bietet MEHR!</span>
             </h2>
             <p className="video-section-subtitle">
               Finde deinen Platz bei REWE Süd.
