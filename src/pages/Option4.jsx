@@ -256,7 +256,7 @@ const Option4 = () => {
 
         <div className="container relative z-10">
           <div className="option4-audio-header">
-            <h2 className="h2 text-center mb-md">Wann kommst du on Board?</h2>
+            <h2 className="h2 text-center mb-md">Wann kommst du ins Team?</h2>
             <p className="option4-audio-subheadline text-center mb-lg">
               Über Teamgefühl, Entwicklung und den Moment, in dem's „passt".
             </p>
