@@ -377,8 +377,8 @@ const VideoSection = () => {
           {/* Title */}
           <div className="video-section-header">
             <h2 className="video-section-title">
-              <span className="video-section-title-line">Traum ist nicht der Titel.</span>
-              <span className="video-section-title-line">Traum ist, wenn der Job zu deinem Leben passt.</span>
+              <span className="video-section-title-line">Komm zu uns,</span>
+              <span className="video-section-title-line">Rewe deinen Traum!</span>
             </h2>
             <p className="video-section-subtitle">
               Finde deinen Platz bei REWE Süd.
