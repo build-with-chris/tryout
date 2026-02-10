@@ -380,8 +380,8 @@ const VideoSection = () => {
               <span className="video-section-title-line">Mehr als ein Job.</span>
               <span className="video-section-title-line">Mehr als Arbeit.</span>
               <span className="video-section-title-line">Mehr als ein Team.</span>
-              <span className="video-section-title-line">Mehr als ein super Markt.</span>
-              <span className="video-section-title-line">REWE bietet MEHR!</span>
+              <span className="video-section-title-line video-section-title-line-nowrap video-section-title-line-spacer">Mehr als ein super Markt.</span>
+              <span className="video-section-title-line video-section-title-line-emphasis">REWE bietet MEHR!</span>
             </h2>
             <p className="video-section-subtitle">
               Finde deinen Platz bei REWE Süd.
