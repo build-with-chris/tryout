@@ -206,7 +206,7 @@ const ValuesSection = () => {
       <div className="container">
         <div className="values-header">
           <h2 id="values-heading" className="values-title">
-            Bei Rewe Süd arbeitet's sich gut. Punkt.
+            Bei REWE Süd arbeitet's sich gut. Punkt.
           </h2>
           <p className="values-subtitle">
             Du sollst wissen, woran du bist: Menschen im Fokus, nicht nur Prozesse.
