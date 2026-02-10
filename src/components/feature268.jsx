@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 import {
@@ -14,7 +13,7 @@ import { Timeline11 } from "@/components/timeline11";
 const ctaLinks = {
   primary: {
     text: 'Kontaktperson finden',
-    href: '/karriere/kontakt'
+    href: 'https://karriere.rewe.de/ansprechpartner-kontakt'
   }
 };
 
@@ -85,9 +84,13 @@ const Feature268 = ({
             <div className="flex w-full flex-col items-center justify-center gap-2 mt-4">
               <CardItem translateZ="100">
                 <Button asChild className="rounded-full w-full">
-                  <Link to={ctaLinks.primary.href}>
+                  <a 
+                    href={ctaLinks.primary.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {ctaLinks.primary.text}
-                  </Link>
+                  </a>
                 </Button>
               </CardItem>
             </div>

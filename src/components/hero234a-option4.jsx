@@ -4,57 +4,56 @@ import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
 
-// Bilder für obere Leiste - Azubis (mit 80% Schwarz-Weiß-Filter)
-const azubisImages = [
-  "/Azubis/Azubi%20Büro.jpg",
-  "/Azubis/Azubi%20Frischetheke.jpg",
-  "/Azubis/Azubi%20Logistik.jpg",
-  "/Azubis/Mitarbeiterin%20Markt.jpg",
-  "/Azubis/Quereinstieg%20Firschetheke.jpg",
-  "/Azubis/QuereinstiegLager.jpg",
+// Bilder für jede Zeile aus den Row-Ordnern
+const row0Images = [
+  "/Row0/0.jpg",
+  "/Row0/1.jpg",
+  "/Row0/2.jpg",
+  "/Row0/3.jpg",
+  "/Row0/4.jpg",
+  "/Row0/5.jpg",
+  "/Row0/6.jpg",
+  "/Row0/7.jpg",
 ];
 
-// Neue REWE Bilder für die untere Leiste (mit Sprüchen zwischen den Bildern)
-const reweImages = [
-  "/heroReweBilder/Motiv1-2.jpg",
-  "/heroReweBilder/Motiv2-1.jpg",
-  "/heroReweBilder/Spruch2.png",
-  "/heroReweBilder/Motiv3-4.jpg",
-  "/heroReweBilder/Spruch3.png",
-  "/heroReweBilder/Motiv3-5.jpg",
+const row1Images = [
+  "/Row1/0.jpg",
+  "/Row1/1.jpg",
+  "/Row1/2.jpg",
+  "/Row1/3.jpg",
+  "/Row1/4.jpg",
+  "/Row1/5.jpg",
+  "/Row1/6.jpg",
+  "/Row1/7.jpg",
 ];
 
-// Bilder für mittlere Leiste - Führungspersönlichkeiten
-const fuehrungspersoehnlichkeitenImages = [
-  "/Fuehrungspersoehnlichkeiten/Jutta.jpg",
-  "/Fuehrungspersoehnlichkeiten/Leiter Frischetheke.jpg",
-  "/Fuehrungspersoehnlichkeiten/Sarah.jpg",
-  "/Fuehrungspersoehnlichkeiten/Teamleiter Logistik.jpg",
-  "/Fuehrungspersoehnlichkeiten/Temperatursicherheitsbeauftragter.jpg",
-  "/Fuehrungspersoehnlichkeiten/Yassin.jpg",
+const row2Images = [
+  "/Row2/0.jpg",
+  "/Row2/1.jpg",
+  "/Row2/2.png",
+  "/Row2/3.jpg",
+  "/Row2/4.jpg",
+  "/Row2/5.png",
+  "/Row2/6.jpg",
+  "/Row2/7.jpg",
 ];
 
-// Funktion zum Erstellen einer gemischten Zeile mit 2 Bildern aus jedem Ordner
+// Funktion zum Erstellen einer Zeile mit Bildern aus dem entsprechenden Row-Ordner
 const createRowImages = (rowIndex) => {
-  // Zeile 0: Bilder 1-2 (Index 0-1)
-  // Zeile 1: Bilder 3-4 (Index 2-3)
-  // Zeile 2: Bilder 5-6 (Index 4-5)
-  const startIndex = rowIndex * 2;
-  const endIndex = startIndex + 2;
+  // Wähle die Bilder basierend auf der Zeile
+  const rowImages = [
+    row0Images,
+    row1Images,
+    row2Images,
+  ];
   
-  const azubis = azubisImages.slice(startIndex, endIndex);
-  const fuehrung = fuehrungspersoehnlichkeitenImages.slice(startIndex, endIndex);
-  const rewe = reweImages.slice(startIndex, endIndex);
+  const images = rowImages[rowIndex % rowImages.length];
   
-  // Mische abwechselnd: Azubis, Führung, Rewe, Azubis, Führung, Rewe...
-  const mixed = [];
-  for (let i = 0; i < 2; i++) {
-    mixed.push({ src: azubis[i], type: 'azubis' });
-    mixed.push({ src: fuehrung[i], type: 'fuehrung' });
-    mixed.push({ src: rewe[i], type: 'rewe' });
-  }
-  
-  return mixed;
+  // Konvertiere zu dem erwarteten Format
+  return images.map((src) => ({
+    src,
+    type: 'default', // Kein spezieller Filter mehr nötig
+  }));
 };
 
 const Hero234aOption4 = ({
@@ -104,9 +103,7 @@ const Hero234aOption4 = ({
                         src={imageData.src}
                         alt={`Gallery image ${imageIndex + 1}`}
                         className="h-full w-full object-cover"
-                        style={{
-                          filter: imageData.type === 'azubis' ? 'grayscale(80%)' : 'none'
-                        }} />
+                      />
                     </motion.div>
                   ))}
                 </motion.div>

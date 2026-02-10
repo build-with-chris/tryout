@@ -27,7 +27,7 @@ const quickAnswers = [
 const ctaLinks = {
   primary: {
     text: 'Kontaktperson finden',
-    href: '/karriere/kontakt'
+    href: 'https://karriere.rewe.de/ansprechpartner-kontakt'
   },
   secondary: [
     {
@@ -148,9 +148,13 @@ const QuickAnswerClosing = ({ className }) => {
               size="lg"
               className="quick-answer-closing-cta-primary"
             >
-              <Link to={ctaLinks.primary.href}>
+              <a 
+                href={ctaLinks.primary.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {ctaLinks.primary.text}
-              </Link>
+              </a>
             </Button>
             <div className="quick-answer-closing-cta-secondary">
               {ctaLinks.secondary.map((link, index) => (
