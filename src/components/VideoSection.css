@@ -59,10 +59,10 @@
 }
 
 .video-section-title {
-  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-neutral-900);
-  line-height: 1.2;
+  line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-sm);
   display: block;
 }
@@ -86,7 +86,7 @@
 
 @media (min-width: 481px) {
   .video-section-title {
-    font-size: clamp(1.5rem, 2vw, 1.875rem);
+    font-size: var(--font-size-3xl);
   }
   
   .video-section-title-line {
@@ -109,7 +109,7 @@
 
 @media (min-width: 769px) {
   .video-section-title {
-    font-size: clamp(1.5rem, 2vw, 1.875rem);
+    font-size: var(--font-size-4xl);
     margin-bottom: var(--spacing-md);
   }
   

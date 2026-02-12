@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { careerPathJobs } from "@/data/careerPathJobs";
 import { verwaltungJobsDetailed } from "@/data/verwaltungJobsDetailed";
+import { Feature253 } from '@/components/feature253';
 import './CareerPathJobs.css';
 
 // CTA-Links Konfiguration - nur interne Pfade, keine Bewerbungen
@@ -238,6 +239,7 @@ const CareerPathJobs = ({
   const [activePhase, setActivePhase] = useState('ausbildung');
   const [expandedJobId, setExpandedJobId] = useState(null);
   const [expandedBenefits, setExpandedBenefits] = useState(false);
+  const [expandedPraktika, setExpandedPraktika] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [modalJobId, setModalJobId] = useState(null);
 
@@ -255,6 +257,7 @@ const CareerPathJobs = ({
   useEffect(() => {
     setExpandedJobId(null);
     setExpandedBenefits(false);
+    setExpandedPraktika(false);
     setModalJobId(null);
   }, [activePath, activePhase]);
 
@@ -415,6 +418,42 @@ const CareerPathJobs = ({
           >
             {displayedJobs.length > 0 ? (
               displayedJobs.map((job, index) => {
+                // Spezieller Fall: Beschreibungstyp für Zentrale Professionals
+                if (job.type === 'description') {
+                  return (
+                    <div
+                      key={job.id}
+                      className="career-path-jobs-description"
+                    >
+                      <div className="career-path-jobs-description-content">
+                        <p className="career-path-jobs-description-text">
+                          {job.description}
+                        </p>
+                        {job.subtitle && (
+                          <p className="career-path-jobs-description-subtitle">
+                            {job.subtitle}
+                          </p>
+                        )}
+                        {job.links && job.links.length > 0 && (
+                          <div className="flex flex-col items-center justify-center gap-6 mt-8">
+                            {job.links.map((link, linkIndex) => (
+                              <a
+                                key={linkIndex}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-primary"
+                              >
+                                {link.text}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                }
+                
                 // Normale Job-Cards
                 const currentJobId = job.id;
                 return (
@@ -465,23 +504,23 @@ const CareerPathJobs = ({
               </div>
             )}
 
-            {/* Benefits-Sektion - nur bei Ausbildung, volle Breite */}
+            {/* Praktika Accordion - nur bei Ausbildung, volle Breite */}
             {activePhase === 'ausbildung' && (
               <div className="career-path-jobs-benefits">
                 <div className="career-path-jobs-item career-path-jobs-item-full-width">
                   <button
                     className="career-path-jobs-item-button"
-                    onClick={() => setExpandedBenefits(!expandedBenefits)}
-                    aria-expanded={expandedBenefits}
-                    aria-controls="benefits-details"
+                    onClick={() => setExpandedPraktika(!expandedPraktika)}
+                    aria-expanded={expandedPraktika}
+                    aria-controls="praktika-details"
                   >
                     <div className="career-path-jobs-item-content">
                       <h3 className="career-path-jobs-item-title">
-                        Deine Benefits bei REWE
+                        Unsere Praktika:
                       </h3>
                     </div>
                     <motion.div
-                      custom={expandedBenefits}
+                      custom={expandedPraktika}
                       variants={iconVariants}
                       animate="rotate"
                       transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
@@ -504,65 +543,35 @@ const CareerPathJobs = ({
                   </button>
 
                   <AnimatePresence>
-                    {expandedBenefits && (
+                    {expandedPraktika && (
                       <motion.div
-                        id="benefits-details"
+                        id="praktika-details"
                         {...accordionVariants}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.3, ease: 'easeInOut' }}
                         className="career-path-jobs-item-details"
                       >
                         <div className="career-path-jobs-item-details-inner">
-                          <div className="career-path-jobs-benefits-grid">
-                            <div className="career-path-jobs-benefit-item">
-                              <div className="career-path-jobs-benefit-icon">💶</div>
-                              <h4 className="career-path-jobs-benefit-title">Tarifliche Sonderzahlungen</h4>
-                              <p className="career-path-jobs-benefit-description">
-                                Urlaubs- und Weihnachtsgeld im Rahmen von Tarifvertrag bzw. Betriebsvereinbarung – transparent geregelt und verlässlich.
-                              </p>
-                            </div>
-                            <div className="career-path-jobs-benefit-item">
-                              <div className="career-path-jobs-benefit-icon">🚲</div>
-                              <h4 className="career-path-jobs-benefit-title">Mobilität &amp; Pendeln</h4>
-                              <p className="career-path-jobs-benefit-description">
-                                Unterstützung rund um den Arbeitsweg, z. B. über Mobilitätsangebote wie JobRad oder Ticket-Lösungen – je nach Einsatzbereich.
-                              </p>
-                            </div>
-                            <div className="career-path-jobs-benefit-item">
-                              <div className="career-path-jobs-benefit-icon">🏦</div>
-                              <h4 className="career-path-jobs-benefit-title">Vorsorge &amp; finanzielle Extras</h4>
-                              <p className="career-path-jobs-benefit-description">
-                                Betriebliche Altersvorsorge und vermögenswirksame Leistungen – abhängig von Tarif/Regelung.
-                              </p>
-                            </div>
-                            <div className="career-path-jobs-benefit-item">
-                              <div className="career-path-jobs-benefit-icon">🛒</div>
-                              <h4 className="career-path-jobs-benefit-title">Mitarbeitendenrabatte</h4>
-                              <p className="career-path-jobs-benefit-description">
-                                Vorteile beim Einkauf sowie weitere Vergünstigungen bei Partnern – damit sich Arbeit auch im Alltag lohnt.
-                              </p>
-                            </div>
-                            <div className="career-path-jobs-benefit-item">
-                              <div className="career-path-jobs-benefit-icon">🩺</div>
-                              <h4 className="career-path-jobs-benefit-title">Gesundheit &amp; Wohlbefinden</h4>
-                              <p className="career-path-jobs-benefit-description">
-                                Angebote wie betriebsärztliche Betreuung und Gesundheitsaktionen (z. B. Check-ups) – je nach Standort ergänzt um weitere Maßnahmen.
-                              </p>
-                            </div>
-                            <div className="career-path-jobs-benefit-item">
-                              <div className="career-path-jobs-benefit-icon">🎓</div>
-                              <h4 className="career-path-jobs-benefit-title">Entwicklung &amp; Vereinbarkeit</h4>
-                              <p className="career-path-jobs-benefit-description">
-                                Individuelle Aus- und Weiterbildungen sowie flexible Modelle, wo es der Job zulässt (z. B. Teilzeitoptionen oder längere Auszeiten nach Regelung).
-                              </p>
-                            </div>
-                          </div>
+                          <Feature253
+                            title="Unsere Praktika:"
+                            subtitle="Praktika für Schülerinnen"
+                            description="Ein Praktikum bei REWE ist dein perfekter Einblick in die Jobwelt. Auch wenn du noch nicht weißt, wo dein Weg nach dem Schulabschluss hinführt: hier kannst du reinschnuppern."
+                            ctaText={
+                              (activePath === 'markt' || activePath === 'frischetheke')
+                                ? "Bewirb dich einfach im Markt um die Ecke."
+                                : null
+                            }
+                            showMailLink={activePath === 'logistik' || activePath === 'verwaltung'}
+                            onCtaClick={() => {
+                              console.log('Schreib uns! clicked')
+                            }}
+                          />
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
                 
-                {/* CTA Button unter dem Benefits-Accordion (nur bei Ausbildung) */}
+                {/* CTA Button unter dem Praktika-Accordion (nur bei Ausbildung) */}
                 <div className="career-path-jobs-cta">
                   <a
                     className="btn btn-primary btn-lg career-path-jobs-cta-button"
@@ -576,8 +585,9 @@ const CareerPathJobs = ({
               </div>
             )}
             
-            {/* CTA Button mittig unter allen Job-Elementen (nur bei Professionals) */}
-            {activePhase === 'professionals' && displayedJobs.length > 0 && (
+            {/* CTA Button mittig unter allen Job-Elementen (nur bei Professionals, nicht bei description type) */}
+            {activePhase === 'professionals' && displayedJobs.length > 0 && 
+             !displayedJobs.some(job => job.type === 'description') && (
               <div className="career-path-jobs-cta career-path-jobs-cta-full-width">
                 <a
                   className="btn btn-primary btn-lg career-path-jobs-cta-button"
@@ -589,6 +599,103 @@ const CareerPathJobs = ({
                 </a>
               </div>
             )}
+
+            {/* Benefits-Sektion - unabhängig von Phase, volle Breite */}
+            <div className="career-path-jobs-benefits">
+              <div className="career-path-jobs-item career-path-jobs-item-full-width">
+                <button
+                  className="career-path-jobs-item-button"
+                  onClick={() => setExpandedBenefits(!expandedBenefits)}
+                  aria-expanded={expandedBenefits}
+                  aria-controls="benefits-details"
+                >
+                  <div className="career-path-jobs-item-content">
+                    <h3 className="career-path-jobs-item-title">
+                      Deine Benefits bei REWE
+                    </h3>
+                  </div>
+                  <motion.div
+                    custom={expandedBenefits}
+                    variants={iconVariants}
+                    animate="rotate"
+                    transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
+                    className="career-path-jobs-item-icon"
+                  >
+                    <svg
+                      className="career-path-jobs-item-icon-svg"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </motion.div>
+                </button>
+
+                <AnimatePresence>
+                  {expandedBenefits && (
+                    <motion.div
+                      id="benefits-details"
+                      {...accordionVariants}
+                      transition={{ duration: prefersReducedMotion ? 0 : 0.3, ease: 'easeInOut' }}
+                      className="career-path-jobs-item-details"
+                    >
+                      <div className="career-path-jobs-item-details-inner">
+                        <div className="career-path-jobs-benefits-grid">
+                          <div className="career-path-jobs-benefit-item">
+                            <div className="career-path-jobs-benefit-icon">💶</div>
+                            <h4 className="career-path-jobs-benefit-title">Tarifliche Sonderzahlungen</h4>
+                            <p className="career-path-jobs-benefit-description">
+                              Urlaubs- und Weihnachtsgeld im Rahmen von Tarifvertrag bzw. Betriebsvereinbarung – transparent geregelt und verlässlich.
+                            </p>
+                          </div>
+                          <div className="career-path-jobs-benefit-item">
+                            <div className="career-path-jobs-benefit-icon">🚲</div>
+                            <h4 className="career-path-jobs-benefit-title">Mobilität &amp; Pendeln</h4>
+                            <p className="career-path-jobs-benefit-description">
+                              Unterstützung rund um den Arbeitsweg, z. B. über Mobilitätsangebote wie JobRad oder Ticket-Lösungen – je nach Einsatzbereich.
+                            </p>
+                          </div>
+                          <div className="career-path-jobs-benefit-item">
+                            <div className="career-path-jobs-benefit-icon">🏦</div>
+                            <h4 className="career-path-jobs-benefit-title">Vorsorge &amp; finanzielle Extras</h4>
+                            <p className="career-path-jobs-benefit-description">
+                              Betriebliche Altersvorsorge und vermögenswirksame Leistungen – abhängig von Tarif/Regelung.
+                            </p>
+                          </div>
+                          <div className="career-path-jobs-benefit-item">
+                            <div className="career-path-jobs-benefit-icon">🛒</div>
+                            <h4 className="career-path-jobs-benefit-title">Mitarbeitendenrabatte</h4>
+                            <p className="career-path-jobs-benefit-description">
+                              Vorteile beim Einkauf sowie weitere Vergünstigungen bei Partnern – damit sich Arbeit auch im Alltag lohnt.
+                            </p>
+                          </div>
+                          <div className="career-path-jobs-benefit-item">
+                            <div className="career-path-jobs-benefit-icon">🩺</div>
+                            <h4 className="career-path-jobs-benefit-title">Gesundheit &amp; Wohlbefinden</h4>
+                            <p className="career-path-jobs-benefit-description">
+                              Angebote wie betriebsärztliche Betreuung und Gesundheitsaktionen (z. B. Check-ups) – je nach Standort ergänzt um weitere Maßnahmen.
+                            </p>
+                          </div>
+                          <div className="career-path-jobs-benefit-item">
+                            <div className="career-path-jobs-benefit-icon">🎓</div>
+                            <h4 className="career-path-jobs-benefit-title">Entwicklung &amp; Vereinbarkeit</h4>
+                            <p className="career-path-jobs-benefit-description">
+                              Individuelle Aus- und Weiterbildungen sowie flexible Modelle, wo es der Job zulässt (z. B. Teilzeitoptionen oder längere Auszeiten nach Regelung).
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
 
           </motion.div>
         </AnimatePresence>

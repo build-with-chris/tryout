@@ -4,7 +4,6 @@ import './PathSelector.css'
 import CareerPathJobs from './CareerPathJobs'
 import { Feature297 } from '@/components/feature297'
 import { Feature217b } from '@/components/feature217b'
-import { Feature253 } from '@/components/feature253'
 
 // Image Alt-Texte für Vertrieb, Logistik und Verwaltung
 const imageAltTexts = {
@@ -201,18 +200,6 @@ const PathSelector = () => {
 
         {/* Content-Bereich - wechselt je nach Auswahl (nur Desktop) */}
         {isDesktop && activePath && currentContent && renderPathContent(activePath)}
-
-        {/* Praktika Section */}
-        <Feature253
-          title="Unsere Praktika:"
-          subtitle="Praktika für Schülerinnen"
-          description="Ein Praktikum bei REWE ist dein perfekter Einblick in die Jobwelt. Auch wenn du noch nicht weißt, wo dein Weg nach dem Schulabschluss hinführt: hier kannst du reinschnuppern. Bewirb dich einfach im Markt um die Ecke."
-          ctaText="Schreib uns!"
-          onCtaClick={() => {
-            // Hier kann später eine Funktion für den CTA eingefügt werden
-            console.log('Schreib uns! clicked')
-          }}
-        />
       </div>
     </section>
   )

@@ -11,6 +11,7 @@ const Feature253 = ({
   subtitle = "",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur",
   ctaText = "Join Today",
+  showMailLink = true,
   onCtaClick
 }) => {
 
@@ -41,20 +42,30 @@ const Feature253 = ({
               >
                 {description}
               </p>
-              <p 
-                className="text-sm md:text-base mt-2"
-                style={{ color: 'var(--color-neutral-600)' }}
-              >
-                Für ein Praktikum in Logistik und Zentrale, schreib uns eine{' '}
-                <a 
-                  href="mailto:karriere@rewe-sued.de"
-                  className="feature253-mail-link text-primary hover:underline font-medium"
+              {showMailLink && (
+                <p 
+                  className="text-sm md:text-base mt-2"
+                  style={{ color: 'var(--color-neutral-600)' }}
+                >
+                  Für ein Praktikum in Logistik und Zentrale, schreib uns eine{' '}
+                  <a 
+                    href="mailto:karriere@rewe-sued.de"
+                    className="feature253-mail-link text-primary hover:underline font-medium"
+                    style={{ color: 'var(--color-primary)' }}
+                  >
+                    Mail
+                  </a>
+                  .
+                </p>
+              )}
+              {ctaText && (
+                <p 
+                  className="text-sm md:text-base mt-2 font-medium"
                   style={{ color: 'var(--color-primary)' }}
                 >
-                  Mail
-                </a>
-                .
-              </p>
+                  {ctaText}
+                </p>
+              )}
             </div>
             <div className="relative flex items-center justify-end overflow-hidden flex-shrink-0">
               <div className="feature253-lottie">

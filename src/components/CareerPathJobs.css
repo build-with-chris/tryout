@@ -23,7 +23,7 @@
 
 .career-path-jobs-timeline-wrapper {
   position: relative;
-  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -579,7 +579,7 @@
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
-  max-width: 800px;
+  width: 100%;
   width: 100%;
   max-height: calc(100vh - 2 * var(--spacing-lg));
   overflow-y: auto;
@@ -705,31 +705,38 @@
     padding-bottom: max(var(--spacing-md), env(safe-area-inset-bottom, 0px));
     align-items: flex-start;
   }
-
-  .career-path-jobs-modal-content {
-    max-height: calc(100vh - 2 * var(--spacing-md));
-    margin-top: var(--spacing-md);
   }
 
-  .career-path-jobs-modal-header {
-    padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-lg);
-  }
+/* Beschreibungs-Komponente für Zentrale Professionals */
+.career-path-jobs-description {
+  width: 100%;
+  grid-column: 1 / -1;
+  grid-column: 1 / -1;
+  margin-bottom: var(--spacing-2xl);
+}
 
-  .career-path-jobs-modal-title {
+.career-path-jobs-description-content {
+  width: 100%;
+  padding: var(--spacing-2xl);
+  text-align: left;
+}
+
+.career-path-jobs-description-text {
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+  color: var(--color-neutral-700);
+  margin-bottom: var(--spacing-lg);
+}
+
+.career-path-jobs-description-subtitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+  .career-path-jobs-description-text {
     font-size: var(--font-size-xl);
-    padding-right: var(--spacing-2xl);
-  }
-
-  .career-path-jobs-modal-body {
-    padding: var(--spacing-xl);
-  }
-
-  .career-path-jobs-modal-footer {
-    padding: var(--spacing-lg) var(--spacing-xl);
-  }
-
-  .career-path-jobs-modal-close {
-    top: var(--spacing-md);
-    right: var(--spacing-md);
   }
 }
