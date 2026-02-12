@@ -1,0 +1,132 @@
+/* Testimonial25 - Accessibility Improvements */
+
+/* Reel Format - 9:16 Aspect Ratio */
+.testimonial25-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial25-section [class*="aspect-[9/16]"] {
+  aspect-ratio: 9 / 16;
+  max-width: 100%;
+}
+
+/* Light variant (for light backgrounds) */
+.testimonial25-light h2 {
+  /* Dark text on light background - WCAG AAA compliant */
+  color: #1a1a1a !important;
+}
+
+.testimonial25-light p {
+  /* Dark text on light background - WCAG AA compliant */
+  color: #404040 !important;
+}
+
+/* Dark variant (for dark backgrounds) */
+.testimonial25-dark h2 {
+  /* White text on dark background - WCAG AAA compliant (21:1) */
+  color: #ffffff !important;
+}
+
+.testimonial25-dark p {
+  /* White text with 95% opacity on dark background - WCAG AA compliant (4.5:1 minimum) */
+  color: #ffffff !important;
+  opacity: 0.95;
+}
+
+/* Focus states for keyboard navigation */
+.testimonial25-section button:focus-visible,
+.testimonial25-section [role="button"]:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Ensure cards have sufficient contrast - Light variant */
+.testimonial25-light [class*="bg-white"]:not([class*="bg-white/"]),
+.testimonial25-light [class*="bg-neutral-100"] {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Ensure cards have sufficient contrast - Dark variant */
+.testimonial25-dark [class*="bg-white/15"] {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Improve text readability in cards - Light variant */
+.testimonial25-light blockquote {
+  color: #1a1a1a !important;
+  opacity: 1 !important;
+}
+
+.testimonial25-light footer {
+  color: #1a1a1a !important;
+}
+
+/* Improve text readability in cards - Dark variant */
+.testimonial25-dark blockquote {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.testimonial25-dark footer {
+  color: #ffffff !important;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Ensure images have proper alt text context */
+.testimonial25-section img {
+  display: block;
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+  .testimonial25-section button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .testimonial25-section {
+    --card-bg: rgba(255, 255, 255, 0.25);
+    --card-border: rgba(255, 255, 255, 0.5);
+    --text-opacity: 1;
+  }
+  
+  .testimonial25-section [class*="bg-white/15"] {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+  }
+  
+  .testimonial25-section p,
+  .testimonial25-section blockquote,
+  .testimonial25-section footer {
+    opacity: 1 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .testimonial25-section * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

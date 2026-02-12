@@ -1,0 +1,82 @@
+/* PraktikaInfo - Breite wie Path Selector Cards */
+.praktika-info-wrapper {
+  /* Standard: normale Breite */
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .praktika-info-wrapper {
+    margin-bottom: var(--spacing-xl);
+  }
+}
+
+/* Desktop: Breiter wie Cards */
+@media (min-width: 768px) {
+  .praktika-info-wrapper {
+    margin-left: calc(-1 * var(--spacing-xl));
+    margin-right: calc(-1 * var(--spacing-xl));
+    width: calc(100% + 2 * var(--spacing-xl));
+  }
+}
+
+/* Container Höhe um weitere 30% reduziert (von 200px auf 140px, von 260px auf 182px) */
+.praktika-info-container {
+  min-height: 140px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .praktika-info-container {
+    min-height: 182px;
+  }
+}
+
+/* Text-Container: 30% mehr Breite für 2 Zeilen */
+.praktika-info-text-container {
+  flex: 1;
+  min-width: 0; /* Wichtig für Flexbox */
+  max-width: none; /* Keine max-width Begrenzung */
+}
+
+@media (min-width: 768px) {
+  .praktika-info-text-container {
+    flex: 1.3; /* 30% mehr Platz als die Animation */
+    max-width: none;
+  }
+}
+
+/* Accessibility: Sicherstellen, dass Text-Kontrast WCAG AA entspricht */
+.praktika-info-wrapper h1 {
+  color: var(--color-neutral-900) !important;
+  /* Kontrast: #1C1C1C auf hellem Hintergrund = 16.6:1 (WCAG AAA) */
+}
+
+.praktika-info-wrapper p {
+  color: var(--color-neutral-600) !important;
+  /* Kontrast: #676767 auf hellem Hintergrund = 4.7:1 (WCAG AA) */
+}
+
+/* Sicherstellen, dass der Hintergrund genug Kontrast bietet */
+.praktika-info-wrapper [class*="bg-muted"] {
+  background-color: var(--color-neutral-100) !important;
+  /* Helles Grau für guten Kontrast */
+}
+
+/* Mail-Link Styling */
+.praktika-info-mail-link {
+  color: var(--color-primary) !important;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.praktika-info-mail-link:hover {
+  text-decoration: underline;
+  color: var(--color-primary-hover) !important;
+}
+
+.praktika-info-mail-link:focus-visible {
+  outline: 2px solid var(--color-primary) !important;
+  outline-offset: 2px !important;
+  border-radius: 2px;
+  /* Fokus-Indikator für Tastaturnavigation */
+}

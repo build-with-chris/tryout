@@ -10,6 +10,7 @@ import { About14 } from '../components/about14'
 import TrustBlock from '../components/TrustBlock'
 import ContactCTA from '../components/ContactCTA'
 import { Shader7 } from '../components/shader7'
+import { Testimonial25 } from '../components/testimonial25'
 import '../components/BewerbungswegeLayout.css'
 
 // Icon Components (Simple SVG placeholders)
@@ -186,6 +187,9 @@ function HomePage() {
 
       {/* Marktstimmen Section */}
       <MarktstimmenSection />
+
+      {/* Testimonial Section */}
+      <Testimonial25 />
 
       {/* Contact / Footer */}
       <footer className="footer" id="kontakt">
