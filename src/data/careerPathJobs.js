@@ -114,32 +114,139 @@ export const careerPathJobs = {
     professionals: [
       {
         id: 'markt-professionals-1',
-        title: 'Aushilfe/Minijob (mit Kassiertätigkeit)',
-        shortDescription: 'Unterstützt stundenweise den Markt, vor allem an der Kasse und im Verkauf. Die Aufgaben entsprechen im Kern denen eines Kassierers/Verkäufers.',
+        title: 'Verkäufer:in / Kassierer:in',
+        shortDescription: 'Kundenberatung und Verkauf stehen im Mittelpunkt. Du führst Beratungs- und Verkaufsgespräche, präsentierst Waren ansprechend und bedienst digitale Kassen- und Marktsysteme.',
         tasks: [
-          'Kassieren und korrekte Abrechnung sicherstellen',
-          'Sauberkeit und Ordnung im Kassenbereich gewährleisten',
-          'Waren verräumen und auf Vollständigkeit sowie Qualität prüfen',
-          'Kunden freundlich bedienen und beraten'
+          'Führen von Beratungs- und Verkaufsgesprächen',
+          'Ansprechende Warenpräsentation',
+          'Kassieren und korrekte Abrechnung',
+          'Warenannahme und -lagerung',
+          'Umsetzung von Verkaufsförderungsmaßnahmen',
+          'Bedienung digitaler Kassen- und Marktsysteme'
         ],
         profile: [
-          'Spaß am Umgang mit Menschen',
-          'Zuverlässig und gewissenhaft',
-          'Flexibel einsetzbar',
+          'Spaß am Umgang mit Menschen und am Verkauf',
+          'Zuverlässig und teamfähig',
           'Gepflegtes Auftreten'
         ],
         benefits: [
-          'Flexible Arbeitszeiten',
-          'Meist auf 450€-Basis (Minijob)',
+          'Teilzeit- oder Vollzeitstellen im Verkauf',
+          'Attraktive Vergütung',
           '5% Mitarbeitendenrabatt bei REWE und PENNY',
-          'Strukturierte Einarbeitung'
+          'Strukturierte Einarbeitung',
+          'Entwicklungsmöglichkeiten'
         ],
-        workModel: 'Minijob / Teilzeit',
-        entryLevel: 'Professionals'
+        workModel: 'Vollzeit / Teilzeit',
+        entryLevel: 'Professionals',
+        category: 'Verkauf und Kasse'
       },
       {
         id: 'markt-professionals-2',
-        title: 'Marktmanager/Filialleitung (mit Perspektive zur Selbstständigkeit)',
+        title: 'Mitarbeiter:in verzehrfertige Lebensmittel',
+        shortDescription: 'Zubereitung verzehrfertiger Speisen nach Rezepturen, Qualitätsstandards und Frische sicherstellen.',
+        tasks: [
+          'Zubereitung verzehrfertiger Speisen (Salate, Snacks, warme Speisen)',
+          'Einhaltung von Qualitätsstandards und Frische',
+          'Hygienevorgaben einhalten',
+          'Warenpräsentation und -auslage'
+        ],
+        profile: [
+          'Sorgfältig und qualitätsbewusst',
+          'Hygienebewusstsein',
+          'Teamfähig'
+        ],
+        benefits: [
+          'Spezialisierung in interessanten Bereichen',
+          'Attraktive Vergütung',
+          '5% Mitarbeitendenrabatt bei REWE und PENNY',
+          'Strukturierte Einarbeitung'
+        ],
+        workModel: 'Vollzeit / Teilzeit',
+        entryLevel: 'Professionals',
+        category: 'Mitarbeiter:in'
+      },
+      {
+        id: 'markt-professionals-3',
+        title: 'Mitarbeiter:in Obst und Gemüse',
+        shortDescription: 'Sorgfältige Pflege und Präsentation der Obst- und Gemüseabteilung.',
+        tasks: [
+          'Warenpräsentation und -auslage',
+          'Qualitätskontrolle und Frischeprüfung',
+          'Warenverräumung',
+          'Kundenberatung zu Obst und Gemüse'
+        ],
+        profile: [
+          'Sorgfältig und qualitätsbewusst',
+          'Interesse an frischen Produkten',
+          'Teamfähig'
+        ],
+        benefits: [
+          'Arbeit mit frischen Produkten',
+          'Attraktive Vergütung',
+          '5% Mitarbeitendenrabatt bei REWE und PENNY',
+          'Strukturierte Einarbeitung'
+        ],
+        workModel: 'Vollzeit / Teilzeit',
+        entryLevel: 'Professionals',
+        category: 'Mitarbeiter:in'
+      },
+      {
+        id: 'markt-professionals-4',
+        title: 'Mitarbeiter:in Warenverräumung',
+        shortDescription: 'Sicherstellung einer vollständigen Warenpräsenz im Markt durch professionelle Warenverräumung.',
+        tasks: [
+          'Warenverräumung und -präsentation',
+          'Lagerbestände prüfen',
+          'Vollständigkeit und Qualität sicherstellen',
+          'Regale auffüllen und ordnen'
+        ],
+        profile: [
+          'Sorgfältig und zuverlässig',
+          'Teamfähig',
+          'Körperliche Belastbarkeit'
+        ],
+        benefits: [
+          'Strukturierte Arbeitsabläufe',
+          'Attraktive Vergütung',
+          '5% Mitarbeitendenrabatt bei REWE und PENNY',
+          'Strukturierte Einarbeitung'
+        ],
+        workModel: 'Vollzeit / Teilzeit',
+        entryLevel: 'Professionals',
+        category: 'Mitarbeiter:in'
+      },
+      {
+        id: 'markt-professionals-5',
+        title: 'Marktmanagement-Assistenz',
+        shortDescription: 'Unterstützt den Marktmanager bei allen laufenden Aufgaben und vertritt ihn bei Abwesenheit.',
+        tasks: [
+          'Mitverantwortung für Umsetzung des Vertriebskonzepts',
+          'Mitsteuerung von Umsatz-, Kosten- und Inventurentwicklungen',
+          'Überwachung der Einhaltung gesetzlicher und betrieblicher Vorgaben',
+          'Aktive Mitarbeit im Team und Dienstplanerstellung',
+          'Führung des Teams auf Augenhöhe'
+        ],
+        profile: [
+          'Abgeschlossene Ausbildung im Einzelhandel',
+          'Erste Erfahrung in Führungsaufgaben wünschenswert',
+          'Organisatorisches Geschick',
+          'Teamfähig und kommunikationsstark',
+          'Verantwortungsbewusst'
+        ],
+        benefits: [
+          'Häufig der Schritt zur eigenen Marktleitung',
+          'Attraktive Vergütung',
+          '5% Mitarbeitendenrabatt bei REWE und PENNY',
+          'Umfassende Weiterbildungsmöglichkeiten',
+          'Unbefristetes Arbeitsverhältnis'
+        ],
+        workModel: 'Vollzeit',
+        entryLevel: 'Professionals',
+        category: 'Führungskräfte'
+      },
+      {
+        id: 'markt-professionals-6',
+        title: 'Marktmanager:in',
         shortDescription: 'Als Filialleitung trägst du die Gesamtverantwortung für einen Supermarkt. Diese Position bietet auch die Perspektive zur Selbstständigkeit.',
         tasks: [
           'Umsetzung des REWE-Vertriebskonzepts und Durchführung von Werbe- und Verkaufsaktionen',
@@ -163,89 +270,63 @@ export const careerPathJobs = {
           'Unbefristetes Arbeitsverhältnis'
         ],
         workModel: 'Vollzeit',
-        entryLevel: 'Professionals'
+        entryLevel: 'Professionals',
+        category: 'Führungskräfte'
       },
       {
-        id: 'markt-professionals-3',
-        title: 'Verkäufer (mit Kassiertätigkeit)',
-        shortDescription: 'Verkaufskraft im Markt mit Schwerpunkt Kasse. Die Aufgaben überschneiden sich mit denen einer Aushilfe an der Kasse.',
+        id: 'markt-professionals-7',
+        title: 'Bereichs- und Abteilungsleiter:in',
+        shortDescription: 'Führung und Verantwortung für einen spezifischen Bereich oder eine Abteilung im Markt.',
         tasks: [
-          'Kassiervorgänge durchführen und korrekt abrechnen',
-          'Kassenbereich sauber halten',
-          'Waren einräumen und Qualität kontrollieren',
-          'Kunden durch freundliches Auftreten und kompetente Beratung begeistern'
-        ],
-        profile: [
-          'Spaß am Umgang mit Menschen',
-          'Zuverlässig und gewissenhaft',
-          'Gepflegtes Auftreten',
-          'Teamfähig'
-        ],
-        benefits: [
-          'Teilzeit- oder Vollzeitstellen im Verkauf mit Kassenverantwortung',
-          'Attraktive Vergütung',
-          '5% Mitarbeitendenrabatt bei REWE und PENNY',
-          'Strukturierte Einarbeitung',
-          'Entwicklungsmöglichkeiten'
-        ],
-        workModel: 'Vollzeit / Teilzeit',
-        entryLevel: 'Professionals'
-      },
-      {
-        id: 'markt-professionals-5',
-        title: 'Marktmanager Assistent / Stellvertretende Filialleitung',
-        shortDescription: 'Unterstützt den Marktmanager bei allen laufenden Aufgaben und vertritt ihn bei Abwesenheit. Diese Position ist häufig der Schritt zur eigenen Marktleitung.',
-        tasks: [
-          'Mitverantwortung für Umsetzung des Vertriebskonzepts und entsprechender Werbe-/Verkaufsmaßnahmen',
-          'Mitsteuerung von Umsatz-, Kosten- und Inventurentwicklungen sowie Qualitätsmanagement',
-          'Überwachung der Einhaltung gesetzlicher und betrieblicher Vorgaben im Markt',
-          'Aktive Mitarbeit im Team und Dienstplanerstellung',
-          'Führung des Teams auf Augenhöhe und als erste Ansprechperson',
-          'Sicherstellung einer exzellenten Kundenbetreuung im Markt'
+          'Führung und Koordination eines Bereichs oder einer Abteilung',
+          'Qualitätsmanagement und Sortimentsgestaltung',
+          'Mitarbeiterführung und -entwicklung',
+          'Umsetzung von Verkaufsförderungsmaßnahmen',
+          'Steuerung von Umsatz- und Kostenentwicklung im Bereich'
         ],
         profile: [
           'Abgeschlossene Ausbildung im Einzelhandel',
-          'Erste Erfahrung in Führungsaufgaben wünschenswert',
+          'Führungserfahrung',
           'Organisatorisches Geschick',
           'Teamfähig und kommunikationsstark',
           'Verantwortungsbewusst'
         ],
         benefits: [
-          'Häufig der Schritt zur eigenen Marktleitung',
+          'Verantwortungsvolle Führungsposition',
           'Attraktive Vergütung',
           '5% Mitarbeitendenrabatt bei REWE und PENNY',
           'Umfassende Weiterbildungsmöglichkeiten',
           'Unbefristetes Arbeitsverhältnis'
         ],
         workModel: 'Vollzeit',
-        entryLevel: 'Professionals'
+        entryLevel: 'Professionals',
+        category: 'Führungskräfte'
       },
       {
-        id: 'markt-professionals-6',
-        title: 'Mitarbeitende in den Bereichen Getränkemarkt, Convenience, MoPro, Backshop, Imbiss warme Speisen',
-        shortDescription: 'In größeren Märkten gibt es spezialisierte Verkaufsmitarbeiter für verschiedene Fachbereiche.',
+        id: 'markt-professionals-8',
+        title: 'Aushilfe / Minijob',
+        shortDescription: 'Unterstützt stundenweise den Markt, vor allem an der Kasse und im Verkauf.',
         tasks: [
-          'Getränkemarkt: Warenverräumung und -präsentation, Lagerbestände prüfen, Leergut',
-          'Convenience: Zubereitung verzehrfertiger Speisen (Salate, Snacks, warme Speisen) nach Rezepturen, Qualitätsstandards und Frische sicherstellen',
-          'Mopro (Molkereiprodukte): Fokus auf Frische, Sauberkeit und lückenlose Warenpräsenz in der Kühlwarenabteilung, Kühlkette und Haltbarkeiten prüfen',
-          'Backshop: Präsentation von Brot und Backwaren, Aufbereitung (z.B. Teiglinge aufbacken), Wareneingang kontrollieren',
-          'Imbiss warme Speisen: Zubereitung von Snacks oder warmen Mahlzeiten, Hygienevorgaben einhalten, Kunden direkt bedienen'
+          'Kassieren und korrekte Abrechnung sicherstellen',
+          'Sauberkeit und Ordnung im Kassenbereich gewährleisten',
+          'Waren verräumen und auf Vollständigkeit sowie Qualität prüfen',
+          'Kunden freundlich bedienen und beraten'
         ],
         profile: [
-          'Interesse an spezialisierten Bereichen',
-          'Sorgfältig und qualitätsbewusst',
-          'Teamfähig',
-          'Hygienebewusstsein (bei Convenience/Imbiss)'
+          'Spaß am Umgang mit Menschen',
+          'Zuverlässig und gewissenhaft',
+          'Flexibel einsetzbar',
+          'Gepflegtes Auftreten'
         ],
         benefits: [
-          'Spezialisierung in interessanten Bereichen',
-          'Attraktive Vergütung',
+          'Flexible Arbeitszeiten',
+          'Meist auf 450€-Basis (Minijob)',
           '5% Mitarbeitendenrabatt bei REWE und PENNY',
-          'Strukturierte Einarbeitung',
-          'Vollzeit- oder Teilzeitstellen möglich'
+          'Strukturierte Einarbeitung'
         ],
-        workModel: 'Vollzeit / Teilzeit',
-        entryLevel: 'Professionals'
+        workModel: 'Minijob / Teilzeit',
+        entryLevel: 'Professionals',
+        category: 'Aushilfsjobs'
       }
     ]
   },
@@ -941,7 +1022,7 @@ export const careerPathJobs = {
         ],
         workModel: 'Vollzeit',
         entryLevel: 'Professionals'
-      },
+      }
     ]
   },
   frischetheke: {

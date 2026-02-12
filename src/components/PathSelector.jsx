@@ -16,84 +16,44 @@ const imageAltTexts = {
 // Inhalte für Markt, Logistik und Verwaltung - aus dem Arbeitsalltag
 const pathContent = {
   markt: {
-    headline: "Der Markt wartet auf dich",
-    description: "Du bist da, wo es passiert. Kunden beraten, Ware auffüllen, im Team zusammenarbeiten. Jeder Tag ist anders, aber die Struktur gibt dir Sicherheit.",
+    headline: "",
+    description: "",
     aspects: [
       {
-        title: "In den Marktrollen zählt am Ende vor allem, dass Kund:innen zufrieden sind.",
-        summary: "",
-        items: []
-      },
-      {
-        title: "Zusammenarbeit auf Augenhöhe. Verantwortung wird belohnt.",
-        summary: "",
-        items: []
-      },
-      {
-        title: "Du bekommst Struktur im Alltag und Sicherheit im Job",
+        title: "In unserem Märkten trägst du von Anfang an echte Verantwortung - für deinen Arbeitsbereich und für die Zufriedenheit unserer Kund:innen.",
         summary: "",
         items: []
       }
     ]
   },
   logistik: {
-    headline: "Die Logistik wartet auf dich",
-    description: "zusammen mit 1.211 Kollegen an zwei Standorten in Buttenheim und Eitting",
+    headline: "",
+    description: "",
     aspects: [
       {
-        title: "Kommissionierung, Wareneingang oder Warenausgang",
-        summary: "",
-        items: []
-      },
-      {
-        title: "Teamgeist ist bei REWE Süd Arbeitgeberversprechens",
-        summary: "",
-        items: []
-      },
-      {
-        title: "Klarer Rahmen durch feste Schichtstruktur",
+        title: "In der Logistik bewegst du was - entdecke deine Karrieremöglichkeiten an unseren Logistikstandorten in Eitting und Buttenheim.",
         summary: "",
         items: []
       }
     ]
   },
   verwaltung: {
-    headline: "Die Zentrale wartet auf dich",
-    description: "Du sorgst dafür, dass im Hintergrund alles funktioniert. Buchhaltung, Personal, Einkauf – strukturierte Abläufe, klares Team, verlässliche Arbeitszeiten.",
+    headline: "",
+    description: "",
     aspects: [
       {
-        title: "Dein Job ist Organisation und Umsetzung",
-        summary: "",
-        items: []
-      },
-      {
-        title: "Rollen, die sich ergänzen – Sachbearbeitung, Assistenz, Referat und Teamleitung",
-        summary: "",
-        items: []
-      },
-      {
-        title: "Weiterkommen ist vorgesehen: Coaching, Fortbildungen und Aufstiegsmöglichkeiten",
+        title: "Übernimm Verantwortung für das Wachstum in unseren Märkten oder gestalte den Erfolg unserer Regionszentrale in Eching aktiv mit.",
         summary: "",
         items: []
       }
     ]
   },
   frischetheke: {
-    headline: "Die Frischetheke wartet auf dich",
-    description: "Du bist Spezialist:in für Frische. An der Theke berätst du Kunden, präsentierst Waren ansprechend und sorgst für Qualität.",
+    headline: "",
+    description: "",
     aspects: [
       {
-        title: "Du bist Spezialist:in für Frischeprodukte",
-        summary: "",
-        items: []
-      },
-      {
-        title: "Kundenberatung und Warenpräsentation stehen im Mittelpunkt",
-        summary: "",
-        items: []
-      },
-      {
-        title: "Du arbeitest mit hochwertigen Produkten und sorgst für Qualität",
+        title: "Du bist die direkte Ansprechperson für unsere Kund:innen, berätst individuell und sorgst mit deinem Fachwissen für Frische und Qualität. Ob Käse, Wurst, Fisch oder Feinkost - hier trifft Handwerk auf Leidenschaft.",
         summary: "",
         items: []
       }
@@ -197,7 +157,7 @@ const PathSelector = () => {
       <div className="container">
         <div className="path-selector-header">
           <h2 id="path-heading" className="path-selector-title">
-            REWE ruft. Welches Team darf's sein?
+            Ein Team. Deine Möglichkeiten.
           </h2>
           <p className="path-selector-subtitle">
             Markt, Frischetheke, Logistik oder Zentrale.

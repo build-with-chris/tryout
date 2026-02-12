@@ -344,19 +344,13 @@ const CareerPathJobs = ({
 
   // Dynamische Überschrift basierend auf dem aktiven Bereich
   const getHeading = () => {
-    const headings = {
-      markt: 'Der Markt wartet auf dich',
-      logistik: 'Die Logistik wartet auf dich',
-      verwaltung: 'Die Zentrale wartet auf dich',
-      frischetheke: 'Die Frischetheke wartet auf dich'
-    };
-    return headings[activePath] || 'Diese Berufe erwarten dich.';
+    return '';
   };
 
   return (
     <div className={cn("career-path-jobs", className)}>
       {/* Überschrift über der Timeline */}
-      <h2 className="career-path-jobs-heading">{getHeading()}</h2>
+      {getHeading() && <h2 className="career-path-jobs-heading">{getHeading()}</h2>}
       
       {/* Phasen-Navigation - Neutrale Karriere-Stufen */}
       <div className="career-path-jobs-phases">
@@ -421,7 +415,7 @@ const CareerPathJobs = ({
           >
             {displayedJobs.length > 0 ? (
               displayedJobs.map((job, index) => {
-                // Stelle sicher, dass die Job-ID korrekt übergeben wird
+                // Normale Job-Cards
                 const currentJobId = job.id;
                 return (
                   <div

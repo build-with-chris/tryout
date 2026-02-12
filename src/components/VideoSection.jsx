@@ -197,6 +197,16 @@ const VideoSection = () => {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
+          {/* Title */}
+          <div className="video-section-header">
+            <h2 className="video-section-title">
+              <span className="video-section-title-line">REWE glaubt an dich. <span className="video-section-title-line-emphasis">Glaub auch du an dich!</span></span>
+            </h2>
+            <p className="video-section-subtitle">
+              Finde deinen Platz bei REWE Region Süd
+            </p>
+          </div>
+
           {/* Video Container */}
           <div
             className="video-container"
@@ -227,7 +237,7 @@ const VideoSection = () => {
               playsInline
               loop={false}
               preload="metadata"
-              aria-label="REWE Imagefilm - Mehr als ein Job. Mehr als Arbeit. Mehr als ein Team. Mehr als ein super Markt. REWE bietet MEHR!"
+              aria-label="REWE Imagefilm - REWE glaubt an dich. Glaub auch du an dich!"
             />
 
             {/* Video Controls */}
@@ -372,20 +382,6 @@ const VideoSection = () => {
                 />
               </div>
             )}
-          </div>
-
-          {/* Title */}
-          <div className="video-section-header">
-            <h2 className="video-section-title">
-              <span className="video-section-title-line">Mehr als ein Job.</span>
-              <span className="video-section-title-line">Mehr als Arbeit.</span>
-              <span className="video-section-title-line">Mehr als ein Team.</span>
-              <span className="video-section-title-line video-section-title-line-nowrap video-section-title-line-spacer">Mehr als ein super Markt.</span>
-              <span className="video-section-title-line video-section-title-line-emphasis">REWE bietet MEHR!</span>
-            </h2>
-            <p className="video-section-subtitle">
-              Finde deinen Platz bei REWE Süd.
-            </p>
           </div>
 
           {/* Screen Reader Announcements */}

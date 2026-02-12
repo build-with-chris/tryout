@@ -13,18 +13,8 @@ const Feature217b = ({
   // Default Icons für die Features
   const defaultIcons = [Briefcase, Users, Shield];
   const [openIndex, setOpenIndex] = useState(null);
-  const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
-
-  // Mobile: Auto-Rotation der Boxen alle 5 Sekunden
-  useEffect(() => {
-    if (features.length === 0) return;
-    
-    const interval = setInterval(() => {
-      setMobileActiveIndex((prev) => (prev + 1) % features.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [features.length]);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [touchedIndex, setTouchedIndex] = useState(null);
   
   // Wenn alle Props leer sind und keine Features vorhanden sind, nichts rendern
   if (!badge && !headline && !description && (!features || features.length === 0)) {
@@ -64,28 +54,48 @@ const Feature217b = ({
             </div>
 
             {features.length > 0 && (
-              <div className="relative grid items-stretch gap-8 lg:grid-cols-3 pb-8">
+              <div className={cn(
+                "relative grid items-stretch gap-8",
+                features.length === 1 
+                  ? "lg:grid-cols-1 lg:justify-center lg:max-w-2xl lg:mx-auto lg:pb-8 lg:pt-0" 
+                  : "lg:grid-cols-3 pb-8"
+              )}>
                 {features.map((item, index) => {
                   const IconComponent = item.icon || defaultIcons[index] || Briefcase;
                   const isOpen = openIndex === index;
                   const hasContent = (item.items && item.items.length > 0) || item.summary;
                   const isSimpleBox = !hasContent; // Einfache Box wenn keine Items und kein Summary
-                  const isMobileVisible = mobileActiveIndex === index; // Mobile: Nur eine Box sichtbar
+                  const isHovered = hoveredIndex === index;
+                  const isTouched = touchedIndex === index;
+                  const showBox = isHovered || isTouched; // Box nur bei Hover oder Touch sichtbar
                   
                   return (
                     <div
                       key={item.title || index}
                       className={cn(
-                        "flex flex-col items-center justify-start gap-1.5 rounded-lg border border-white/30 bg-white/10 p-2 backdrop-blur-md transition-all duration-500 group max-w-[90px]",
-                        isSimpleBox ? "hover:bg-white/15" : "cursor-pointer",
-                        // Mobile: Nur eine Box sichtbar mit Fade, Desktop: alle sichtbar
-                        "lg:opacity-100 lg:pointer-events-auto lg:relative lg:max-w-sm lg:p-5 lg:gap-3 lg:rounded-xl",
-                        isMobileVisible ? "opacity-100 pointer-events-auto relative" : "opacity-0 pointer-events-none absolute inset-0"
+                        "flex flex-col items-center justify-start gap-1.5 rounded-lg border border-white/30 bg-white/10 backdrop-blur-md transition-all duration-500 group",
+                        // Größenanpassungen
+                        "max-w-[90px] p-2",
+                        "lg:max-w-sm lg:p-5 lg:gap-3 lg:rounded-xl",
+                        // Wenn nur eine Box vorhanden, größer darstellen
+                        features.length === 1 && "lg:max-w-2xl lg:p-6 lg:gap-4",
+                        isSimpleBox ? "hover:bg-white/15 cursor-pointer" : "cursor-pointer",
+                        // Sichtbarkeit: komplett unsichtbar außer bei Hover/Touch
+                        showBox ? "opacity-100" : "opacity-0"
                       )}
+                      onMouseEnter={() => setHoveredIndex(index)}
+                      onMouseLeave={() => setHoveredIndex(null)}
+                      onTouchStart={() => setTouchedIndex(touchedIndex === index ? null : index)}
                       onClick={!isSimpleBox ? () => setOpenIndex(isOpen ? null : index) : undefined}
                     >
-                      <IconComponent className="size-4 stroke-white group-hover:scale-110 transition-transform drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] lg:size-12" />
-                      <div className="max-w-full text-center text-xs font-bold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_3px_rgba(0,0,0,0.9)] leading-tight lg:text-xl lg:max-w-sm">
+                      <IconComponent className={cn(
+                        "size-4 stroke-white group-hover:scale-110 transition-transform drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] lg:size-12",
+                        features.length === 1 && "lg:size-16"
+                      )} />
+                      <div className={cn(
+                        "max-w-full text-center text-xs font-bold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_3px_rgba(0,0,0,0.9)] leading-tight lg:text-xl lg:max-w-sm",
+                        features.length === 1 && "lg:text-2xl lg:max-w-2xl"
+                      )}>
                         {item.title}
                       </div>
                       {hasContent && !isSimpleBox && (
