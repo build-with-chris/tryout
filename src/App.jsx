@@ -6,6 +6,7 @@ import Option2 from './pages/Option2'
 import Option3 from './pages/Option3'
 import Option4 from './pages/Option4'
 import Gallerie from './pages/Gallerie'
+import Alternativen from './pages/Alternativen'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/option3" element={<Option3 />} />
             <Route path="/option4" element={<Option4 />} />
             <Route path="/galerie" element={<Gallerie />} />
+            <Route path="/alternativen" element={<Alternativen />} />
           </Routes>
         </main>
         <Footer />
