@@ -182,6 +182,20 @@
   height: 600px;
 }
 
+/* Struktur für alle Werte: Kein Video, Icon oben, Content zentriert */
+.values-content-expanded--centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
+  min-height: auto;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
 .values-content-left {
   flex: 1;
   padding: var(--spacing-3xl);
@@ -264,6 +278,119 @@
   height: 8px;
   background-color: var(--color-primary);
   border-radius: 50%;
+}
+
+/* ============================================
+   Sicherheit Icon Animation
+   ============================================ */
+
+.values-sicherheit-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+}
+
+.values-sicherheit-svg {
+  width: 48px;
+  height: 48px;
+  color: var(--color-primary);
+  animation: sicherheit-pulse 3s ease-in-out 1;
+}
+
+@keyframes sicherheit-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Hero Icon für alle Werte (oben mittig) */
+.values-icon-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.values-svg-hero {
+  width: 56px;
+  height: 56px;
+  color: var(--color-primary);
+  animation: sicherheit-pulse 3s ease-in-out infinite;
+}
+
+/* Zentrierter Content für alle Werte */
+.values-content-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  flex: 0 1 auto;
+  overflow-y: auto;
+  padding: 0 var(--spacing-md);
+  margin-bottom: 0;
+}
+
+.values-content-header--centered {
+  text-align: center;
+  border-bottom: 2px solid var(--color-neutral-300);
+  padding-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  width: 100%;
+}
+
+.values-content-headline--centered {
+  text-align: center;
+}
+
+.values-content-description--centered {
+  text-align: center;
+}
+
+.values-examples--centered {
+  text-align: center;
+  width: 100%;
+  margin-top: var(--spacing-md);
+  margin-bottom: 0;
+}
+
+.values-examples--centered .values-examples-title {
+  margin-bottom: var(--spacing-md);
+}
+
+.values-examples-title--centered {
+  text-align: center;
+}
+
+.values-examples-list--centered {
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: var(--spacing-md);
+}
+
+.values-examples-item--centered {
+  text-align: center;
+  padding-left: 0;
+}
+
+.values-examples-item--centered::before {
+  display: none;
 }
 
 /* ============================================
