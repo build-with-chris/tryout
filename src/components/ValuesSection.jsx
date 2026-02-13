@@ -65,12 +65,11 @@ const valuesData = [
   {
     id: 5,
     shortLabel: "Verantwortung",
-    headline: "Wir machen's lieber praktisch als perfekt.",
-    description: "Verantwortung zeigt sich in kleinen Entscheidungen – jeden Tag. Und du kannst Teil davon sein, ohne Theater.",
+    headline: "Mitwirken, Verantwortung übernehmen, etwas bewegen.",
+    description: "Wir fördern eigenverantwortliches Handeln - und geben Raum, Dinge voranzubringen.",
     examples: [
-      "Ideen einbringen – pragmatisch, nicht bürokratisch",
-      "Mitdenken im Kleinen (da, wo's wirkt)",
-      "Offenheit für alle – im Team und im Umgang"
+      "Agiles Arbeitsumfeld: Arbeit in agilen oder cross-funktionalen Teams, eigenverantwortlich und ergebnisorientiert.",
+      "Wir schaffen Rahmenbedingungen, die unternehmerisches Denken und eigenverantwortliches Handeln fördern und fordern."
     ],
     icon: Leaf,
     reelSrc: "/Reels copy/Verantwortung.mp4",
@@ -78,12 +77,11 @@ const valuesData = [
   {
     id: 6,
     shortLabel: "Wertschätzung",
-    headline: "REWE glaubt an dich. Glaub auch du an dich.",
-    description: "Du bekommst Rückhalt, ehrliches Feedback und das Gefühl: Ich bin hier richtig – gerade am Anfang.",
+    headline: ["REWE glaubt an dich.", "Glaub auch du an dich."],
+    description: "Bei REWE steht der Mensch im Mittelpunkt.",
     examples: [
-      "Faire Bezahlung/Benefits als Basis",
-      "Feedback auch dann, wenn's gut läuft",
-      "Zusammenhalt im Umgang als Standard"
+      "Work-Life-Balance-Angebote (z.B. flexible Arbeitszeiten ohne Kernarbeitszeit, Homeoffice-Ausstattung, Sabbatical, ...)",
+      "Gesundheitsmanagement (Sport-/Gesundheitsangebote, EGYM Wellpass, betriebsärztliche Leistungen, Erste-Hilfe-Weiterbildungen)."
     ],
     icon: Star,
     reelSrc: "/Reels copy/Wertschätzung.mp4",
@@ -262,7 +260,15 @@ const ValuesSection = () => {
                   </button>
                   <div className="values-content-header">
                     <h3 className="values-content-headline">
-                      {currentValue.headline}
+                      {Array.isArray(currentValue.headline) ? (
+                        <>
+                          {currentValue.headline[0]}
+                          <br />
+                          {currentValue.headline[1]}
+                        </>
+                      ) : (
+                        currentValue.headline
+                      )}
                     </h3>
                     <p className="values-content-description">
                       {currentValue.description}
@@ -349,7 +355,15 @@ const ValuesSection = () => {
               <div className="values-content-inner">
                 <div className="values-content-header">
                   <h3 className="values-content-headline">
-                    {currentValue.headline}
+                    {Array.isArray(currentValue.headline) ? (
+                      <>
+                        {currentValue.headline[0]}
+                        <br />
+                        {currentValue.headline[1]}
+                      </>
+                    ) : (
+                      currentValue.headline
+                    )}
                   </h3>
                   <p className="values-content-description">
                     {currentValue.description}
