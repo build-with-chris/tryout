@@ -29,8 +29,8 @@ export const valuesData = [
   },
   {
     id: 3,
-    shortLabel: "Respekt",
-    title: "Respekt & Teamgeist",
+    shortLabel: "Zusammenhalt",
+    title: "Zusammenhalt & Teamgeist",
     definition: "Miteinander statt Ellenbogen – im Team läuft's besser.",
     bullets: [
       "Zusammenarbeit auf Augenhöhe",

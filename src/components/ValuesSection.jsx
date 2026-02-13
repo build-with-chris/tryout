@@ -16,11 +16,10 @@ const valuesData = [
     id: 1,
     shortLabel: "Sicherheit",
     headline: "Sicherer Job. Sicheres Gefühl.",
-    description: "Du startest nicht ins Ungewisse. Du kennst deinen Plan – und wenn's hakt, ist jemand da, der dich rauszieht. (Nicht erst nach Feierabend.)",
+    description: "Wir schaffen Rahmenbedingungen, auf die du dich verlassen kannst.",
     examples: [
-      "Schichten mit Vorlauf – damit Privatleben auch Platz hat",
-      "Kolleg:innen als fester Anker am Start",
-      "Stabilität, auf die man bauen kann"
+      "Sonderleistungen wie Urlaubs- und Weihnachtsgeld, plus vermögenswirksame Leistungen & betriebliche Altersvorsorge.",
+      "Zuschüsse (z.B. Kantine) und vergünstigtes Deutschlandticket / Fahrrad-Leasing."
     ],
     icon: Shield,
     reelSrc: "/Reels%20copy/Sicherheit.mp4",
@@ -30,11 +29,10 @@ const valuesData = [
     id: 2,
     shortLabel: "Karriere",
     headline: "Wir begleiten dich auf der Karriereleiter.",
-    description: "Du musst nicht geschniegelt \"Karriere machen\". Wer anpackt und dranbleibt, kommt bei uns weiter – finanziell und im Können.",
+    description: "Weiterkommen ist bei uns kein Zufall. Wir fördern dich individuell — vom ersten Tag an.",
     examples: [
-      "Klare Entwicklungsschritte",
-      "Entwicklung in mehrere Richtungen (Markt/Logistik/Team)",
-      "Perspektiven, die sichtbar sind (auch intern)"
+      "Seminarangebot & Weiterbildungsprogramme (plus z.B. E-Learnings, Konferenzen, Hackathons je nach Bereich).",
+      "Kickstart-Formate wie REWE Akademie, myCampus und Women's Drive."
     ],
     icon: ArrowUp,
     reelSrc: "/Reels copy/Karriere.mp4",
@@ -42,13 +40,12 @@ const valuesData = [
   },
   {
     id: 3,
-    shortLabel: "Respekt",
-    headline: "Entrecôte statt Ellenbogen.",
-    description: "Wenn's stressig wird, zählt nicht das Ego – sondern das Team. Bei uns hilft man sich, weil's sonst keinen Spaß macht.",
+    shortLabel: "Zusammenhalt",
+    headline: "Umgang auf Augenhöhe",
+    description: "REWE steht für null Toleranz gegenüber Diskriminierung, und gleiche Chancen sind unser Anspruch",
     examples: [
-      "Teamgefühl als Standard, nicht als Ausnahme",
-      "Unterstützung statt Schuldzuweisung",
-      "Respektvoll – auch wenn's mal knirscht"
+      "Wir sprechen offen, ehrlich, respektvoll und wertschätzend - ausdrücklich als Kommunikationsprinzip.",
+      "Ein Verhaltenskodex, der diese Art der Kommunikation auf allen Ebenen tragen soll."
     ],
     icon: Users,
     reelSrc: "/Reels copy/Respekt.mp4",
@@ -56,12 +53,11 @@ const valuesData = [
   {
     id: 4,
     shortLabel: "Klarheit",
-    headline: "Du weißt, was zählt – heute und morgen.",
-    description: "Klarheit heißt auch: Ziel und Sinn verstehen. Dann macht Arbeit mehr Spaß – und weniger Stress.",
+    headline: "Halt und Orientierung durch klare Strukturen",
+    description: "Regelmäßige Personalgespräche geben Orientierung durch klare Erwartungen und offene Kommunikation",
     examples: [
-      "Verständliche Ziele – mit dir abgestimmt",
-      "Feste Ansprechpartner, die dich begleiten",
-      "Standards, die dir Sicherheit geben"
+      "Kommunikation ist unser Schlüsselfaktor und eine klare Leitline im Unternehmen",
+      "Informationen, wie Arbeitsmodelle oder deine Benefits werden strukturiert an dich kommuniziert."
     ],
     icon: CheckSquare,
     reelSrc: "/Reels copy/Klarheit.mp4",
@@ -87,7 +83,7 @@ const valuesData = [
     examples: [
       "Faire Bezahlung/Benefits als Basis",
       "Feedback auch dann, wenn's gut läuft",
-      "Respektvoller Umgang als Standard"
+      "Zusammenhalt im Umgang als Standard"
     ],
     icon: Star,
     reelSrc: "/Reels copy/Wertschätzung.mp4",
