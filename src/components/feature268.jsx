@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import { HelpCircle, Lightbulb, CircleHelp } from "lucide-react";
+import { FileQuestion, Lightbulb, CircleHelp } from "lucide-react";
 
 import {
   CardBody,
@@ -25,7 +25,7 @@ const Feature268 = ({
 
   const iconLinks = [
     {
-      icon: HelpCircle,
+      icon: FileQuestion,
       shortText: "FAQ",
       fullText: "FAQ",
       href: "https://karriere.rewe.de/faq",
