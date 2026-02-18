@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import '../styles.css'
-import HeroStart from '../components/HeroStart'
+import { Hero244 } from '../components/hero244'
 import MarktstimmenSection from '../components/MarktstimmenSection'
 import { Timeline10 } from '../components/timeline10'
 import KarriereWeltenSection from '../components/KarriereWeltenSection'
 import CheckAgent from '../components/CheckAgent'
 import ApplicationFlow from '../components/ApplicationFlow'
-import { About14 } from '../components/about14'
+import { CaseStudies5 } from '../components/case-studies5'
 import TrustBlock from '../components/TrustBlock'
 import ContactCTA from '../components/ContactCTA'
 import { Shader7 } from '../components/shader7'
@@ -150,14 +150,14 @@ function HomePage() {
 
       {/* Content with relative z-index - pointer-events-none allows shader interaction, but interactive elements will override */}
       <div className="relative z-10 content-layer" style={{ background: 'transparent' }}>
-        {/* Hero Start - Clean Hero + Typographic Drop */}
-        <HeroStart />
+        {/* Hero 244 - Viele Wege führen zu deinem Traum */}
+        <Hero244 />
 
       {/* Timeline Section */}
       <Timeline10 />
 
-      {/* Values Section */}
-      <About14 />
+      {/* Values Section - Bei REWE Süd arbeitet's sich gut. Punkt. */}
+      <CaseStudies5 />
 
       {/* Karriere Welten Section */}
       <KarriereWeltenSection />
