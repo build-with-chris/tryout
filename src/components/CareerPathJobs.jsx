@@ -446,19 +446,19 @@ const CareerPathJobs = ({
                   return (
                     <div
                       key={job.id}
-                      className="career-path-jobs-description"
+                      className="col-span-2 w-full mb-8 -mx-4 md:-mx-8 lg:-mx-12 xl:-mx-16"
                     >
-                      <div className="career-path-jobs-description-content">
-                        <p className="career-path-jobs-description-text">
+                      <div className="w-full max-w-[1600px] mx-auto bg-neutral-50 border border-neutral-200 rounded-lg p-6 md:p-8 lg:p-10">
+                        <p className="text-base md:text-lg leading-relaxed text-neutral-700 mb-4 text-center">
                           {job.description}
                         </p>
                         {job.subtitle && (
-                          <p className="career-path-jobs-description-subtitle">
+                          <p className="text-lg md:text-xl font-semibold text-neutral-900 mb-6 text-center">
                             {job.subtitle}
                           </p>
                         )}
                         {job.links && job.links.length > 0 && (
-                          <div className="flex flex-col items-center justify-center gap-6 mt-8">
+                          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-8">
                             {job.links.map((link, linkIndex) => (
                               <a
                                 key={linkIndex}
@@ -686,6 +686,10 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
 
   if (!jobInfo) return null;
 
+  // Prüfe, ob der Titel "Abiturientenprogramm" oder "Abiprogramm" enthält
+  const title = jobInfo.title || jobTitle || '';
+  const isAbiprogramm = /Abiturientenprogramm|Abiprogramm/i.test(title);
+
   return (
     <motion.div
       className="career-path-jobs-modal-overlay"
@@ -725,7 +729,7 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
         </div>
 
         <div className="career-path-jobs-modal-body">
-          {jobInfo.shortDescription && (
+          {jobInfo.shortDescription && isAbiprogramm && (
             <div className="career-path-jobs-modal-section">
               <h4 className="career-path-jobs-modal-section-title">Abiprogramm</h4>
               <p className="career-path-jobs-item-description">
@@ -796,7 +800,8 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
           )}
 
           {/* Fallback für Bereiche ohne detaillierte Daten: Kurzbeschreibung + Bullets aus Basisdaten */}
-          {!jobInfo.tasks && !jobInfo.content && jobInfo.shortDescription && (
+          {/* Nur anzeigen, wenn shortDescription nicht bereits als Abiprogramm angezeigt wurde */}
+          {!jobInfo.tasks && !jobInfo.content && jobInfo.shortDescription && !isAbiprogramm && (
             <div className="career-path-jobs-modal-section">
               <h4 className="career-path-jobs-modal-section-title">Das erwartet dich</h4>
               <p className="career-path-jobs-item-description">
