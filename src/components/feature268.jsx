@@ -32,13 +32,6 @@ const Feature268 = ({
       target: "_blank"
     },
     {
-      icon: Lightbulb,
-      shortText: "Tipps",
-      fullText: "Bewerbungstipps",
-      href: "https://karriere.rewe.de/bewerbungstipps",
-      target: "_blank"
-    },
-    {
       icon: CircleHelp,
       shortText: "Fragen",
       fullText: "Allgemeine Bewerbungsanfragen",
@@ -65,6 +58,19 @@ const Feature268 = ({
             <div className="hidden md:block">
               <Timeline11 className="py-0" />
             </div>
+          </div>
+          
+          {/* Bewerbungstipps Button nach der Timeline */}
+          <div className="mt-6">
+            <Button asChild className="rounded-full">
+              <a 
+                href="https://karriere.rewe.de/bewerbungstipps"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Bewerbungstipps
+              </a>
+            </Button>
           </div>
         </div>
         <div className="w-full lg:w-2/5">
