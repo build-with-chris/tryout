@@ -18,7 +18,7 @@ const JobHighlights = ({ activePath }) => {
       description: 'Warenannahme, Kommissionierung – auch ohne Erfahrung möglich'
     },
     {
-      title: 'Azubi Kaufmann im Einzelhandel',
+      title: 'Azubi Kaufmann/-frau im Einzelhandel',
       location: 'Stuttgart',
       type: 'Ausbildung',
       badge: 'Azubi',

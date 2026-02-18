@@ -95,36 +95,42 @@ const phases = [
 // Funktion zur Generierung des Job-Suchlinks basierend auf Job-Titel
 const getJobSearchLink = (jobTitle) => {
   // Spezielle Mappings für bessere Suchergebnisse (in Reihenfolge der Spezifität)
+  // Patterns erkennen sowohl gegenderte als auch nicht-gegenderte Titel
   const searchTermMap = [
-    { pattern: /Kaufmann im Einzelhandel, Feinkost/i, term: 'frischetheke' },
+    { pattern: /Kaufmann\/?-?frau im Einzelhandel, Feinkost/i, term: 'frischetheke' },
     { pattern: /Frischetheke Metzgerei/i, term: 'frischetheke' },
     { pattern: /Ausbildung im Abiturientenprogramm/i, term: 'abiturientenprogramm' },
+    { pattern: /Duales Studium.*Handel/i, term: 'Duales Studium Handel' },
     { pattern: /Duales Bachelor Studium BWL.*Handel/i, term: 'duales studium handel' },
     { pattern: /Duales Bachelor.*Logistik/i, term: 'duales studium logistik' },
     { pattern: /Duales Studium Wirtschaftsingenieurwesen/i, term: 'wirtschaftsingenieurwesen' },
     { pattern: /Marktmanager.*Filialleitung/i, term: 'marktmanager' },
-    { pattern: /Marktmanager Assistent/i, term: 'marktmanager assistent' },
+    { pattern: /Marktmanager.*Assistent/i, term: 'marktmanager assistent' },
     { pattern: /Aushilfe.*Minijob/i, term: 'aushilfe' },
     { pattern: /Mitarbeitende in speziellen Abteilungen/i, term: 'getränkemarkt' },
     { pattern: /Ausbildung zum Berufskraftfahrer/i, term: 'berufskraftfahrer' },
-    { pattern: /Ausbildung zum Fachlageristen/i, term: 'fachlagerist' },
+    { pattern: /Ausbildung zum Fachlagerist/i, term: 'fachlagerist' },
     { pattern: /Ausbildung zur Fachkraft für Lagerlogistik/i, term: 'fachkraft lagerlogistik' },
     { pattern: /Kaufleute für Groß- und Außenhandelsmanagement/i, term: 'großhandel' },
     { pattern: /Kommissionierer.*Lagermitarbeiter/i, term: 'kommissionierer' },
-    { pattern: /Lagerassistenten/i, term: 'lagerassistent' },
+    { pattern: /Lagerassistent/i, term: 'lagerassistent' },
     { pattern: /Teamleiter.*Zentrale/i, term: 'teamleiter verwaltung' },
     { pattern: /Teamleiter/i, term: 'teamleiter logistik' },
-    { pattern: /Mitarbeiter Wareneingang.*Warenausgang/i, term: 'wareneingang' },
+    { pattern: /Mitarbeiter.*Wareneingang.*Warenausgang/i, term: 'wareneingang' },
     { pattern: /Berufskraftfahrer/i, term: 'berufskraftfahrer' },
     { pattern: /Werkstudenten.*Kommissionierung/i, term: 'werkstudent logistik' },
-    { pattern: /Kaufmann für Büromanagement/i, term: 'büromanagement' },
-    { pattern: /Kaufmann für Immobilienmanagement/i, term: 'immobilien' },
-    { pattern: /Kaufmann für Marketingkommunikation/i, term: 'marketing' },
-    { pattern: /Kaufmann im Einzelhandel/i, term: 'kaufmann einzelhandel' },
+    { pattern: /Kaufmann\/?-?frau für Büromanagement/i, term: 'büromanagement' },
+    { pattern: /Kaufmann\/?-?frau für Immobilienmanagement|Immobilienkaufmann\/?-?frau/i, term: 'immobilien' },
+    { pattern: /Ausbildung zum Kaufmann\/?-?frau für Marketingkommunikation/i, term: 'Ausbildung zum Kaufmann für Marketingkommunikation' },
+    { pattern: /Ausbildung zum Kaufmann\/?-?frau für Büromanagement/i, term: 'Ausbildung zum Kaufmann für Büromanagement' },
+    { pattern: /Ausbildung zum Immobilienkaufmann\/?-?frau/i, term: 'Ausbildung zum Immobilienkaufmann' },
+    { pattern: /Abiturientenprogramm.*Kaufmann\/?-?frau im Groß- und Außenhandel/i, term: 'Abiturientenprogramm Kaufmann im Groß- und Außenhandel' },
+    { pattern: /Kaufmann\/?-?frau im Einzelhandel/i, term: 'kaufmann einzelhandel' },
+    { pattern: /Kaufmann\/?-?frau im Groß- und Außenhandel/i, term: 'kaufmann groß- und außenhandel' },
     { pattern: /Verkäufer/i, term: 'verkäufer' },
     { pattern: /Sachbearbeiter/i, term: 'sachbearbeiter' },
     { pattern: /Assistenzen/i, term: 'assistenz' },
-    { pattern: /Referenten/i, term: 'referenten' }
+    { pattern: /Referent/i, term: 'referenten' }
   ];
   
   // Finde passendes Mapping
@@ -136,10 +142,12 @@ const getJobSearchLink = (jobTitle) => {
     }
   }
   
-  // Fallback: Nutze den ersten Teil des Titels (ohne Klammern)
+  // Fallback: Nutze den ersten Teil des Titels (ohne Klammern und Genderung)
   if (!searchTerm) {
     searchTerm = jobTitle
       .replace(/\s*\([^)]*\)/g, '') // Entferne alles in Klammern
+      .replace(/\/-?frau/gi, '') // Entferne "/-frau" oder "/frau"
+      .replace(/:in/gi, '') // Entferne ":in"
       .trim()
       .split(' ')[0]
       .toLowerCase();
@@ -296,8 +304,25 @@ const CareerPathJobs = ({
         : getAreaSearchLink(activePath, activePhase);
     }
 
-    // Erstelle neue URL mit Job-Titel als term-Parameter
-    const jobTitleParam = encodeURIComponent(jobTitle.trim());
+    // Verwende getJobSearchLink für konsistente Suchbegriffe
+    const searchLink = getJobSearchLink(jobTitle);
+    // Extrahiere den Suchbegriff aus der URL
+    const urlMatch = searchLink.match(/term=([^&]+)/);
+    if (urlMatch) {
+      return searchLink;
+    }
+
+    // Fallback: Entferne Genderung aus dem Titel für die Suche (verwende ursprünglichen Titel)
+    // Entferne (m/w/d) und ähnliche Klammern
+    let searchTitle = jobTitle
+      .replace(/\s*\([^)]*\)/g, '') // Entferne alles in Klammern
+      .replace(/\/-?frau/gi, '') // Entferne "/-frau" oder "/frau"
+      .replace(/:in/gi, '') // Entferne ":in"
+      .replace(/\s+/g, ' ') // Normalisiere Leerzeichen
+      .trim();
+
+    // Erstelle neue URL mit bereinigtem Job-Titel als term-Parameter
+    const jobTitleParam = encodeURIComponent(searchTitle);
     return `https://karriere.rewe.de/jobs/suche?term=${jobTitleParam}`;
   };
 
@@ -700,9 +725,20 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
         </div>
 
         <div className="career-path-jobs-modal-body">
+          {jobInfo.shortDescription && (
+            <div className="career-path-jobs-modal-section">
+              <h4 className="career-path-jobs-modal-section-title">Abiprogramm</h4>
+              <p className="career-path-jobs-item-description">
+                {jobInfo.shortDescription}
+              </p>
+            </div>
+          )}
+
           {jobInfo.tasks && (
             <div className="career-path-jobs-modal-section">
-              <h4 className="career-path-jobs-modal-section-title">Aufgaben</h4>
+              <h4 className="career-path-jobs-modal-section-title">
+                {jobId === 'verwaltung-ausbildung-6' ? 'Deine Aufgaben' : 'Aufgaben'}
+              </h4>
               <ul className="career-path-jobs-modal-list">
                 {jobInfo.tasks.map((task, index) => (
                   <li key={index}>{task}</li>
@@ -713,7 +749,7 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
 
           {jobInfo.content && (
             <div className="career-path-jobs-modal-section">
-              <h4 className="career-path-jobs-modal-section-title">Inhalt</h4>
+              <h4 className="career-path-jobs-modal-section-title">Das lernst du bei uns</h4>
               <ul className="career-path-jobs-modal-list">
                 {jobInfo.content.map((item, index) => (
                   <li key={index}>{item}</li>
@@ -724,7 +760,9 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
 
           {jobInfo.profile && (
             <div className="career-path-jobs-modal-section">
-              <h4 className="career-path-jobs-modal-section-title">Profil</h4>
+              <h4 className="career-path-jobs-modal-section-title">
+                {jobId === 'verwaltung-ausbildung-6' ? 'Dein Profil' : 'Profil'}
+              </h4>
               <ul className="career-path-jobs-modal-list">
                 {jobInfo.profile.map((item, index) => (
                   <li key={index}>{item}</li>
@@ -746,7 +784,9 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
 
           {jobInfo.plus && (
             <div className="career-path-jobs-modal-section">
-              <h4 className="career-path-jobs-modal-section-title">Plus</h4>
+              <h4 className="career-path-jobs-modal-section-title">
+                {jobId === 'verwaltung-ausbildung-6' ? 'Wir bieten' : 'Darauf kannst du dich freuen'}
+              </h4>
               <ul className="career-path-jobs-modal-list">
                 {jobInfo.plus.map((item, index) => (
                   <li key={index}>{item}</li>

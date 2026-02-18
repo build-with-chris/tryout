@@ -6,7 +6,7 @@ export const careerPathJobs = {
     ausbildung: [
       {
         id: 'markt-ausbildung-1',
-        title: 'Verkäufer (m/w/d)',
+        title: 'Verkäufer:in (m/w/d)',
         shortDescription: 'Kundenberatung und Verkauf stehen im Mittelpunkt. Du führst Beratungs- und Verkaufsgespräche, präsentierst Waren ansprechend und bedienst digitale Kassen- und Marktsysteme.',
         tasks: [
           'Führen von Beratungs- und Verkaufsgesprächen',
@@ -31,7 +31,7 @@ export const careerPathJobs = {
       },
       {
         id: 'markt-ausbildung-2',
-        title: 'Kaufmann im Einzelhandel (m/w/d)',
+        title: 'Kaufmann/-frau im Einzelhandel (m/w/d)',
         shortDescription: 'Drei-jährige Ausbildung mit erweiterten Aufgaben im Markt. Du organisierst Waren und den gesamten Markt, setzt Verkaufsförderungsaktionen um und arbeitest mit digitalen Systemen.',
         tasks: [
           'Kunden beraten und Verkaufsgespräche führen',
@@ -58,7 +58,7 @@ export const careerPathJobs = {
       {
         id: 'markt-ausbildung-4',
         title: 'Ausbildung im Abiturientenprogramm zur Führungskraft im Einzelhandel (m/w/d)',
-        shortDescription: 'Kombinierte Aus- und Fortbildung (Handelsfachwirt). In drei Jahren werden Verkäufer/Kaufmann-Abschluss und Führungsqualifikation erworben.',
+        shortDescription: 'Kombinierte Aus- und Fortbildung (Handelsfachwirt). In drei Jahren werden Verkäufer:in/Kaufmann/-frau-Abschluss und Führungsqualifikation erworben.',
         tasks: [
           'Kunden beraten und Verkaufsgespräche führen',
           'Mit digitalen Marktsystemen arbeiten',
@@ -263,7 +263,7 @@ export const careerPathJobs = {
           'Kundenorientiert und ergebnisorientiert'
         ],
         benefits: [
-          'Perspektive zur Selbstständigkeit: Möglichkeit, einen eigenen REWE-Markt als Kaufmann/frau zu führen',
+          'Perspektive zur Selbstständigkeit: Möglichkeit, einen eigenen REWE-Markt als Kaufmann/-frau zu führen',
           'Attraktive Vergütung und Sonderzahlungen',
           '5% Mitarbeitendenrabatt bei REWE und PENNY',
           'Umfassende Weiterbildungsmöglichkeiten',
@@ -476,7 +476,7 @@ export const careerPathJobs = {
     professionals: [
       {
         id: 'logistik-professionals-1',
-        title: 'Kommissionierer / Lagermitarbeiter',
+        title: 'Kommissionierer:in / Lagermitarbeiter:in',
         shortDescription: 'Lagerpersonal, das Kundenaufträge (Marktbestellungen) im Verteilzentrum zusammenstellt. Diese Mitarbeiter sind das Rückgrat der Logistik.',
         benefits: [
           'Attraktive Vergütung und Urlaubsanspruch nach Tarif',
@@ -506,7 +506,7 @@ export const careerPathJobs = {
       },
       {
         id: 'logistik-professionals-2',
-        title: 'Lagerassistenten',
+        title: 'Lagerassistent:in',
         shortDescription: 'Unterstützt die Lagerleitung oder bestimmte Lagerprozesse administrativ. Typische Aufgaben umfassen Kommissionierung unterstützen, Bestandsdaten verwalten und Inventuren mit vorbereiten.',
         tasks: [
           'Kommissionierung unterstützen',
@@ -533,7 +533,7 @@ export const careerPathJobs = {
       },
       {
         id: 'logistik-professionals-3',
-        title: 'Teamleiter',
+        title: 'Teamleiter:in',
         shortDescription: 'Führungsposition im Lager: Du verantwortest einen Lagerbereich oder eine Schicht (z.B. Nachtschicht).',
         tasks: [
           'Operative Prozesse im Lagerabschnitt koordinieren und optimieren (z.B. im Kommissionierbereich)',
@@ -562,7 +562,7 @@ export const careerPathJobs = {
       },
       {
         id: 'logistik-professionals-4',
-        title: 'Mitarbeiter Wareneingang / Warenausgang',
+        title: 'Mitarbeiter:in Wareneingang / Warenausgang',
         shortDescription: 'Das Logistikpersonal im Wareneingang prüft und verbucht eingehende Warenlieferungen. Im Warenausgang stellen Mitarbeiter sicher, dass ausgehende Lieferungen vollständig und korrekt zusammengestellt sind.',
         tasks: [
           'Wareneingang: Prüfung und Verbuchung eingehender Warenlieferungen',
@@ -650,8 +650,8 @@ export const careerPathJobs = {
         entryLevel: 'Ausbildung'
       },
       {
-        id: 'verwaltung-ausbildung-2',
-        title: 'Ausbildung (Immobilien)',
+        id: 'verwaltung-ausbildung-6',
+        title: 'Ausbildung zum Immobilienkaufmann/-frau',
         shortDescription: 'Ausbildung im Immobilienwesen, speziell bei REWE, wo es um Märkte und Logistikimmobilien geht.',
         tasks: [
           'Verschiedene relevante Abteilungen kennenlernen: kaufmännisches Immobilienmanagement, Expansion (Standortentwicklung), Bauabteilung und Vertrieb',
@@ -680,7 +680,7 @@ export const careerPathJobs = {
       },
       {
         id: 'verwaltung-ausbildung-3',
-        title: 'Ausbildung (Einzelhandel: Verkäufer / Kaufmann im Einzelhandel)',
+        title: 'Ausbildung (Einzelhandel: Verkäufer:in / Kaufmann/-frau im Einzelhandel)',
         shortDescription: 'Klassische Einzelhandelsausbildung mit Fokus auf Verwaltungs- und Organisationsaufgaben in der Zentrale.',
         tasks: [
           'Organisation und Verwaltung von Waren- und Sortimentsdaten',
@@ -709,9 +709,9 @@ export const careerPathJobs = {
       {
         id: 'verwaltung-ausbildung-4',
         title: 'Abiturientenprogramm (Groß- & Außenhandel)',
-        shortDescription: 'Kombinierte Aus- und Fortbildung für Abiturienten im Groß- und Außenhandel. In drei Jahren werden Verkäufer/Kaufmann-Abschluss und Führungsqualifikation erworben.',
+        shortDescription: 'Kombinierte Aus- und Fortbildung für Abiturienten im Groß- und Außenhandel. In drei Jahren werden Verkäufer:in/Kaufmann/-frau-Abschluss und Führungsqualifikation erworben.',
         tasks: [
-          'Ausbildung zum Kaufmann im Groß- und Außenhandel',
+          'Ausbildung zum Kaufmann/-frau im Groß- und Außenhandel',
           'Erwerb der Handelsfachwirt-Qualifikation',
           'Mitarbeit in verschiedenen Bereichen wie Einkauf, Vertrieb und Logistik',
           'Vorbereitung auf Führungsaufgaben im Großhandel',
@@ -787,7 +787,7 @@ export const careerPathJobs = {
     ausbildung: [
       {
         id: 'frischetheke-ausbildung-1',
-        title: 'Kaufmann im Einzelhandel, Feinkost (m/w/d)',
+        title: 'Kaufmann/-frau im Einzelhandel, Feinkost (m/w/d)',
         shortDescription: 'Spezialisierung auf Frischetheke (Fleisch, Wurst, Käse, Feinkost). Du präsentierst Waren attraktiv, berätst fachkundig und stellst eigene Spezialitäten nach Rezept her.',
         tasks: [
           'Ansprechende Präsentation und Auszeichnung unserer Feinkost- und Frischewaren in den Verkaufstheken',

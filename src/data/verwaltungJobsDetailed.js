@@ -5,7 +5,7 @@ export const verwaltungJobsDetailed = {
   professionals: [
     {
       id: 'verwaltung-professionals-1',
-      title: 'Referent Geschäftsleitung',
+      title: 'Referent:in Geschäftsleitung',
       jobId: '947232',
       location: 'Eching',
       contractType: 'Vollzeit, unbefristet',
@@ -32,7 +32,7 @@ export const verwaltungJobsDetailed = {
     },
     {
       id: 'verwaltung-professionals-2',
-      title: 'Ladenlayouter Serviceabteilung',
+      title: 'Ladenlayouter:in Serviceabteilung',
       jobId: '945268',
       location: 'Region Süd (Eching)',
       contractType: 'Vollzeit, unbefristet',
@@ -59,7 +59,7 @@ export const verwaltungJobsDetailed = {
     },
     {
       id: 'verwaltung-professionals-3',
-      title: 'Revisor',
+      title: 'Revisor:in',
       jobId: '945271',
       location: 'Eching',
       contractType: 'Vollzeit, unbefristet',
@@ -87,7 +87,7 @@ export const verwaltungJobsDetailed = {
     },
     {
       id: 'verwaltung-professionals-4',
-      title: 'Gebietsmanager Ware Kolo / Trockensortiment',
+      title: 'Gebietsmanager:in Ware Kolo / Trockensortiment',
       jobId: '946360',
       location: 'Raum Schwaben/Oberbayern',
       contractType: 'Vollzeit, unbefristet',
@@ -116,7 +116,7 @@ export const verwaltungJobsDetailed = {
     },
     {
       id: 'verwaltung-professionals-5',
-      title: 'Sachbearbeiter Fuhrparkmanagement (Dienstwagenbetreuung)',
+      title: 'Sachbearbeiter:in Fuhrparkmanagement (Dienstwagenbetreuung)',
       jobId: '946118',
       location: 'Eching',
       contractType: 'Vollzeit, unbefristet',
@@ -145,7 +145,7 @@ export const verwaltungJobsDetailed = {
     },
     {
       id: 'verwaltung-professionals-6',
-      title: 'Immobilienverwalter im Innendienst',
+      title: 'Immobilienverwalter:in im Innendienst',
       jobId: '948074',
       location: 'Eching',
       contractType: 'Vollzeit, unbefristet',
@@ -167,7 +167,7 @@ export const verwaltungJobsDetailed = {
     },
     {
       id: 'verwaltung-professionals-8',
-      title: 'Projektleiter Technisches Immobilienmanagement',
+      title: 'Projektleiter:in Technisches Immobilienmanagement',
       jobId: '940379',
       location: 'u.a. Eching',
       contractType: 'Vollzeit, unbefristet',
@@ -197,7 +197,7 @@ export const verwaltungJobsDetailed = {
     },
     {
       id: 'verwaltung-professionals-11',
-      title: 'Vertriebskoordinator Trockensortiment, Getränke, Tiefkühl und Non-Food',
+      title: 'Vertriebskoordinator:in Trockensortiment, Getränke, Tiefkühl und Non-Food',
       jobId: '946964',
       location: 'Eching',
       contractType: 'Vollzeit, unbefristet',
@@ -229,7 +229,7 @@ export const verwaltungJobsDetailed = {
     },
     {
       id: 'verwaltung-professionals-9',
-      title: 'Leiter Arbeitssicherheit',
+      title: 'Leiter:in Arbeitssicherheit',
       jobId: '903422',
       location: 'Eching/Region Süd',
       contractType: 'Vollzeit, unbefristet',
@@ -282,25 +282,30 @@ export const verwaltungJobsDetailed = {
   ausbildung: [
     {
       id: 'verwaltung-ausbildung-1',
-      title: 'Ausbildung zum Kaufmann für Marketingkommunikation',
+      title: 'Ausbildung (kaufmännisch: Büro/Marketing/Groß- & Außenhandel)',
       jobId: '930234',
       location: 'Eching',
       startDate: '01.09.2026',
       content: [
-        'Kampagnen (Print/Online) planen',
-        'Klassische Werbung platzieren',
-        'Eigenmarken vermarkten',
-        'Werbemittel mit interner Grafik',
-        'Schnittstellen/Agenturen',
-        'Events (z.B. Jahrestagung)',
-        'Sonderprojekte',
-        'Media-/Werbemittel-Einkauf',
-        'Sponsoring-Unterstützung'
+        'Mitarbeit in unterschiedlichen Unternehmensbereichen wie Personal, Rechnungswesen, Einkauf, Vertrieb, Marketing',
+        'Kommunikation mit internen und externen Ansprechpartnern (z.B. andere Abteilungen, Lieferanten) und Teilnahme an Besprechungen',
+        'Umgang mit digitalen Büro- und Informationssystemen',
+        'Aufbereitung und Verarbeitung von Daten und Informationen (z.B. Statistiken, Berichte)',
+        'Planung, Organisation und Durchführung kleiner Projekte und Büroabläufe',
+        'Marketingkampagnen konzipieren und umsetzen (bei Marketing-Ausbildung)',
+        'Media- und Werbemittel planen sowie Marktforschungsergebnisse auswerten'
+      ],
+      plus: [
+        'Strukturierte Ausbildung mit Praxis und Berufsschule',
+        'Übernahme bei guten Leistungen',
+        '5% Mitarbeitendenrabatt bei REWE und PENNY',
+        'Umfassende Weiterbildungsmöglichkeiten',
+        'Einblick in verschiedene Unternehmensbereiche'
       ]
     },
     {
       id: 'verwaltung-ausbildung-2',
-      title: 'Ausbildung Kaufmann f. Groß- und Außenhandelsmanagement, CM/Einkauf',
+      title: 'Ausbildung Kaufmann/-frau f. Groß- und Außenhandelsmanagement, CM/Einkauf',
       jobId: '930232',
       location: 'Eching',
       startDate: '01.09.2026',
@@ -320,83 +325,97 @@ export const verwaltungJobsDetailed = {
     },
     {
       id: 'verwaltung-ausbildung-3',
-      title: 'Abiturientenprogramm Kaufmann im Groß- und Außenhandel, Schwerpunkt Verwaltung',
+      title: 'Ausbildung (Einzelhandel: Verkäufer:in / Kaufmann/-frau im Einzelhandel)',
       jobId: '930230',
       location: 'Eching',
       startDate: '01.09.2026',
       content: [
-        'Einkauf/Vertrieb-Abläufe',
-        'Verhandlungen mit Herstellern',
-        'Rechnungen/Reklamationen',
-        'Disposition & Sortimente',
-        'Prozesssteuerung + Warenwirtschaft'
+        'Organisation und Verwaltung von Waren- und Sortimentsdaten',
+        'Unterstützung bei der Planung und Steuerung von Verkaufsprozessen',
+        'Mitarbeit in verschiedenen Verwaltungsbereichen wie Einkauf, Vertrieb und Controlling',
+        'Umgang mit Warenwirtschaftssystemen und digitalen Verwaltungstools',
+        'Vorbereitung auf Führungsaufgaben im Einzelhandel',
+        'Kombination aus praktischer Erfahrung und theoretischem Wissen'
       ],
       plus: [
-        'Verkürzung der 3-jährigen Ausbildung auf 19 Monate',
-        'Azubi-Events',
-        'Übernahme',
-        'Rabatte'
+        'Strukturierte Ausbildung mit Praxis und Berufsschule',
+        'Übernahme bei guten Leistungen',
+        '5% Mitarbeitendenrabatt bei REWE und PENNY',
+        'Umfassende Weiterbildungsmöglichkeiten',
+        'Vorbereitung auf Führungsaufgaben'
       ]
     },
     {
       id: 'verwaltung-ausbildung-4',
-      title: 'Abiturientenprogramm Kaufmann im Groß- und Außenhandel, Category Management/Einkauf',
+      title: 'Abiturientenprogramm Kaufmann/-frau im Groß- und Außenhandel, Category Management/Einkauf',
       jobId: '930228',
       location: 'Eching',
       startDate: '01.09.2026',
+      shortDescription: 'Übrigens: Mit dem Abiprogramm kannst du die 3-jährige Ausbildung zum Kaufmann/-frau im Groß- und Außenhandel (m/w/d) auf nur 19 Monate verkürzen!',
       content: [
-        'Einkauf/Vertrieb',
-        'Verhandlungen',
-        'Dispo/Sortiment',
-        'Rechnungen/Reklamationen',
-        'Warenwirtschaft',
-        'Prozesssteuerung'
+        'Alle Abläufe rund um Einkauf und Vertrieb',
+        'Führung von Verhandlungsgesprächen mit Herstellern',
+        'Rechnungs- und Reklamationsbearbeitung',
+        'Disposition und Gestaltung der Sortimente',
+        'Kaufmännische Steuerung der Prozesse und Umgang mit Warenwirtschaftssystemen'
       ],
       plus: [
-        '19 Monate',
-        'Azubi-Events',
-        'Übernahme',
-        'Rabatte'
+        'Azubiprojekte und Events',
+        'Garantierte Übernahme bei guten Leistungen',
+        'Einkaufsrabatt bei den Unternehmen REWE und PENNY sowie toom Baumarkt und DER Touristik'
       ]
     },
     {
       id: 'verwaltung-ausbildung-5',
-      title: 'Ausbildung zum Kaufmann für Büromanagement',
+      title: 'Duales Studium (Handel)',
       jobId: '930224',
       location: 'Eching',
       startDate: '01.09.2026',
       content: [
-        'Mitarbeit in Bereichen wie HR/Rechnungswesen/Einkauf/Vertrieb/Werbung',
-        'Interne/externe Kommunikation + Verhandlungen',
-        'Digitale Systeme/Medien',
-        'Daten aufbereiten',
-        'Projekte & Abläufe planen/organisieren'
+        'Mitarbeit in verschiedenen Unternehmensbereichen (Markt, Logistik, Verwaltung)',
+        'Vertretungs-Einsätze zur Vorbereitung auf Führungsposition',
+        'Begleitung von Außendienst-Einsätzen (z.B. mit Vertriebsleitung, bei Umbauten/Neueröffnungen)',
+        'Kennenlernen der Schnittstellen zwischen Markt, Verwaltung und Logistik',
+        'Teilnahme an Seminaren (z.B. Systemschulungen, Arbeitsrecht)',
+        'Theoretisches Wissen aus dem Studium praktisch anwenden'
+      ],
+      plus: [
+        'Kombination aus Studium und Praxis',
+        'Schneller Einstieg in Führungspositionen',
+        'Übernahme nach erfolgreichem Abschluss',
+        '5% Mitarbeitendenrabatt bei REWE und PENNY',
+        'Umfassende Weiterbildungsmöglichkeiten'
       ]
     },
     {
       id: 'verwaltung-ausbildung-6',
-      title: 'Ausbildung zum Immobilienkaufmann',
+      title: 'Ausbildung zum Immobilienkaufmann/-frau',
       jobId: '930236',
       location: 'Eching',
       startDate: '01.09.2026',
-      content: [
-        'Objektverwaltung (u.a. Nebenkosten prüfen/weiterbelasten)',
-        'Mietverträge verwalten',
-        'Verträge im Immobilienprogramm bearbeiten',
-        'Teilnahme an Besprechungen'
+      tasks: [
+        'Alle Tätigkeiten, die bei der Objektverwaltung anfallen, z.B. die Prüfung der Nebenkostenabrechnungen und deren Weiterbelastung, Verwaltung der Mietverträge etc.',
+        'Eingabe und Bearbeitung von Verträgen in speziellem Immobilienverwaltungsprogramm',
+        'Teilnahme an Besprechungen und vieles mehr'
+      ],
+      plus: [
+        'Einsatz im Bereich kaufmännisches Immobilienmanagement',
+        'Schwerpunkte: Objektverwaltung, Mieterbetreuung, Mietvertragsverwaltung',
+        'Abwechslungsreiche und interessante Aufgabenfelder',
+        'Unterstützung und Entwicklung im Team',
+        'Vielseitige Projektarbeit'
       ],
       profile: [
-        'Mind. (Fach-)Abi',
-        'Zahlen-/Sprachverständnis',
-        'Teamgeist',
-        'Dienstleistungsorientiert',
-        'MS Office Basics',
-        'Praktika vorteilhaft'
+        'Mindestens Fachhochschulreife oder Abitur',
+        'Gutes Zahlen- und Sprachverständnis',
+        'Teamgeist, Kontaktfreude und Dienstleistungsorientierung',
+        'Grundkenntnisse in MS-Office',
+        'Erste Erfahrungen durch Praktika (idealerweise im kaufmännischen Bereich)'
       ]
     },
     {
       id: 'verwaltung-ausbildung-7',
-      title: 'Ausbildung Kaufmann f. Büromanagement, Fachrichtung Category Management/Einkauf',
+      title: 'Ausbildung Kaufmann/-frau f. Büromanagement, Fachrichtung Category Management/Einkauf',
       jobId: '930220',
       location: 'Eching',
       startDate: '01.09.2026',
