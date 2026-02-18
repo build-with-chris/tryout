@@ -45,6 +45,9 @@
 
 .values-nav {
   margin-bottom: var(--spacing-3xl);
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .values-nav-scroll {
@@ -56,6 +59,23 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--color-neutral-300) transparent;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Auf großen Bildschirmen: Items gleichmäßig verteilen, wenn genug Platz */
+@media (min-width: 1200px) {
+  .values-nav-scroll {
+    justify-content: space-between;
+  }
+}
+
+/* Auf mittleren Bildschirmen: Items zentrieren */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .values-nav-scroll {
+    justify-content: flex-start;
+  }
 }
 
 .values-nav-scroll::-webkit-scrollbar {
@@ -147,6 +167,9 @@
   cursor: pointer;
   transition: all var(--transition-base);
   position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .values-content:hover {
@@ -502,10 +525,13 @@
   .values-nav {
     margin-bottom: var(--spacing-2xl);
     padding: 0 var(--spacing-md);
+    width: 100%;
   }
 
   .values-nav-scroll {
     gap: var(--spacing-sm);
+    max-width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
   }
 
   .values-nav-item {

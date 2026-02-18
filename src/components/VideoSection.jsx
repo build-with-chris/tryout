@@ -200,7 +200,7 @@ const VideoSection = () => {
           {/* Title */}
           <div className="video-section-header">
             <h2 className="video-section-title">
-              <span className="video-section-title-line">REWE glaubt an dich. <span className="video-section-title-line-emphasis">Glaub auch du an dich!</span></span>
+              <span className="video-section-title-line">Vom Käse bis zur Wurscht – ALLES.</span>
             </h2>
             <p className="video-section-subtitle">
               Finde deinen Platz bei REWE Region Süd
@@ -237,7 +237,7 @@ const VideoSection = () => {
               playsInline
               loop={false}
               preload="metadata"
-              aria-label="REWE Imagefilm - REWE glaubt an dich. Glaub auch du an dich!"
+              aria-label="REWE Imagefilm - Vom Käse bis zur Wurscht – ALLES."
             />
 
             {/* Video Controls */}
