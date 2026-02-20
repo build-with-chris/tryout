@@ -33,7 +33,7 @@ const row2Images = [
   "/Row2/2.png",
   "/Row2/3.jpg",
   "/Row2/4.jpg",
-  "/Row2/5.png",
+  "/Row2/5.jpg",
   "/Row2/6.jpg",
   "/Row2/7.jpg",
 ];
