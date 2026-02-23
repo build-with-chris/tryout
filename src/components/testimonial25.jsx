@@ -181,20 +181,20 @@ const Testimonial25 = ({
                   className="grow basis-[280px] md:basis-[320px] lg:basis-[360px]"
                 >
                   <Card className={cn(
-                    "overflow-hidden border backdrop-blur-sm relative",
+                    "overflow-hidden border-0 shadow-lg backdrop-blur-sm relative",
                     isDark 
-                      ? "border-white/30 bg-black"
-                      : "border-neutral-200 bg-black"
+                      ? "bg-black"
+                      : "bg-black"
                   )}>
-                    <CardContent className="p-0">
-                      <div className="relative w-full aspect-[9/16] bg-black">
+                    <CardContent className="p-0 overflow-hidden">
+                      <div className="relative w-full aspect-[9/16] overflow-hidden bg-black">
                         <video
                           ref={(el) => {
                             if (el) {
                               videoRefs.current[testimonial.id] = el;
                             }
                           }}
-                          className="w-full h-full object-cover"
+                          className="absolute inset-0 w-full h-full object-cover object-center [border:0]"
                           src={testimonial.videoSrc}
                           loop={false}
                           muted={false}

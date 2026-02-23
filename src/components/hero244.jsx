@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { GripVertical } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -10,6 +12,28 @@ import {
 const Hero244 = ({
   className
 }) => {
+  const containerRef = useRef(null);
+  const hintRef = useRef(null);
+  const [maxLeft, setMaxLeft] = useState(0);
+
+  useEffect(() => {
+    const updateMaxLeft = () => {
+      if (containerRef.current && hintRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        const hintWidth = hintRef.current.offsetWidth;
+        setMaxLeft(Math.max(0, containerWidth - hintWidth));
+      }
+    };
+    updateMaxLeft();
+    const ro = new ResizeObserver(updateMaxLeft);
+    if (containerRef.current) ro.observe(containerRef.current);
+    window.addEventListener("resize", updateMaxLeft);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", updateMaxLeft);
+    };
+  }, []);
+
   const items = [
     {
       title: "Bereichsleiter Frischetheke",
@@ -65,8 +89,24 @@ const Hero244 = ({
             Dein Traum ist nicht „der eine" Job? Perfekt. Bei REWE Süd gibt's viele Wege: im Markt, in der Logistik oder in der Verwaltung. Vom ersten Schritt bis zur Verantwortung – du bringst den Antrieb, wir den Rahmen.
           </p>
         </div>
-        <DraggableCardContainer
+        <div
+          ref={containerRef}
           className="relative flex h-[80vh] w-full items-center justify-center lg:h-full">
+          <DraggableCardContainer className="absolute inset-0 flex items-center justify-center">
+          <motion.p
+            ref={hintRef}
+            className="absolute bottom-6 left-0 flex w-max items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-base font-medium text-neutral-600 shadow-sm"
+            aria-hidden
+            animate={{ x: [0, maxLeft] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}>
+            <GripVertical className="h-4 w-4 shrink-0 text-neutral-500" strokeWidth={2} />
+            Entdecke ihre Berufung.
+          </motion.p>
           <p
             className="absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center font-calSans text-4xl text-neutral-400">
             REWE Region Süd wartet auf DICH!
@@ -76,24 +116,26 @@ const Hero244 = ({
               key={item.title}
               className={cn(
                 item.className,
-                "-translate-x-20 scale-75 rounded-2xl p-3 lg:translate-x-0 lg:scale-100"
+                "w-80 -translate-x-20 scale-75 rounded-2xl p-3 lg:translate-x-0 lg:scale-100"
               )}>
-              <img
-                src={item.image}
-                alt={item.title}
-                className="pointer-events-none relative z-10 h-82 w-80 rounded-2xl object-cover" />
+              {/* Bildbereich 5 % kürzer: aspect 16/19 ≈ 95 % von 4/5 */}
+              <div className="relative w-full overflow-hidden rounded-2xl aspect-[16/19] bg-neutral-100">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+                />
+              </div>
               <h3 className="mt-4 text-center text-xl tracking-tighter text-neutral-900">
                 {item.title}
               </h3>
+              <div className="mt-3 flex justify-end">
+                <GripVertical className="h-3.5 w-3.5 text-neutral-400/70" strokeWidth={2} aria-hidden />
+              </div>
             </DraggableCardBody>
           ))}
-        </DraggableCardContainer>
-      </div>
-      <div
-        className="absolute inset-0 flex h-full w-full items-center justify-between">
-        {Array.from({ length: 7 }).map((_, index) => (
-          <div key={index} className="h-full w-px bg-neutral-200"></div>
-        ))}
+          </DraggableCardContainer>
+        </div>
       </div>
     </section>
   );
