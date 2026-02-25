@@ -44,8 +44,10 @@ const galleryImages = [
 ];
 
 const Hero234a = ({
-  className
+  className,
+  galleryImages: galleryImagesProp,
 }) => {
+  const images = galleryImagesProp ?? galleryImages;
   return (
     <section
       className={cn("relative overflow-hidden -mt-0 mb-0", className)}
@@ -60,7 +62,7 @@ const Hero234a = ({
         <div
           className="relative h-[500px] w-[900px] overflow-hidden rounded-2xl md:h-[600px] md:w-[1200px]">
           <div className="absolute inset-0 flex flex-col justify-center gap-3">
-            {galleryImages.map((row, rowIndex) => (
+            {images.map((row, rowIndex) => (
               <motion.div
                 key={rowIndex}
                 className="flex gap-3 will-change-transform"

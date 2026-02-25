@@ -722,11 +722,11 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
 
         <div className="career-path-jobs-modal-header">
           <h3 className="career-path-jobs-modal-title">{jobInfo.title || jobTitle}</h3>
-          <div className="career-path-jobs-modal-meta">
-            {jobInfo.location && <span>{jobInfo.location}</span>}
-            {jobInfo.contractType && <span>{jobInfo.contractType}</span>}
-            {jobInfo.startDate && <span>Start: {jobInfo.startDate}</span>}
-          </div>
+          {jobInfo.contractType && (
+            <div className="career-path-jobs-modal-meta">
+              <span>{jobInfo.contractType}</span>
+            </div>
+          )}
         </div>
 
         <div className="career-path-jobs-modal-body">
@@ -776,30 +776,6 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
               </h4>
               <ul className="career-path-jobs-modal-list">
                 {jobInfo.profile.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {jobInfo.benefits && (
-            <div className="career-path-jobs-modal-section">
-              <h4 className="career-path-jobs-modal-section-title">Benefits</h4>
-              <ul className="career-path-jobs-modal-list">
-                {jobInfo.benefits.map((benefit, index) => (
-                  <li key={index}>{benefit}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {jobInfo.plus && (
-            <div className="career-path-jobs-modal-section">
-              <h4 className="career-path-jobs-modal-section-title">
-                {jobId === 'verwaltung-ausbildung-6' ? 'Wir bieten' : 'Darauf kannst du dich freuen'}
-              </h4>
-              <ul className="career-path-jobs-modal-list">
-                {jobInfo.plus.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
