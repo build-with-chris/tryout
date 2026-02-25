@@ -282,18 +282,23 @@ export const verwaltungJobsDetailed = {
   ausbildung: [
     {
       id: 'verwaltung-ausbildung-1',
-      title: 'Ausbildung (kaufmännisch: Büro/Marketing/Groß- & Außenhandel)',
+      title: 'Kaufmann/-frau für Büromanagement',
       jobId: '930234',
       location: 'Eching',
       startDate: '01.09.2026',
-      content: [
-        'Mitarbeit in unterschiedlichen Unternehmensbereichen wie Personal, Rechnungswesen, Einkauf, Vertrieb, Marketing',
-        'Kommunikation mit internen und externen Ansprechpartnern (z.B. andere Abteilungen, Lieferanten) und Teilnahme an Besprechungen',
-        'Umgang mit digitalen Büro- und Informationssystemen',
-        'Aufbereitung und Verarbeitung von Daten und Informationen (z.B. Statistiken, Berichte)',
-        'Planung, Organisation und Durchführung kleiner Projekte und Büroabläufe',
-        'Marketingkampagnen konzipieren und umsetzen (bei Marketing-Ausbildung)',
-        'Media- und Werbemittel planen sowie Marktforschungsergebnisse auswerten'
+      shortDescription: 'Bei REWE erwartet dich mehr als nur ein Job: In einem familiären Umfeld kannst du dich entwickeln und wirst auf deinem Weg gefördert und unterstützt.',
+      tasks: [
+        'Mitarbeit in verschiedenen Unternehmensbereichen (Human Resources, Rechnungswesen, Einkauf, Vertrieb, Werbung)',
+        'Kommunikation mit internen und externen Schnittstellen sowie Teilnahme an Verhandlungsgesprächen',
+        'Umgang mit digitalen Systemen und Medien',
+        'Aufbereiten und Verarbeiten von Daten und Informationen',
+        'Planung, Organisation und Durchführung von Projekten und Arbeitsabläufen'
+      ],
+      profile: [
+        'MS-Office-Kenntnisse',
+        'Sicher in deutscher Rechtschreibung und Grammatik',
+        'Teamorientiert, kund:innenorientiert, selbstbewusstes Auftreten',
+        'Kontaktfreudig und einsatzbereit'
       ],
       plus: [
         'Strukturierte Ausbildung mit Praxis und Berufsschule',
@@ -301,6 +306,40 @@ export const verwaltungJobsDetailed = {
         '5% Mitarbeitendenrabatt bei REWE und PENNY',
         'Umfassende Weiterbildungsmöglichkeiten',
         'Einblick in verschiedene Unternehmensbereiche'
+      ]
+    },
+    {
+      id: 'verwaltung-ausbildung-8',
+      title: 'Kaufmann/-frau für Marketingkommunikation',
+      jobId: '930235',
+      location: 'Eching',
+      startDate: '01.09.2026',
+      shortDescription: 'Starte deine Karriere in der Marketingkommunikation: Du bekommst Einblicke in Planung und Umsetzung von REWE-Werbemaßnahmen, unterstützt das Marketing-Team der Region Süd und übernimmst nach der Einarbeitung eigene Aufgabenbereiche.',
+      tasks: [
+        'Kreation und Planung von Kampagnen (Print & Online)',
+        'Gestaltung und Platzierung klassischer Werbung (z. B. Zeitschriften, Zeitungen, TV, Hörfunk, Handzettel, POS, Onlinemedien)',
+        'Strategische Entwicklung und Vermarktung der Eigenmarken',
+        'Layoutgestaltung und Produktion von Werbemitteln (mit interner Grafik) für Mitarbeitende und Endkund:innen',
+        'Kommunikation mit internen/externen Schnittstellen, Dienstleistern und Agenturen',
+        'Planung/Organisation/Umsetzung von Veranstaltungen vor Ort (z. B. Jahrestagung)',
+        'Mitwirken an Sonderprojekten sowie Media- und Werbemitteleinkauf',
+        'Unterstützung bei Sponsoringmaßnahmen (u. a. FC Bayern Basketball, TSV 1860 München)',
+        'Einsatz im visuellen Marketing-Team inkl. Begleitung zu Außendienst-Terminen in REWE Märkten'
+      ],
+      profile: [
+        'Abitur, Fachhochschulreife oder gute Mittlere Reife',
+        'Interesse am Handel und seinen Kund:innen',
+        'Ausgeprägte Kommunikations- und Koordinationsfähigkeit',
+        'Sehr gute Deutschkenntnisse in Wort und Schrift',
+        'Gute MS-Office-Kenntnisse',
+        'Teamgeist, Kontaktfreude, Kundenorientierung und Einsatzbereitschaft'
+      ],
+      plus: [
+        'Strukturierte Ausbildung mit Praxis und Berufsschule',
+        'Übernahme bei guten Leistungen',
+        '5% Mitarbeitendenrabatt bei REWE und PENNY',
+        'Umfassende Weiterbildungsmöglichkeiten',
+        'Einblick in Marketing und Kommunikation'
       ]
     },
     {
@@ -329,13 +368,19 @@ export const verwaltungJobsDetailed = {
       jobId: '930230',
       location: 'Eching',
       startDate: '01.09.2026',
-      content: [
-        'Organisation und Verwaltung von Waren- und Sortimentsdaten',
-        'Unterstützung bei der Planung und Steuerung von Verkaufsprozessen',
-        'Mitarbeit in verschiedenen Verwaltungsbereichen wie Einkauf, Vertrieb und Controlling',
-        'Umgang mit Warenwirtschaftssystemen und digitalen Verwaltungstools',
-        'Vorbereitung auf Führungsaufgaben im Einzelhandel',
-        'Kombination aus praktischer Erfahrung und theoretischem Wissen'
+      shortDescription: 'Du kümmerst dich um den Markt, hast das Sortiment im Blick und berätst deine Kund:innen fachgerecht.',
+      tasks: [
+        'Führen von Beratungs- und Verkaufsgesprächen',
+        'Organisation der Ware und des Gesamtmarktes (z. B. Bestandsaufnahme, Beschaffung und Lagerung von Waren sowie Personaleinsatzplanung)',
+        'Gezielte Umsetzung von Werbe- und Verkaufsförderungsmaßnahmen passend zu aktuellen Trends',
+        'Umgang mit digitalen Markt- und Kassensystemen sowie Kennenlernen und Auswerten von Verkaufsstatistiken'
+      ],
+      profile: [
+        'Interesse an Lebensmitteln und den Prozessen hinter den Kulissen eines Supermarkts',
+        'Lernst gern Neues',
+        'Verlässlich und arbeitest gut im Team',
+        'Magst den Kontakt mit Menschen',
+        'Guter Hauptschulabschluss, Mittlere Reife oder (Fach-)Abitur'
       ],
       plus: [
         'Strukturierte Ausbildung mit Praxis und Berufsschule',
@@ -393,24 +438,25 @@ export const verwaltungJobsDetailed = {
       jobId: '930236',
       location: 'Eching',
       startDate: '01.09.2026',
+      shortDescription: 'Kaufmännische Ausbildung im Immobilienmanagement mit Fokus auf Objektverwaltung, Mieterbetreuung und Mietvertragsverwaltung.',
       tasks: [
-        'Alle Tätigkeiten, die bei der Objektverwaltung anfallen, z.B. die Prüfung der Nebenkostenabrechnungen und deren Weiterbelastung, Verwaltung der Mietverträge etc.',
-        'Eingabe und Bearbeitung von Verträgen in speziellem Immobilienverwaltungsprogramm',
-        'Teilnahme an Besprechungen und vieles mehr'
-      ],
-      plus: [
-        'Einsatz im Bereich kaufmännisches Immobilienmanagement',
-        'Schwerpunkte: Objektverwaltung, Mieterbetreuung, Mietvertragsverwaltung',
-        'Abwechslungsreiche und interessante Aufgabenfelder',
-        'Unterstützung und Entwicklung im Team',
-        'Vielseitige Projektarbeit'
+        'Tätigkeiten der Objektverwaltung (z. B. Prüfung von Nebenkostenabrechnungen, Weiterbelastung, Verwaltung von Mietverträgen)',
+        'Eingabe und Bearbeitung von Verträgen in einem Immobilienverwaltungsprogramm',
+        'Teilnahme an Besprechungen und weitere organisatorische Aufgaben'
       ],
       profile: [
         'Mindestens Fachhochschulreife oder Abitur',
         'Gutes Zahlen- und Sprachverständnis',
         'Teamgeist, Kontaktfreude und Dienstleistungsorientierung',
-        'Grundkenntnisse in MS-Office',
-        'Erste Erfahrungen durch Praktika (idealerweise im kaufmännischen Bereich)'
+        'Grundkenntnisse in MS Office',
+        'Erste Erfahrungen durch Praktika (idealerweise kaufmännisch)'
+      ],
+      plus: [
+        'Strukturierte Ausbildung mit Praxis und Berufsschule',
+        'Übernahme bei guten Leistungen',
+        '5% Mitarbeitendenrabatt bei REWE und PENNY',
+        'Umfassende Weiterbildungsmöglichkeiten',
+        'Einblick in verschiedene Immobilienbereiche'
       ]
     },
     {

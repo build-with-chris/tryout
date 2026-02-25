@@ -121,6 +121,7 @@ const getJobSearchLink = (jobTitle) => {
     { pattern: /Werkstudenten.*Kommissionierung/i, term: 'werkstudent logistik' },
     { pattern: /Kaufmann\/?-?frau für Büromanagement/i, term: 'büromanagement' },
     { pattern: /Kaufmann\/?-?frau für Immobilienmanagement|Immobilienkaufmann\/?-?frau/i, term: 'immobilien' },
+    { pattern: /Kaufmann\/?-?frau für Marketingkommunikation/i, term: 'marketingkommunikation' },
     { pattern: /Ausbildung zum Kaufmann\/?-?frau für Marketingkommunikation/i, term: 'Ausbildung zum Kaufmann für Marketingkommunikation' },
     { pattern: /Ausbildung zum Kaufmann\/?-?frau für Büromanagement/i, term: 'Ausbildung zum Kaufmann für Büromanagement' },
     { pattern: /Ausbildung zum Immobilienkaufmann\/?-?frau/i, term: 'Ausbildung zum Immobilienkaufmann' },
@@ -736,6 +737,12 @@ const JobModal = ({ jobId, jobInfo, jobTitle, onClose, prefersReducedMotion, get
                 {jobInfo.shortDescription}
               </p>
             </div>
+          )}
+
+          {jobInfo.shortDescription && !isAbiprogramm && (
+            <p className="career-path-jobs-item-description career-path-jobs-modal-intro">
+              {jobInfo.shortDescription}
+            </p>
           )}
 
           {jobInfo.tasks && (
