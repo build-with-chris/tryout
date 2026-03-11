@@ -5,12 +5,18 @@ import './ReelsGalleryNew.css'
 const REELS_PER_PAGE = 5
 const TOTAL_REELS = 50
 
+const getBaseUrl = () => {
+  const base = import.meta.env.BASE_URL ?? ''
+  return base.endsWith('/') ? base.slice(0, -1) : base
+}
+
 const buildReels = () => {
+  const baseUrl = getBaseUrl()
   const reels = []
   for (let i = 1; i <= TOTAL_REELS; i++) {
     reels.push({
       id: `reel-${i}`,
-      src: `/REWS_Reels_final/${i}.mp4`,
+      src: `${baseUrl}/REWS_Reels_final/${i}.mp4`,
       title: `REWE Reel #${i}`,
     })
   }
