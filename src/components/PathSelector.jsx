@@ -67,7 +67,6 @@ const PathSelector = () => {
     if (typeof window === 'undefined') return true
     return window.matchMedia('(min-width: 768px)').matches
   })
-  
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 768px)')
     setIsDesktop(mq.matches)
@@ -169,25 +168,29 @@ const PathSelector = () => {
             items={[
               {
                 id: 'markt',
-                title: 'Komm in den Markt',
+                titlePrefix: 'Komm in den',
+                titleTyping: 'Markt',
                 imageSrc: '/KommInDenMarkt.jpg',
                 imageAlt: imageAltTexts.markt,
               },
               {
                 id: 'frischetheke',
-                title: 'Komm an die Frischetheke',
+                titlePrefix: 'Komm an die',
+                titleTyping: 'Frischetheke',
                 imageSrc: '/KommAnDieFrischetheke.jpg',
                 imageAlt: 'REWE Frischetheke - Frische Produkte und Beratung',
               },
               {
                 id: 'logistik',
-                title: 'Komm in die Logistik',
+                titlePrefix: 'Komm in die',
+                titleTyping: 'Logistik',
                 imageSrc: '/MarktLogistikVerwaltgung/Logistik.jpg',
                 imageAlt: imageAltTexts.logistik,
               },
               {
                 id: 'verwaltung',
-                title: 'Komm in die Zentrale',
+                titlePrefix: 'Komm in die',
+                titleTyping: 'Zentral & Außendienst',
                 imageSrc: '/MarktLogistikVerwaltgung/Verwaltung.jpg',
                 imageAlt: imageAltTexts.verwaltung,
               },

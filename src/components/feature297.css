@@ -10,3 +10,22 @@
 .animate-border-rotate {
   animation: borderRotate 3s linear infinite;
 }
+
+.feature297-title-prefix {
+  /* Untertitel der Card – immer sichtbar für Orientierung */
+}
+
+.feature297-typing-wrap {
+  display: inline;
+}
+
+.feature297-typing-cursor {
+  display: inline-block;
+  margin-left: 1px;
+  animation: feature297-cursor-blink 0.9s step-end infinite;
+}
+
+@keyframes feature297-cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
