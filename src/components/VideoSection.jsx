@@ -203,7 +203,7 @@ const VideoSection = () => {
               <span className="video-section-title-line">Vom Käse bis zur Wurscht – ALLES.</span>
             </h2>
             <p className="video-section-subtitle">
-              Finde deinen Platz bei REWE Region Süd
+              Finde deinen Platz in der Region Süd
             </p>
           </div>
 

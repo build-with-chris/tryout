@@ -36,38 +36,38 @@ const Hero244 = ({
 
   const items = [
     {
-      title: "Bereichsleiter Frischetheke",
+      title: "Metzger im Verkauf",
       image: "/Alterative/Bereichsleiter Frischetheke.jpg",
       className: "absolute top-10 left-[20%] rotate-[-5deg]",
     },
     {
-      title: "Duales Studium Wirtschaftsingenieurwesen",
+      title: "Teamleitung Warenausgang",
       image: "/Alterative/Duales Studium Wirtschaftsingenieurwesen.jpg",
       className: "absolute top-40 left-[25%] rotate-[-7deg]",
     },
     {
-      title: "Fachlageristin",
+      title: "Mitarbeiterin Logistik",
       image: "/Alterative/Fachlageristin.jpg",
       className: "absolute top-5 left-[40%] rotate-[8deg]",
     },
     {
-      title: "Marketing und PR",
+      title: "Transportleitung Standort (Logistik)",
       image: "/Alterative/Marketing und PR.jpg",
       className: "absolute top-32 left-[55%] rotate-[10deg]",
     },
     {
-      title: "Mitarbeiter Obst und Gemüse",
+      title: "Einzelhandelskaufmann",
       image: "/Alterative/Mitarbeiter Obst und Gemüse.jpg",
       className: "absolute top-20 lg:right-[35%] rotate-[2deg]",
     },
     {
-      title: "Qualitätsprüfer",
+      title: "Ausbildung zum Fachlagerist",
       image: "/Alterative/Qualitätsprüfer.jpg",
       className: "absolute top-24 left-[45%] rotate-[-7deg]",
     },
     {
-      title: "Schichtleitung",
-      image: "/Alterative/Schichtleitung.jpg",
+      title: "Ausbildung Einzelhandelskaufmann Feinkost",
+      image: "/Azubis/Azubi Frischetheke.jpg",
       className: "absolute top-8 left-[30%] rotate-[4deg]",
     },
   ];

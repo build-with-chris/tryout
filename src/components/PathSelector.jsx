@@ -159,7 +159,7 @@ const PathSelector = () => {
             Ein Team. Deine Möglichkeiten.
           </h2>
           <p className="path-selector-subtitle">
-            Markt, Frischetheke, Logistik oder Zentrale.
+            Markt, Frischetheke, Logistik, Zentrale oder Außendienst.
           </p>
         </div>
 
