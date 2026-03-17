@@ -157,10 +157,9 @@ const PathSelector = () => {
           <h2 id="path-heading" className="path-selector-title">
             Ein Team. Deine Möglichkeiten.
           </h2>
-          <p className="path-selector-subtitle">
-            Markt, Frischetheke, Logistik, Zentrale oder Außendienst.
-          </p>
         </div>
+
+        <p className="path-selector-subheading">Komm zu uns:</p>
 
         {/* Feature297 Cards - Shadcn Style */}
         <div className="path-selector-cards">
@@ -168,29 +167,25 @@ const PathSelector = () => {
             items={[
               {
                 id: 'markt',
-                titlePrefix: 'Komm in den',
-                titleTyping: 'Markt',
+                title: 'Markt',
                 imageSrc: '/KommInDenMarkt.jpg',
                 imageAlt: imageAltTexts.markt,
               },
               {
                 id: 'frischetheke',
-                titlePrefix: 'Komm an die',
-                titleTyping: 'Frischetheke',
+                title: 'Frischetheke',
                 imageSrc: '/KommAnDieFrischetheke.jpg',
                 imageAlt: 'REWE Frischetheke - Frische Produkte und Beratung',
               },
               {
                 id: 'logistik',
-                titlePrefix: 'Komm in die',
-                titleTyping: 'Logistik',
+                title: 'Logistik',
                 imageSrc: '/MarktLogistikVerwaltgung/Logistik.jpg',
                 imageAlt: imageAltTexts.logistik,
               },
               {
                 id: 'verwaltung',
-                titlePrefix: 'Komm in die',
-                titleTyping: 'Zentral & Außendienst',
+                title: 'Außendienst & Zentrale',
                 imageSrc: '/MarktLogistikVerwaltgung/Verwaltung.jpg',
                 imageAlt: imageAltTexts.verwaltung,
               },
