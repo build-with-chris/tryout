@@ -70,7 +70,7 @@ const Feature284 = ({
   className
 }) => {
   return (
-    <section className={cn("h-full overflow-hidden py-32", className)}>
+    <section className={cn("h-full overflow-hidden pb-32 pt-12", className)}>
       <div className="container flex h-full w-full items-center justify-center">
         <div
           className="grid w-full max-w-6xl grid-cols-1 grid-rows-2 gap-4 md:grid-cols-2 lg:h-[1000px] lg:grid-cols-4">

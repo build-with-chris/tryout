@@ -12,8 +12,7 @@
   vertical-align: top;
 }
 
-.testimonial25-section [class*="aspect-[9/16]"] {
-  aspect-ratio: 9 / 16;
+.testimonial25-section [class*="aspect-[9/"] {
   max-width: 100%;
   overflow: hidden;
 }

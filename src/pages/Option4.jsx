@@ -2,7 +2,7 @@ import './Option4.css'
 import { Hero234aOption4 } from '@/components/hero234a-option4'
 import { Hero244 } from '@/components/hero244'
 import VideoSection from '@/components/VideoSection'
-import { CaseStudies5 } from '@/components/case-studies5'
+import { Feature284 } from '@/components/feature284'
 import PathSelector from '@/components/PathSelector'
 import { Feature268 } from '@/components/feature268'
 import { Testimonial25 } from '@/components/testimonial25'
@@ -19,7 +19,8 @@ const Option4 = () => {
 
       <Hero244 />
 
-      <CaseStudies5 />
+      <h2 className="h2 text-center mb-0 pt-32" style={{ color: '#000000' }}>Bei REWE Süd arbeitet&apos;s sich gut. Punkt.</h2>
+      <Feature284 />
 
       <Feature268 />
 

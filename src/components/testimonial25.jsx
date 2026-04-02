@@ -16,16 +16,16 @@ import "./testimonial25.css";
 
 const items = [
   {
-    id: 'reel-1',
-    videoSrc: '/KommInsTeam/1.mp4',
+    id: 'reel-14',
+    videoSrc: '/REWS_Reels_final/14.mp4',
   },
   {
-    id: 'reel-2',
-    videoSrc: '/KommInsTeam/2.mp4',
+    id: 'reel-16',
+    videoSrc: '/REWS_Reels_final/16.mp4',
   },
   {
-    id: 'reel-3',
-    videoSrc: '/KommInsTeam/3.mp4',
+    id: 'reel-35',
+    videoSrc: '/REWS_Reels_final/35.mp4',
   },
 ];
 
@@ -180,14 +180,9 @@ const Testimonial25 = ({
                   key={`${testimonial.id}-${index}`}
                   className="grow basis-[280px] md:basis-[320px] lg:basis-[360px]"
                 >
-                  <Card className={cn(
-                    "overflow-hidden border-0 shadow-lg backdrop-blur-sm relative",
-                    isDark 
-                      ? "bg-black"
-                      : "bg-black"
-                  )}>
+                  <Card className="overflow-hidden border-0 shadow-lg backdrop-blur-sm relative bg-transparent">
                     <CardContent className="p-0 overflow-hidden">
-                      <div className="relative w-full aspect-[9/16] overflow-hidden bg-black">
+                      <div className="relative w-full aspect-[9/14] overflow-hidden rounded-xl">
                         <video
                           ref={(el) => {
                             if (el) {
@@ -236,7 +231,7 @@ const Testimonial25 = ({
                         {playingVideo !== testimonial.id && (
                           <button
                             onClick={() => handlePlayClick(testimonial.id)}
-                            className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors group z-10"
+                            className="absolute inset-0 flex items-end justify-end p-4 bg-black/20 hover:bg-black/30 transition-colors group z-10"
                             aria-label="Video abspielen"
                           >
                             <div className={cn(
