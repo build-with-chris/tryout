@@ -100,11 +100,8 @@ const Feature284 = ({
                 />
               </div>
               <div className="flex-1 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold tracking-tight">
-                  {feature.title}
-                </h3>
                 {feature.gridClass?.includes("col-span-2") ? (
-                  <div className="mt-1.5 grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-4">
                     {(feature.points || []).map((point, pointIndex) => (
                       <div key={pointIndex} className="flex items-start gap-2 text-base leading-relaxed text-muted-foreground">
                         <span className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#CC071E]" />
@@ -113,7 +110,7 @@ const Feature284 = ({
                     ))}
                   </div>
                 ) : (
-                  <ul className="mt-1.5 space-y-1">
+                  <ul className="space-y-1">
                     {(feature.points || []).map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start gap-2 text-base leading-relaxed text-muted-foreground">
                         <span className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#CC071E]" />
